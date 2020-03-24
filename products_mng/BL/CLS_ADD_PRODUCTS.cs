@@ -19,19 +19,21 @@ namespace products_mng.BL
 
         }
 
-        public void ADD_PRODUCT( int ID_CAT, string BARCODE_PRODUCT, string LABEL, byte[] IMAGE)
+        public void ADD_PRODUCT( int ID_PRD, int ID_CAT, string BARCODE_PRODUCT, string LABEL, byte[] IMAGE)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
-            SqlParameter[] PARAM = new SqlParameter[4];
+            SqlParameter[] PARAM = new SqlParameter[5];
             PARAM[0] = new SqlParameter ("@ID_CAT", SqlDbType.Int);
             PARAM[1] = new SqlParameter ("@BARCODE_PRODUCT", SqlDbType.NVarChar,50);
             PARAM[2] = new SqlParameter ("@LABEL", SqlDbType.NVarChar,50);
             PARAM[3] = new SqlParameter ("@IMAGE", SqlDbType.Image);
+            PARAM[4] = new SqlParameter ("@ID_PRD", SqlDbType.Int);
             PARAM[0].Value = ID_CAT;
             PARAM[1].Value = BARCODE_PRODUCT;
             PARAM[2].Value = LABEL;
             PARAM[3].Value = IMAGE;
+            PARAM[4].Value = ID_PRD;
             dal.ExecuteCommand ("ADD_PRODUCT", PARAM);
             dal.ConClose ();
 
@@ -71,13 +73,13 @@ namespace products_mng.BL
             return dt;
         }
 
-        public void DELETE_PRODUCT(String ID_CAT)
+        public void DELETE_PRODUCT(String ID_PRD)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
             SqlParameter[] PARAM = new SqlParameter[1];
             PARAM[0] = new SqlParameter ("@ID", SqlDbType.NVarChar,50);
-            PARAM[0].Value = ID_CAT;
+            PARAM[0].Value = ID_PRD;
             dal.ExecuteCommand ("DELETE_PRODUCT", PARAM);
             dal.ConClose ();
 
@@ -111,7 +113,6 @@ namespace products_mng.BL
             }
             dal.ConClose ();
             return ID;
-
         }
 
         public void UPDATE_PRODCUT(int ID_CAT, string BARCODE_PRODUCT, string LABEL, byte[] IMAGE,string ID_PRODCUT)
@@ -134,13 +135,13 @@ namespace products_mng.BL
 
         }
 
-        public void UPDATE_PRICE_STOCK(int ID_PRD, int STOCK, int PRICE)
+        public void UPDATE_PRICE_STOCK(int ID_PRD, int STOCK, double PRICE)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
             SqlParameter[] PARAM = new SqlParameter[3];
             PARAM[0] = new SqlParameter ("@ID_PRD", SqlDbType.Int);
-            PARAM[1] = new SqlParameter ("@STOCK", SqlDbType.Int);
+            PARAM[1] = new SqlParameter ("@STOCK", SqlDbType.Float);
             PARAM[2] = new SqlParameter ("@PRICE", SqlDbType.Int);
            
             PARAM[0].Value = ID_PRD;

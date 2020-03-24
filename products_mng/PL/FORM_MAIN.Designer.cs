@@ -44,7 +44,6 @@
             this.Tool_ADDITEM = new System.Windows.Forms.ToolStripMenuItem();
             this.Tool_MNGITEMS = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.Too_ADDCAT = new System.Windows.Forms.ToolStripMenuItem();
             this.Tool_MNGCAT = new System.Windows.Forms.ToolStripMenuItem();
             this.Tool_CUSTOMER = new System.Windows.Forms.ToolStripMenuItem();
             this.Tool_ADDCUSTOMER = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,6 +130,7 @@
             this.tool_DIRSALES.Name = "tool_DIRSALES";
             this.tool_DIRSALES.Size = new System.Drawing.Size(164, 28);
             this.tool_DIRSALES.Text = "بيع مباشر";
+            this.tool_DIRSALES.Click += new System.EventHandler(this.tool_DIRSALES_Click);
             // 
             // tool_MNGSALESS
             // 
@@ -166,7 +166,6 @@
             this.Tool_ADDITEM,
             this.Tool_MNGITEMS,
             this.toolStripSeparator1,
-            this.Too_ADDCAT,
             this.Tool_MNGCAT});
             this.Tool_ITEMS.Enabled = false;
             this.Tool_ITEMS.Name = "Tool_ITEMS";
@@ -192,17 +191,12 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
             // 
-            // Too_ADDCAT
-            // 
-            this.Too_ADDCAT.Name = "Too_ADDCAT";
-            this.Too_ADDCAT.Size = new System.Drawing.Size(190, 28);
-            this.Too_ADDCAT.Text = "أضافة صنف جديد";
-            // 
             // Tool_MNGCAT
             // 
             this.Tool_MNGCAT.Name = "Tool_MNGCAT";
             this.Tool_MNGCAT.Size = new System.Drawing.Size(190, 28);
             this.Tool_MNGCAT.Text = "أدارة الاصناف";
+            this.Tool_MNGCAT.Click += new System.EventHandler(this.Tool_MNGCAT_Click);
             // 
             // Tool_CUSTOMER
             // 
@@ -219,12 +213,14 @@
             this.Tool_ADDCUSTOMER.Name = "Tool_ADDCUSTOMER";
             this.Tool_ADDCUSTOMER.Size = new System.Drawing.Size(184, 28);
             this.Tool_ADDCUSTOMER.Text = "أضافة عميل جديد";
+            this.Tool_ADDCUSTOMER.Click += new System.EventHandler(this.Tool_ADDCUSTOMER_Click);
             // 
             // Tool_MNGCUSTOMER
             // 
             this.Tool_MNGCUSTOMER.Name = "Tool_MNGCUSTOMER";
             this.Tool_MNGCUSTOMER.Size = new System.Drawing.Size(184, 28);
             this.Tool_MNGCUSTOMER.Text = "أدارة العملاء";
+            this.Tool_MNGCUSTOMER.Click += new System.EventHandler(this.Tool_MNGCUSTOMER_Click);
             // 
             // Too_USERS
             // 
@@ -292,9 +288,12 @@
             this.ClientSize = new System.Drawing.Size(792, 464);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_MAIN";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -322,7 +321,6 @@
         private System.Windows.Forms.ToolStripMenuItem Tool_ADDITEM;
         private System.Windows.Forms.ToolStripMenuItem Tool_MNGITEMS;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem Too_ADDCAT;
         private System.Windows.Forms.ToolStripMenuItem Tool_MNGCAT;
         private System.Windows.Forms.ToolStripMenuItem Tool_ADDCUSTOMER;
         private System.Windows.Forms.ToolStripMenuItem Tool_MNGCUSTOMER;

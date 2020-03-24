@@ -37,14 +37,16 @@ namespace products_mng.PL
             {
                 frm = this;
             }
-            this.dataGridView_PRODUCTS.DataSource = PRD.GET_ALL_PRODUCTS ();
+            this.GridControl_PRODUCTS.DataSource = PRD.GET_ALL_PRODUCTS ();
+
         }
 
         private void textBox_SEARCH_PRODUCT_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable ();
             dt = PRD.SEARCH_PRODUCT (textBox_SEARCH_PRODUCT.Text);
-            this.dataGridView_PRODUCTS.DataSource = dt;
+            this.GridControl_PRODUCTS.DataSource = dt;
+
         }
 
         private void button_ADD_NEW_PRODUCT_Click(object sender, EventArgs e)
@@ -55,30 +57,39 @@ namespace products_mng.PL
 
         private void button_DELETE_PRODUCT_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("هل  تريد حذف المنتج","حذف",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation)==DialogResult.Yes)
+            if (gridView1.RowCount > 0)
             {
-                PRD.DELETE_PRODUCT (this.dataGridView_PRODUCTS.CurrentRow.Cells[0].Value.ToString ());
-                MessageBox.Show ("تمت عملية الحذف", "حذف");
-                this.dataGridView_PRODUCTS.DataSource = PRD.GET_ALL_PRODUCTS ();
+                if (MessageBox.Show ("هل  تريد حذف المنتج", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    String ID_PRD = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_PRODUCT"]).ToString ();
+                    PRD.DELETE_PRODUCT (ID_PRD);
+                    MessageBox.Show ("تمت عملية الحذف", "حذف");
+                    this.GridControl_PRODUCTS.DataSource = PRD.GET_ALL_PRODUCTS ();
+                }
             }
+
         }
 
         private void button_PRODUCT_MODIFY_Click(object sender, EventArgs e)
         {
             FORM_ADD_PRODUCTS FRM = new FORM_ADD_PRODUCTS ();
             FRM.stat = "update";
-            FRM.ID_PRODUCT.Text = this.dataGridView_PRODUCTS.CurrentRow.Cells["ID_PRODUCT"].Value.ToString ();
+            String ID_PRODUCT = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_PRODUCT"]).ToString ();
+            FRM.ID_PRODUCT.Text = ID_PRODUCT;
             FRM.ID_PRODUCT.Enabled = false;
-            FRM.comboBox_CATEGORIES.Text = this.dataGridView_PRODUCTS.CurrentRow.Cells["CAT_DESCRPTION"].Value.ToString ();
-            FRM.textBox_LABEL.Text = this.dataGridView_PRODUCTS.CurrentRow.Cells["LABEL_PRODUCT"].Value.ToString ();
-            FRM.textBox_BARCODE.Text = this.dataGridView_PRODUCTS.CurrentRow.Cells["BARCODE_PRODCUT"].Value.ToString ();
-            byte[] image = (byte[]) PRD.GET_IMAGE_PRODUCTS (this.dataGridView_PRODUCTS.CurrentRow.Cells["ID_PRODUCT"].Value.ToString ()).Rows[0][0];
+            var PRD_CAT = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["CAT_DESCRPTION"]).ToString ();
+            FRM.comboBox_CATEGORIES.Text = PRD_CAT;
+            var PRD_LABEL = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["LABEL_PRODUCT"]).ToString ();
+            FRM.textBox_LABEL.Text = PRD_LABEL;
+            var PRD_BARCODE = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["BARCODE_PRODUCT"]).ToString ();
+            FRM.textBox_BARCODE.Text = PRD_BARCODE;
+            byte[] image = (byte[]) PRD.GET_IMAGE_PRODUCTS (ID_PRODUCT).Rows[0][0];
             MemoryStream ms = new MemoryStream (image);
             FRM.pictureBox_PRODUCTS.Image = Image.FromStream (ms);
             FRM.Text = "تحديث بيانات";
             FRM.btn_SAVE_PRODUCT.Text = "تحديث";
             FRM.ShowDialog ();
-          
+
         }
 
         private void button_CLOSE_Click(object sender, EventArgs e)
@@ -86,20 +97,29 @@ namespace products_mng.PL
             this.Close ();
         }
 
-        private void button_REFRESH_Click(object sender, EventArgs e)
-        {
-            this.dataGridView_PRODUCTS.DataSource = PRD.GET_ALL_PRODUCTS ();
-        }
-
         private void button_PRODUCT_PRICE_STOCK_Click(object sender, EventArgs e)
         {
-            if (this.dataGridView_PRODUCTS.Rows.Count>0)
+            if (this.gridView1.RowCount > 0)
             {
-                for (int i = 0; i < this.dataGridView_PRODUCTS.Rows.Count-1; i++)
+                for (int i = 0; i < this.gridView1.RowCount ; i++)
                 {
-                    PRD.UPDATE_PRICE_STOCK (int.Parse(dataGridView_PRODUCTS.Rows[i].Cells["ID_PRODUCT"].Value.ToString ()), int.Parse (dataGridView_PRODUCTS.Rows[i].Cells["QTE_IN_STOCK"].Value.ToString ()), int.Parse (dataGridView_PRODUCTS.Rows[i].Cells["PRICE"].Value.ToString ()));
+                    int ID_PRD = Convert.ToInt16 (gridView1.GetRowCellValue (i, gridView1.Columns["ID_PRODUCT"]).ToString ());
+                    int PRD_STOCK = Convert.ToInt16 (gridView1.GetRowCellValue (i, gridView1.Columns["QTE_IN_STOCK"]).ToString ());
+                    double PRD_PRICE = Convert.ToDouble (gridView1.GetRowCellValue (i, gridView1.Columns["PRICE"]).ToString ());
+                    PRD.UPDATE_PRICE_STOCK (ID_PRD, PRD_STOCK, PRD_PRICE);
                 }
                 MessageBox.Show ("Update Success", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+
+        private void button_PRINT_PRD_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount>0)
+            {
+                printableComponentLink1.CreateDocument ();
+                printableComponentLink1.ShowPreview ();
             }
         }
     }

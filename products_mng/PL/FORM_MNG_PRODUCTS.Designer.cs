@@ -28,35 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_SEARCH_PRODUCT = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_REFRESH = new System.Windows.Forms.Button();
-            this.btn_SAVE_PRODUCT = new System.Windows.Forms.Button();
+            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
+            this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
+            this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.GridControl_PRODUCTS = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn_ID_PRODUCT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_BARCODE_PRODUCT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_LABEL_PRODUCT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_CAT_DESCRPTION = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_QTE_IN_STOCK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_PRICE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_IMAGE_PRODUCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button_PRODUCT_PRICE_STOCK = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button_CLOSE = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button_PRODUCT_MODIFY = new System.Windows.Forms.Button();
-            this.button_DELETE_PRODUCT = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button_ADD_NEW_PRODUCT = new System.Windows.Forms.Button();
-            this.dataGridView_PRODUCTS = new System.Windows.Forms.DataGridView();
-            this.ID_PRODUCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BARCODE_PRODCUT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LABEL_PRODUCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAT_DESCRPTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QTE_IN_STOCK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IMAGE_PRODUCT = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button_CLOSE = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button_PRODUCT_PRICE_STOCK = new System.Windows.Forms.Button();
+            this.button_DELETE_PRODUCT = new System.Windows.Forms.Button();
+            this.button_PRINT_PRD = new System.Windows.Forms.Button();
+            this.button_PRODUCT_MODIFY = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControl_PRODUCTS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PRODUCTS)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,8 +85,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button_REFRESH);
-            this.groupBox1.Controls.Add(this.btn_SAVE_PRODUCT);
+            this.groupBox1.Controls.Add(this.documentViewer1);
             this.groupBox1.Controls.Add(this.textBox_SEARCH_PRODUCT);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -95,46 +97,192 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "البحث";
             // 
-            // button_REFRESH
+            // documentViewer1
             // 
-            this.button_REFRESH.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.button_REFRESH.FlatAppearance.BorderSize = 2;
-            this.button_REFRESH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_REFRESH.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_REFRESH.ForeColor = System.Drawing.Color.White;
-            this.button_REFRESH.Location = new System.Drawing.Point(6, 29);
-            this.button_REFRESH.Name = "button_REFRESH";
-            this.button_REFRESH.Size = new System.Drawing.Size(100, 50);
-            this.button_REFRESH.TabIndex = 12;
-            this.button_REFRESH.Text = "تحديث";
-            this.button_REFRESH.UseVisualStyleBackColor = true;
-            this.button_REFRESH.Click += new System.EventHandler(this.button_REFRESH_Click);
+            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.documentViewer1.DocumentSource = this.printingSystem1;
+            this.documentViewer1.IsMetric = false;
+            this.documentViewer1.Location = new System.Drawing.Point(3, 28);
+            this.documentViewer1.Name = "documentViewer1";
+            this.documentViewer1.Size = new System.Drawing.Size(344, 69);
+            this.documentViewer1.TabIndex = 3;
+            this.documentViewer1.Visible = false;
             // 
-            // btn_SAVE_PRODUCT
+            // printingSystem1
             // 
-            this.btn_SAVE_PRODUCT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.btn_SAVE_PRODUCT.FlatAppearance.BorderSize = 2;
-            this.btn_SAVE_PRODUCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SAVE_PRODUCT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btn_SAVE_PRODUCT.ForeColor = System.Drawing.Color.White;
-            this.btn_SAVE_PRODUCT.Location = new System.Drawing.Point(247, 31);
-            this.btn_SAVE_PRODUCT.Name = "btn_SAVE_PRODUCT";
-            this.btn_SAVE_PRODUCT.Size = new System.Drawing.Size(100, 50);
-            this.btn_SAVE_PRODUCT.TabIndex = 11;
-            this.btn_SAVE_PRODUCT.Text = "بحث";
-            this.btn_SAVE_PRODUCT.UseVisualStyleBackColor = true;
+            this.printingSystem1.Links.AddRange(new object[] {
+            this.printableComponentLink1});
+            // 
+            // printableComponentLink1
+            // 
+            this.printableComponentLink1.Component = this.GridControl_PRODUCTS;
+            this.printableComponentLink1.Landscape = true;
+            this.printableComponentLink1.Margins = new System.Drawing.Printing.Margins(20, 20, 20, 20);
+            this.printableComponentLink1.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printableComponentLink1.RightToLeftLayout = true;
+            // 
+            // GridControl_PRODUCTS
+            // 
+            this.GridControl_PRODUCTS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridControl_PRODUCTS.Location = new System.Drawing.Point(5, 25);
+            this.GridControl_PRODUCTS.MainView = this.gridView1;
+            this.GridControl_PRODUCTS.Name = "GridControl_PRODUCTS";
+            this.GridControl_PRODUCTS.Size = new System.Drawing.Size(1014, 362);
+            this.GridControl_PRODUCTS.TabIndex = 21;
+            this.GridControl_PRODUCTS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.ColumnPanelRowHeight = 30;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn_ID_PRODUCT,
+            this.gridColumn_BARCODE_PRODUCT,
+            this.gridColumn_LABEL_PRODUCT,
+            this.gridColumn_CAT_DESCRPTION,
+            this.gridColumn_QTE_IN_STOCK,
+            this.gridColumn_PRICE,
+            this.gridColumn_IMAGE_PRODUCT});
+            this.gridView1.FooterPanelHeight = 30;
+            this.gridView1.GridControl = this.GridControl_PRODUCTS;
+            this.gridView1.GroupRowHeight = 30;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.RowHeight = 30;
+            // 
+            // gridColumn_ID_PRODUCT
+            // 
+            this.gridColumn_ID_PRODUCT.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn_ID_PRODUCT.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_ID_PRODUCT.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_ID_PRODUCT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_ID_PRODUCT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_ID_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_ID_PRODUCT.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_ID_PRODUCT.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_ID_PRODUCT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_ID_PRODUCT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_ID_PRODUCT.Caption = "التسلسل";
+            this.gridColumn_ID_PRODUCT.FieldName = "ID_PRODUCT";
+            this.gridColumn_ID_PRODUCT.Name = "gridColumn_ID_PRODUCT";
+            this.gridColumn_ID_PRODUCT.OptionsColumn.AllowEdit = false;
+            this.gridColumn_ID_PRODUCT.OptionsFilter.AllowFilter = false;
+            this.gridColumn_ID_PRODUCT.Visible = true;
+            this.gridColumn_ID_PRODUCT.VisibleIndex = 0;
+            // 
+            // gridColumn_BARCODE_PRODUCT
+            // 
+            this.gridColumn_BARCODE_PRODUCT.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_BARCODE_PRODUCT.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_BARCODE_PRODUCT.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_BARCODE_PRODUCT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_BARCODE_PRODUCT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_BARCODE_PRODUCT.Caption = "الباركود";
+            this.gridColumn_BARCODE_PRODUCT.FieldName = "BARCODE_PRODUCT";
+            this.gridColumn_BARCODE_PRODUCT.Name = "gridColumn_BARCODE_PRODUCT";
+            this.gridColumn_BARCODE_PRODUCT.OptionsColumn.AllowEdit = false;
+            this.gridColumn_BARCODE_PRODUCT.Visible = true;
+            this.gridColumn_BARCODE_PRODUCT.VisibleIndex = 1;
+            // 
+            // gridColumn_LABEL_PRODUCT
+            // 
+            this.gridColumn_LABEL_PRODUCT.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_LABEL_PRODUCT.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_LABEL_PRODUCT.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_LABEL_PRODUCT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_LABEL_PRODUCT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_LABEL_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_LABEL_PRODUCT.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_LABEL_PRODUCT.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_LABEL_PRODUCT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_LABEL_PRODUCT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_LABEL_PRODUCT.Caption = "أسم المادة";
+            this.gridColumn_LABEL_PRODUCT.FieldName = "LABEL_PRODUCT";
+            this.gridColumn_LABEL_PRODUCT.Name = "gridColumn_LABEL_PRODUCT";
+            this.gridColumn_LABEL_PRODUCT.OptionsColumn.AllowEdit = false;
+            this.gridColumn_LABEL_PRODUCT.Visible = true;
+            this.gridColumn_LABEL_PRODUCT.VisibleIndex = 2;
+            // 
+            // gridColumn_CAT_DESCRPTION
+            // 
+            this.gridColumn_CAT_DESCRPTION.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_CAT_DESCRPTION.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_CAT_DESCRPTION.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_CAT_DESCRPTION.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_CAT_DESCRPTION.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_CAT_DESCRPTION.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_CAT_DESCRPTION.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_CAT_DESCRPTION.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_CAT_DESCRPTION.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_CAT_DESCRPTION.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_CAT_DESCRPTION.Caption = "الصنف";
+            this.gridColumn_CAT_DESCRPTION.FieldName = "CAT_DESCRPTION";
+            this.gridColumn_CAT_DESCRPTION.Name = "gridColumn_CAT_DESCRPTION";
+            this.gridColumn_CAT_DESCRPTION.OptionsColumn.AllowEdit = false;
+            this.gridColumn_CAT_DESCRPTION.Visible = true;
+            this.gridColumn_CAT_DESCRPTION.VisibleIndex = 3;
+            // 
+            // gridColumn_QTE_IN_STOCK
+            // 
+            this.gridColumn_QTE_IN_STOCK.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_QTE_IN_STOCK.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_QTE_IN_STOCK.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_QTE_IN_STOCK.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_QTE_IN_STOCK.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_QTE_IN_STOCK.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_QTE_IN_STOCK.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_QTE_IN_STOCK.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_QTE_IN_STOCK.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_QTE_IN_STOCK.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_QTE_IN_STOCK.Caption = "المتوفر";
+            this.gridColumn_QTE_IN_STOCK.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn_QTE_IN_STOCK.FieldName = "QTE_IN_STOCK";
+            this.gridColumn_QTE_IN_STOCK.Name = "gridColumn_QTE_IN_STOCK";
+            this.gridColumn_QTE_IN_STOCK.Visible = true;
+            this.gridColumn_QTE_IN_STOCK.VisibleIndex = 4;
+            // 
+            // gridColumn_PRICE
+            // 
+            this.gridColumn_PRICE.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_PRICE.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_PRICE.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_PRICE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_PRICE.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_PRICE.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_PRICE.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_PRICE.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_PRICE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_PRICE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_PRICE.Caption = "سعر البيع";
+            this.gridColumn_PRICE.FieldName = "PRICE";
+            this.gridColumn_PRICE.Name = "gridColumn_PRICE";
+            this.gridColumn_PRICE.Visible = true;
+            this.gridColumn_PRICE.VisibleIndex = 5;
+            // 
+            // gridColumn_IMAGE_PRODUCT
+            // 
+            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_IMAGE_PRODUCT.Caption = "الصورة";
+            this.gridColumn_IMAGE_PRODUCT.FieldName = "IMAGE_PRODUCT";
+            this.gridColumn_IMAGE_PRODUCT.Name = "gridColumn_IMAGE_PRODUCT";
+            this.gridColumn_IMAGE_PRODUCT.OptionsColumn.AllowEdit = false;
+            this.gridColumn_IMAGE_PRODUCT.Visible = true;
+            this.gridColumn_IMAGE_PRODUCT.VisibleIndex = 6;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button_PRODUCT_PRICE_STOCK);
-            this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Controls.Add(this.button_CLOSE);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button_PRODUCT_MODIFY);
-            this.groupBox2.Controls.Add(this.button_DELETE_PRODUCT);
-            this.groupBox2.Controls.Add(this.button_ADD_NEW_PRODUCT);
-            this.groupBox2.Controls.Add(this.dataGridView_PRODUCTS);
+            this.groupBox2.Controls.Add(this.GridControl_PRODUCTS);
+            this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(5, 105);
@@ -145,107 +293,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "المواد";
             // 
-            // button_PRODUCT_PRICE_STOCK
+            // panel1
             // 
-            this.button_PRODUCT_PRICE_STOCK.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_PRODUCT_PRICE_STOCK.FlatAppearance.BorderSize = 2;
-            this.button_PRODUCT_PRICE_STOCK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_PRODUCT_PRICE_STOCK.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_PRODUCT_PRICE_STOCK.ForeColor = System.Drawing.Color.White;
-            this.button_PRODUCT_PRICE_STOCK.Location = new System.Drawing.Point(552, 419);
-            this.button_PRODUCT_PRICE_STOCK.Name = "button_PRODUCT_PRICE_STOCK";
-            this.button_PRODUCT_PRICE_STOCK.Size = new System.Drawing.Size(100, 50);
-            this.button_PRODUCT_PRICE_STOCK.TabIndex = 20;
-            this.button_PRODUCT_PRICE_STOCK.Text = "سعر و مخزن";
-            this.button_PRODUCT_PRICE_STOCK.UseVisualStyleBackColor = true;
-            this.button_PRODUCT_PRICE_STOCK.Click += new System.EventHandler(this.button_PRODUCT_PRICE_STOCK_Click);
-            // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.BorderSize = 2;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(156, 419);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(91, 50);
-            this.button8.TabIndex = 19;
-            this.button8.Text = "ملف اكسل";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button_CLOSE
-            // 
-            this.button_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_CLOSE.FlatAppearance.BorderSize = 2;
-            this.button_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_CLOSE.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_CLOSE.ForeColor = System.Drawing.Color.White;
-            this.button_CLOSE.Location = new System.Drawing.Point(35, 419);
-            this.button_CLOSE.Name = "button_CLOSE";
-            this.button_CLOSE.Size = new System.Drawing.Size(100, 50);
-            this.button_CLOSE.TabIndex = 18;
-            this.button_CLOSE.Text = "خروج";
-            this.button_CLOSE.UseVisualStyleBackColor = true;
-            this.button_CLOSE.Click += new System.EventHandler(this.button_CLOSE_Click);
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.BorderSize = 2;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(268, 419);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(142, 50);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "طباعة كل منتوجات";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(431, 419);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 50);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "تفاصيل منتج";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button_PRODUCT_MODIFY
-            // 
-            this.button_PRODUCT_MODIFY.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_PRODUCT_MODIFY.FlatAppearance.BorderSize = 2;
-            this.button_PRODUCT_MODIFY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_PRODUCT_MODIFY.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_PRODUCT_MODIFY.ForeColor = System.Drawing.Color.White;
-            this.button_PRODUCT_MODIFY.Location = new System.Drawing.Point(673, 419);
-            this.button_PRODUCT_MODIFY.Name = "button_PRODUCT_MODIFY";
-            this.button_PRODUCT_MODIFY.Size = new System.Drawing.Size(100, 50);
-            this.button_PRODUCT_MODIFY.TabIndex = 14;
-            this.button_PRODUCT_MODIFY.Text = "تعديل منتوج";
-            this.button_PRODUCT_MODIFY.UseVisualStyleBackColor = true;
-            this.button_PRODUCT_MODIFY.Click += new System.EventHandler(this.button_PRODUCT_MODIFY_Click);
-            // 
-            // button_DELETE_PRODUCT
-            // 
-            this.button_DELETE_PRODUCT.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_DELETE_PRODUCT.FlatAppearance.BorderSize = 2;
-            this.button_DELETE_PRODUCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_DELETE_PRODUCT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_DELETE_PRODUCT.ForeColor = System.Drawing.Color.White;
-            this.button_DELETE_PRODUCT.Location = new System.Drawing.Point(794, 419);
-            this.button_DELETE_PRODUCT.Name = "button_DELETE_PRODUCT";
-            this.button_DELETE_PRODUCT.Size = new System.Drawing.Size(100, 50);
-            this.button_DELETE_PRODUCT.TabIndex = 13;
-            this.button_DELETE_PRODUCT.Text = "حذف منتوج";
-            this.button_DELETE_PRODUCT.UseVisualStyleBackColor = true;
-            this.button_DELETE_PRODUCT.Click += new System.EventHandler(this.button_DELETE_PRODUCT_Click);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.button_ADD_NEW_PRODUCT);
+            this.panel1.Controls.Add(this.button_CLOSE);
+            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.button_PRODUCT_PRICE_STOCK);
+            this.panel1.Controls.Add(this.button_DELETE_PRODUCT);
+            this.panel1.Controls.Add(this.button_PRINT_PRD);
+            this.panel1.Controls.Add(this.button_PRODUCT_MODIFY);
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(5, 387);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1014, 85);
+            this.panel1.TabIndex = 22;
             // 
             // button_ADD_NEW_PRODUCT
             // 
@@ -254,7 +317,7 @@
             this.button_ADD_NEW_PRODUCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ADD_NEW_PRODUCT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_ADD_NEW_PRODUCT.ForeColor = System.Drawing.Color.White;
-            this.button_ADD_NEW_PRODUCT.Location = new System.Drawing.Point(915, 419);
+            this.button_ADD_NEW_PRODUCT.Location = new System.Drawing.Point(871, 19);
             this.button_ADD_NEW_PRODUCT.Name = "button_ADD_NEW_PRODUCT";
             this.button_ADD_NEW_PRODUCT.Size = new System.Drawing.Size(100, 50);
             this.button_ADD_NEW_PRODUCT.TabIndex = 12;
@@ -262,119 +325,108 @@
             this.button_ADD_NEW_PRODUCT.UseVisualStyleBackColor = true;
             this.button_ADD_NEW_PRODUCT.Click += new System.EventHandler(this.button_ADD_NEW_PRODUCT_Click);
             // 
-            // dataGridView_PRODUCTS
+            // button_CLOSE
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
-            this.dataGridView_PRODUCTS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView_PRODUCTS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_PRODUCTS.BackgroundColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_PRODUCTS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView_PRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_PRODUCTS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_PRODUCT,
-            this.BARCODE_PRODCUT,
-            this.LABEL_PRODUCT,
-            this.CAT_DESCRPTION,
-            this.QTE_IN_STOCK,
-            this.PRICE,
-            this.IMAGE_PRODUCT});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_PRODUCTS.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_PRODUCTS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView_PRODUCTS.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView_PRODUCTS.EnableHeadersVisualStyles = false;
-            this.dataGridView_PRODUCTS.Location = new System.Drawing.Point(5, 25);
-            this.dataGridView_PRODUCTS.MultiSelect = false;
-            this.dataGridView_PRODUCTS.Name = "dataGridView_PRODUCTS";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_PRODUCTS.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView_PRODUCTS.RowHeadersVisible = false;
-            this.dataGridView_PRODUCTS.RowHeadersWidth = 50;
-            this.dataGridView_PRODUCTS.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView_PRODUCTS.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView_PRODUCTS.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.dataGridView_PRODUCTS.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.dataGridView_PRODUCTS.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView_PRODUCTS.RowTemplate.Height = 35;
-            this.dataGridView_PRODUCTS.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_PRODUCTS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_PRODUCTS.Size = new System.Drawing.Size(1014, 368);
-            this.dataGridView_PRODUCTS.TabIndex = 0;
+            this.button_CLOSE.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_CLOSE.FlatAppearance.BorderSize = 2;
+            this.button_CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_CLOSE.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_CLOSE.ForeColor = System.Drawing.Color.White;
+            this.button_CLOSE.Location = new System.Drawing.Point(61, 19);
+            this.button_CLOSE.Name = "button_CLOSE";
+            this.button_CLOSE.Size = new System.Drawing.Size(100, 50);
+            this.button_CLOSE.TabIndex = 18;
+            this.button_CLOSE.Text = "خروج";
+            this.button_CLOSE.UseVisualStyleBackColor = true;
+            this.button_CLOSE.Click += new System.EventHandler(this.button_CLOSE_Click);
             // 
-            // ID_PRODUCT
+            // button8
             // 
-            this.ID_PRODUCT.DataPropertyName = "ID_PRODUCT";
-            this.ID_PRODUCT.HeaderText = "المعرف";
-            this.ID_PRODUCT.Name = "ID_PRODUCT";
-            this.ID_PRODUCT.ReadOnly = true;
-            this.ID_PRODUCT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button8.FlatAppearance.BorderSize = 2;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(172, 19);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(91, 50);
+            this.button8.TabIndex = 19;
+            this.button8.Text = "ملف اكسل";
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // BARCODE_PRODCUT
+            // button_PRODUCT_PRICE_STOCK
             // 
-            this.BARCODE_PRODCUT.DataPropertyName = "BARCODE_PRODUCT";
-            this.BARCODE_PRODCUT.HeaderText = "الباركود";
-            this.BARCODE_PRODCUT.Name = "BARCODE_PRODCUT";
-            this.BARCODE_PRODCUT.ReadOnly = true;
-            this.BARCODE_PRODCUT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.button_PRODUCT_PRICE_STOCK.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_PRODUCT_PRICE_STOCK.FlatAppearance.BorderSize = 2;
+            this.button_PRODUCT_PRICE_STOCK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PRODUCT_PRICE_STOCK.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_PRODUCT_PRICE_STOCK.ForeColor = System.Drawing.Color.White;
+            this.button_PRODUCT_PRICE_STOCK.Location = new System.Drawing.Point(538, 19);
+            this.button_PRODUCT_PRICE_STOCK.Name = "button_PRODUCT_PRICE_STOCK";
+            this.button_PRODUCT_PRICE_STOCK.Size = new System.Drawing.Size(100, 50);
+            this.button_PRODUCT_PRICE_STOCK.TabIndex = 20;
+            this.button_PRODUCT_PRICE_STOCK.Text = "سعر و مخزن";
+            this.button_PRODUCT_PRICE_STOCK.UseVisualStyleBackColor = true;
+            this.button_PRODUCT_PRICE_STOCK.Click += new System.EventHandler(this.button_PRODUCT_PRICE_STOCK_Click);
             // 
-            // LABEL_PRODUCT
+            // button_DELETE_PRODUCT
             // 
-            this.LABEL_PRODUCT.DataPropertyName = "LABEL_PRODUCT";
-            this.LABEL_PRODUCT.HeaderText = "أسم مادة";
-            this.LABEL_PRODUCT.Name = "LABEL_PRODUCT";
-            this.LABEL_PRODUCT.ReadOnly = true;
-            this.LABEL_PRODUCT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.button_DELETE_PRODUCT.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_DELETE_PRODUCT.FlatAppearance.BorderSize = 2;
+            this.button_DELETE_PRODUCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_DELETE_PRODUCT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_DELETE_PRODUCT.ForeColor = System.Drawing.Color.White;
+            this.button_DELETE_PRODUCT.Location = new System.Drawing.Point(760, 19);
+            this.button_DELETE_PRODUCT.Name = "button_DELETE_PRODUCT";
+            this.button_DELETE_PRODUCT.Size = new System.Drawing.Size(100, 50);
+            this.button_DELETE_PRODUCT.TabIndex = 13;
+            this.button_DELETE_PRODUCT.Text = "حذف منتوج";
+            this.button_DELETE_PRODUCT.UseVisualStyleBackColor = true;
+            this.button_DELETE_PRODUCT.Click += new System.EventHandler(this.button_DELETE_PRODUCT_Click);
             // 
-            // CAT_DESCRPTION
+            // button_PRINT_PRD
             // 
-            this.CAT_DESCRPTION.DataPropertyName = "CAT_DESCRPTION";
-            this.CAT_DESCRPTION.HeaderText = "الصنف";
-            this.CAT_DESCRPTION.Name = "CAT_DESCRPTION";
-            this.CAT_DESCRPTION.ReadOnly = true;
-            this.CAT_DESCRPTION.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.button_PRINT_PRD.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_PRINT_PRD.FlatAppearance.BorderSize = 2;
+            this.button_PRINT_PRD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PRINT_PRD.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_PRINT_PRD.ForeColor = System.Drawing.Color.White;
+            this.button_PRINT_PRD.Location = new System.Drawing.Point(274, 19);
+            this.button_PRINT_PRD.Name = "button_PRINT_PRD";
+            this.button_PRINT_PRD.Size = new System.Drawing.Size(142, 50);
+            this.button_PRINT_PRD.TabIndex = 17;
+            this.button_PRINT_PRD.Text = "طباعة كل منتوجات";
+            this.button_PRINT_PRD.UseVisualStyleBackColor = true;
+            this.button_PRINT_PRD.Click += new System.EventHandler(this.button_PRINT_PRD_Click);
             // 
-            // QTE_IN_STOCK
+            // button_PRODUCT_MODIFY
             // 
-            this.QTE_IN_STOCK.DataPropertyName = "QTE_IN_STOCK";
-            this.QTE_IN_STOCK.HeaderText = "المتوفر";
-            this.QTE_IN_STOCK.Name = "QTE_IN_STOCK";
-            this.QTE_IN_STOCK.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.button_PRODUCT_MODIFY.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_PRODUCT_MODIFY.FlatAppearance.BorderSize = 2;
+            this.button_PRODUCT_MODIFY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PRODUCT_MODIFY.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_PRODUCT_MODIFY.ForeColor = System.Drawing.Color.White;
+            this.button_PRODUCT_MODIFY.Location = new System.Drawing.Point(649, 19);
+            this.button_PRODUCT_MODIFY.Name = "button_PRODUCT_MODIFY";
+            this.button_PRODUCT_MODIFY.Size = new System.Drawing.Size(100, 50);
+            this.button_PRODUCT_MODIFY.TabIndex = 14;
+            this.button_PRODUCT_MODIFY.Text = "تعديل منتوج";
+            this.button_PRODUCT_MODIFY.UseVisualStyleBackColor = true;
+            this.button_PRODUCT_MODIFY.Click += new System.EventHandler(this.button_PRODUCT_MODIFY_Click);
             // 
-            // PRICE
+            // button5
             // 
-            this.PRICE.DataPropertyName = "PRICE";
-            this.PRICE.HeaderText = "السعر";
-            this.PRICE.Name = "PRICE";
-            this.PRICE.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // IMAGE_PRODUCT
-            // 
-            this.IMAGE_PRODUCT.DataPropertyName = "IMAGE_PRODUCT";
-            this.IMAGE_PRODUCT.HeaderText = "الصورة";
-            this.IMAGE_PRODUCT.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.IMAGE_PRODUCT.Name = "IMAGE_PRODUCT";
-            this.IMAGE_PRODUCT.ReadOnly = true;
-            this.IMAGE_PRODUCT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IMAGE_PRODUCT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button5.FlatAppearance.BorderSize = 2;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(427, 19);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 50);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "تفاصيل منتج";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // FORM_MNG_PRODUCTS
             // 
@@ -385,6 +437,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -392,12 +445,15 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "أدارة المنتوجات";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridControl_PRODUCTS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PRODUCTS)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -407,24 +463,27 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_SEARCH_PRODUCT;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_SAVE_PRODUCT;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button_CLOSE;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button_PRINT_PRD;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button_PRODUCT_MODIFY;
         private System.Windows.Forms.Button button_DELETE_PRODUCT;
         private System.Windows.Forms.Button button_ADD_NEW_PRODUCT;
         private System.Windows.Forms.Button button_PRODUCT_PRICE_STOCK;
-        private System.Windows.Forms.Button button_REFRESH;
-        public System.Windows.Forms.DataGridView dataGridView_PRODUCTS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BARCODE_PRODCUT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LABEL_PRODUCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CAT_DESCRPTION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QTE_IN_STOCK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
-        private System.Windows.Forms.DataGridViewImageColumn IMAGE_PRODUCT;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_ID_PRODUCT;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_BARCODE_PRODUCT;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_LABEL_PRODUCT;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_CAT_DESCRPTION;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_QTE_IN_STOCK;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_PRICE;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_IMAGE_PRODUCT;
+        public DevExpress.XtraGrid.GridControl GridControl_PRODUCTS;
+        private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
+        private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
+        private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
     }
 }

@@ -57,5 +57,29 @@ namespace products_mng.PL
             FORM_MNG_PRODUCTS form = new FORM_MNG_PRODUCTS ();
             form.ShowDialog ();
         }
+
+        private void Tool_MNGCAT_Click(object sender, EventArgs e)
+        {
+            FORM_MNG_CATEGORIES FORM = new FORM_MNG_CATEGORIES ();
+            FORM.ShowDialog ();
+        }
+
+        private void Tool_MNGCUSTOMER_Click(object sender, EventArgs e)
+        {
+            FORM_MNG_COUSTOMERS FORM = new FORM_MNG_COUSTOMERS ();
+            FORM.ShowDialog ();
+        }
+
+        private void Tool_ADDCUSTOMER_Click(object sender, EventArgs e)
+        {
+            FORM_COUSTOMERS FORM = new FORM_COUSTOMERS ();
+            FORM.ShowDialog ();
+        }
+
+        private void tool_DIRSALES_Click(object sender, EventArgs e)
+        {
+            FORM_SALES FORM = new FORM_SALES ();
+            FORM.ShowDialog ();
+        }
     }
 }

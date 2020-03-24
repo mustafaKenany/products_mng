@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.ID_PRODUCT = new System.Windows.Forms.TextBox();
             this.btn_SAVE_PRODUCT = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.comboBox_CATEGORIES = new System.Windows.Forms.ComboBox();
             this.textBox_BARCODE = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PRODUCTS)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "أضافة مادة جديدة";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(524, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 24);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "رقم المادة";
             // 
             // ID_PRODUCT
             // 
@@ -197,6 +206,7 @@
             this.textBox_BARCODE.Size = new System.Drawing.Size(300, 35);
             this.textBox_BARCODE.TabIndex = 1;
             this.textBox_BARCODE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_BARCODE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_BARCODE_KeyPress);
             this.textBox_BARCODE.Validated += new System.EventHandler(this.textBox_BARCODE_Validated);
             // 
             // label1
@@ -208,15 +218,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "الباركود الخاص بالمادة ان وجد";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(524, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 24);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "رقم المادة";
-            // 
             // FORM_ADD_PRODUCTS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 24F);
@@ -226,7 +227,10 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_ADD_PRODUCTS";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
