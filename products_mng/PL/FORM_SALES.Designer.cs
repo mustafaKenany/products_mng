@@ -29,15 +29,12 @@
         private void InitializeComponent()
         {
             this.panel_top = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_COUST_ID = new System.Windows.Forms.Label();
+            this.label_SALES_MAN = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button_close = new System.Windows.Forms.Button();
             this.panel_Right = new System.Windows.Forms.Panel();
             this.dataGridView_INVO_ITEMS = new System.Windows.Forms.DataGridView();
-            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_PAID_MONEY = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox_INVO_PAID = new System.Windows.Forms.TextBox();
@@ -47,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox_INVO_DISC = new System.Windows.Forms.TextBox();
+            this.label_INVO_REMID = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_DLT_ITEM = new System.Windows.Forms.Button();
             this.splitter5 = new System.Windows.Forms.Splitter();
@@ -61,15 +59,19 @@
             this.label_ID_ORDER = new System.Windows.Forms.Label();
             this.button_NEW_INVO = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_ORDER_NOTES = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_COUST_NAME = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel_CATEGORIES = new System.Windows.Forms.Panel();
             this.flowLayoutPanel_CATEGORIES = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel_PRD = new System.Windows.Forms.FlowLayoutPanel();
-            this.label_INVO_REMID = new System.Windows.Forms.Label();
+            this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_top.SuspendLayout();
             this.panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_INVO_ITEMS)).BeginInit();
@@ -84,7 +86,8 @@
             // panel_top
             // 
             this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(158)))), ((int)(((byte)(132)))));
-            this.panel_top.Controls.Add(this.label2);
+            this.panel_top.Controls.Add(this.label_COUST_ID);
+            this.panel_top.Controls.Add(this.label_SALES_MAN);
             this.panel_top.Controls.Add(this.label1);
             this.panel_top.Controls.Add(this.button_close);
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
@@ -95,15 +98,26 @@
             this.panel_top.Size = new System.Drawing.Size(1250, 50);
             this.panel_top.TabIndex = 0;
             // 
-            // label2
+            // label_COUST_ID
             // 
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(589, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 40);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "المستخدم";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_COUST_ID.ForeColor = System.Drawing.Color.White;
+            this.label_COUST_ID.Location = new System.Drawing.Point(450, 5);
+            this.label_COUST_ID.Name = "label_COUST_ID";
+            this.label_COUST_ID.Size = new System.Drawing.Size(99, 40);
+            this.label_COUST_ID.TabIndex = 3;
+            this.label_COUST_ID.Text = "COUST_ID";
+            this.label_COUST_ID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_COUST_ID.Visible = false;
+            // 
+            // label_SALES_MAN
+            // 
+            this.label_SALES_MAN.ForeColor = System.Drawing.Color.White;
+            this.label_SALES_MAN.Location = new System.Drawing.Point(589, 5);
+            this.label_SALES_MAN.Name = "label_SALES_MAN";
+            this.label_SALES_MAN.Size = new System.Drawing.Size(99, 40);
+            this.label_SALES_MAN.TabIndex = 2;
+            this.label_SALES_MAN.Text = "المستخدم";
+            this.label_SALES_MAN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -149,6 +163,7 @@
             this.dataGridView_INVO_ITEMS.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.dataGridView_INVO_ITEMS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_INVO_ITEMS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ITEM_ID,
             this.ITEM_NAME,
             this.ITEM_QTY,
             this.ITEM_PRICE,
@@ -163,26 +178,6 @@
             this.dataGridView_INVO_ITEMS.TabIndex = 2;
             this.dataGridView_INVO_ITEMS.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_INVO_ITEMS_CellValueChanged);
             this.dataGridView_INVO_ITEMS.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_INVO_ITEMS_EditingControlShowing);
-            // 
-            // ITEM_NAME
-            // 
-            this.ITEM_NAME.HeaderText = "مادة";
-            this.ITEM_NAME.Name = "ITEM_NAME";
-            // 
-            // ITEM_QTY
-            // 
-            this.ITEM_QTY.HeaderText = "عدد";
-            this.ITEM_QTY.Name = "ITEM_QTY";
-            // 
-            // ITEM_PRICE
-            // 
-            this.ITEM_PRICE.HeaderText = "سعر";
-            this.ITEM_PRICE.Name = "ITEM_PRICE";
-            // 
-            // ITEM_TOTAL
-            // 
-            this.ITEM_TOTAL.HeaderText = "المجموع";
-            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
             // 
             // panel_PAID_MONEY
             // 
@@ -297,6 +292,18 @@
             this.textBox_INVO_DISC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_INVO_DISC.TextChanged += new System.EventHandler(this.textBox_INVO_DISC_TextChanged);
             // 
+            // label_INVO_REMID
+            // 
+            this.label_INVO_REMID.AutoSize = true;
+            this.label_INVO_REMID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_INVO_REMID.ForeColor = System.Drawing.Color.White;
+            this.label_INVO_REMID.Location = new System.Drawing.Point(6, 111);
+            this.label_INVO_REMID.Name = "label_INVO_REMID";
+            this.label_INVO_REMID.Size = new System.Drawing.Size(211, 36);
+            this.label_INVO_REMID.TabIndex = 19;
+            this.label_INVO_REMID.Text = "0";
+            this.label_INVO_REMID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.button_DLT_ITEM);
@@ -361,6 +368,7 @@
             this.button_CNCL_INVO.TabIndex = 11;
             this.button_CNCL_INVO.Text = "الغاء";
             this.button_CNCL_INVO.UseVisualStyleBackColor = false;
+            this.button_CNCL_INVO.Click += new System.EventHandler(this.button_CNCL_INVO_Click);
             // 
             // splitter4
             // 
@@ -413,6 +421,7 @@
             this.button_SAVE_INVO.TabIndex = 7;
             this.button_SAVE_INVO.Text = "حفظ";
             this.button_SAVE_INVO.UseVisualStyleBackColor = false;
+            this.button_SAVE_INVO.Click += new System.EventHandler(this.button_SAVE_INVO_Click);
             // 
             // splitter2
             // 
@@ -483,9 +492,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBox_ORDER_NOTES);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textBox_COUST_NAME);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 110);
@@ -494,15 +503,15 @@
             this.panel2.Size = new System.Drawing.Size(800, 37);
             this.panel2.TabIndex = 3;
             // 
-            // textBox2
+            // textBox_ORDER_NOTES
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(3, 3);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(373, 31);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ORDER_NOTES.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ORDER_NOTES.Location = new System.Drawing.Point(3, 3);
+            this.textBox_ORDER_NOTES.Multiline = true;
+            this.textBox_ORDER_NOTES.Name = "textBox_ORDER_NOTES";
+            this.textBox_ORDER_NOTES.Size = new System.Drawing.Size(373, 31);
+            this.textBox_ORDER_NOTES.TabIndex = 15;
+            this.textBox_ORDER_NOTES.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -515,15 +524,15 @@
             this.label8.Text = "ملاحظات";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // textBox_COUST_NAME
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.textBox1.Location = new System.Drawing.Point(475, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 31);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_COUST_NAME.Dock = System.Windows.Forms.DockStyle.Right;
+            this.textBox_COUST_NAME.Location = new System.Drawing.Point(475, 3);
+            this.textBox_COUST_NAME.Multiline = true;
+            this.textBox_COUST_NAME.Name = "textBox_COUST_NAME";
+            this.textBox_COUST_NAME.Size = new System.Drawing.Size(223, 31);
+            this.textBox_COUST_NAME.TabIndex = 13;
+            this.textBox_COUST_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -578,17 +587,31 @@
             this.flowLayoutPanel_PRD.Size = new System.Drawing.Size(790, 315);
             this.flowLayoutPanel_PRD.TabIndex = 0;
             // 
-            // label_INVO_REMID
+            // ITEM_ID
             // 
-            this.label_INVO_REMID.AutoSize = true;
-            this.label_INVO_REMID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_INVO_REMID.ForeColor = System.Drawing.Color.White;
-            this.label_INVO_REMID.Location = new System.Drawing.Point(6, 111);
-            this.label_INVO_REMID.Name = "label_INVO_REMID";
-            this.label_INVO_REMID.Size = new System.Drawing.Size(211, 36);
-            this.label_INVO_REMID.TabIndex = 19;
-            this.label_INVO_REMID.Text = "0";
-            this.label_INVO_REMID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ITEM_ID.HeaderText = "ITEM_ID";
+            this.ITEM_ID.Name = "ITEM_ID";
+            this.ITEM_ID.Visible = false;
+            // 
+            // ITEM_NAME
+            // 
+            this.ITEM_NAME.HeaderText = "مادة";
+            this.ITEM_NAME.Name = "ITEM_NAME";
+            // 
+            // ITEM_QTY
+            // 
+            this.ITEM_QTY.HeaderText = "عدد";
+            this.ITEM_QTY.Name = "ITEM_QTY";
+            // 
+            // ITEM_PRICE
+            // 
+            this.ITEM_PRICE.HeaderText = "سعر";
+            this.ITEM_PRICE.Name = "ITEM_PRICE";
+            // 
+            // ITEM_TOTAL
+            // 
+            this.ITEM_TOTAL.HeaderText = "المجموع";
+            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
             // 
             // FORM_SALES
             // 
@@ -633,7 +656,7 @@
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_SALES_MAN;
         private System.Windows.Forms.Panel panel_Right;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button_NEW_INVO;
@@ -656,21 +679,23 @@
         private System.Windows.Forms.Label label_INVO_TOTAL;
         private System.Windows.Forms.TextBox textBox_INVO_DISC;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_COUST_NAME;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_ORDER_NOTES;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel_CATEGORIES;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_CATEGORIES;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_PRD;
         private System.Windows.Forms.DataGridView dataGridView_INVO_ITEMS;
+        private System.Windows.Forms.Button button_DLT_ITEM;
+        private System.Windows.Forms.Splitter splitter5;
+        private System.Windows.Forms.Label label_INVO_REMID;
+        private System.Windows.Forms.Label label_COUST_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_QTY;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_PRICE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_TOTAL;
-        private System.Windows.Forms.Button button_DLT_ITEM;
-        private System.Windows.Forms.Splitter splitter5;
-        private System.Windows.Forms.Label label_INVO_REMID;
     }
 }

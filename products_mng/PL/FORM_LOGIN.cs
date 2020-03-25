@@ -24,6 +24,7 @@ namespace products_mng.PL
             dt = log.LOGIN (txb_userID.Text.Trim(), txb_PwdUsr.Text.Trim());
             if (dt.Rows.Count > 0)
             {
+                BL.CLS_LOGIN.SALES_MAN = txb_userID.Text;
                 FORM_MAIN.getMainForm.tool_Backup.Enabled = true;
                 FORM_MAIN.getMainForm.tool_importBakup.Enabled= true;
                 FORM_MAIN.getMainForm.Tool_CUSTOMER.Enabled = true;

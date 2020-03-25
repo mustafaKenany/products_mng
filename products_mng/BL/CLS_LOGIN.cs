@@ -9,7 +9,7 @@ namespace products_mng.BL
 {
     class CLS_LOGIN
     {
-
+        public static string SALES_MAN = "";
         //method check login
         public  DataTable LOGIN(string ID, string PWD)
         {

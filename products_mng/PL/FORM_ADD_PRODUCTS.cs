@@ -103,7 +103,11 @@ namespace products_mng.PL
         {
             base.OnKeyPress (e);
             if (!char.IsControl (e.KeyChar) && !char.IsDigit (e.KeyChar))
+            {
+
                 e.Handled = true;
+                MessageBox.Show ("ادخال ارقام فقط", "textBox_BARCODE ERORR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
