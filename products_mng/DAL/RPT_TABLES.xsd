@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RPT_TABLES" targetNamespace="http://tempuri.org/RPT_TABLES.xsd" xmlns:mstns="http://tempuri.org/RPT_TABLES.xsd" xmlns="http://tempuri.org/RPT_TABLES.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RPT_TABLES" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RPT_TABLES" msprop:Generator_UserDSName="RPT_TABLES">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PRT_INVO_ORDER" msprop:Generator_TableClassName="PRT_INVO_ORDERDataTable" msprop:Generator_TableVarName="tablePRT_INVO_ORDER" msprop:Generator_TablePropName="PRT_INVO_ORDER" msprop:Generator_RowDeletingName="PRT_INVO_ORDERRowDeleting" msprop:Generator_RowChangingName="PRT_INVO_ORDERRowChanging" msprop:Generator_RowEvHandlerName="PRT_INVO_ORDERRowChangeEventHandler" msprop:Generator_RowDeletedName="PRT_INVO_ORDERRowDeleted" msprop:Generator_UserTableName="PRT_INVO_ORDER" msprop:Generator_RowChangedName="PRT_INVO_ORDERRowChanged" msprop:Generator_RowEvArgName="PRT_INVO_ORDERRowChangeEvent" msprop:Generator_RowClassName="PRT_INVO_ORDERRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_ORDER" msprop:Generator_ColumnVarNameInTable="columnID_ORDER" msprop:Generator_ColumnPropNameInRow="ID_ORDER" msprop:Generator_ColumnPropNameInTable="ID_ORDERColumn" msprop:Generator_UserColumnName="ID_ORDER" type="xs:int" minOccurs="0" />
+              <xs:element name="COUST_NAME" msprop:Generator_ColumnVarNameInTable="columnCOUST_NAME" msprop:Generator_ColumnPropNameInRow="COUST_NAME" msprop:Generator_ColumnPropNameInTable="COUST_NAMEColumn" msprop:Generator_UserColumnName="COUST_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ORDER_DATE" msprop:Generator_ColumnVarNameInTable="columnORDER_DATE" msprop:Generator_ColumnPropNameInRow="ORDER_DATE" msprop:Generator_ColumnPropNameInTable="ORDER_DATEColumn" msprop:Generator_UserColumnName="ORDER_DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABEL_PRODUCT" msprop:Generator_ColumnVarNameInTable="columnLABEL_PRODUCT" msprop:Generator_ColumnPropNameInRow="LABEL_PRODUCT" msprop:Generator_ColumnPropNameInTable="LABEL_PRODUCTColumn" msprop:Generator_UserColumnName="LABEL_PRODUCT" type="xs:string" minOccurs="0" />
+              <xs:element name="PRD_QTY" msprop:Generator_ColumnVarNameInTable="columnPRD_QTY" msprop:Generator_ColumnPropNameInRow="PRD_QTY" msprop:Generator_ColumnPropNameInTable="PRD_QTYColumn" msprop:Generator_UserColumnName="PRD_QTY" type="xs:double" minOccurs="0" />
+              <xs:element name="PRD_PRICE" msprop:Generator_ColumnVarNameInTable="columnPRD_PRICE" msprop:Generator_ColumnPropNameInRow="PRD_PRICE" msprop:Generator_ColumnPropNameInTable="PRD_PRICEColumn" msprop:Generator_UserColumnName="PRD_PRICE" type="xs:string" minOccurs="0" />
+              <xs:element name="QTY_BY_PRICE" msprop:Generator_ColumnVarNameInTable="columnQTY_BY_PRICE" msprop:Generator_ColumnPropNameInRow="QTY_BY_PRICE" msprop:Generator_ColumnPropNameInTable="QTY_BY_PRICEColumn" msprop:Generator_UserColumnName="QTY_BY_PRICE" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTAL_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnTOTAL_AMOUNT" msprop:Generator_ColumnPropNameInRow="TOTAL_AMOUNT" msprop:Generator_ColumnPropNameInTable="TOTAL_AMOUNTColumn" msprop:Generator_UserColumnName="TOTAL_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="PAID_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnPAID_AMOUNT" msprop:Generator_ColumnPropNameInRow="PAID_AMOUNT" msprop:Generator_ColumnPropNameInTable="PAID_AMOUNTColumn" msprop:Generator_UserColumnName="PAID_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="DISCOUNT_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnDISCOUNT_AMOUNT" msprop:Generator_ColumnPropNameInRow="DISCOUNT_AMOUNT" msprop:Generator_ColumnPropNameInTable="DISCOUNT_AMOUNTColumn" msprop:Generator_UserColumnName="DISCOUNT_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="REMINDER_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnREMINDER_AMOUNT" msprop:Generator_ColumnPropNameInRow="REMINDER_AMOUNT" msprop:Generator_ColumnPropNameInTable="REMINDER_AMOUNTColumn" msprop:Generator_UserColumnName="REMINDER_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="ORDER_NOTES" msprop:Generator_ColumnVarNameInTable="columnORDER_NOTES" msprop:Generator_ColumnPropNameInRow="ORDER_NOTES" msprop:Generator_ColumnPropNameInTable="ORDER_NOTESColumn" msprop:Generator_UserColumnName="ORDER_NOTES" type="xs:string" minOccurs="0" />
+              <xs:element name="PAID_OR_NOT" msprop:Generator_ColumnVarNameInTable="columnPAID_OR_NOT" msprop:Generator_ColumnPropNameInRow="PAID_OR_NOT" msprop:Generator_ColumnPropNameInTable="PAID_OR_NOTColumn" msprop:Generator_UserColumnName="PAID_OR_NOT" type="xs:string" minOccurs="0" />
+              <xs:element name="ORDER_TYPES" msprop:Generator_ColumnVarNameInTable="columnORDER_TYPES" msprop:Generator_ColumnPropNameInRow="ORDER_TYPES" msprop:Generator_ColumnPropNameInTable="ORDER_TYPESColumn" msprop:Generator_UserColumnName="ORDER_TYPES" type="xs:string" minOccurs="0" />
+              <xs:element name="SALES_MAN" msprop:Generator_ColumnVarNameInTable="columnSALES_MAN" msprop:Generator_ColumnPropNameInRow="SALES_MAN" msprop:Generator_ColumnPropNameInTable="SALES_MANColumn" msprop:Generator_UserColumnName="SALES_MAN" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

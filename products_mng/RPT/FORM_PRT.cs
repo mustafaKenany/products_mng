@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace products_mng.RPT
 {
-    public partial class FRM_RPT : Form
+    public partial class FORM_PRT : Form
     {
-        public FRM_RPT()
+        public FORM_PRT()
         {
             InitializeComponent ();
         }

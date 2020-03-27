@@ -45,7 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox_INVO_DISC = new System.Windows.Forms.TextBox();
             this.label_INVO_REMID = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_BTNS = new System.Windows.Forms.Panel();
             this.button_DLT_ITEM = new System.Windows.Forms.Button();
             this.splitter5 = new System.Windows.Forms.Splitter();
             this.button_CNCL_INVO = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.label_ID_ORDER = new System.Windows.Forms.Label();
             this.button_NEW_INVO = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_COUST_NOTS = new System.Windows.Forms.Panel();
             this.textBox_ORDER_NOTES = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_COUST_NAME = new System.Windows.Forms.TextBox();
@@ -72,13 +72,14 @@
             this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_COUST_BRWS = new System.Windows.Forms.Button();
             this.panel_top.SuspendLayout();
             this.panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_INVO_ITEMS)).BeginInit();
             this.panel_PAID_MONEY.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel_BTNS.SuspendLayout();
+            this.panel_COUST_NOTS.SuspendLayout();
             this.panel_CATEGORIES.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +108,6 @@
             this.label_COUST_ID.TabIndex = 3;
             this.label_COUST_ID.Text = "COUST_ID";
             this.label_COUST_ID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_COUST_ID.Visible = false;
             // 
             // label_SALES_MAN
             // 
@@ -304,27 +304,28 @@
             this.label_INVO_REMID.Text = "0";
             this.label_INVO_REMID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // panel_BTNS
             // 
-            this.panel1.Controls.Add(this.button_DLT_ITEM);
-            this.panel1.Controls.Add(this.splitter5);
-            this.panel1.Controls.Add(this.button_CNCL_INVO);
-            this.panel1.Controls.Add(this.splitter4);
-            this.panel1.Controls.Add(this.button_PRT_INVO);
-            this.panel1.Controls.Add(this.splitter3);
-            this.panel1.Controls.Add(this.button_SAVE_INVO);
-            this.panel1.Controls.Add(this.splitter2);
-            this.panel1.Controls.Add(this.button_PAID_INVO);
-            this.panel1.Controls.Add(this.splitter1);
-            this.panel1.Controls.Add(this.label_ID_ORDER);
-            this.panel1.Controls.Add(this.button_NEW_INVO);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(3);
-            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(800, 60);
-            this.panel1.TabIndex = 2;
+            this.panel_BTNS.BackColor = System.Drawing.SystemColors.Window;
+            this.panel_BTNS.Controls.Add(this.button_DLT_ITEM);
+            this.panel_BTNS.Controls.Add(this.splitter5);
+            this.panel_BTNS.Controls.Add(this.button_CNCL_INVO);
+            this.panel_BTNS.Controls.Add(this.splitter4);
+            this.panel_BTNS.Controls.Add(this.button_PRT_INVO);
+            this.panel_BTNS.Controls.Add(this.splitter3);
+            this.panel_BTNS.Controls.Add(this.button_SAVE_INVO);
+            this.panel_BTNS.Controls.Add(this.splitter2);
+            this.panel_BTNS.Controls.Add(this.button_PAID_INVO);
+            this.panel_BTNS.Controls.Add(this.splitter1);
+            this.panel_BTNS.Controls.Add(this.label_ID_ORDER);
+            this.panel_BTNS.Controls.Add(this.button_NEW_INVO);
+            this.panel_BTNS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_BTNS.Location = new System.Drawing.Point(0, 50);
+            this.panel_BTNS.Name = "panel_BTNS";
+            this.panel_BTNS.Padding = new System.Windows.Forms.Padding(3);
+            this.panel_BTNS.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.panel_BTNS.Size = new System.Drawing.Size(800, 60);
+            this.panel_BTNS.TabIndex = 2;
             // 
             // button_DLT_ITEM
             // 
@@ -489,27 +490,27 @@
             this.button_NEW_INVO.UseVisualStyleBackColor = false;
             this.button_NEW_INVO.Click += new System.EventHandler(this.button_NEW_INVO_Click);
             // 
-            // panel2
+            // panel_COUST_NOTS
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.panel2.Controls.Add(this.textBox_ORDER_NOTES);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox_COUST_NAME);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 110);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(3);
-            this.panel2.Size = new System.Drawing.Size(800, 37);
-            this.panel2.TabIndex = 3;
+            this.panel_COUST_NOTS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel_COUST_NOTS.Controls.Add(this.textBox_ORDER_NOTES);
+            this.panel_COUST_NOTS.Controls.Add(this.label8);
+            this.panel_COUST_NOTS.Controls.Add(this.button_COUST_BRWS);
+            this.panel_COUST_NOTS.Controls.Add(this.textBox_COUST_NAME);
+            this.panel_COUST_NOTS.Controls.Add(this.label7);
+            this.panel_COUST_NOTS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_COUST_NOTS.Location = new System.Drawing.Point(0, 110);
+            this.panel_COUST_NOTS.Name = "panel_COUST_NOTS";
+            this.panel_COUST_NOTS.Padding = new System.Windows.Forms.Padding(3);
+            this.panel_COUST_NOTS.Size = new System.Drawing.Size(800, 39);
+            this.panel_COUST_NOTS.TabIndex = 3;
             // 
             // textBox_ORDER_NOTES
             // 
             this.textBox_ORDER_NOTES.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_ORDER_NOTES.Location = new System.Drawing.Point(3, 3);
-            this.textBox_ORDER_NOTES.Multiline = true;
             this.textBox_ORDER_NOTES.Name = "textBox_ORDER_NOTES";
-            this.textBox_ORDER_NOTES.Size = new System.Drawing.Size(373, 31);
+            this.textBox_ORDER_NOTES.Size = new System.Drawing.Size(332, 34);
             this.textBox_ORDER_NOTES.TabIndex = 15;
             this.textBox_ORDER_NOTES.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -517,9 +518,9 @@
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Right;
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(376, 3);
+            this.label8.Location = new System.Drawing.Point(335, 3);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 31);
+            this.label8.Size = new System.Drawing.Size(74, 33);
             this.label8.TabIndex = 14;
             this.label8.Text = "ملاحظات";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -527,10 +528,9 @@
             // textBox_COUST_NAME
             // 
             this.textBox_COUST_NAME.Dock = System.Windows.Forms.DockStyle.Right;
-            this.textBox_COUST_NAME.Location = new System.Drawing.Point(475, 3);
-            this.textBox_COUST_NAME.Multiline = true;
+            this.textBox_COUST_NAME.Location = new System.Drawing.Point(489, 3);
             this.textBox_COUST_NAME.Name = "textBox_COUST_NAME";
-            this.textBox_COUST_NAME.Size = new System.Drawing.Size(223, 31);
+            this.textBox_COUST_NAME.Size = new System.Drawing.Size(223, 34);
             this.textBox_COUST_NAME.TabIndex = 13;
             this.textBox_COUST_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -538,9 +538,9 @@
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Right;
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(698, 3);
+            this.label7.Location = new System.Drawing.Point(712, 3);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 31);
+            this.label7.Size = new System.Drawing.Size(85, 33);
             this.label7.TabIndex = 12;
             this.label7.Text = "أسم الزبون";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -550,7 +550,7 @@
             this.panel_CATEGORIES.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.panel_CATEGORIES.Controls.Add(this.flowLayoutPanel_CATEGORIES);
             this.panel_CATEGORIES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_CATEGORIES.Location = new System.Drawing.Point(0, 147);
+            this.panel_CATEGORIES.Location = new System.Drawing.Point(0, 149);
             this.panel_CATEGORIES.Name = "panel_CATEGORIES";
             this.panel_CATEGORIES.Padding = new System.Windows.Forms.Padding(5);
             this.panel_CATEGORIES.Size = new System.Drawing.Size(800, 200);
@@ -613,6 +613,23 @@
             this.ITEM_TOTAL.HeaderText = "المجموع";
             this.ITEM_TOTAL.Name = "ITEM_TOTAL";
             // 
+            // button_COUST_BRWS
+            // 
+            this.button_COUST_BRWS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(158)))), ((int)(((byte)(132)))));
+            this.button_COUST_BRWS.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_COUST_BRWS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(37)))));
+            this.button_COUST_BRWS.FlatAppearance.BorderSize = 2;
+            this.button_COUST_BRWS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_COUST_BRWS.ForeColor = System.Drawing.Color.White;
+            this.button_COUST_BRWS.Location = new System.Drawing.Point(409, 3);
+            this.button_COUST_BRWS.Margin = new System.Windows.Forms.Padding(10);
+            this.button_COUST_BRWS.Name = "button_COUST_BRWS";
+            this.button_COUST_BRWS.Size = new System.Drawing.Size(80, 33);
+            this.button_COUST_BRWS.TabIndex = 14;
+            this.button_COUST_BRWS.Text = "زبائن";
+            this.button_COUST_BRWS.UseVisualStyleBackColor = false;
+            this.button_COUST_BRWS.Click += new System.EventHandler(this.button_COUST_BRWS_Click);
+            // 
             // FORM_SALES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
@@ -621,8 +638,8 @@
             this.ClientSize = new System.Drawing.Size(1250, 700);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel_CATEGORIES);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_COUST_NOTS);
+            this.Controls.Add(this.panel_BTNS);
             this.Controls.Add(this.panel_Right);
             this.Controls.Add(this.panel_top);
             this.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -642,9 +659,9 @@
             this.panel_PAID_MONEY.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel_BTNS.ResumeLayout(false);
+            this.panel_COUST_NOTS.ResumeLayout(false);
+            this.panel_COUST_NOTS.PerformLayout();
             this.panel_CATEGORIES.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -658,7 +675,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_SALES_MAN;
         private System.Windows.Forms.Panel panel_Right;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_BTNS;
         private System.Windows.Forms.Button button_NEW_INVO;
         private System.Windows.Forms.Label label_ID_ORDER;
         private System.Windows.Forms.Splitter splitter1;
@@ -678,8 +695,7 @@
         private System.Windows.Forms.TextBox textBox_INVO_PAID;
         private System.Windows.Forms.Label label_INVO_TOTAL;
         private System.Windows.Forms.TextBox textBox_INVO_DISC;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox_COUST_NAME;
+        private System.Windows.Forms.Panel panel_COUST_NOTS;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox_ORDER_NOTES;
         private System.Windows.Forms.Label label8;
@@ -691,11 +707,13 @@
         private System.Windows.Forms.Button button_DLT_ITEM;
         private System.Windows.Forms.Splitter splitter5;
         private System.Windows.Forms.Label label_INVO_REMID;
-        private System.Windows.Forms.Label label_COUST_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_QTY;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_PRICE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_TOTAL;
+        private System.Windows.Forms.Button button_COUST_BRWS;
+        public System.Windows.Forms.Label label_COUST_ID;
+        public System.Windows.Forms.TextBox textBox_COUST_NAME;
     }
 }

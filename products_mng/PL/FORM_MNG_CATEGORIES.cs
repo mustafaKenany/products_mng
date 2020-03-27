@@ -13,6 +13,7 @@ namespace products_mng.PL
     public partial class FORM_MNG_CATEGORIES : Form
     {
         BL.CLS_MNG_CAT CAT = new BL.CLS_MNG_CAT ();
+
         private static FORM_MNG_CATEGORIES frm;
         static void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -99,6 +100,11 @@ namespace products_mng.PL
                 printableComponentLink1.ShowPreview ();
 
             }
+        }
+
+        private void textBox_Cat_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

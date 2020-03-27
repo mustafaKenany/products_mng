@@ -9,7 +9,8 @@ namespace products_mng.BL
 {
     class CLS_COUSTOMERS
     {
-
+        public static string COUST_NAME = "زبون نقدي";
+        public static int COUST_ID = 1;
         public int GET_ID_COUST()
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();

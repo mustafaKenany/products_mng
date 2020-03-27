@@ -36,14 +36,18 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v17.2.UI, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -63,6 +67,7 @@
     <Reference Include="DevExpress.XtraRichEdit.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -70,6 +75,8 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,8 +92,16 @@
     <Compile Include="BL\CLS_COUSTOMERS.cs" />
     <Compile Include="BL\CLS_LOGIN.cs" />
     <Compile Include="BL\CLS_MNG_CAT.cs" />
-    <Compile Include="BL\CLS_SALES.cs" />
+    <Compile Include="BL\CLS_ORDERS.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="DAL\RPT_TABLES.cs">
+      <DependentUpon>RPT_TABLES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RPT_TABLES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_TABLES.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PL\FORM_ADD_PRODUCTS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +113,12 @@
     </Compile>
     <Compile Include="PL\FORM_COUSTOMERS.Designer.cs">
       <DependentUpon>FORM_COUSTOMERS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FORM_COUSTOMERS_SELECT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_COUSTOMERS_SELECT.Designer.cs">
+      <DependentUpon>FORM_COUSTOMERS_SELECT.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FORM_LOGIN.cs">
       <SubType>Form</SubType>
@@ -123,6 +144,12 @@
     <Compile Include="PL\FORM_MNG_COUSTOMERS.Designer.cs">
       <DependentUpon>FORM_MNG_COUSTOMERS.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FORM_MNG_ORDERS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_MNG_ORDERS.Designer.cs">
+      <DependentUpon>FORM_MNG_ORDERS.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FORM_MNG_PRODUCTS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,17 +170,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RPT\FRM_RPT.cs">
-      <SubType>Form</SubType>
+    <Compile Include="RPT\RPT_INVO.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RPT\FRM_RPT.Designer.cs">
-      <DependentUpon>FRM_RPT.cs</DependentUpon>
+    <Compile Include="RPT\RPT_INVO.Designer.cs">
+      <DependentUpon>RPT_INVO.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="PL\FORM_ADD_PRODUCTS.resx">
       <DependentUpon>FORM_ADD_PRODUCTS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_COUSTOMERS.resx">
       <DependentUpon>FORM_COUSTOMERS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_COUSTOMERS_SELECT.resx">
+      <DependentUpon>FORM_COUSTOMERS_SELECT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_LOGIN.resx">
       <DependentUpon>FORM_LOGIN.cs</DependentUpon>
@@ -166,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_MNG_COUSTOMERS.resx">
       <DependentUpon>FORM_MNG_COUSTOMERS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_MNG_ORDERS.resx">
+      <DependentUpon>FORM_MNG_ORDERS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_MNG_PRODUCTS.resx">
       <DependentUpon>FORM_MNG_PRODUCTS.cs</DependentUpon>
@@ -186,9 +219,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RPT\FRM_RPT.resx">
-      <DependentUpon>FRM_RPT.cs</DependentUpon>
+    <EmbeddedResource Include="RPT\RPT_INVO.resx">
+      <DependentUpon>RPT_INVO.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DAL\RPT_TABLES.xsc">
+      <DependentUpon>RPT_TABLES.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\RPT_TABLES.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPT_TABLES.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAL\RPT_TABLES.xss">
+      <DependentUpon>RPT_TABLES.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -205,6 +249,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

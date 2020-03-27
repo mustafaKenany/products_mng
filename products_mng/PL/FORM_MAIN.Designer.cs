@@ -137,6 +137,7 @@
             this.tool_MNGSALESS.Name = "tool_MNGSALESS";
             this.tool_MNGSALESS.Size = new System.Drawing.Size(164, 28);
             this.tool_MNGSALESS.Text = "أدارة المبيعات";
+            this.tool_MNGSALESS.Click += new System.EventHandler(this.tool_MNGSALESS_Click);
             // 
             // Tool_PURCHAES
             // 

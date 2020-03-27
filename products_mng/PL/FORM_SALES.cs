@@ -12,7 +12,7 @@ namespace products_mng.PL
 {
     public partial class FORM_SALES : Form
     {
-        BL.CLS_SALES SLS = new BL.CLS_SALES ();
+        BL.CLS_ORDERS SLS = new BL.CLS_ORDERS ();
         BL.CLS_MNG_CAT CATEG = new BL.CLS_MNG_CAT ();
         BL.CLS_ADD_PRODUCTS PROD = new BL.CLS_ADD_PRODUCTS ();
         BL.CLS_COUSTOMERS COUST = new BL.CLS_COUSTOMERS ();
@@ -25,14 +25,8 @@ namespace products_mng.PL
         {
             InitializeComponent ();
             label_SALES_MAN.Text = BL.CLS_LOGIN.SALES_MAN;
-            var dt = new DataTable ();
-            dt = COUST.SEARCH_COUSTOMER (1.ToString ());
-            if (dt.Rows.Count > 0)
-            {
-                textBox_COUST_NAME.Text = dt.Rows[0]["COUST_NAME"].ToString ();
-                label_COUST_ID.Text = dt.Rows[0]["ID_COUSTOMER"].ToString ();
-            }
-
+            textBox_COUST_NAME.Text = BL.CLS_COUSTOMERS.COUST_NAME;
+            label_COUST_ID.Text = BL.CLS_COUSTOMERS.COUST_ID.ToString ();
         }
 
         #region FUNCTIONS
@@ -214,6 +208,7 @@ namespace products_mng.PL
 
         private void button_close_Click(object sender, EventArgs e)
         {
+
             this.Close ();
         }
 
@@ -263,6 +258,8 @@ namespace products_mng.PL
                         MessageBox.Show ("حفظ بنجاح", "ADD_ORDER SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         InitializeFunction ();
                         button_NEW_INVO.Enabled = true;
+                        FORM_COUSTOMERS_SELECT FORM = new FORM_COUSTOMERS_SELECT ();
+                        FORM.Close ();
 
                     }
                 }
@@ -272,6 +269,10 @@ namespace products_mng.PL
 
                 MessageBox.Show (ex.Message, "ADD_ORDER ERORR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void button_COUST_BRWS_Click(object sender, EventArgs e)
+        {
         }
 
         private void button_CNCL_INVO_Click(object sender, EventArgs e)

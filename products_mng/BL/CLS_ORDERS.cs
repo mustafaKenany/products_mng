@@ -8,8 +8,9 @@ using System.Data.SqlClient;
 
 namespace products_mng.BL
 {
-    class CLS_SALES
+    class CLS_ORDERS
     {
+        public static int ORDER_TYPES;
         public int GET_ID_ORDER()
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
@@ -28,7 +29,7 @@ namespace products_mng.BL
             return ID;
         }
 
-        public void ADD_ORDER(int ID_ORDER, int ID_COUST, string ORDER_NOTES, int ORDER_TYPE, int PAID_OR_NOT , String SALES_MAN)
+        public void ADD_ORDER(int ID_ORDER, int ID_COUST, string ORDER_NOTES, int ORDER_TYPE, int PAID_OR_NOT, String SALES_MAN)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
@@ -38,7 +39,7 @@ namespace products_mng.BL
             PARAM[2] = new SqlParameter ("@ORDER_NOTES", SqlDbType.NVarChar, 50);
             PARAM[3] = new SqlParameter ("@ORDER_TYPE", SqlDbType.Bit);
             PARAM[4] = new SqlParameter ("@PAID_OR_NOT", SqlDbType.Bit);
-            PARAM[5] = new SqlParameter ("@SALES_MAN", SqlDbType.NVarChar,50);
+            PARAM[5] = new SqlParameter ("@SALES_MAN", SqlDbType.NVarChar, 50);
             PARAM[6] = new SqlParameter ("@ORDER_DATE", SqlDbType.Date);
             PARAM[0].Value = ID_ORDER;
             PARAM[1].Value = ID_COUST;
@@ -51,7 +52,6 @@ namespace products_mng.BL
             dal.ConClose ();
 
         }
-
 
         public void ADD_ORDER_DETAILS(int ID_ORDER, int ID_PRD, float PRD_QTY, float QTY_BY_PRICE, float PRD_PRICE)
         {
@@ -73,7 +73,7 @@ namespace products_mng.BL
 
         }
 
-        public void ADD_ORDER_MONEY(int ID_ORDER, int ID_COUST, float TOTAL_AMOUNT, float PAID_AMOUNT, float DISCOUNT_AMOUNT,float REMINDER_AMOUNT)
+        public void ADD_ORDER_MONEY(int ID_ORDER, int ID_COUST, float TOTAL_AMOUNT, float PAID_AMOUNT, float DISCOUNT_AMOUNT, float REMINDER_AMOUNT)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
@@ -92,6 +92,80 @@ namespace products_mng.BL
             PARAM[5].Value = REMINDER_AMOUNT;
             dal.ExecuteCommand ("ADD_ORDER_MONEY", PARAM);
             dal.ConClose ();
+
+        }
+
+        public DataTable GET_ALL_ORDERS(int TYPE_OF_ORDER)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter ("@ORDER_TYPES", SqlDbType.Bit);
+            param[0].Value = TYPE_OF_ORDER;
+            dt = dal.SelectData ("GET_ALL_ORDERS", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
+        public DataTable SEARCH_ORDER(int TYPE_OF_ORDER, String ORDER_FILTER)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter ("@TYPE_OF_ORDER", SqlDbType.Bit);
+            param[0].Value = TYPE_OF_ORDER;
+            param[1] = new SqlParameter ("@ORDER_FILTER", SqlDbType.NVarChar, 50);
+            param[1].Value = ORDER_FILTER;
+            dt = dal.SelectData ("SEARCH_ORDER", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
+        public DataTable SEARCH_ORDER_DATE(int TYPE_OF_ORDER, String BEGIN_DATE, String END_DATE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter ("@TYPE_OF_ORDER", SqlDbType.Bit);
+            param[0].Value = TYPE_OF_ORDER;
+            param[1] = new SqlParameter ("@BEGIN_DATE", SqlDbType.NVarChar, 50);
+            param[1].Value = BEGIN_DATE;
+            param[2] = new SqlParameter ("@END_DATE", SqlDbType.NVarChar, 50);
+            param[2].Value = END_DATE;
+            dt = dal.SelectData ("SEARCH_ORDER_DATE", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
+        public void DLT_ORDER(int TYPE_OF_ORDER, int ID_ORDER)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            dal.ConOpen ();
+            SqlParameter[] PARAM = new SqlParameter[2];
+            PARAM[0] = new SqlParameter ("@TYPE_OF_ORDER", SqlDbType.Bit);
+            PARAM[1] = new SqlParameter ("@ID_ORDER", SqlDbType.Int);
+            PARAM[0].Value = TYPE_OF_ORDER;
+            PARAM[1].Value = ID_ORDER;
+            dal.ExecuteCommand ("DLT_ORDER", PARAM);
+            dal.ConClose ();
+
+        }
+
+        public DataTable PRT_INVO_ORDER(int ORDER_TYPES, int ID_ORDER)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter ("@ID_ORDER", SqlDbType.Int);
+            param[0].Value = ID_ORDER;
+            param[1] = new SqlParameter ("@ORDER_TYPES", SqlDbType.Bit);
+            param[1].Value = ORDER_TYPES;
+            dt = dal.SelectData ("PRT_INVO_ORDER", param);
+            dal.ConClose ();
+            return dt;
 
         }
 
