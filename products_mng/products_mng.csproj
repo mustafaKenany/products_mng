@@ -88,7 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\CLS_ADD_PRODUCTS.cs" />
+    <Compile Include="BL\CLS_PRODUCTS.cs" />
     <Compile Include="BL\CLS_COUSTOMERS.cs" />
     <Compile Include="BL\CLS_LOGIN.cs" />
     <Compile Include="BL\CLS_MNG_CAT.cs" />
@@ -107,6 +107,12 @@
     </Compile>
     <Compile Include="PL\FORM_ADD_PRODUCTS.Designer.cs">
       <DependentUpon>FORM_ADD_PRODUCTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FORM_ADD_USR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_ADD_USR.Designer.cs">
+      <DependentUpon>FORM_ADD_USR.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FORM_COUSTOMERS.cs">
       <SubType>Form</SubType>
@@ -156,11 +162,23 @@
     <Compile Include="PL\FORM_MNG_PRODUCTS.Designer.cs">
       <DependentUpon>FORM_MNG_PRODUCTS.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FORM_MNG_USRS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_MNG_USRS.Designer.cs">
+      <DependentUpon>FORM_MNG_USRS.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FORM_PRODUCTS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\FORM_PRODUCTS.Designer.cs">
       <DependentUpon>FORM_PRODUCTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FORM_PURCHASES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_PURCHASES.Designer.cs">
+      <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FORM_SALES.cs">
       <SubType>Form</SubType>
@@ -178,6 +196,9 @@
     </Compile>
     <EmbeddedResource Include="PL\FORM_ADD_PRODUCTS.resx">
       <DependentUpon>FORM_ADD_PRODUCTS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_ADD_USR.resx">
+      <DependentUpon>FORM_ADD_USR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_COUSTOMERS.resx">
       <DependentUpon>FORM_COUSTOMERS.cs</DependentUpon>
@@ -203,8 +224,14 @@
     <EmbeddedResource Include="PL\FORM_MNG_PRODUCTS.resx">
       <DependentUpon>FORM_MNG_PRODUCTS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_MNG_USRS.resx">
+      <DependentUpon>FORM_MNG_USRS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_PRODUCTS.resx">
       <DependentUpon>FORM_PRODUCTS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_PURCHASES.resx">
+      <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_SALES.resx">
       <DependentUpon>FORM_SALES.cs</DependentUpon>

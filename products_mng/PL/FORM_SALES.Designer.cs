@@ -29,12 +29,18 @@
         private void InitializeComponent()
         {
             this.panel_top = new System.Windows.Forms.Panel();
+            this.label_MONEYIES_ID = new System.Windows.Forms.Label();
             this.label_COUST_ID = new System.Windows.Forms.Label();
             this.label_SALES_MAN = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button_close = new System.Windows.Forms.Button();
             this.panel_Right = new System.Windows.Forms.Panel();
             this.dataGridView_INVO_ITEMS = new System.Windows.Forms.DataGridView();
+            this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_PAID_MONEY = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox_INVO_PAID = new System.Windows.Forms.TextBox();
@@ -61,18 +67,13 @@
             this.panel_COUST_NOTS = new System.Windows.Forms.Panel();
             this.textBox_ORDER_NOTES = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.button_COUST_BRWS = new System.Windows.Forms.Button();
             this.textBox_COUST_NAME = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel_CATEGORIES = new System.Windows.Forms.Panel();
             this.flowLayoutPanel_CATEGORIES = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel_PRD = new System.Windows.Forms.FlowLayoutPanel();
-            this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_COUST_BRWS = new System.Windows.Forms.Button();
             this.panel_top.SuspendLayout();
             this.panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_INVO_ITEMS)).BeginInit();
@@ -87,6 +88,7 @@
             // panel_top
             // 
             this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(158)))), ((int)(((byte)(132)))));
+            this.panel_top.Controls.Add(this.label_MONEYIES_ID);
             this.panel_top.Controls.Add(this.label_COUST_ID);
             this.panel_top.Controls.Add(this.label_SALES_MAN);
             this.panel_top.Controls.Add(this.label1);
@@ -99,6 +101,17 @@
             this.panel_top.Size = new System.Drawing.Size(1250, 50);
             this.panel_top.TabIndex = 0;
             // 
+            // label_MONEYIES_ID
+            // 
+            this.label_MONEYIES_ID.ForeColor = System.Drawing.Color.White;
+            this.label_MONEYIES_ID.Location = new System.Drawing.Point(284, 5);
+            this.label_MONEYIES_ID.Name = "label_MONEYIES_ID";
+            this.label_MONEYIES_ID.Size = new System.Drawing.Size(125, 40);
+            this.label_MONEYIES_ID.TabIndex = 4;
+            this.label_MONEYIES_ID.Text = "MONEY_ID";
+            this.label_MONEYIES_ID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_MONEYIES_ID.Visible = false;
+            // 
             // label_COUST_ID
             // 
             this.label_COUST_ID.ForeColor = System.Drawing.Color.White;
@@ -108,6 +121,7 @@
             this.label_COUST_ID.TabIndex = 3;
             this.label_COUST_ID.Text = "COUST_ID";
             this.label_COUST_ID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_COUST_ID.Visible = false;
             // 
             // label_SALES_MAN
             // 
@@ -178,6 +192,32 @@
             this.dataGridView_INVO_ITEMS.TabIndex = 2;
             this.dataGridView_INVO_ITEMS.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_INVO_ITEMS_CellValueChanged);
             this.dataGridView_INVO_ITEMS.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_INVO_ITEMS_EditingControlShowing);
+            // 
+            // ITEM_ID
+            // 
+            this.ITEM_ID.HeaderText = "ITEM_ID";
+            this.ITEM_ID.Name = "ITEM_ID";
+            this.ITEM_ID.Visible = false;
+            // 
+            // ITEM_NAME
+            // 
+            this.ITEM_NAME.HeaderText = "مادة";
+            this.ITEM_NAME.Name = "ITEM_NAME";
+            // 
+            // ITEM_QTY
+            // 
+            this.ITEM_QTY.HeaderText = "عدد";
+            this.ITEM_QTY.Name = "ITEM_QTY";
+            // 
+            // ITEM_PRICE
+            // 
+            this.ITEM_PRICE.HeaderText = "سعر";
+            this.ITEM_PRICE.Name = "ITEM_PRICE";
+            // 
+            // ITEM_TOTAL
+            // 
+            this.ITEM_TOTAL.HeaderText = "المجموع";
+            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
             // 
             // panel_PAID_MONEY
             // 
@@ -385,6 +425,7 @@
             // 
             this.button_PRT_INVO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(158)))), ((int)(((byte)(132)))));
             this.button_PRT_INVO.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_PRT_INVO.Enabled = false;
             this.button_PRT_INVO.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(37)))));
             this.button_PRT_INVO.FlatAppearance.BorderSize = 2;
             this.button_PRT_INVO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -396,6 +437,7 @@
             this.button_PRT_INVO.TabIndex = 9;
             this.button_PRT_INVO.Text = "طباعة";
             this.button_PRT_INVO.UseVisualStyleBackColor = false;
+            this.button_PRT_INVO.Click += new System.EventHandler(this.button_PRT_INVO_Click);
             // 
             // splitter3
             // 
@@ -525,6 +567,23 @@
             this.label8.Text = "ملاحظات";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button_COUST_BRWS
+            // 
+            this.button_COUST_BRWS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(158)))), ((int)(((byte)(132)))));
+            this.button_COUST_BRWS.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_COUST_BRWS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(37)))));
+            this.button_COUST_BRWS.FlatAppearance.BorderSize = 2;
+            this.button_COUST_BRWS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_COUST_BRWS.ForeColor = System.Drawing.Color.White;
+            this.button_COUST_BRWS.Location = new System.Drawing.Point(409, 3);
+            this.button_COUST_BRWS.Margin = new System.Windows.Forms.Padding(10);
+            this.button_COUST_BRWS.Name = "button_COUST_BRWS";
+            this.button_COUST_BRWS.Size = new System.Drawing.Size(80, 33);
+            this.button_COUST_BRWS.TabIndex = 14;
+            this.button_COUST_BRWS.Text = "زبائن";
+            this.button_COUST_BRWS.UseVisualStyleBackColor = false;
+            this.button_COUST_BRWS.Click += new System.EventHandler(this.button_COUST_BRWS_Click);
+            // 
             // textBox_COUST_NAME
             // 
             this.textBox_COUST_NAME.Dock = System.Windows.Forms.DockStyle.Right;
@@ -586,49 +645,6 @@
             this.flowLayoutPanel_PRD.Padding = new System.Windows.Forms.Padding(3);
             this.flowLayoutPanel_PRD.Size = new System.Drawing.Size(790, 315);
             this.flowLayoutPanel_PRD.TabIndex = 0;
-            // 
-            // ITEM_ID
-            // 
-            this.ITEM_ID.HeaderText = "ITEM_ID";
-            this.ITEM_ID.Name = "ITEM_ID";
-            this.ITEM_ID.Visible = false;
-            // 
-            // ITEM_NAME
-            // 
-            this.ITEM_NAME.HeaderText = "مادة";
-            this.ITEM_NAME.Name = "ITEM_NAME";
-            // 
-            // ITEM_QTY
-            // 
-            this.ITEM_QTY.HeaderText = "عدد";
-            this.ITEM_QTY.Name = "ITEM_QTY";
-            // 
-            // ITEM_PRICE
-            // 
-            this.ITEM_PRICE.HeaderText = "سعر";
-            this.ITEM_PRICE.Name = "ITEM_PRICE";
-            // 
-            // ITEM_TOTAL
-            // 
-            this.ITEM_TOTAL.HeaderText = "المجموع";
-            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
-            // 
-            // button_COUST_BRWS
-            // 
-            this.button_COUST_BRWS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(158)))), ((int)(((byte)(132)))));
-            this.button_COUST_BRWS.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button_COUST_BRWS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(37)))));
-            this.button_COUST_BRWS.FlatAppearance.BorderSize = 2;
-            this.button_COUST_BRWS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_COUST_BRWS.ForeColor = System.Drawing.Color.White;
-            this.button_COUST_BRWS.Location = new System.Drawing.Point(409, 3);
-            this.button_COUST_BRWS.Margin = new System.Windows.Forms.Padding(10);
-            this.button_COUST_BRWS.Name = "button_COUST_BRWS";
-            this.button_COUST_BRWS.Size = new System.Drawing.Size(80, 33);
-            this.button_COUST_BRWS.TabIndex = 14;
-            this.button_COUST_BRWS.Text = "زبائن";
-            this.button_COUST_BRWS.UseVisualStyleBackColor = false;
-            this.button_COUST_BRWS.Click += new System.EventHandler(this.button_COUST_BRWS_Click);
             // 
             // FORM_SALES
             // 
@@ -715,5 +731,6 @@
         private System.Windows.Forms.Button button_COUST_BRWS;
         public System.Windows.Forms.Label label_COUST_ID;
         public System.Windows.Forms.TextBox textBox_COUST_NAME;
+        public System.Windows.Forms.Label label_MONEYIES_ID;
     }
 }

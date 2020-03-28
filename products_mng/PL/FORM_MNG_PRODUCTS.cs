@@ -12,7 +12,7 @@ namespace products_mng.PL
 {
     public partial class FORM_MNG_PRODUCTS : Form
     {
-        BL.CLS_ADD_PRODUCTS PRD = new BL.CLS_ADD_PRODUCTS ();
+        BL.CLS_PRODUCTS PRD = new BL.CLS_PRODUCTS ();
         private static FORM_MNG_PRODUCTS frm;
         static void frm_FormClosed(object sender, FormClosedEventArgs e)
         {

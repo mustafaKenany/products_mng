@@ -7,35 +7,65 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
 
 namespace products_mng.PL
 {
     public partial class FORM_SALES : Form
     {
-        BL.CLS_ORDERS SLS = new BL.CLS_ORDERS ();
+        private static FORM_SALES frm;
+        static void frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm = null;
+        }
+        public static FORM_SALES getMainForm
+        {
+            get
+            {
+                if (frm == null)
+                {
+                    frm = new FORM_SALES ();
+                    frm.FormClosed += new FormClosedEventHandler (frm_FormClosed);
+                }
+                return frm;
+            }
+        }
+
+
+        BL.CLS_ORDERS ORD = new BL.CLS_ORDERS ();
         BL.CLS_MNG_CAT CATEG = new BL.CLS_MNG_CAT ();
-        BL.CLS_ADD_PRODUCTS PROD = new BL.CLS_ADD_PRODUCTS ();
+        BL.CLS_PRODUCTS PROD = new BL.CLS_PRODUCTS ();
         BL.CLS_COUSTOMERS COUST = new BL.CLS_COUSTOMERS ();
         int ID_ORDER = 0;
         int ID_COUST = 0;
+        int ID_MONEY = 0;
         int ORDER_TYPE = 0;
         int PAID_OR_NOT = 0;
         String SALES_MAN = "";
+
         public FORM_SALES()
         {
+            if (frm == null)
+            {
+                frm = this;
+            }
+
             InitializeComponent ();
             label_SALES_MAN.Text = BL.CLS_LOGIN.SALES_MAN;
             textBox_COUST_NAME.Text = BL.CLS_COUSTOMERS.COUST_NAME;
             label_COUST_ID.Text = BL.CLS_COUSTOMERS.COUST_ID.ToString ();
+
         }
 
         #region FUNCTIONS
 
         private void InitializeFunction()
         {
-            this.label_ID_ORDER.Text = SLS.GET_ID_ORDER ().ToString ();
+            this.label_ID_ORDER.Text = ORD.GET_ID_ORDER ().ToString ();
+            this.label_MONEYIES_ID.Text = ORD.GET_ID_MONEYIES ().ToString ();
             ID_ORDER = int.Parse (label_ID_ORDER.Text);
             ID_COUST = int.Parse (label_COUST_ID.Text);
+            ID_MONEY = int.Parse (label_MONEYIES_ID.Text);
             SALES_MAN = label_SALES_MAN.Text;
             dataGridView_INVO_ITEMS.Rows.Clear ();
             label_INVO_TOTAL.Text = textBox_INVO_PAID.Text = textBox_INVO_DISC.Text = "0";
@@ -162,7 +192,7 @@ namespace products_mng.PL
         private void ADD_ORDER()
         {
             string ORDER_NOTES = textBox_ORDER_NOTES.Text;
-            SLS.ADD_ORDER (ID_ORDER, ID_COUST, ORDER_NOTES, ORDER_TYPE, PAID_OR_NOT, SALES_MAN);
+            ORD.ADD_ORDER (ID_ORDER, ID_COUST, ORDER_NOTES, ORDER_TYPE, PAID_OR_NOT, SALES_MAN);
         }
 
         private void ADD_ORDER_DETAILS()
@@ -173,7 +203,7 @@ namespace products_mng.PL
                 float PRD_QTY = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_QTY"].Value.ToString ());
                 float QTY_BY_PRICE = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_TOTAL"].Value.ToString ());
                 float PRD_PRICE = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_PRICE"].Value.ToString ());
-                SLS.ADD_ORDER_DETAILS (ID_ORDER, ID_PRD, PRD_QTY, QTY_BY_PRICE, PRD_PRICE);
+                ORD.ADD_ORDER_DETAILS (ID_ORDER, ID_PRD, PRD_QTY, QTY_BY_PRICE, PRD_PRICE);
             }
         }
 
@@ -183,7 +213,13 @@ namespace products_mng.PL
             float PAID_AMOUNT = float.Parse (textBox_INVO_PAID.Text);
             float DISCOUNT_AMOUNT = float.Parse (textBox_INVO_DISC.Text);
             float REMINDER_AMOUNT = float.Parse (label_INVO_REMID.Text);
-            SLS.ADD_ORDER_MONEY (ID_ORDER, ID_COUST, TOTAL_AMOUNT, PAID_AMOUNT, DISCOUNT_AMOUNT, REMINDER_AMOUNT);
+            ORD.ADD_ORDER_MONEY (ID_MONEY,ID_ORDER, ID_COUST, TOTAL_AMOUNT, PAID_AMOUNT, DISCOUNT_AMOUNT, REMINDER_AMOUNT);
+        }
+
+        private void ADD_MONEY_DETAILS()
+        {
+            
+            ORD.ADD_MONEY_DETAILS (ID_MONEY, ID_COUST, "بيع مباشر", ("فاتورة مرقمة "+label_ID_ORDER.Text+" "+textBox_ORDER_NOTES.Text),DateTime.Now);
         }
 
         private bool CHECK_MONEY()
@@ -255,12 +291,10 @@ namespace products_mng.PL
                         ADD_ORDER ();
                         ADD_ORDER_DETAILS ();
                         ADD_ORDER_MONEY ();
+                        ADD_MONEY_DETAILS ();
                         MessageBox.Show ("حفظ بنجاح", "ADD_ORDER SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         InitializeFunction ();
-                        button_NEW_INVO.Enabled = true;
-                        FORM_COUSTOMERS_SELECT FORM = new FORM_COUSTOMERS_SELECT ();
-                        FORM.Close ();
-
+                        button_PRT_INVO.Enabled = true;
                     }
                 }
             }
@@ -273,6 +307,8 @@ namespace products_mng.PL
 
         private void button_COUST_BRWS_Click(object sender, EventArgs e)
         {
+            FORM_COUSTOMERS_SELECT FORM = new FORM_COUSTOMERS_SELECT ();
+            FORM.ShowDialog ();
         }
 
         private void button_CNCL_INVO_Click(object sender, EventArgs e)
@@ -294,6 +330,17 @@ namespace products_mng.PL
 
         }
 
+        private void button_PRT_INVO_Click(object sender, EventArgs e)
+        {
+            var LAST_ORDER_ID = int.Parse (label_ID_ORDER.Text) - 1;
+            var ORDER_TYPES = BL.CLS_ORDERS.ORDER_TYPES;
+            button_PRT_INVO.Enabled = false;
+            RPT.RPT_INVO x = new RPT.RPT_INVO ();
+            x.DataSource = ORD.PRT_INVO_ORDER (ORDER_TYPES, LAST_ORDER_ID);
+            x.ShowPreviewDialog ();
+
+
+        }
         #endregion
 
         #region DGV ITEMS
@@ -399,7 +446,7 @@ namespace products_mng.PL
             }
         }
 
-        #endregion
 
+        #endregion
     }
 }

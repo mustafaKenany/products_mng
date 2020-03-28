@@ -12,7 +12,7 @@ namespace products_mng.PL
 {
     public partial class FORM_ADD_PRODUCTS : Form
     {
-        BL.CLS_ADD_PRODUCTS prd = new BL.CLS_ADD_PRODUCTS ();
+        BL.CLS_PRODUCTS prd = new BL.CLS_PRODUCTS ();
         public String stat = "add";
         public FORM_ADD_PRODUCTS()
         {

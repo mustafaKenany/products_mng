@@ -167,6 +167,13 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(178)));
+            this.gridView1.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridView1.Appearance.GroupRow.Options.UseFont = true;
             this.gridView1.ColumnPanelRowHeight = 30;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
@@ -175,11 +182,15 @@
             this.gridColumn4,
             this.gridColumn5});
             this.gridView1.GridControl = this.gridControl_ORDERS;
+            this.gridView1.GroupRowHeight = 30;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TOTAL_AMOUNT", this.gridColumn4, "")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TOTAL_AMOUNT", this.gridColumn3, "")});
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.RowHeight = 30;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // gridColumn1
             // 
@@ -196,6 +207,8 @@
             this.gridColumn1.Caption = "رقم الفاتورة";
             this.gridColumn1.FieldName = "ID_ORDER";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
@@ -216,6 +229,7 @@
             this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn2.FieldName = "ORDER_DATE";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
@@ -233,7 +247,11 @@
             this.gridColumn3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn3.Caption = "مبلغ الفاتورة";
             this.gridColumn3.FieldName = "TOTAL_AMOUNT";
+            this.gridColumn3.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TOTAL_AMOUNT", "مجموع مبالغ={0:0.##}")});
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
@@ -252,6 +270,7 @@
             this.gridColumn4.Caption = "اسم الزبون";
             this.gridColumn4.FieldName = "COUST_NAME";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
@@ -270,6 +289,7 @@
             this.gridColumn5.Caption = "الكاشير";
             this.gridColumn5.FieldName = "SALES_MAN";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
@@ -395,6 +415,7 @@
             this.button_INVO_DETLS.TabIndex = 14;
             this.button_INVO_DETLS.Text = "كشف الفاتورة";
             this.button_INVO_DETLS.UseVisualStyleBackColor = true;
+            this.button_INVO_DETLS.Click += new System.EventHandler(this.button_INVO_DETLS_Click);
             // 
             // FORM_MNG_ORDERS
             // 

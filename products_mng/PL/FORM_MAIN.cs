@@ -78,15 +78,33 @@ namespace products_mng.PL
 
         private void tool_DIRSALES_Click(object sender, EventArgs e)
         {
+            BL.CLS_ORDERS.ORDER_TYPES = 0;
             FORM_SALES FORM = new FORM_SALES ();
             FORM.ShowDialog ();
         }
 
         private void tool_MNGSALESS_Click(object sender, EventArgs e)
         {
-            BL.CLS_ORDERS.ORDER_TYPES = 0;
+           
             FORM_MNG_ORDERS FORM = new FORM_MNG_ORDERS ();
             FORM.ShowDialog ();
+        }
+
+        private void tool_Logout_Click(object sender, EventArgs e)
+        {
+            Application.Exit ();
+        }
+
+        private void Tool_ADDUSER_Click(object sender, EventArgs e)
+        {
+            FORM_ADD_USR FORM = new FORM_ADD_USR ();
+            FORM.ShowDialog ();
+        }
+
+        private void Tool_MNGUSERS_Click(object sender, EventArgs e)
+        {
+            FORM_MNG_USRS form = new FORM_MNG_USRS ();
+            form.ShowDialog ();
         }
     }
 }

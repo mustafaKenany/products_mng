@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 namespace products_mng.BL
 {
-    class CLS_ADD_PRODUCTS
+    class CLS_PRODUCTS
     {
         public DataTable GET_ALL_CATEGORIES()
         {

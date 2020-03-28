@@ -34,11 +34,9 @@ namespace products_mng.PL
             {
                 string ID_COUST = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_COUSTOMER"]).ToString ();
                 string COUST_NAME = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["COUST_NAME"]).ToString ();
-                BL.CLS_COUSTOMERS.COUST_NAME = COUST_NAME;
-                BL.CLS_COUSTOMERS.COUST_ID = int.Parse (ID_COUST);
-                FORM_SALES FORM = new FORM_SALES ();
-                FORM.Show ();
-                
+                FORM_SALES.getMainForm.textBox_COUST_NAME.Text = COUST_NAME;
+                FORM_SALES.getMainForm.label_COUST_ID.Text = ID_COUST;
+                this.Close ();                
             }
         }
     }

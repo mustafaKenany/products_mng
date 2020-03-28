@@ -114,6 +114,7 @@
             this.tool_Logout.Name = "tool_Logout";
             this.tool_Logout.Size = new System.Drawing.Size(221, 28);
             this.tool_Logout.Text = "تسجيل الخروج";
+            this.tool_Logout.Click += new System.EventHandler(this.tool_Logout_Click);
             // 
             // tool_SALES
             // 
@@ -148,6 +149,7 @@
             this.Tool_PURCHAES.Name = "Tool_PURCHAES";
             this.Tool_PURCHAES.Size = new System.Drawing.Size(81, 28);
             this.Tool_PURCHAES.Text = "المشتريات";
+            this.Tool_PURCHAES.Visible = false;
             // 
             // Tool_DIRECTPURCHASE
             // 
@@ -238,12 +240,14 @@
             this.Tool_ADDUSER.Name = "Tool_ADDUSER";
             this.Tool_ADDUSER.Size = new System.Drawing.Size(184, 28);
             this.Tool_ADDUSER.Text = "أضافة  مستخدم";
+            this.Tool_ADDUSER.Click += new System.EventHandler(this.Tool_ADDUSER_Click);
             // 
             // Tool_MNGUSERS
             // 
             this.Tool_MNGUSERS.Name = "Tool_MNGUSERS";
             this.Tool_MNGUSERS.Size = new System.Drawing.Size(184, 28);
             this.Tool_MNGUSERS.Text = "أدارة المستخدمين";
+            this.Tool_MNGUSERS.Click += new System.EventHandler(this.Tool_MNGUSERS_Click);
             // 
             // Tool_MONEY
             // 
@@ -313,7 +317,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem Tool_FILE;
-        private System.Windows.Forms.ToolStripMenuItem tool_login;
         private System.Windows.Forms.ToolStripMenuItem tool_Logout;
         private System.Windows.Forms.ToolStripMenuItem tool_DIRSALES;
         private System.Windows.Forms.ToolStripMenuItem tool_MNGSALESS;
@@ -339,5 +342,6 @@
         public System.Windows.Forms.ToolStripMenuItem Tool_CUSTOMER;
         public System.Windows.Forms.ToolStripMenuItem Too_USERS;
         public System.Windows.Forms.ToolStripMenuItem Tool_MONEY;
+        public System.Windows.Forms.ToolStripMenuItem tool_login;
     }
 }

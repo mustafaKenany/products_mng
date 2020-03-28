@@ -96,7 +96,21 @@ namespace products_mng.PL
                 RPT.RPT_INVO x = new RPT.RPT_INVO ();
                 x.DataSource = ORD.PRT_INVO_ORDER (ORDER_TYPES, ID_ORD);
                 x.ShowPreviewDialog ();
-                MessageBox.Show (ID_ORD.ToString ());
+                //MessageBox.Show (ID_ORD.ToString ());
+
+            }
+        }
+
+        private void button_INVO_DETLS_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount > 0)
+            {
+                var ORDER_TYPES = BL.CLS_ORDERS.ORDER_TYPES;
+                int ID_ORD = int.Parse (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_ORDER"]).ToString ());
+                RPT.RPT_INVO x = new RPT.RPT_INVO ();
+                x.DataSource = ORD.PRT_INVO_ORDER (ORDER_TYPES, ID_ORD);
+                x.ShowPreviewDialog ();
+                //MessageBox.Show (ID_ORD.ToString ());
 
             }
         }

@@ -33,6 +33,7 @@ namespace products_mng.PL
                 FORM_MAIN.getMainForm.Tool_PURCHAES.Enabled = true;
                 FORM_MAIN.getMainForm.tool_SALES.Enabled = true;
                 FORM_MAIN.getMainForm.Too_USERS.Enabled = true;
+                FORM_MAIN.getMainForm.tool_login.Enabled = false;
                 this.Close ();
             }
             else
