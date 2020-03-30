@@ -30,10 +30,9 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button_SLCT_USR = new System.Windows.Forms.Button();
+            this.button_BLOCKUSR = new System.Windows.Forms.Button();
+            this.button_DLTUSR = new System.Windows.Forms.Button();
+            this.button_UPDATEUSR = new System.Windows.Forms.Button();
             this.button_ALL_USRS = new System.Windows.Forms.Button();
             this.gridControl_MNGUSR = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -41,36 +40,56 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBoxACS_ADMIN = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS8 = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS7 = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS6 = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS5 = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS4 = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS3 = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS2 = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS1 = new System.Windows.Forms.CheckBox();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit6 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit8 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit9 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit10 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit11 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_MNGUSR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit11)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button_SLCT_USR);
+            this.groupBox1.Controls.Add(this.button_BLOCKUSR);
+            this.groupBox1.Controls.Add(this.button_DLTUSR);
+            this.groupBox1.Controls.Add(this.button_UPDATEUSR);
             this.groupBox1.Controls.Add(this.button_ALL_USRS);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(5, 4);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(746, 129);
+            this.groupBox1.Size = new System.Drawing.Size(1174, 129);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "البحث هنا";
@@ -82,69 +101,57 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(110, 51);
+            this.button4.Location = new System.Drawing.Point(320, 53);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 50);
             this.button4.TabIndex = 23;
             this.button4.Text = "الغاء";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_BLOCKUSR
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(216, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 50);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "حظر";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_BLOCKUSR.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.button_BLOCKUSR.FlatAppearance.BorderSize = 2;
+            this.button_BLOCKUSR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_BLOCKUSR.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_BLOCKUSR.ForeColor = System.Drawing.Color.Black;
+            this.button_BLOCKUSR.Location = new System.Drawing.Point(452, 53);
+            this.button_BLOCKUSR.Name = "button_BLOCKUSR";
+            this.button_BLOCKUSR.Size = new System.Drawing.Size(100, 50);
+            this.button_BLOCKUSR.TabIndex = 22;
+            this.button_BLOCKUSR.Text = "حظر";
+            this.button_BLOCKUSR.UseVisualStyleBackColor = true;
+            this.button_BLOCKUSR.Click += new System.EventHandler(this.button_BLOCKUSR_Click);
             // 
-            // button3
+            // button_DLTUSR
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(322, 51);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 50);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "حذف";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_DLTUSR.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.button_DLTUSR.FlatAppearance.BorderSize = 2;
+            this.button_DLTUSR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_DLTUSR.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_DLTUSR.ForeColor = System.Drawing.Color.Black;
+            this.button_DLTUSR.Location = new System.Drawing.Point(584, 53);
+            this.button_DLTUSR.Name = "button_DLTUSR";
+            this.button_DLTUSR.Size = new System.Drawing.Size(100, 50);
+            this.button_DLTUSR.TabIndex = 21;
+            this.button_DLTUSR.Text = "حذف";
+            this.button_DLTUSR.UseVisualStyleBackColor = true;
+            this.button_DLTUSR.Click += new System.EventHandler(this.button_DLTUSR_Click);
             // 
-            // button2
+            // button_UPDATEUSR
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(428, 51);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 50);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "تعديل";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button_SLCT_USR
-            // 
-            this.button_SLCT_USR.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.button_SLCT_USR.FlatAppearance.BorderSize = 2;
-            this.button_SLCT_USR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_SLCT_USR.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_SLCT_USR.ForeColor = System.Drawing.Color.Black;
-            this.button_SLCT_USR.Location = new System.Drawing.Point(534, 51);
-            this.button_SLCT_USR.Name = "button_SLCT_USR";
-            this.button_SLCT_USR.Size = new System.Drawing.Size(100, 50);
-            this.button_SLCT_USR.TabIndex = 19;
-            this.button_SLCT_USR.Text = "تحديد";
-            this.button_SLCT_USR.UseVisualStyleBackColor = true;
-            this.button_SLCT_USR.Click += new System.EventHandler(this.button_SLCT_USR_Click);
+            this.button_UPDATEUSR.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.button_UPDATEUSR.FlatAppearance.BorderSize = 2;
+            this.button_UPDATEUSR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_UPDATEUSR.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_UPDATEUSR.ForeColor = System.Drawing.Color.Black;
+            this.button_UPDATEUSR.Location = new System.Drawing.Point(716, 53);
+            this.button_UPDATEUSR.Name = "button_UPDATEUSR";
+            this.button_UPDATEUSR.Size = new System.Drawing.Size(100, 50);
+            this.button_UPDATEUSR.TabIndex = 20;
+            this.button_UPDATEUSR.Text = "تعديل";
+            this.button_UPDATEUSR.UseVisualStyleBackColor = true;
+            this.button_UPDATEUSR.Click += new System.EventHandler(this.button_UPDATEUSR_Click);
             // 
             // button_ALL_USRS
             // 
@@ -153,7 +160,7 @@
             this.button_ALL_USRS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ALL_USRS.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_ALL_USRS.ForeColor = System.Drawing.Color.Black;
-            this.button_ALL_USRS.Location = new System.Drawing.Point(640, 52);
+            this.button_ALL_USRS.Location = new System.Drawing.Point(848, 53);
             this.button_ALL_USRS.Name = "button_ALL_USRS";
             this.button_ALL_USRS.Size = new System.Drawing.Size(100, 50);
             this.button_ALL_USRS.TabIndex = 16;
@@ -167,7 +174,19 @@
             this.gridControl_MNGUSR.Location = new System.Drawing.Point(5, 133);
             this.gridControl_MNGUSR.MainView = this.gridView1;
             this.gridControl_MNGUSR.Name = "gridControl_MNGUSR";
-            this.gridControl_MNGUSR.Size = new System.Drawing.Size(746, 297);
+            this.gridControl_MNGUSR.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1,
+            this.repositoryItemCheckEdit2,
+            this.repositoryItemCheckEdit3,
+            this.repositoryItemCheckEdit4,
+            this.repositoryItemCheckEdit5,
+            this.repositoryItemCheckEdit6,
+            this.repositoryItemCheckEdit7,
+            this.repositoryItemCheckEdit8,
+            this.repositoryItemCheckEdit9,
+            this.repositoryItemCheckEdit10,
+            this.repositoryItemCheckEdit11});
+            this.gridControl_MNGUSR.Size = new System.Drawing.Size(1174, 297);
             this.gridControl_MNGUSR.TabIndex = 1;
             this.gridControl_MNGUSR.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -179,7 +198,17 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
-            this.gridColumn4});
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14});
             this.gridView1.GridControl = this.gridControl_MNGUSR;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -223,162 +252,207 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.gridColumn3.AppearanceCell.Options.UseFont = true;
-            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn3.Caption = "الصلاحيات";
-            this.gridColumn3.FieldName = "USER_ACS";
+            this.gridColumn3.Caption = "USRID";
+            this.gridColumn3.FieldName = "ID_USER";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "USR_ID";
-            this.gridColumn4.FieldName = "ID_USER";
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn4.Caption = "بيع مباشر";
+            this.gridColumn4.FieldName = "ACS1";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 2;
             // 
-            // groupBox2
+            // gridColumn5
             // 
-            this.groupBox2.Controls.Add(this.checkBoxACS_ADMIN);
-            this.groupBox2.Controls.Add(this.checkBox_ACS8);
-            this.groupBox2.Controls.Add(this.checkBox_ACS7);
-            this.groupBox2.Controls.Add(this.checkBox_ACS6);
-            this.groupBox2.Controls.Add(this.checkBox_ACS5);
-            this.groupBox2.Controls.Add(this.checkBox_ACS4);
-            this.groupBox2.Controls.Add(this.checkBox_ACS3);
-            this.groupBox2.Controls.Add(this.checkBox_ACS2);
-            this.groupBox2.Controls.Add(this.checkBox_ACS1);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(5, 430);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(746, 153);
-            this.groupBox2.TabIndex = 22;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "الصلاحيات";
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn5.Caption = "ادارة مبيعات";
+            this.gridColumn5.FieldName = "ACS2";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 3;
             // 
-            // checkBoxACS_ADMIN
+            // gridColumn6
             // 
-            this.checkBoxACS_ADMIN.AutoSize = true;
-            this.checkBoxACS_ADMIN.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBoxACS_ADMIN.Location = new System.Drawing.Point(571, 51);
-            this.checkBoxACS_ADMIN.Name = "checkBoxACS_ADMIN";
-            this.checkBoxACS_ADMIN.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxACS_ADMIN.Size = new System.Drawing.Size(88, 28);
-            this.checkBoxACS_ADMIN.TabIndex = 25;
-            this.checkBoxACS_ADMIN.Text = "مدير نظام";
-            this.checkBoxACS_ADMIN.UseVisualStyleBackColor = true;
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn6.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn6.Caption = "مشتريات";
+            this.gridColumn6.FieldName = "ACS3";
+            this.gridColumn6.Name = "gridColumn6";
             // 
-            // checkBox_ACS8
+            // gridColumn7
             // 
-            this.checkBox_ACS8.AutoSize = true;
-            this.checkBox_ACS8.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS8.Location = new System.Drawing.Point(192, 51);
-            this.checkBox_ACS8.Name = "checkBox_ACS8";
-            this.checkBox_ACS8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS8.Size = new System.Drawing.Size(80, 28);
-            this.checkBox_ACS8.TabIndex = 24;
-            this.checkBox_ACS8.Text = "الحسابات";
-            this.checkBox_ACS8.UseVisualStyleBackColor = true;
+            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn7.Caption = "ادارة مشتريا";
+            this.gridColumn7.FieldName = "ACS4";
+            this.gridColumn7.Name = "gridColumn7";
             // 
-            // checkBox_ACS7
+            // gridColumn8
             // 
-            this.checkBox_ACS7.AutoSize = true;
-            this.checkBox_ACS7.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS7.Location = new System.Drawing.Point(20, 51);
-            this.checkBox_ACS7.Name = "checkBox_ACS7";
-            this.checkBox_ACS7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS7.Size = new System.Drawing.Size(133, 28);
-            this.checkBox_ACS7.TabIndex = 23;
-            this.checkBox_ACS7.Text = "ادارة المستخدمين";
-            this.checkBox_ACS7.UseVisualStyleBackColor = true;
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn8.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn8.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn8.Caption = "الاصناف والمواد";
+            this.gridColumn8.FieldName = "ACS5";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 4;
             // 
-            // checkBox_ACS6
+            // gridColumn9
             // 
-            this.checkBox_ACS6.AutoSize = true;
-            this.checkBox_ACS6.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS6.Location = new System.Drawing.Point(553, 85);
-            this.checkBox_ACS6.Name = "checkBox_ACS6";
-            this.checkBox_ACS6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS6.Size = new System.Drawing.Size(106, 28);
-            this.checkBox_ACS6.TabIndex = 22;
-            this.checkBox_ACS6.Text = "المستخدمون";
-            this.checkBox_ACS6.UseVisualStyleBackColor = true;
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn9.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn9.Caption = "العملاء";
+            this.gridColumn9.FieldName = "ACS6";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 5;
             // 
-            // checkBox_ACS5
+            // gridColumn10
             // 
-            this.checkBox_ACS5.AutoSize = true;
-            this.checkBox_ACS5.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS5.Location = new System.Drawing.Point(292, 85);
-            this.checkBox_ACS5.Name = "checkBox_ACS5";
-            this.checkBox_ACS5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS5.Size = new System.Drawing.Size(101, 28);
-            this.checkBox_ACS5.TabIndex = 21;
-            this.checkBox_ACS5.Text = "أدارة العملاء";
-            this.checkBox_ACS5.UseVisualStyleBackColor = true;
+            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn10.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn10.Caption = "ادارة العملاء";
+            this.gridColumn10.FieldName = "ACS7";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 6;
             // 
-            // checkBox_ACS4
+            // gridColumn11
             // 
-            this.checkBox_ACS4.AutoSize = true;
-            this.checkBox_ACS4.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS4.Location = new System.Drawing.Point(322, 51);
-            this.checkBox_ACS4.Name = "checkBox_ACS4";
-            this.checkBox_ACS4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS4.Size = new System.Drawing.Size(71, 28);
-            this.checkBox_ACS4.TabIndex = 20;
-            this.checkBox_ACS4.Text = "العملاء";
-            this.checkBox_ACS4.UseVisualStyleBackColor = true;
+            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn11.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn11.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn11.Caption = "المستخدمين";
+            this.gridColumn11.FieldName = "ACS8";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 7;
             // 
-            // checkBox_ACS3
+            // gridColumn12
             // 
-            this.checkBox_ACS3.AutoSize = true;
-            this.checkBox_ACS3.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS3.Location = new System.Drawing.Point(150, 85);
-            this.checkBox_ACS3.Name = "checkBox_ACS3";
-            this.checkBox_ACS3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS3.Size = new System.Drawing.Size(122, 28);
-            this.checkBox_ACS3.TabIndex = 18;
-            this.checkBox_ACS3.Text = "المواد والاصناف";
-            this.checkBox_ACS3.UseVisualStyleBackColor = true;
+            this.gridColumn12.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn12.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn12.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn12.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn12.Caption = "ادارة المستخدمين";
+            this.gridColumn12.FieldName = "ACS9";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 8;
             // 
-            // checkBox_ACS2
+            // gridColumn13
             // 
-            this.checkBox_ACS2.AutoSize = true;
-            this.checkBox_ACS2.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS2.Location = new System.Drawing.Point(419, 85);
-            this.checkBox_ACS2.Name = "checkBox_ACS2";
-            this.checkBox_ACS2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS2.Size = new System.Drawing.Size(113, 28);
-            this.checkBox_ACS2.TabIndex = 17;
-            this.checkBox_ACS2.Text = "ادارة المبيعات";
-            this.checkBox_ACS2.UseVisualStyleBackColor = true;
+            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn13.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn13.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn13.Caption = "الحسابات";
+            this.gridColumn13.FieldName = "ACS10";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 9;
             // 
-            // checkBox_ACS1
+            // gridColumn14
             // 
-            this.checkBox_ACS1.AutoSize = true;
-            this.checkBox_ACS1.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS1.Location = new System.Drawing.Point(428, 51);
-            this.checkBox_ACS1.Name = "checkBox_ACS1";
-            this.checkBox_ACS1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS1.Size = new System.Drawing.Size(104, 28);
-            this.checkBox_ACS1.TabIndex = 16;
-            this.checkBox_ACS1.Text = "البيع المباشر";
-            this.checkBox_ACS1.UseVisualStyleBackColor = true;
+            this.gridColumn14.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn14.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn14.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn14.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn14.Caption = "التقارير";
+            this.gridColumn14.FieldName = "ACS11";
+            this.gridColumn14.Name = "gridColumn14";
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
+            // repositoryItemCheckEdit2
+            // 
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
+            // 
+            // repositoryItemCheckEdit3
+            // 
+            this.repositoryItemCheckEdit3.AutoHeight = false;
+            this.repositoryItemCheckEdit3.Name = "repositoryItemCheckEdit3";
+            // 
+            // repositoryItemCheckEdit4
+            // 
+            this.repositoryItemCheckEdit4.AutoHeight = false;
+            this.repositoryItemCheckEdit4.Name = "repositoryItemCheckEdit4";
+            // 
+            // repositoryItemCheckEdit5
+            // 
+            this.repositoryItemCheckEdit5.AutoHeight = false;
+            this.repositoryItemCheckEdit5.Name = "repositoryItemCheckEdit5";
+            // 
+            // repositoryItemCheckEdit6
+            // 
+            this.repositoryItemCheckEdit6.AutoHeight = false;
+            this.repositoryItemCheckEdit6.Name = "repositoryItemCheckEdit6";
+            // 
+            // repositoryItemCheckEdit7
+            // 
+            this.repositoryItemCheckEdit7.AutoHeight = false;
+            this.repositoryItemCheckEdit7.Name = "repositoryItemCheckEdit7";
+            // 
+            // repositoryItemCheckEdit8
+            // 
+            this.repositoryItemCheckEdit8.AutoHeight = false;
+            this.repositoryItemCheckEdit8.Name = "repositoryItemCheckEdit8";
+            // 
+            // repositoryItemCheckEdit9
+            // 
+            this.repositoryItemCheckEdit9.AutoHeight = false;
+            this.repositoryItemCheckEdit9.Name = "repositoryItemCheckEdit9";
+            // 
+            // repositoryItemCheckEdit10
+            // 
+            this.repositoryItemCheckEdit10.AutoHeight = false;
+            this.repositoryItemCheckEdit10.Name = "repositoryItemCheckEdit10";
+            // 
+            // repositoryItemCheckEdit11
+            // 
+            this.repositoryItemCheckEdit11.AutoHeight = false;
+            this.repositoryItemCheckEdit11.Name = "repositoryItemCheckEdit11";
             // 
             // FORM_MNG_USRS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 587);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(1184, 587);
             this.Controls.Add(this.gridControl_MNGUSR);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -395,8 +469,17 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_MNGUSR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,22 +492,32 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBoxACS_ADMIN;
-        private System.Windows.Forms.CheckBox checkBox_ACS8;
-        private System.Windows.Forms.CheckBox checkBox_ACS7;
-        private System.Windows.Forms.CheckBox checkBox_ACS6;
-        private System.Windows.Forms.CheckBox checkBox_ACS5;
-        private System.Windows.Forms.CheckBox checkBox_ACS4;
-        private System.Windows.Forms.CheckBox checkBox_ACS3;
-        private System.Windows.Forms.CheckBox checkBox_ACS2;
-        private System.Windows.Forms.CheckBox checkBox_ACS1;
-        public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button button_SLCT_USR;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button_DLTUSR;
+        public System.Windows.Forms.Button button_UPDATEUSR;
+        public System.Windows.Forms.Button button_BLOCKUSR;
         public System.Windows.Forms.Button button4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit6;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit7;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit8;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit9;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit10;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
     }
 }

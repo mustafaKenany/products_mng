@@ -39,16 +39,17 @@
             this.txt_USRFLNAME = new System.Windows.Forms.TextBox();
             this.button_CANCL = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_ACS4 = new System.Windows.Forms.CheckBox();
+            this.checkBox_ACS3 = new System.Windows.Forms.CheckBox();
+            this.checkBox_ACS10 = new System.Windows.Forms.CheckBox();
+            this.checkBox_ACS9 = new System.Windows.Forms.CheckBox();
             this.checkBox_ACS8 = new System.Windows.Forms.CheckBox();
             this.checkBox_ACS7 = new System.Windows.Forms.CheckBox();
             this.checkBox_ACS6 = new System.Windows.Forms.CheckBox();
             this.checkBox_ACS5 = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS4 = new System.Windows.Forms.CheckBox();
-            this.checkBox_ACS3 = new System.Windows.Forms.CheckBox();
             this.checkBox_ACS2 = new System.Windows.Forms.CheckBox();
             this.checkBox_ACS1 = new System.Windows.Forms.CheckBox();
             this.button_ADD_USR = new System.Windows.Forms.Button();
-            this.checkBoxACS_ADMIN = new System.Windows.Forms.CheckBox();
             this.groupBox_TOP.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -169,13 +170,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBoxACS_ADMIN);
+            this.groupBox1.Controls.Add(this.checkBox_ACS4);
+            this.groupBox1.Controls.Add(this.checkBox_ACS3);
+            this.groupBox1.Controls.Add(this.checkBox_ACS10);
+            this.groupBox1.Controls.Add(this.checkBox_ACS9);
             this.groupBox1.Controls.Add(this.checkBox_ACS8);
             this.groupBox1.Controls.Add(this.checkBox_ACS7);
             this.groupBox1.Controls.Add(this.checkBox_ACS6);
             this.groupBox1.Controls.Add(this.checkBox_ACS5);
-            this.groupBox1.Controls.Add(this.checkBox_ACS4);
-            this.groupBox1.Controls.Add(this.checkBox_ACS3);
             this.groupBox1.Controls.Add(this.checkBox_ACS2);
             this.groupBox1.Controls.Add(this.checkBox_ACS1);
             this.groupBox1.Controls.Add(this.button_ADD_USR);
@@ -188,77 +190,111 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "الصلاحيات";
             // 
-            // checkBox_ACS8
-            // 
-            this.checkBox_ACS8.AutoSize = true;
-            this.checkBox_ACS8.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS8.Location = new System.Drawing.Point(438, 182);
-            this.checkBox_ACS8.Name = "checkBox_ACS8";
-            this.checkBox_ACS8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS8.Size = new System.Drawing.Size(80, 28);
-            this.checkBox_ACS8.TabIndex = 24;
-            this.checkBox_ACS8.Text = "الحسابات";
-            this.checkBox_ACS8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_ACS7
-            // 
-            this.checkBox_ACS7.AutoSize = true;
-            this.checkBox_ACS7.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS7.Location = new System.Drawing.Point(226, 77);
-            this.checkBox_ACS7.Name = "checkBox_ACS7";
-            this.checkBox_ACS7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS7.Size = new System.Drawing.Size(133, 28);
-            this.checkBox_ACS7.TabIndex = 23;
-            this.checkBox_ACS7.Text = "ادارة المستخدمين";
-            this.checkBox_ACS7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_ACS6
-            // 
-            this.checkBox_ACS6.AutoSize = true;
-            this.checkBox_ACS6.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS6.Location = new System.Drawing.Point(412, 111);
-            this.checkBox_ACS6.Name = "checkBox_ACS6";
-            this.checkBox_ACS6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS6.Size = new System.Drawing.Size(106, 28);
-            this.checkBox_ACS6.TabIndex = 22;
-            this.checkBox_ACS6.Text = "المستخدمون";
-            this.checkBox_ACS6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_ACS5
-            // 
-            this.checkBox_ACS5.AutoSize = true;
-            this.checkBox_ACS5.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS5.Location = new System.Drawing.Point(258, 111);
-            this.checkBox_ACS5.Name = "checkBox_ACS5";
-            this.checkBox_ACS5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS5.Size = new System.Drawing.Size(101, 28);
-            this.checkBox_ACS5.TabIndex = 21;
-            this.checkBox_ACS5.Text = "أدارة العملاء";
-            this.checkBox_ACS5.UseVisualStyleBackColor = true;
-            // 
             // checkBox_ACS4
             // 
             this.checkBox_ACS4.AutoSize = true;
             this.checkBox_ACS4.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS4.Location = new System.Drawing.Point(447, 145);
+            this.checkBox_ACS4.Location = new System.Drawing.Point(301, 182);
             this.checkBox_ACS4.Name = "checkBox_ACS4";
             this.checkBox_ACS4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS4.Size = new System.Drawing.Size(71, 28);
-            this.checkBox_ACS4.TabIndex = 20;
-            this.checkBox_ACS4.Text = "العملاء";
+            this.checkBox_ACS4.Size = new System.Drawing.Size(118, 28);
+            this.checkBox_ACS4.TabIndex = 27;
+            this.checkBox_ACS4.Text = "ادارة المشتريات";
             this.checkBox_ACS4.UseVisualStyleBackColor = true;
+            this.checkBox_ACS4.Visible = false;
+            this.checkBox_ACS4.CheckedChanged += new System.EventHandler(this.checkBox_ACS4_CheckedChanged);
             // 
             // checkBox_ACS3
             // 
             this.checkBox_ACS3.AutoSize = true;
             this.checkBox_ACS3.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBox_ACS3.Location = new System.Drawing.Point(396, 77);
+            this.checkBox_ACS3.Location = new System.Drawing.Point(448, 182);
             this.checkBox_ACS3.Name = "checkBox_ACS3";
             this.checkBox_ACS3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox_ACS3.Size = new System.Drawing.Size(122, 28);
-            this.checkBox_ACS3.TabIndex = 18;
-            this.checkBox_ACS3.Text = "المواد والاصناف";
+            this.checkBox_ACS3.Size = new System.Drawing.Size(88, 28);
+            this.checkBox_ACS3.TabIndex = 26;
+            this.checkBox_ACS3.Text = "المشتريات";
             this.checkBox_ACS3.UseVisualStyleBackColor = true;
+            this.checkBox_ACS3.Visible = false;
+            this.checkBox_ACS3.CheckedChanged += new System.EventHandler(this.checkBox_ACS3_CheckedChanged);
+            // 
+            // checkBox_ACS10
+            // 
+            this.checkBox_ACS10.AutoSize = true;
+            this.checkBox_ACS10.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.checkBox_ACS10.Location = new System.Drawing.Point(279, 111);
+            this.checkBox_ACS10.Name = "checkBox_ACS10";
+            this.checkBox_ACS10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox_ACS10.Size = new System.Drawing.Size(80, 28);
+            this.checkBox_ACS10.TabIndex = 24;
+            this.checkBox_ACS10.Text = "الحسابات";
+            this.checkBox_ACS10.UseVisualStyleBackColor = true;
+            this.checkBox_ACS10.CheckedChanged += new System.EventHandler(this.checkBox_ACS10_CheckedChanged);
+            // 
+            // checkBox_ACS9
+            // 
+            this.checkBox_ACS9.AutoSize = true;
+            this.checkBox_ACS9.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.checkBox_ACS9.Location = new System.Drawing.Point(385, 111);
+            this.checkBox_ACS9.Name = "checkBox_ACS9";
+            this.checkBox_ACS9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox_ACS9.Size = new System.Drawing.Size(133, 28);
+            this.checkBox_ACS9.TabIndex = 23;
+            this.checkBox_ACS9.Text = "ادارة المستخدمين";
+            this.checkBox_ACS9.UseVisualStyleBackColor = true;
+            this.checkBox_ACS9.CheckedChanged += new System.EventHandler(this.checkBox_ACS9_CheckedChanged);
+            // 
+            // checkBox_ACS8
+            // 
+            this.checkBox_ACS8.AutoSize = true;
+            this.checkBox_ACS8.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.checkBox_ACS8.Location = new System.Drawing.Point(82, 77);
+            this.checkBox_ACS8.Name = "checkBox_ACS8";
+            this.checkBox_ACS8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox_ACS8.Size = new System.Drawing.Size(106, 28);
+            this.checkBox_ACS8.TabIndex = 22;
+            this.checkBox_ACS8.Text = "المستخدمون";
+            this.checkBox_ACS8.UseVisualStyleBackColor = true;
+            this.checkBox_ACS8.CheckedChanged += new System.EventHandler(this.checkBox_ACS8_CheckedChanged);
+            // 
+            // checkBox_ACS7
+            // 
+            this.checkBox_ACS7.AutoSize = true;
+            this.checkBox_ACS7.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.checkBox_ACS7.Location = new System.Drawing.Point(258, 77);
+            this.checkBox_ACS7.Name = "checkBox_ACS7";
+            this.checkBox_ACS7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox_ACS7.Size = new System.Drawing.Size(101, 28);
+            this.checkBox_ACS7.TabIndex = 21;
+            this.checkBox_ACS7.Text = "أدارة العملاء";
+            this.checkBox_ACS7.UseVisualStyleBackColor = true;
+            this.checkBox_ACS7.CheckedChanged += new System.EventHandler(this.checkBox_ACS7_CheckedChanged);
+            // 
+            // checkBox_ACS6
+            // 
+            this.checkBox_ACS6.AutoSize = true;
+            this.checkBox_ACS6.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.checkBox_ACS6.Location = new System.Drawing.Point(447, 77);
+            this.checkBox_ACS6.Name = "checkBox_ACS6";
+            this.checkBox_ACS6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox_ACS6.Size = new System.Drawing.Size(71, 28);
+            this.checkBox_ACS6.TabIndex = 20;
+            this.checkBox_ACS6.Text = "العملاء";
+            this.checkBox_ACS6.UseVisualStyleBackColor = true;
+            this.checkBox_ACS6.CheckedChanged += new System.EventHandler(this.checkBox_ACS6_CheckedChanged);
+            // 
+            // checkBox_ACS5
+            // 
+            this.checkBox_ACS5.AutoSize = true;
+            this.checkBox_ACS5.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.checkBox_ACS5.Location = new System.Drawing.Point(66, 43);
+            this.checkBox_ACS5.Name = "checkBox_ACS5";
+            this.checkBox_ACS5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox_ACS5.Size = new System.Drawing.Size(122, 28);
+            this.checkBox_ACS5.TabIndex = 18;
+            this.checkBox_ACS5.Text = "المواد والاصناف";
+            this.checkBox_ACS5.UseVisualStyleBackColor = true;
+            this.checkBox_ACS5.CheckedChanged += new System.EventHandler(this.checkBox_ACS5_CheckedChanged);
             // 
             // checkBox_ACS2
             // 
@@ -271,6 +307,7 @@
             this.checkBox_ACS2.TabIndex = 17;
             this.checkBox_ACS2.Text = "ادارة المبيعات";
             this.checkBox_ACS2.UseVisualStyleBackColor = true;
+            this.checkBox_ACS2.CheckedChanged += new System.EventHandler(this.checkBox_ACS2_CheckedChanged);
             // 
             // checkBox_ACS1
             // 
@@ -283,6 +320,7 @@
             this.checkBox_ACS1.TabIndex = 16;
             this.checkBox_ACS1.Text = "البيع المباشر";
             this.checkBox_ACS1.UseVisualStyleBackColor = true;
+            this.checkBox_ACS1.CheckedChanged += new System.EventHandler(this.checkBox_ACS1_CheckedChanged);
             // 
             // button_ADD_USR
             // 
@@ -298,19 +336,6 @@
             this.button_ADD_USR.Text = "حفظ";
             this.button_ADD_USR.UseVisualStyleBackColor = true;
             this.button_ADD_USR.Click += new System.EventHandler(this.button_ADD_USR_Click);
-            // 
-            // checkBoxACS_ADMIN
-            // 
-            this.checkBoxACS_ADMIN.AutoSize = true;
-            this.checkBoxACS_ADMIN.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.checkBoxACS_ADMIN.Location = new System.Drawing.Point(95, 43);
-            this.checkBoxACS_ADMIN.Name = "checkBoxACS_ADMIN";
-            this.checkBoxACS_ADMIN.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxACS_ADMIN.Size = new System.Drawing.Size(88, 28);
-            this.checkBoxACS_ADMIN.TabIndex = 25;
-            this.checkBoxACS_ADMIN.Text = "مدير نظام";
-            this.checkBoxACS_ADMIN.UseVisualStyleBackColor = true;
-            this.checkBoxACS_ADMIN.CheckedChanged += new System.EventHandler(this.checkBoxACS_ADMIN_CheckedChanged);
             // 
             // FORM_ADD_USR
             // 
@@ -354,12 +379,13 @@
         public System.Windows.Forms.Button button_ADD_USR;
         private System.Windows.Forms.CheckBox checkBox_ACS2;
         private System.Windows.Forms.CheckBox checkBox_ACS1;
-        private System.Windows.Forms.CheckBox checkBox_ACS3;
         private System.Windows.Forms.CheckBox checkBox_ACS5;
-        private System.Windows.Forms.CheckBox checkBox_ACS4;
         private System.Windows.Forms.CheckBox checkBox_ACS7;
         private System.Windows.Forms.CheckBox checkBox_ACS6;
+        private System.Windows.Forms.CheckBox checkBox_ACS9;
         private System.Windows.Forms.CheckBox checkBox_ACS8;
-        private System.Windows.Forms.CheckBox checkBoxACS_ADMIN;
+        private System.Windows.Forms.CheckBox checkBox_ACS10;
+        private System.Windows.Forms.CheckBox checkBox_ACS4;
+        private System.Windows.Forms.CheckBox checkBox_ACS3;
     }
 }

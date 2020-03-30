@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace products_mng.PL
     public partial class FORM_MNG_COUSTOMERS : Form
     {
         BL.CLS_COUSTOMERS COUST = new BL.CLS_COUSTOMERS ();
+        BL.CLS_ORDERS ORD = new BL.CLS_ORDERS ();
         private static FORM_MNG_COUSTOMERS frm;
         static void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -84,5 +86,7 @@ namespace products_mng.PL
                 }
             }
         }
+
+       
     }
 }

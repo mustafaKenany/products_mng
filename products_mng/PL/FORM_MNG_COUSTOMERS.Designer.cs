@@ -31,10 +31,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox_COUST_FILTER = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button_DLT_COUST = new System.Windows.Forms.Button();
             this.button_EDIT_COUST = new System.Windows.Forms.Button();
             this.gridControl_COUSTOMERS = new DevExpress.XtraGrid.GridControl();
@@ -53,10 +49,6 @@
             // 
             this.groupBox1.Controls.Add(this.textBox_COUST_FILTER);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button_DLT_COUST);
             this.groupBox1.Controls.Add(this.button_EDIT_COUST);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -88,66 +80,6 @@
             this.label1.Size = new System.Drawing.Size(67, 26);
             this.label1.TabIndex = 23;
             this.label1.Text = "ابحث هنا";
-            // 
-            // button5
-            // 
-            this.button5.AutoSize = true;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(13, 80);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 50);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "سندات الصرف";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.AutoSize = true;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(129, 80);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 50);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "سندات القبض";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.AutoSize = true;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(245, 80);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 50);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "فاتورة معينة";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(361, 80);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 50);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "كافة الفواتير";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // button_DLT_COUST
             // 
@@ -331,10 +263,6 @@
         #endregion
 
         public System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.Button button5;
-        public System.Windows.Forms.Button button4;
-        public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button_DLT_COUST;
         public System.Windows.Forms.Button button_EDIT_COUST;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;

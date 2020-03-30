@@ -56,6 +56,13 @@
             this.Tool_TAKEMONEY = new System.Windows.Forms.ToolStripMenuItem();
             this.Tool_GET_TAKEMONEY = new System.Windows.Forms.ToolStripMenuItem();
             this.Tool_DAILYMONEY = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_REPORTS = new System.Windows.Forms.ToolStripMenuItem();
+            this.تقريرمبيعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تقريرمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تقريرمادةمعينةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تقريرالعملاءToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تقريرالمستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تقريرالحساباتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +76,8 @@
             this.Tool_ITEMS,
             this.Tool_CUSTOMER,
             this.Too_USERS,
-            this.Tool_MONEY});
+            this.Tool_MONEY,
+            this.ToolStripMenuItem_REPORTS});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(3);
@@ -128,6 +136,7 @@
             // 
             // tool_DIRSALES
             // 
+            this.tool_DIRSALES.Enabled = false;
             this.tool_DIRSALES.Name = "tool_DIRSALES";
             this.tool_DIRSALES.Size = new System.Drawing.Size(164, 28);
             this.tool_DIRSALES.Text = "بيع مباشر";
@@ -135,6 +144,7 @@
             // 
             // tool_MNGSALESS
             // 
+            this.tool_MNGSALESS.Enabled = false;
             this.tool_MNGSALESS.Name = "tool_MNGSALESS";
             this.tool_MNGSALESS.Size = new System.Drawing.Size(164, 28);
             this.tool_MNGSALESS.Text = "أدارة المبيعات";
@@ -213,6 +223,7 @@
             // 
             // Tool_ADDCUSTOMER
             // 
+            this.Tool_ADDCUSTOMER.Enabled = false;
             this.Tool_ADDCUSTOMER.Name = "Tool_ADDCUSTOMER";
             this.Tool_ADDCUSTOMER.Size = new System.Drawing.Size(184, 28);
             this.Tool_ADDCUSTOMER.Text = "أضافة عميل جديد";
@@ -220,6 +231,7 @@
             // 
             // Tool_MNGCUSTOMER
             // 
+            this.Tool_MNGCUSTOMER.Enabled = false;
             this.Tool_MNGCUSTOMER.Name = "Tool_MNGCUSTOMER";
             this.Tool_MNGCUSTOMER.Size = new System.Drawing.Size(184, 28);
             this.Tool_MNGCUSTOMER.Text = "أدارة العملاء";
@@ -237,6 +249,7 @@
             // 
             // Tool_ADDUSER
             // 
+            this.Tool_ADDUSER.Enabled = false;
             this.Tool_ADDUSER.Name = "Tool_ADDUSER";
             this.Tool_ADDUSER.Size = new System.Drawing.Size(184, 28);
             this.Tool_ADDUSER.Text = "أضافة  مستخدم";
@@ -244,6 +257,7 @@
             // 
             // Tool_MNGUSERS
             // 
+            this.Tool_MNGUSERS.Enabled = false;
             this.Tool_MNGUSERS.Name = "Tool_MNGUSERS";
             this.Tool_MNGUSERS.Size = new System.Drawing.Size(184, 28);
             this.Tool_MNGUSERS.Text = "أدارة المستخدمين";
@@ -285,6 +299,57 @@
             this.Tool_DAILYMONEY.Size = new System.Drawing.Size(182, 28);
             this.Tool_DAILYMONEY.Text = "الصرفيات اليومية";
             // 
+            // ToolStripMenuItem_REPORTS
+            // 
+            this.ToolStripMenuItem_REPORTS.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.تقريرمبيعاتToolStripMenuItem,
+            this.تقريرمشترياتToolStripMenuItem,
+            this.تقريرمادةمعينةToolStripMenuItem,
+            this.تقريرالعملاءToolStripMenuItem,
+            this.تقريرالمستخدمينToolStripMenuItem,
+            this.تقريرالحساباتToolStripMenuItem});
+            this.ToolStripMenuItem_REPORTS.Enabled = false;
+            this.ToolStripMenuItem_REPORTS.Name = "ToolStripMenuItem_REPORTS";
+            this.ToolStripMenuItem_REPORTS.Size = new System.Drawing.Size(64, 28);
+            this.ToolStripMenuItem_REPORTS.Text = "التقارير";
+            // 
+            // تقريرمبيعاتToolStripMenuItem
+            // 
+            this.تقريرمبيعاتToolStripMenuItem.Name = "تقريرمبيعاتToolStripMenuItem";
+            this.تقريرمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
+            this.تقريرمبيعاتToolStripMenuItem.Text = "تقرير مبيعات";
+            // 
+            // تقريرمشترياتToolStripMenuItem
+            // 
+            this.تقريرمشترياتToolStripMenuItem.Name = "تقريرمشترياتToolStripMenuItem";
+            this.تقريرمشترياتToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
+            this.تقريرمشترياتToolStripMenuItem.Text = "تقرير مشتريات";
+            this.تقريرمشترياتToolStripMenuItem.Visible = false;
+            // 
+            // تقريرمادةمعينةToolStripMenuItem
+            // 
+            this.تقريرمادةمعينةToolStripMenuItem.Name = "تقريرمادةمعينةToolStripMenuItem";
+            this.تقريرمادةمعينةToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
+            this.تقريرمادةمعينةToolStripMenuItem.Text = "تقرير مواد";
+            // 
+            // تقريرالعملاءToolStripMenuItem
+            // 
+            this.تقريرالعملاءToolStripMenuItem.Name = "تقريرالعملاءToolStripMenuItem";
+            this.تقريرالعملاءToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
+            this.تقريرالعملاءToolStripMenuItem.Text = "تقرير العملاء";
+            // 
+            // تقريرالمستخدمينToolStripMenuItem
+            // 
+            this.تقريرالمستخدمينToolStripMenuItem.Name = "تقريرالمستخدمينToolStripMenuItem";
+            this.تقريرالمستخدمينToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
+            this.تقريرالمستخدمينToolStripMenuItem.Text = "تقرير المستخدمين";
+            // 
+            // تقريرالحساباتToolStripMenuItem
+            // 
+            this.تقريرالحساباتToolStripMenuItem.Name = "تقريرالحساباتToolStripMenuItem";
+            this.تقريرالحساباتToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
+            this.تقريرالحساباتToolStripMenuItem.Text = "تقرير الحسابات";
+            // 
             // FORM_MAIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 23F);
@@ -318,18 +383,10 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem Tool_FILE;
         private System.Windows.Forms.ToolStripMenuItem tool_Logout;
-        private System.Windows.Forms.ToolStripMenuItem tool_DIRSALES;
-        private System.Windows.Forms.ToolStripMenuItem tool_MNGSALESS;
-        private System.Windows.Forms.ToolStripMenuItem Tool_DIRECTPURCHASE;
-        private System.Windows.Forms.ToolStripMenuItem Tool_MNGPURCHASE;
         private System.Windows.Forms.ToolStripMenuItem Tool_ADDITEM;
         private System.Windows.Forms.ToolStripMenuItem Tool_MNGITEMS;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem Tool_MNGCAT;
-        private System.Windows.Forms.ToolStripMenuItem Tool_ADDCUSTOMER;
-        private System.Windows.Forms.ToolStripMenuItem Tool_MNGCUSTOMER;
-        private System.Windows.Forms.ToolStripMenuItem Tool_ADDUSER;
-        private System.Windows.Forms.ToolStripMenuItem Tool_MNGUSERS;
         private System.Windows.Forms.ToolStripMenuItem TooL_GETMONEY;
         private System.Windows.Forms.ToolStripMenuItem Tool_TAKEMONEY;
         private System.Windows.Forms.ToolStripMenuItem Tool_GET_TAKEMONEY;
@@ -343,5 +400,20 @@
         public System.Windows.Forms.ToolStripMenuItem Too_USERS;
         public System.Windows.Forms.ToolStripMenuItem Tool_MONEY;
         public System.Windows.Forms.ToolStripMenuItem tool_login;
+        private System.Windows.Forms.ToolStripMenuItem Tool_DIRECTPURCHASE;
+        private System.Windows.Forms.ToolStripMenuItem Tool_MNGPURCHASE;
+        public System.Windows.Forms.ToolStripMenuItem tool_DIRSALES;
+        public System.Windows.Forms.ToolStripMenuItem tool_MNGSALESS;
+        public System.Windows.Forms.ToolStripMenuItem Tool_ADDCUSTOMER;
+        public System.Windows.Forms.ToolStripMenuItem Tool_MNGCUSTOMER;
+        public System.Windows.Forms.ToolStripMenuItem Tool_ADDUSER;
+        public System.Windows.Forms.ToolStripMenuItem Tool_MNGUSERS;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORTS;
+        private System.Windows.Forms.ToolStripMenuItem تقريرمبيعاتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تقريرمشترياتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تقريرمادةمعينةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تقريرالعملاءToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تقريرالمستخدمينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تقريرالحساباتToolStripMenuItem;
     }
 }

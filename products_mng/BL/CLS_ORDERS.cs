@@ -210,5 +210,18 @@ namespace products_mng.BL
 
         }
 
+        public DataTable PRT_ALL_INVO(int COUST_ID)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter ("@COUST_ID", SqlDbType.Int);
+            param[0].Value = COUST_ID;
+            dt = dal.SelectData ("PRT_ALL_INVO", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
     }
 }

@@ -23,50 +23,64 @@ namespace products_mng.PL
             this.gridControl_MNGUSR.DataSource = USR.GET_ALL_USRS ();
         }
 
-        private void button_SLCT_USR_Click(object sender, EventArgs e)
+        private void button_UPDATEUSR_Click(object sender, EventArgs e)
         {
+            int[] USR_ACS = new int[12];
             if (gridView1.RowCount > 0)
             {
-                string ID_USR = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_USER"]).ToString ();
-                int USR_ACS = int.Parse(gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["USER_ACS"]).ToString ());
-                USR_ACS_CHECKED (USR_ACS);
+                for (int i = 0; i < gridView1.RowCount; i++)
+                {
+                    int ID_USR = Convert.ToInt16 (gridView1.GetRowCellValue (i, gridView1.Columns["ID_USER"]).ToString ());
+                    string USRFLNAME = gridView1.GetRowCellValue (i, gridView1.Columns["USR_FLNAME"]).ToString ();
+                    string USRNAME = gridView1.GetRowCellValue (i, gridView1.Columns["USRNAME"]).ToString ();
+                    USR_ACS[1] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS1"])));
+                    USR_ACS[2] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS2"])));
+                    USR_ACS[3] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS3"])));
+                    USR_ACS[4] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS4"])));
+                    USR_ACS[5] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS5"])));
+                    USR_ACS[6] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS6"])));
+                    USR_ACS[7] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS7"])));
+                    USR_ACS[8] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS8"])));
+                    USR_ACS[9] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS9"])));
+                    USR_ACS[10] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS10"])));
+                    USR_ACS[11] = Convert.ToInt16 ((gridView1.GetRowCellValue (i, gridView1.Columns["ACS11"])));
+                    USR.UPDATE_USR (ID_USR, USRFLNAME, USRNAME, USR_ACS);
+                }
+                MessageBox.Show ("تمت عملية التعديل", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
         }
 
-        private void USR_ACS_CHECKED(int USR_ACS)
+        private void button_DLTUSR_Click(object sender, EventArgs e)
         {
-            switch (USR_ACS)
+            if (gridView1.RowCount > 0)
             {
-                case 3:
-                    checkBox_ACS1.Checked = true;
-                    break;
-                case 4:
-                    checkBox_ACS2.Checked = true;
-                    break;
-                case 5:
-                    checkBox_ACS3.Checked = true;
+                var DT = new DataTable ();
+                string USRNAME = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["USRNAME"]).ToString ();
+                int ID_USR = Convert.ToInt16 (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_USER"]).ToString ());
 
-                    break;
-                case 6:
-                    checkBox_ACS4.Checked = true;
-                    break;
-                case 7:
-                    checkBox_ACS5.Checked = true;
-                    break;
-                case 8:
-                    checkBox_ACS6.Checked = true;
+                DT = USR.VERFIY_SALESMAN (USRNAME);
+                if (DT.Rows.Count > 0)
+                {
+                    MessageBox.Show ("عذرا هذا المستخدم لديه قوائم مسجلة باسمه لايمكن حذفه", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    USR.DLT_USR (ID_USR);
+                    MessageBox.Show ("تم حذف المستخدم", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.gridControl_MNGUSR.DataSource = USR.GET_ALL_USRS ();
+                }
+            }
+        }
 
-                    break;
-                case 9:
-                    checkBox_ACS7.Checked = true;
-                    break;
-                case 10:
-                    checkBox_ACS8.Checked = true;
-                    break;
-                case 100:
-                    break;
-                default:
-                    break;
+        private void button_BLOCKUSR_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount > 0)
+            {
+                int ID_USR = Convert.ToInt16 (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_USER"]).ToString ());
+                USR.BLOCKUSR (ID_USR);
+                MessageBox.Show ("تم حظر المستخدم", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
         }
     }

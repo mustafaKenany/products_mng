@@ -160,7 +160,7 @@
             this.gridControl_ORDERS.Location = new System.Drawing.Point(5, 118);
             this.gridControl_ORDERS.MainView = this.gridView1;
             this.gridControl_ORDERS.Name = "gridControl_ORDERS";
-            this.gridControl_ORDERS.Size = new System.Drawing.Size(974, 464);
+            this.gridControl_ORDERS.Size = new System.Drawing.Size(974, 389);
             this.gridControl_ORDERS.TabIndex = 3;
             this.gridControl_ORDERS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -304,7 +304,7 @@
             this.panel1.Controls.Add(this.splitter1);
             this.panel1.Controls.Add(this.button_INVO_DETLS);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(5, 582);
+            this.panel1.Location = new System.Drawing.Point(5, 507);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(974, 75);
@@ -422,7 +422,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(984, 662);
+            this.ClientSize = new System.Drawing.Size(984, 587);
             this.Controls.Add(this.gridControl_ORDERS);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
