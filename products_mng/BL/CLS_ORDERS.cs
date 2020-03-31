@@ -15,16 +15,13 @@ namespace products_mng.BL
         public int GET_ID_ORDER()
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
-            int ID = 1;
+            int ID = 0;
             DataTable dt = new DataTable ();
             dt = dal.SelectData ("GET_ID_ORDER", null);
-            if (dt.Rows.Count > 0)
+            if (dt.Rows.Count >0)
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    ID = int.Parse (dt.Rows[i]["ID_ORDER"].ToString ());
-                }
-                ID = ID + 1;
+
+                ID = int.Parse (dt.Rows[0]["ID_ORDER"].ToString ());
             }
             dal.ConClose ();
             return ID;
@@ -92,7 +89,7 @@ namespace products_mng.BL
 
         }
 
-        public void ADD_ORDER_MONEY(int ID_MONEY,int ID_ORDER, int ID_COUST, float TOTAL_AMOUNT, float PAID_AMOUNT, float DISCOUNT_AMOUNT, float REMINDER_AMOUNT)
+        public void ADD_ORDER_MONEY(int ID_MONEY, int ID_ORDER, int ID_COUST, float TOTAL_AMOUNT, float PAID_AMOUNT, float DISCOUNT_AMOUNT, float REMINDER_AMOUNT)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
@@ -116,15 +113,15 @@ namespace products_mng.BL
 
         }
 
-        public void ADD_MONEY_DETAILS(int ID_MONEY, int ID_COUST, String TYPES_OF_MONEY, String NOTES,DateTime MONEY_DATE)
+        public void ADD_MONEY_DETAILS(int ID_MONEY, int ID_COUST, String TYPES_OF_MONEY, String NOTES, DateTime MONEY_DATE)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
             SqlParameter[] PARAM = new SqlParameter[5];
             PARAM[0] = new SqlParameter ("@ID_MONEY", SqlDbType.Int);
             PARAM[1] = new SqlParameter ("@ID_COUST", SqlDbType.Int);
-            PARAM[2] = new SqlParameter ("@TYPES_OF_MONEY", SqlDbType.NVarChar,250);
-            PARAM[3] = new SqlParameter ("@NOTES", SqlDbType.NVarChar,250);
+            PARAM[2] = new SqlParameter ("@TYPES_OF_MONEY", SqlDbType.NVarChar, 250);
+            PARAM[3] = new SqlParameter ("@NOTES", SqlDbType.NVarChar, 250);
             PARAM[4] = new SqlParameter ("@MONEY_DATE", SqlDbType.Date);
             PARAM[0].Value = ID_MONEY;
             PARAM[1].Value = ID_COUST;

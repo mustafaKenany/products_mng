@@ -16,7 +16,7 @@ namespace products_mng
         {
             Application.EnableVisualStyles ();
             Application.SetCompatibleTextRenderingDefault (false);
-            Application.Run (new PL.FORM_RPT_SALES());
+            Application.Run (new PL.FORM_DOCS_INCOMING());
         }
     }
 }

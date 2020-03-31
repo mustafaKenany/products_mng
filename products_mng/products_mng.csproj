@@ -88,6 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\CLS_MONEYIES.cs" />
     <Compile Include="BL\CLS_PRODUCTS.cs" />
     <Compile Include="BL\CLS_COUSTOMERS.cs" />
     <Compile Include="BL\CLS_LOGIN.cs" />
@@ -125,6 +126,12 @@
     </Compile>
     <Compile Include="PL\FORM_COUSTOMERS_SELECT.Designer.cs">
       <DependentUpon>FORM_COUSTOMERS_SELECT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FORM_DOCS_INCOMING.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_DOCS_INCOMING.Designer.cs">
+      <DependentUpon>FORM_DOCS_INCOMING.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FORM_LOGIN.cs">
       <SubType>Form</SubType>
@@ -206,6 +213,12 @@
     <Compile Include="RPT\RPT_INVO.Designer.cs">
       <DependentUpon>RPT_INVO.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\RPT_PAID_SPENT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_PAID_SPENT.Designer.cs">
+      <DependentUpon>RPT_PAID_SPENT.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PL\FORM_ADD_PRODUCTS.resx">
       <DependentUpon>FORM_ADD_PRODUCTS.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_COUSTOMERS_SELECT.resx">
       <DependentUpon>FORM_COUSTOMERS_SELECT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_DOCS_INCOMING.resx">
+      <DependentUpon>FORM_DOCS_INCOMING.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_LOGIN.resx">
       <DependentUpon>FORM_LOGIN.cs</DependentUpon>
@@ -266,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_INVO.resx">
       <DependentUpon>RPT_INVO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_PAID_SPENT.resx">
+      <DependentUpon>RPT_PAID_SPENT.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DAL\RPT_TABLES.xsc">
       <DependentUpon>RPT_TABLES.xsd</DependentUpon>

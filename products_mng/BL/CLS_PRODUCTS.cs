@@ -105,11 +105,7 @@ namespace products_mng.BL
             dt = dal.SelectData ("GET_ID_PRODUCT", null);
             if (dt.Rows.Count>0)
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    ID = int.Parse(dt.Rows[i]["ID_PRODUCT"].ToString ());
-                }
-                ID = ID + 1;
+                ID = int.Parse (dt.Rows[0]["ID_PRD"].ToString ());
             }
             dal.ConClose ();
             return ID;

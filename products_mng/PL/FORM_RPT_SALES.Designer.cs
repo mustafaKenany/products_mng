@@ -38,12 +38,14 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel_BTNS = new System.Windows.Forms.Panel();
+            this.button_INVOSDETLS = new System.Windows.Forms.Button();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
@@ -55,8 +57,6 @@
             this.button_PRTGRID = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.button_ALSALES = new System.Windows.Forms.Button();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button_INVOSDETLS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_ALLSALES)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel_BTNS.SuspendLayout();
@@ -201,6 +201,27 @@
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
             // 
+            // gridColumn10
+            // 
+            this.gridColumn10.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn10.AppearanceCell.Options.UseFont = true;
+            this.gridColumn10.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn10.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn10.Caption = "تاريخ قائمة";
+            this.gridColumn10.DisplayFormat.FormatString = "yyyy/MM/dd";
+            this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn10.FieldName = "ORDER_DATE";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 3;
+            // 
             // gridColumn5
             // 
             this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
@@ -314,6 +335,22 @@
             this.panel_BTNS.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel_BTNS.Size = new System.Drawing.Size(1224, 60);
             this.panel_BTNS.TabIndex = 21;
+            // 
+            // button_INVOSDETLS
+            // 
+            this.button_INVOSDETLS.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_INVOSDETLS.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_INVOSDETLS.FlatAppearance.BorderSize = 2;
+            this.button_INVOSDETLS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_INVOSDETLS.ForeColor = System.Drawing.Color.White;
+            this.button_INVOSDETLS.Location = new System.Drawing.Point(806, 3);
+            this.button_INVOSDETLS.Margin = new System.Windows.Forms.Padding(10);
+            this.button_INVOSDETLS.Name = "button_INVOSDETLS";
+            this.button_INVOSDETLS.Size = new System.Drawing.Size(100, 54);
+            this.button_INVOSDETLS.TabIndex = 21;
+            this.button_INVOSDETLS.Text = "كل تفاصيل";
+            this.button_INVOSDETLS.UseVisualStyleBackColor = false;
+            this.button_INVOSDETLS.Click += new System.EventHandler(this.button_INVOSDETLS_Click);
             // 
             // documentViewer1
             // 
@@ -447,43 +484,6 @@
             this.button_ALSALES.Text = "عرض البيانات";
             this.button_ALSALES.UseVisualStyleBackColor = false;
             this.button_ALSALES.Click += new System.EventHandler(this.button_ALSALES_Click);
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gridColumn10.AppearanceCell.Options.UseFont = true;
-            this.gridColumn10.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn10.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn10.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn10.Caption = "تاريخ قائمة";
-            this.gridColumn10.DisplayFormat.FormatString = "yyyy/MM/dd";
-            this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn10.FieldName = "ORDER_DATE";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
-            // 
-            // button_INVOSDETLS
-            // 
-            this.button_INVOSDETLS.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button_INVOSDETLS.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_INVOSDETLS.FlatAppearance.BorderSize = 2;
-            this.button_INVOSDETLS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_INVOSDETLS.ForeColor = System.Drawing.Color.White;
-            this.button_INVOSDETLS.Location = new System.Drawing.Point(806, 3);
-            this.button_INVOSDETLS.Margin = new System.Windows.Forms.Padding(10);
-            this.button_INVOSDETLS.Name = "button_INVOSDETLS";
-            this.button_INVOSDETLS.Size = new System.Drawing.Size(100, 54);
-            this.button_INVOSDETLS.TabIndex = 21;
-            this.button_INVOSDETLS.Text = "كل تفاصيل";
-            this.button_INVOSDETLS.UseVisualStyleBackColor = false;
-            this.button_INVOSDETLS.Click += new System.EventHandler(this.button_INVOSDETLS_Click);
             // 
             // FORM_RPT_SALES
             // 

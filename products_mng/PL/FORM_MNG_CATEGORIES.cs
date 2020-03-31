@@ -31,6 +31,7 @@ namespace products_mng.PL
                 return frm;
             }
         }
+
         public FORM_MNG_CATEGORIES()
         {
             InitializeComponent ();

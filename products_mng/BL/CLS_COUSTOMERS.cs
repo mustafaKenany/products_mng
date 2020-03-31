@@ -19,11 +19,7 @@ namespace products_mng.BL
             dt = dal.SelectData ("GET_ID_COUST", null);
             if (dt.Rows.Count > 0)
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    ID = int.Parse (dt.Rows[i]["ID_COUSTOMER"].ToString ());
-                }
-                ID = ID + 1;
+                    ID = int.Parse (dt.Rows[0]["ID_COUST"].ToString ());
             }
             dal.ConClose ();
             return ID;
