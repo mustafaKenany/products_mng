@@ -88,7 +88,7 @@
             this.btn_close.Location = new System.Drawing.Point(349, 219);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(100, 50);
-            this.btn_close.TabIndex = 5;
+            this.btn_close.TabIndex = 4;
             this.btn_close.Text = "الخروج";
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
@@ -103,7 +103,7 @@
             this.btn_Enter.Location = new System.Drawing.Point(199, 219);
             this.btn_Enter.Name = "btn_Enter";
             this.btn_Enter.Size = new System.Drawing.Size(100, 50);
-            this.btn_Enter.TabIndex = 6;
+            this.btn_Enter.TabIndex = 3;
             this.btn_Enter.Text = "الدخول";
             this.btn_Enter.UseVisualStyleBackColor = true;
             this.btn_Enter.Click += new System.EventHandler(this.btn_Enter_Click);

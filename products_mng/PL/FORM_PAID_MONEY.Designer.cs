@@ -1,6 +1,6 @@
 ﻿namespace products_mng.PL
 {
-    partial class FORM_DOCS_INCOMING
+    partial class FORM_PAID_MONEY
     {
         /// <summary>
         /// Required designer variable.
@@ -92,6 +92,7 @@
             this.textBox_MONEYPAID.Size = new System.Drawing.Size(130, 35);
             this.textBox_MONEYPAID.TabIndex = 2;
             this.textBox_MONEYPAID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MONEYPAID.Leave += new System.EventHandler(this.textBox_MONEYPAID_Leave);
             // 
             // textBox_NOTESPAID
             // 
@@ -224,7 +225,7 @@
             this.button_ADDCOUST.UseVisualStyleBackColor = true;
             this.button_ADDCOUST.Click += new System.EventHandler(this.button_ADDCOUST_Click);
             // 
-            // FORM_DOCS_INCOMING
+            // FORM_PAID_MONEY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -251,7 +252,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FORM_DOCS_INCOMING";
+            this.Name = "FORM_PAID_MONEY";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

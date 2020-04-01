@@ -68,21 +68,26 @@ namespace products_mng.PL
                     }
                     if (USR_ACC[6] == 1)
                     {
+                        
+                        FORM_MAIN.getMainForm.Tool_CUSTOMER.Enabled = true;
                         FORM_MAIN.getMainForm.Tool_ADDCUSTOMER.Enabled = true;
 
                     }
                     if (USR_ACC[7] == 1)
                     {
+                        FORM_MAIN.getMainForm.Tool_CUSTOMER.Enabled = true;
                         FORM_MAIN.getMainForm.Tool_MNGCUSTOMER.Enabled = true;
 
                     }
                     if (USR_ACC[8] == 1)
                     {
+                        FORM_MAIN.getMainForm.Too_USERS.Enabled = true;
                         FORM_MAIN.getMainForm.Tool_ADDUSER.Enabled = true;
 
                     }
                     if (USR_ACC[9] == 1)
                     {
+                        FORM_MAIN.getMainForm.Too_USERS.Enabled = true;
                         FORM_MAIN.getMainForm.Tool_MNGUSERS.Enabled = true;
 
                     }
@@ -93,10 +98,10 @@ namespace products_mng.PL
                     }
                     if (USR_ACC[11] == 1)
                     {
-
+                        FORM_MAIN.getMainForm.ToolStripMenuItem_REPORTS.Enabled = true;
                     }
 
-                   
+
                     this.Close ();
                 }
                 else

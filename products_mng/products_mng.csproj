@@ -127,11 +127,35 @@
     <Compile Include="PL\FORM_COUSTOMERS_SELECT.Designer.cs">
       <DependentUpon>FORM_COUSTOMERS_SELECT.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\FORM_DOCS_INCOMING.cs">
+    <Compile Include="PL\FORM_DAILY_SPENT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\FORM_DOCS_INCOMING.Designer.cs">
-      <DependentUpon>FORM_DOCS_INCOMING.cs</DependentUpon>
+    <Compile Include="PL\FORM_DAILY_SPENT.Designer.cs">
+      <DependentUpon>FORM_DAILY_SPENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FORM_MNG_PAID_SPENT_DOCS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_MNG_PAID_SPENT_DOCS.Designer.cs">
+      <DependentUpon>FORM_MNG_PAID_SPENT_DOCS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FORM_PAID_MONEY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_PAID_MONEY.Designer.cs">
+      <DependentUpon>FORM_PAID_MONEY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\FORM_RPTDATE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\FORM_RPTDATE.Designer.cs">
+      <DependentUpon>FORM_RPTDATE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FORM_SPENT_MONEY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_SPENT_MONEY.Designer.cs">
+      <DependentUpon>FORM_SPENT_MONEY.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FORM_LOGIN.cs">
       <SubType>Form</SubType>
@@ -187,10 +211,16 @@
     <Compile Include="PL\FORM_PURCHASES.Designer.cs">
       <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\FORM_RPT_SALES.cs">
+    <Compile Include="RPT\FORM_RPTITEMS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\FORM_RPT_SALES.Designer.cs">
+    <Compile Include="RPT\FORM_RPTITEMS.Designer.cs">
+      <DependentUpon>FORM_RPTITEMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\FORM_RPT_SALES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\FORM_RPT_SALES.Designer.cs">
       <DependentUpon>FORM_RPT_SALES.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FORM_SALES.cs">
@@ -213,6 +243,12 @@
     <Compile Include="RPT\RPT_INVO.Designer.cs">
       <DependentUpon>RPT_INVO.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\RPT_ITMSDTLS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_ITMSDTLS.Designer.cs">
+      <DependentUpon>RPT_ITMSDTLS.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\RPT_PAID_SPENT.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -231,8 +267,20 @@
     <EmbeddedResource Include="PL\FORM_COUSTOMERS_SELECT.resx">
       <DependentUpon>FORM_COUSTOMERS_SELECT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\FORM_DOCS_INCOMING.resx">
-      <DependentUpon>FORM_DOCS_INCOMING.cs</DependentUpon>
+    <EmbeddedResource Include="PL\FORM_DAILY_SPENT.resx">
+      <DependentUpon>FORM_DAILY_SPENT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_MNG_PAID_SPENT_DOCS.resx">
+      <DependentUpon>FORM_MNG_PAID_SPENT_DOCS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_PAID_MONEY.resx">
+      <DependentUpon>FORM_PAID_MONEY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\FORM_RPTDATE.resx">
+      <DependentUpon>FORM_RPTDATE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_SPENT_MONEY.resx">
+      <DependentUpon>FORM_SPENT_MONEY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_LOGIN.resx">
       <DependentUpon>FORM_LOGIN.cs</DependentUpon>
@@ -261,7 +309,10 @@
     <EmbeddedResource Include="PL\FORM_PURCHASES.resx">
       <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\FORM_RPT_SALES.resx">
+    <EmbeddedResource Include="RPT\FORM_RPTITEMS.resx">
+      <DependentUpon>FORM_RPTITEMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\FORM_RPT_SALES.resx">
       <DependentUpon>FORM_RPT_SALES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_SALES.resx">
@@ -282,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_INVO.resx">
       <DependentUpon>RPT_INVO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_ITMSDTLS.resx">
+      <DependentUpon>RPT_ITMSDTLS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_PAID_SPENT.resx">
       <DependentUpon>RPT_PAID_SPENT.cs</DependentUpon>

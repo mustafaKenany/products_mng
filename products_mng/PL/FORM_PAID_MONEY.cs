@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace products_mng.PL
 {
-    public partial class FORM_DOCS_INCOMING : Form
+    public partial class FORM_PAID_MONEY : Form
     {
         BL.CLS_COUSTOMERS COUST = new BL.CLS_COUSTOMERS ();
         BL.CLS_MONEYIES paid = new BL.CLS_MONEYIES ();
-        public FORM_DOCS_INCOMING()
+        public FORM_PAID_MONEY()
         {
             InitializeComponent ();
         }
@@ -96,6 +96,7 @@ namespace products_mng.PL
             x.xrLabelDETLS.Text = " استلمت من السيد/السيدة " + COUS_NAME.Text + "  مبلغ مالي مقداره  " + textBox_MONEYPAID.Text + "   وذلك عن  " + textBox_NOTESPAID.Text + "  ولأجله وقعت" ;
             x.xrLabel_date.Text = dateTimePicker_DATEPAID.Text;
             x.xrLabel_SLAESMAN.Text = BL.CLS_LOGIN.SALES_MAN;
+            x.xrLabel_DOCSNO.Text = label_PAIDID.Text;
             x.ShowPreviewDialog ();
 
         }
@@ -109,6 +110,15 @@ namespace products_mng.PL
         private void button_CNCLPAID_Click(object sender, EventArgs e)
         {
             COUS_NAME.Text = textBox_MONEYPAID.Text = textBox_NOTESPAID.Text = "";
+        }
+
+        private void textBox_MONEYPAID_Leave(object sender, EventArgs e)
+        {
+            if (textBox_MONEYPAID.Text != "")
+            {
+                textBox_MONEYPAID.Text = int.Parse (textBox_MONEYPAID.Text).ToString ("n1");
+            }
+
         }
     }
 }

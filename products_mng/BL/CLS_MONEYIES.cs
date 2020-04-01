@@ -24,7 +24,7 @@ namespace products_mng.BL
             return ID;
         }
 
-        public void ADD_PAID_SPENT_MONEY(int PAID_SPENT_ID, int COUST_ID, float THE_AMOUNT,DateTime DATE, String TYPE, String NOTS)
+        public void ADD_PAID_SPENT_MONEY(int PAID_SPENT_ID, int COUST_ID, float THE_AMOUNT, DateTime DATE, String TYPE, String NOTS)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
@@ -33,8 +33,8 @@ namespace products_mng.BL
             PARAM[1] = new SqlParameter ("@COUST_ID", SqlDbType.Int);
             PARAM[2] = new SqlParameter ("@THE_AMOUNT", SqlDbType.Float);
             PARAM[3] = new SqlParameter ("@DATE", SqlDbType.Date);
-            PARAM[4] = new SqlParameter ("@TYPE", SqlDbType.NVarChar,50);
-            PARAM[5] = new SqlParameter ("@NOTS", SqlDbType.NVarChar,50);
+            PARAM[4] = new SqlParameter ("@TYPE", SqlDbType.NVarChar, 50);
+            PARAM[5] = new SqlParameter ("@NOTS", SqlDbType.NVarChar, 50);
             PARAM[0].Value = PAID_SPENT_ID;
             PARAM[1].Value = COUST_ID;
             PARAM[2].Value = THE_AMOUNT;
@@ -45,27 +45,40 @@ namespace products_mng.BL
             dal.ConClose ();
         }
 
-        public void ADD_PAID_SPENT_DETLS()
+        public DataTable GET_ALL_PAID_SPENT_DOCS()
         {
-            //DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
-            //dal.ConOpen ();
-            //SqlParameter[] PARAM = new SqlParameter[7];
-            //PARAM[0] = new SqlParameter ("@ID_ORDER", SqlDbType.Int);
-            //PARAM[1] = new SqlParameter ("@ID_COUST", SqlDbType.Int);
-            //PARAM[2] = new SqlParameter ("@ORDER_NOTES", SqlDbType.NVarChar, 50);
-            //PARAM[3] = new SqlParameter ("@ORDER_TYPE", SqlDbType.Bit);
-            //PARAM[4] = new SqlParameter ("@PAID_OR_NOT", SqlDbType.Bit);
-            //PARAM[5] = new SqlParameter ("@SALES_MAN", SqlDbType.NVarChar, 50);
-            //PARAM[6] = new SqlParameter ("@ORDER_DATE", SqlDbType.Date);
-            //PARAM[0].Value = ID_ORDER;
-            //PARAM[1].Value = ID_COUST;
-            //PARAM[2].Value = ORDER_NOTES;
-            //PARAM[3].Value = ORDER_TYPE;
-            //PARAM[4].Value = PAID_OR_NOT;
-            //PARAM[5].Value = SALES_MAN;
-            //PARAM[6].Value = DateTime.Now.ToShortDateString ();
-            //dal.ExecuteCommand ("ADD_ORDER", PARAM);
-            //dal.ConClose ();
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            dt = dal.SelectData ("GET_ALL_PAID_SPENT_DOCS", null);
+            dal.ConClose ();
+            return dt;
+        }
+
+        public DataTable GET_ALL_PAID_SPENT_DOCS_BETWEEN_DATES(String BEGIN_DATE, String END_DATE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter ("@BEGIN_DATE", SqlDbType.NVarChar, 50);
+            param[0].Value = BEGIN_DATE;
+            param[1] = new SqlParameter ("@END_DATE", SqlDbType.NVarChar, 50);
+            param[1].Value = END_DATE;
+            dt = dal.SelectData ("GET_ALL_PAID_SPENT_DOCS_BETWEEN_DATES", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
+        public void DLT_PAID_SPENT_DOCS(int ID)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            dal.ConOpen ();
+            SqlParameter[] PARAM = new SqlParameter[1];
+            PARAM[0] = new SqlParameter ("@ID", SqlDbType.Int);
+            PARAM[0].Value = ID;
+            dal.ExecuteCommand ("DLT_PAID_SPENT_DOCS", PARAM);
+            dal.ConClose ();
+
         }
 
     }

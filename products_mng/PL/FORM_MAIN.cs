@@ -106,5 +106,41 @@ namespace products_mng.PL
             FORM_MNG_USRS form = new FORM_MNG_USRS ();
             form.ShowDialog ();
         }
+
+        private void TooL_PAIDMONEY_Click(object sender, EventArgs e)
+        {
+            FORM_PAID_MONEY FORM = new FORM_PAID_MONEY ();
+            FORM.ShowDialog ();
+        }
+
+        private void Tool_SPENTMONEY_Click(object sender, EventArgs e)
+        {
+            FORM_SPENT_MONEY FORM = new FORM_SPENT_MONEY ();
+            FORM.ShowDialog ();
+        }
+
+        private void Tool_DAILYSPENT_Click(object sender, EventArgs e)
+        {
+            FORM_DAILY_SPENT FORM = new FORM_DAILY_SPENT ();
+            FORM.ShowDialog ();
+        }
+
+        private void ToolStripMenuItem_mngdocs_Click(object sender, EventArgs e)
+        {
+            FORM_MNG_PAID_SPENT_DOCS FORM = new FORM_MNG_PAID_SPENT_DOCS ();
+            FORM.ShowDialog ();
+        }
+
+        private void ToolStripMenuItem_SLAESREP_Click(object sender, EventArgs e)
+        {
+            PL.FORM_RPTDATE form = new FORM_RPTDATE ();
+            form.ShowDialog ();
+        }
+
+        private void ToolStripMenuItem_REPORITMS_Click(object sender, EventArgs e)
+        {
+            RPT.FORM_RPTITEMS FORM = new RPT.FORM_RPTITEMS ();
+            FORM.ShowDialog ();
+        }
     }
 }

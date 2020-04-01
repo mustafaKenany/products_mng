@@ -220,5 +220,18 @@ namespace products_mng.BL
 
         }
 
+        public DataTable RPT_ITMS_DTLS(int ID_PRODUCT)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter ("@ID_PRODUCT", SqlDbType.Int);
+            param[0].Value = ID_PRODUCT;
+            dt = dal.SelectData ("RPT_ITMS_DTLS", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
     }
 }

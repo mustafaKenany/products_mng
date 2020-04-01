@@ -92,7 +92,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1174, 129);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "البحث هنا";
+            this.groupBox1.Text = "الاجراءات الممكنة";
             // 
             // button4
             // 

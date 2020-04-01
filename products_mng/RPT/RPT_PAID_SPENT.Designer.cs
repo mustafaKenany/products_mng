@@ -29,23 +29,27 @@
         private void InitializeComponent()
         {
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel_date = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabelDETLS = new DevExpress.XtraReports.UI.XRLabel();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.rpT_TABLES1 = new products_mng.DAL.RPT_TABLES();
             this.xrLabelTITLE = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel_SLAESMAN = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabelDETLS = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel_date = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel_DOCSNO = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.rpT_TABLES1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel_DOCSNO,
+            this.xrLabel3,
             this.xrLabel_date,
             this.xrLabel2,
             this.xrLabelDETLS});
@@ -55,6 +59,41 @@
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.Detail.StylePriority.UseTextAlignment = false;
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // xrLabel_date
+            // 
+            this.xrLabel_date.Dpi = 254F;
+            this.xrLabel_date.LocationFloat = new DevExpress.Utils.PointFloat(578.5417F, 193.4167F);
+            this.xrLabel_date.Name = "xrLabel_date";
+            this.xrLabel_date.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
+            this.xrLabel_date.SizeF = new System.Drawing.SizeF(500F, 100F);
+            this.xrLabel_date.StylePriority.UsePadding = false;
+            this.xrLabel_date.StylePriority.UseTextAlignment = false;
+            this.xrLabel_date.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.Dpi = 254F;
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(25.00005F, 193.4167F);
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(500F, 100F);
+            this.xrLabel2.StylePriority.UsePadding = false;
+            this.xrLabel2.StylePriority.UseTextAlignment = false;
+            this.xrLabel2.Text = "تاريخ التسديد";
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabelDETLS
+            // 
+            this.xrLabelDETLS.Dpi = 254F;
+            this.xrLabelDETLS.LocationFloat = new DevExpress.Utils.PointFloat(25.00001F, 2.000039F);
+            this.xrLabelDETLS.Name = "xrLabelDETLS";
+            this.xrLabelDETLS.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
+            this.xrLabelDETLS.SizeF = new System.Drawing.SizeF(1806.646F, 171.4374F);
+            this.xrLabelDETLS.StylePriority.UsePadding = false;
+            this.xrLabelDETLS.StylePriority.UseTextAlignment = false;
+            this.xrLabelDETLS.Text = "xrLabelTITLE";
+            this.xrLabelDETLS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // TopMargin
             // 
@@ -108,6 +147,17 @@
             this.PageFooter.HeightF = 254F;
             this.PageFooter.Name = "PageFooter";
             // 
+            // xrLabel_SLAESMAN
+            // 
+            this.xrLabel_SLAESMAN.Dpi = 254F;
+            this.xrLabel_SLAESMAN.LocationFloat = new DevExpress.Utils.PointFloat(1305.917F, 114.9583F);
+            this.xrLabel_SLAESMAN.Name = "xrLabel_SLAESMAN";
+            this.xrLabel_SLAESMAN.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
+            this.xrLabel_SLAESMAN.SizeF = new System.Drawing.SizeF(500F, 100F);
+            this.xrLabel_SLAESMAN.StylePriority.UsePadding = false;
+            this.xrLabel_SLAESMAN.StylePriority.UseTextAlignment = false;
+            this.xrLabel_SLAESMAN.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // xrLabel1
             // 
             this.xrLabel1.Dpi = 254F;
@@ -120,51 +170,28 @@
             this.xrLabel1.Text = "أسم الكاشير او المستخدم";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel_SLAESMAN
+            // xrLabel3
             // 
-            this.xrLabel_SLAESMAN.Dpi = 254F;
-            this.xrLabel_SLAESMAN.LocationFloat = new DevExpress.Utils.PointFloat(1305.917F, 114.9583F);
-            this.xrLabel_SLAESMAN.Name = "xrLabel_SLAESMAN";
-            this.xrLabel_SLAESMAN.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
-            this.xrLabel_SLAESMAN.SizeF = new System.Drawing.SizeF(500F, 100F);
-            this.xrLabel_SLAESMAN.StylePriority.UsePadding = false;
-            this.xrLabel_SLAESMAN.StylePriority.UseTextAlignment = false;
-            this.xrLabel_SLAESMAN.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel3.Dpi = 254F;
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(1097.021F, 193.4167F);
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(314.7917F, 99.99998F);
+            this.xrLabel3.StylePriority.UsePadding = false;
+            this.xrLabel3.StylePriority.UseTextAlignment = false;
+            this.xrLabel3.Text = "رقم المستند";
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabelDETLS
+            // xrLabel_DOCSNO
             // 
-            this.xrLabelDETLS.Dpi = 254F;
-            this.xrLabelDETLS.LocationFloat = new DevExpress.Utils.PointFloat(25.00001F, 2.000039F);
-            this.xrLabelDETLS.Name = "xrLabelDETLS";
-            this.xrLabelDETLS.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
-            this.xrLabelDETLS.SizeF = new System.Drawing.SizeF(1806.646F, 171.4374F);
-            this.xrLabelDETLS.StylePriority.UsePadding = false;
-            this.xrLabelDETLS.StylePriority.UseTextAlignment = false;
-            this.xrLabelDETLS.Text = "xrLabelTITLE";
-            this.xrLabelDETLS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel2
-            // 
-            this.xrLabel2.Dpi = 254F;
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(25.00005F, 193.4167F);
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(500F, 100F);
-            this.xrLabel2.StylePriority.UsePadding = false;
-            this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "تاريخ التسديد";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel_date
-            // 
-            this.xrLabel_date.Dpi = 254F;
-            this.xrLabel_date.LocationFloat = new DevExpress.Utils.PointFloat(578.5417F, 193.4167F);
-            this.xrLabel_date.Name = "xrLabel_date";
-            this.xrLabel_date.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
-            this.xrLabel_date.SizeF = new System.Drawing.SizeF(500F, 100F);
-            this.xrLabel_date.StylePriority.UsePadding = false;
-            this.xrLabel_date.StylePriority.UseTextAlignment = false;
-            this.xrLabel_date.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel_DOCSNO.Dpi = 254F;
+            this.xrLabel_DOCSNO.LocationFloat = new DevExpress.Utils.PointFloat(1451.667F, 193.4167F);
+            this.xrLabel_DOCSNO.Name = "xrLabel_DOCSNO";
+            this.xrLabel_DOCSNO.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 254F);
+            this.xrLabel_DOCSNO.SizeF = new System.Drawing.SizeF(314.7917F, 99.99998F);
+            this.xrLabel_DOCSNO.StylePriority.UsePadding = false;
+            this.xrLabel_DOCSNO.StylePriority.UseTextAlignment = false;
+            this.xrLabel_DOCSNO.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // RPT_PAID_SPENT
             // 
@@ -213,5 +240,7 @@
         public DevExpress.XtraReports.UI.XRLabel xrLabel_date;
         public DevExpress.XtraReports.UI.XRLabel xrLabel2;
         public DevExpress.XtraReports.UI.XRLabel xrLabelDETLS;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel_DOCSNO;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel3;
     }
 }

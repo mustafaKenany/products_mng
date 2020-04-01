@@ -52,14 +52,15 @@
             this.Tool_ADDUSER = new System.Windows.Forms.ToolStripMenuItem();
             this.Tool_MNGUSERS = new System.Windows.Forms.ToolStripMenuItem();
             this.Tool_MONEY = new System.Windows.Forms.ToolStripMenuItem();
-            this.TooL_GETMONEY = new System.Windows.Forms.ToolStripMenuItem();
-            this.Tool_TAKEMONEY = new System.Windows.Forms.ToolStripMenuItem();
+            this.TooL_PAIDMONEY = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tool_SPENTMONEY = new System.Windows.Forms.ToolStripMenuItem();
             this.Tool_GET_TAKEMONEY = new System.Windows.Forms.ToolStripMenuItem();
-            this.Tool_DAILYMONEY = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tool_DAILYSPENT = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_mngdocs = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_REPORTS = new System.Windows.Forms.ToolStripMenuItem();
-            this.تقريرمبيعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_SLAESREP = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.تقريرمادةمعينةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_REPORITMS = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالعملاءToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالمستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالحساباتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -266,45 +267,57 @@
             // Tool_MONEY
             // 
             this.Tool_MONEY.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TooL_GETMONEY,
-            this.Tool_TAKEMONEY,
+            this.TooL_PAIDMONEY,
+            this.Tool_SPENTMONEY,
             this.Tool_GET_TAKEMONEY,
-            this.Tool_DAILYMONEY});
+            this.Tool_DAILYSPENT,
+            this.ToolStripMenuItem_mngdocs});
             this.Tool_MONEY.Enabled = false;
             this.Tool_MONEY.Name = "Tool_MONEY";
             this.Tool_MONEY.Size = new System.Drawing.Size(73, 28);
             this.Tool_MONEY.Text = "الحسابات";
             // 
-            // TooL_GETMONEY
+            // TooL_PAIDMONEY
             // 
-            this.TooL_GETMONEY.Name = "TooL_GETMONEY";
-            this.TooL_GETMONEY.Size = new System.Drawing.Size(182, 28);
-            this.TooL_GETMONEY.Text = "سندات القبض";
+            this.TooL_PAIDMONEY.Name = "TooL_PAIDMONEY";
+            this.TooL_PAIDMONEY.Size = new System.Drawing.Size(182, 28);
+            this.TooL_PAIDMONEY.Text = "سندات القبض";
+            this.TooL_PAIDMONEY.Click += new System.EventHandler(this.TooL_PAIDMONEY_Click);
             // 
-            // Tool_TAKEMONEY
+            // Tool_SPENTMONEY
             // 
-            this.Tool_TAKEMONEY.Name = "Tool_TAKEMONEY";
-            this.Tool_TAKEMONEY.Size = new System.Drawing.Size(182, 28);
-            this.Tool_TAKEMONEY.Text = "سندات الصرف";
+            this.Tool_SPENTMONEY.Name = "Tool_SPENTMONEY";
+            this.Tool_SPENTMONEY.Size = new System.Drawing.Size(182, 28);
+            this.Tool_SPENTMONEY.Text = "سندات الصرف";
+            this.Tool_SPENTMONEY.Click += new System.EventHandler(this.Tool_SPENTMONEY_Click);
             // 
             // Tool_GET_TAKEMONEY
             // 
             this.Tool_GET_TAKEMONEY.Name = "Tool_GET_TAKEMONEY";
             this.Tool_GET_TAKEMONEY.Size = new System.Drawing.Size(182, 28);
             this.Tool_GET_TAKEMONEY.Text = "سندات القيد";
+            this.Tool_GET_TAKEMONEY.Visible = false;
             // 
-            // Tool_DAILYMONEY
+            // Tool_DAILYSPENT
             // 
-            this.Tool_DAILYMONEY.Name = "Tool_DAILYMONEY";
-            this.Tool_DAILYMONEY.Size = new System.Drawing.Size(182, 28);
-            this.Tool_DAILYMONEY.Text = "الصرفيات اليومية";
+            this.Tool_DAILYSPENT.Name = "Tool_DAILYSPENT";
+            this.Tool_DAILYSPENT.Size = new System.Drawing.Size(182, 28);
+            this.Tool_DAILYSPENT.Text = "الصرفيات اليومية";
+            this.Tool_DAILYSPENT.Click += new System.EventHandler(this.Tool_DAILYSPENT_Click);
+            // 
+            // ToolStripMenuItem_mngdocs
+            // 
+            this.ToolStripMenuItem_mngdocs.Name = "ToolStripMenuItem_mngdocs";
+            this.ToolStripMenuItem_mngdocs.Size = new System.Drawing.Size(182, 28);
+            this.ToolStripMenuItem_mngdocs.Text = "ادارة المستندات";
+            this.ToolStripMenuItem_mngdocs.Click += new System.EventHandler(this.ToolStripMenuItem_mngdocs_Click);
             // 
             // ToolStripMenuItem_REPORTS
             // 
             this.ToolStripMenuItem_REPORTS.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.تقريرمبيعاتToolStripMenuItem,
+            this.ToolStripMenuItem_SLAESREP,
             this.تقريرمشترياتToolStripMenuItem,
-            this.تقريرمادةمعينةToolStripMenuItem,
+            this.ToolStripMenuItem_REPORITMS,
             this.تقريرالعملاءToolStripMenuItem,
             this.تقريرالمستخدمينToolStripMenuItem,
             this.تقريرالحساباتToolStripMenuItem});
@@ -313,11 +326,12 @@
             this.ToolStripMenuItem_REPORTS.Size = new System.Drawing.Size(64, 28);
             this.ToolStripMenuItem_REPORTS.Text = "التقارير";
             // 
-            // تقريرمبيعاتToolStripMenuItem
+            // ToolStripMenuItem_SLAESREP
             // 
-            this.تقريرمبيعاتToolStripMenuItem.Name = "تقريرمبيعاتToolStripMenuItem";
-            this.تقريرمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
-            this.تقريرمبيعاتToolStripMenuItem.Text = "تقرير مبيعات";
+            this.ToolStripMenuItem_SLAESREP.Name = "ToolStripMenuItem_SLAESREP";
+            this.ToolStripMenuItem_SLAESREP.Size = new System.Drawing.Size(189, 28);
+            this.ToolStripMenuItem_SLAESREP.Text = "تقرير مبيعات";
+            this.ToolStripMenuItem_SLAESREP.Click += new System.EventHandler(this.ToolStripMenuItem_SLAESREP_Click);
             // 
             // تقريرمشترياتToolStripMenuItem
             // 
@@ -326,11 +340,12 @@
             this.تقريرمشترياتToolStripMenuItem.Text = "تقرير مشتريات";
             this.تقريرمشترياتToolStripMenuItem.Visible = false;
             // 
-            // تقريرمادةمعينةToolStripMenuItem
+            // ToolStripMenuItem_REPORITMS
             // 
-            this.تقريرمادةمعينةToolStripMenuItem.Name = "تقريرمادةمعينةToolStripMenuItem";
-            this.تقريرمادةمعينةToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
-            this.تقريرمادةمعينةToolStripMenuItem.Text = "تقرير مواد";
+            this.ToolStripMenuItem_REPORITMS.Name = "ToolStripMenuItem_REPORITMS";
+            this.ToolStripMenuItem_REPORITMS.Size = new System.Drawing.Size(189, 28);
+            this.ToolStripMenuItem_REPORITMS.Text = "تقرير مواد";
+            this.ToolStripMenuItem_REPORITMS.Click += new System.EventHandler(this.ToolStripMenuItem_REPORITMS_Click);
             // 
             // تقريرالعملاءToolStripMenuItem
             // 
@@ -387,10 +402,10 @@
         private System.Windows.Forms.ToolStripMenuItem Tool_MNGITEMS;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem Tool_MNGCAT;
-        private System.Windows.Forms.ToolStripMenuItem TooL_GETMONEY;
-        private System.Windows.Forms.ToolStripMenuItem Tool_TAKEMONEY;
+        private System.Windows.Forms.ToolStripMenuItem TooL_PAIDMONEY;
+        private System.Windows.Forms.ToolStripMenuItem Tool_SPENTMONEY;
         private System.Windows.Forms.ToolStripMenuItem Tool_GET_TAKEMONEY;
-        private System.Windows.Forms.ToolStripMenuItem Tool_DAILYMONEY;
+        private System.Windows.Forms.ToolStripMenuItem Tool_DAILYSPENT;
         public System.Windows.Forms.ToolStripMenuItem tool_Backup;
         public System.Windows.Forms.ToolStripMenuItem tool_importBakup;
         public System.Windows.Forms.ToolStripMenuItem tool_SALES;
@@ -408,12 +423,13 @@
         public System.Windows.Forms.ToolStripMenuItem Tool_MNGCUSTOMER;
         public System.Windows.Forms.ToolStripMenuItem Tool_ADDUSER;
         public System.Windows.Forms.ToolStripMenuItem Tool_MNGUSERS;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORTS;
-        private System.Windows.Forms.ToolStripMenuItem تقريرمبيعاتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_SLAESREP;
         private System.Windows.Forms.ToolStripMenuItem تقريرمشترياتToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem تقريرمادةمعينةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORITMS;
         private System.Windows.Forms.ToolStripMenuItem تقريرالعملاءToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تقريرالمستخدمينToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تقريرالحساباتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_mngdocs;
+        public System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORTS;
     }
 }

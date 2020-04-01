@@ -56,7 +56,7 @@ namespace products_mng.PL
                 string BEGIN_DATE = dateTimePicker_BEGIN_DATE.Text;
                 string END_DATE = dateTimePicker_ENDATE.Text;
                 RPT.PRT_ALL_INVO x = new RPT.PRT_ALL_INVO ();
-                x.DataSource = ORD.SEARCH_ORDER_DATE (BL.CLS_ORDERS.ORDER_TYPES, BEGIN_DATE, END_DATE);
+                x.DataSource = ORD.SEARCH_ORDER_DATE (0, BEGIN_DATE, END_DATE);
                 x.xrLabel_title.Text = "قوائم المبيعات للفترة";
                 x.xrLabel_BEGINDATE.Text = dateTimePicker_BEGIN_DATE.Text;
                 x.xrLabel_ENDDATE.Text = dateTimePicker_ENDATE.Text;
