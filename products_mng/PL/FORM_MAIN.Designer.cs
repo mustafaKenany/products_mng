@@ -62,7 +62,7 @@
             this.تقريرمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_REPORITMS = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_COUST = new System.Windows.Forms.ToolStripMenuItem();
-            this.تقريرالمستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_USRS = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالحساباتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -319,7 +319,7 @@
             this.تقريرمشترياتToolStripMenuItem,
             this.ToolStripMenuItem_REPORITMS,
             this.ToolStripMenuItem_COUST,
-            this.تقريرالمستخدمينToolStripMenuItem,
+            this.ToolStripMenuItem_USRS,
             this.تقريرالحساباتToolStripMenuItem});
             this.ToolStripMenuItem_REPORTS.Enabled = false;
             this.ToolStripMenuItem_REPORTS.Name = "ToolStripMenuItem_REPORTS";
@@ -354,11 +354,12 @@
             this.ToolStripMenuItem_COUST.Text = "تقرير العملاء";
             this.ToolStripMenuItem_COUST.Click += new System.EventHandler(this.ToolStripMenuItem_COUST_Click);
             // 
-            // تقريرالمستخدمينToolStripMenuItem
+            // ToolStripMenuItem_USRS
             // 
-            this.تقريرالمستخدمينToolStripMenuItem.Name = "تقريرالمستخدمينToolStripMenuItem";
-            this.تقريرالمستخدمينToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
-            this.تقريرالمستخدمينToolStripMenuItem.Text = "تقرير المستخدمين";
+            this.ToolStripMenuItem_USRS.Name = "ToolStripMenuItem_USRS";
+            this.ToolStripMenuItem_USRS.Size = new System.Drawing.Size(189, 28);
+            this.ToolStripMenuItem_USRS.Text = "تقرير المستخدمين";
+            this.ToolStripMenuItem_USRS.Click += new System.EventHandler(this.ToolStripMenuItem_USRS_Click);
             // 
             // تقريرالحساباتToolStripMenuItem
             // 
@@ -428,7 +429,7 @@
         private System.Windows.Forms.ToolStripMenuItem تقريرمشترياتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORITMS;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_COUST;
-        private System.Windows.Forms.ToolStripMenuItem تقريرالمستخدمينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_USRS;
         private System.Windows.Forms.ToolStripMenuItem تقريرالحساباتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_mngdocs;
         public System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORTS;
