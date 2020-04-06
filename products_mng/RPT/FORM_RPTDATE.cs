@@ -33,12 +33,12 @@ namespace products_mng.PL
                 x.xrLabel_BEGINDATE.Text = BEGIN_DATE;
                 x.xrLabel_ENDDATE.Text = END_DATE;
                 x.ShowPreviewDialog ();
+                this.Close ();
             }
             else
             {
                 MessageBox.Show ("لا توجد بيانات");
             }
-            this.Close ();
         }
     }
 }

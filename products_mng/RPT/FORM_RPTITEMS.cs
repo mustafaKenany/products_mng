@@ -27,14 +27,25 @@ namespace products_mng.RPT
         {
             if (gridView1.RowCount > 0)
             {
-                int PRD_ID =Convert.ToInt16( gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_PRODUCT"]).ToString ());
+                int PRD_ID = Convert.ToInt16 (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_PRODUCT"]).ToString ());
                 string PRDLABEL = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["LABEL_PRODUCT"]).ToString ();
                 RPT.RPT_ITMSDTLS X = new RPT_ITMSDTLS ();
-                X.DataSource = PRD.RPT_PRODUCTS_DTLS (PRD_ID);
-                X.xrTableCell_PRDLABEL.Text = PRDLABEL;
-                X.ShowPreviewDialog ();
-                
-                
+                var dt = new DataTable ();
+                dt = PRD.RPT_PRODUCTS_DTLS (PRD_ID);
+                if (dt.Rows.Count > 0)
+                {
+                    Cursor = Cursors.WaitCursor;
+                    X.DataSource = dt;
+                    X.xrTableCell_PRDLABEL.Text = PRDLABEL;
+                    X.ShowPreviewDialog ();
+                    Cursor = Cursors.Arrow;
+                }
+                else
+                {
+                    MessageBox.Show ("لا توجد معلومات");
+                }
+
+
             }
         }
     }
