@@ -68,7 +68,7 @@ namespace products_mng.PL
                     }
                     if (USR_ACC[6] == 1)
                     {
-                        
+
                         FORM_MAIN.getMainForm.Tool_CUSTOMER.Enabled = true;
                         FORM_MAIN.getMainForm.Tool_ADDCUSTOMER.Enabled = true;
 
@@ -101,7 +101,7 @@ namespace products_mng.PL
                         FORM_MAIN.getMainForm.ToolStripMenuItem_REPORTS.Enabled = true;
                     }
 
-
+                    FORM_MAIN.getMainForm.tool_login.Enabled = false;
                     this.Close ();
                 }
                 else

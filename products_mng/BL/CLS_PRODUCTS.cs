@@ -110,7 +110,6 @@ namespace products_mng.BL
 
         }
 
-
         public int GET_ID_PRODUCT()
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();

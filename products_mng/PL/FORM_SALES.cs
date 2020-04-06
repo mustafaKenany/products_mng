@@ -14,6 +14,19 @@ namespace products_mng.PL
     public partial class FORM_SALES : Form
     {
         private static FORM_SALES frm;
+
+        BL.CLS_ORDERS ORD = new BL.CLS_ORDERS ();
+        BL.CLS_MNG_CAT CATEG = new BL.CLS_MNG_CAT ();
+        BL.CLS_PRODUCTS PROD = new BL.CLS_PRODUCTS ();
+        BL.CLS_COUSTOMERS COUST = new BL.CLS_COUSTOMERS ();
+        BL.CLS_REPORT_LIST RPT = new BL.CLS_REPORT_LIST ();
+        int ID_ORDER = 0;
+        int ID_COUST = 0;
+        int ID_MONEY = 0;
+        int ORDER_TYPE = 0;
+        int PAID_OR_NOT = 0;
+        String SALES_MAN = "";
+
         static void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
             frm = null;
@@ -31,17 +44,6 @@ namespace products_mng.PL
             }
         }
 
-
-        BL.CLS_ORDERS ORD = new BL.CLS_ORDERS ();
-        BL.CLS_MNG_CAT CATEG = new BL.CLS_MNG_CAT ();
-        BL.CLS_PRODUCTS PROD = new BL.CLS_PRODUCTS ();
-        BL.CLS_COUSTOMERS COUST = new BL.CLS_COUSTOMERS ();
-        int ID_ORDER = 0;
-        int ID_COUST = 0;
-        int ID_MONEY = 0;
-        int ORDER_TYPE = 0;
-        int PAID_OR_NOT = 0;
-        String SALES_MAN = "";
 
         public FORM_SALES()
         {
@@ -213,13 +215,13 @@ namespace products_mng.PL
             float PAID_AMOUNT = float.Parse (textBox_INVO_PAID.Text);
             float DISCOUNT_AMOUNT = float.Parse (textBox_INVO_DISC.Text);
             float REMINDER_AMOUNT = float.Parse (label_INVO_REMID.Text);
-            ORD.ADD_ORDER_MONEY (ID_MONEY,ID_ORDER, ID_COUST, TOTAL_AMOUNT, PAID_AMOUNT, DISCOUNT_AMOUNT, REMINDER_AMOUNT);
+            ORD.ADD_ORDER_MONEY (ID_MONEY, ID_ORDER, ID_COUST, TOTAL_AMOUNT, PAID_AMOUNT, DISCOUNT_AMOUNT, REMINDER_AMOUNT);
         }
 
         private void ADD_MONEY_DETAILS()
         {
-            
-            ORD.ADD_MONEY_DETAILS (ID_MONEY, ID_COUST, "بيع مباشر", ("فاتورة مرقمة "+label_ID_ORDER.Text+" "+textBox_ORDER_NOTES.Text),DateTime.Now);
+
+            ORD.ADD_MONEY_DETAILS (ID_MONEY, ID_COUST, "بيع مباشر", ("فاتورة مرقمة " + label_ID_ORDER.Text + " " + textBox_ORDER_NOTES.Text), DateTime.Now);
         }
 
         private bool CHECK_MONEY()
@@ -336,7 +338,7 @@ namespace products_mng.PL
             var ORDER_TYPES = BL.CLS_ORDERS.ORDER_TYPES;
             button_PRT_INVO.Enabled = false;
             RPT.RPT_INVO x = new RPT.RPT_INVO ();
-            x.DataSource = ORD.PRT_INVO_ORDER (ORDER_TYPES, LAST_ORDER_ID);
+            x.DataSource = RPT.PRT_INVO_ORDER (ORDER_TYPES, LAST_ORDER_ID);
             x.ShowPreviewDialog ();
 
 
@@ -448,5 +450,18 @@ namespace products_mng.PL
 
 
         #endregion
+
+        private void textBox_COUST_NAME_Leave(object sender, EventArgs e)
+        {
+            if (textBox_COUST_NAME.Text != "")
+            {
+                DataTable dt = new DataTable ();
+                dt = COUST.SEARCH_COUSTOMER (textBox_COUST_NAME.Text);
+                if (dt.Rows.Count > 0)
+                {
+                    label_COUST_ID.Text = dt.Rows[0]["ID_COUSTOMER"].ToString ();
+                }
+            }
+        }
     }
 }

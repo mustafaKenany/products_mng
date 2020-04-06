@@ -14,7 +14,7 @@ namespace products_mng.PL
     {
         private static FORM_MNG_ORDERS frm;
         BL.CLS_ORDERS ORD = new BL.CLS_ORDERS ();
-
+        BL.CLS_REPORT_LIST RPT = new BL.CLS_REPORT_LIST ();
         static void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
             frm = null;
@@ -94,7 +94,7 @@ namespace products_mng.PL
                 var ORDER_TYPES = BL.CLS_ORDERS.ORDER_TYPES;
                 int ID_ORD =int.Parse( gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_ORDER"]).ToString ());
                 RPT.RPT_INVO x = new RPT.RPT_INVO ();
-                x.DataSource = ORD.PRT_INVO_ORDER (ORDER_TYPES, ID_ORD);
+                x.DataSource = RPT.PRT_INVO_ORDER (ORDER_TYPES, ID_ORD);
                 x.ShowPreviewDialog ();
                 //MessageBox.Show (ID_ORD.ToString ());
 
@@ -108,7 +108,7 @@ namespace products_mng.PL
                 var ORDER_TYPES = BL.CLS_ORDERS.ORDER_TYPES;
                 int ID_ORD = int.Parse (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_ORDER"]).ToString ());
                 RPT.RPT_INVO x = new RPT.RPT_INVO ();
-                x.DataSource = ORD.PRT_INVO_ORDER (ORDER_TYPES, ID_ORD);
+                x.DataSource = RPT.PRT_INVO_ORDER (ORDER_TYPES, ID_ORD);
                 x.ShowPreviewDialog ();
                 //MessageBox.Show (ID_ORD.ToString ());
 

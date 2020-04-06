@@ -139,7 +139,13 @@ namespace products_mng.PL
 
         private void ToolStripMenuItem_REPORITMS_Click(object sender, EventArgs e)
         {
-            RPT.FORM_RPTITEMS FORM = new RPT.FORM_RPTITEMS ();
+            RPT.FORM_RPT_ITEMS FORM = new RPT.FORM_RPT_ITEMS ();
+            FORM.ShowDialog ();
+        }
+
+        private void ToolStripMenuItem_COUST_Click(object sender, EventArgs e)
+        {
+            RPT.FORM_RPT_COUSTOMERS FORM = new RPT.FORM_RPT_COUSTOMERS ();
             FORM.ShowDialog ();
         }
     }

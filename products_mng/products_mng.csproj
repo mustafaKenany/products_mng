@@ -94,6 +94,7 @@
     <Compile Include="BL\CLS_LOGIN.cs" />
     <Compile Include="BL\CLS_MNG_CAT.cs" />
     <Compile Include="BL\CLS_ORDERS.cs" />
+    <Compile Include="BL\CLS_REPORT_LIST.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="DAL\RPT_TABLES.cs">
       <DependentUpon>RPT_TABLES.xsd</DependentUpon>
@@ -145,11 +146,11 @@
     <Compile Include="PL\FORM_PAID_MONEY.Designer.cs">
       <DependentUpon>FORM_PAID_MONEY.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\FORM_RPTDATE.cs">
+    <Compile Include="RPT\FORM_RPT_DATES.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RPT\FORM_RPTDATE.Designer.cs">
-      <DependentUpon>FORM_RPTDATE.cs</DependentUpon>
+    <Compile Include="RPT\FORM_RPT_DATES.Designer.cs">
+      <DependentUpon>FORM_RPT_DATES.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FORM_SPENT_MONEY.cs">
       <SubType>Form</SubType>
@@ -211,11 +212,17 @@
     <Compile Include="PL\FORM_PURCHASES.Designer.cs">
       <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\FORM_RPTITEMS.cs">
+    <Compile Include="RPT\FORM_RPT_ITEMS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RPT\FORM_RPTITEMS.Designer.cs">
-      <DependentUpon>FORM_RPTITEMS.cs</DependentUpon>
+    <Compile Include="RPT\FORM_RPT_ITEMS.Designer.cs">
+      <DependentUpon>FORM_RPT_ITEMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\FORM_RPT_COUSTOMERS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\FORM_RPT_COUSTOMERS.Designer.cs">
+      <DependentUpon>FORM_RPT_COUSTOMERS.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\FORM_RPT_SALES.cs">
       <SubType>Form</SubType>
@@ -243,11 +250,23 @@
     <Compile Include="RPT\RPT_INVO.Designer.cs">
       <DependentUpon>RPT_INVO.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\RPT_ITEMS_COUST.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_ITEMS_COUST.Designer.cs">
+      <DependentUpon>RPT_ITEMS_COUST.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\RPT_ITMSDTLS.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\RPT_ITMSDTLS.Designer.cs">
       <DependentUpon>RPT_ITMSDTLS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\RPT_ONE_ITEM_ONE_COUST.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_ONE_ITEM_ONE_COUST.Designer.cs">
+      <DependentUpon>RPT_ONE_ITEM_ONE_COUST.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\RPT_PAID_SPENT.cs">
       <SubType>Component</SubType>
@@ -276,8 +295,11 @@
     <EmbeddedResource Include="PL\FORM_PAID_MONEY.resx">
       <DependentUpon>FORM_PAID_MONEY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RPT\FORM_RPTDATE.resx">
-      <DependentUpon>FORM_RPTDATE.cs</DependentUpon>
+    <EmbeddedResource Include="RPT\FORM_RPT_COUSTOMERS.resx">
+      <DependentUpon>FORM_RPT_COUSTOMERS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\FORM_RPT_DATES.resx">
+      <DependentUpon>FORM_RPT_DATES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_SPENT_MONEY.resx">
       <DependentUpon>FORM_SPENT_MONEY.cs</DependentUpon>
@@ -309,8 +331,8 @@
     <EmbeddedResource Include="PL\FORM_PURCHASES.resx">
       <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RPT\FORM_RPTITEMS.resx">
-      <DependentUpon>FORM_RPTITEMS.cs</DependentUpon>
+    <EmbeddedResource Include="RPT\FORM_RPT_ITEMS.resx">
+      <DependentUpon>FORM_RPT_ITEMS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\FORM_RPT_SALES.resx">
       <DependentUpon>FORM_RPT_SALES.cs</DependentUpon>
@@ -334,8 +356,14 @@
     <EmbeddedResource Include="RPT\RPT_INVO.resx">
       <DependentUpon>RPT_INVO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_ITEMS_COUST.resx">
+      <DependentUpon>RPT_ITEMS_COUST.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_ITMSDTLS.resx">
       <DependentUpon>RPT_ITMSDTLS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_ONE_ITEM_ONE_COUST.resx">
+      <DependentUpon>RPT_ONE_ITEM_ONE_COUST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_PAID_SPENT.resx">
       <DependentUpon>RPT_PAID_SPENT.cs</DependentUpon>

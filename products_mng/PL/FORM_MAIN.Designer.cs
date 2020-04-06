@@ -61,7 +61,7 @@
             this.ToolStripMenuItem_SLAESREP = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_REPORITMS = new System.Windows.Forms.ToolStripMenuItem();
-            this.تقريرالعملاءToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_COUST = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالمستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالحساباتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
@@ -318,7 +318,7 @@
             this.ToolStripMenuItem_SLAESREP,
             this.تقريرمشترياتToolStripMenuItem,
             this.ToolStripMenuItem_REPORITMS,
-            this.تقريرالعملاءToolStripMenuItem,
+            this.ToolStripMenuItem_COUST,
             this.تقريرالمستخدمينToolStripMenuItem,
             this.تقريرالحساباتToolStripMenuItem});
             this.ToolStripMenuItem_REPORTS.Enabled = false;
@@ -347,11 +347,12 @@
             this.ToolStripMenuItem_REPORITMS.Text = "تقرير مواد";
             this.ToolStripMenuItem_REPORITMS.Click += new System.EventHandler(this.ToolStripMenuItem_REPORITMS_Click);
             // 
-            // تقريرالعملاءToolStripMenuItem
+            // ToolStripMenuItem_COUST
             // 
-            this.تقريرالعملاءToolStripMenuItem.Name = "تقريرالعملاءToolStripMenuItem";
-            this.تقريرالعملاءToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
-            this.تقريرالعملاءToolStripMenuItem.Text = "تقرير العملاء";
+            this.ToolStripMenuItem_COUST.Name = "ToolStripMenuItem_COUST";
+            this.ToolStripMenuItem_COUST.Size = new System.Drawing.Size(189, 28);
+            this.ToolStripMenuItem_COUST.Text = "تقرير العملاء";
+            this.ToolStripMenuItem_COUST.Click += new System.EventHandler(this.ToolStripMenuItem_COUST_Click);
             // 
             // تقريرالمستخدمينToolStripMenuItem
             // 
@@ -426,7 +427,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_SLAESREP;
         private System.Windows.Forms.ToolStripMenuItem تقريرمشترياتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORITMS;
-        private System.Windows.Forms.ToolStripMenuItem تقريرالعملاءToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_COUST;
         private System.Windows.Forms.ToolStripMenuItem تقريرالمستخدمينToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تقريرالحساباتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_mngdocs;

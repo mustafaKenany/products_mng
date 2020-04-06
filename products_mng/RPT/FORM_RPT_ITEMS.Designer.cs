@@ -1,6 +1,6 @@
 ﻿namespace products_mng.RPT
 {
-    partial class FORM_RPTITEMS
+    partial class FORM_RPT_ITEMS
     {
         /// <summary>
         /// Required designer variable.
@@ -53,7 +53,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(652, 105);
+            this.groupBox1.Size = new System.Drawing.Size(649, 105);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "الاجراءات الممكنة";
@@ -123,7 +123,7 @@
             this.gridControl_ITEMS.Location = new System.Drawing.Point(5, 110);
             this.gridControl_ITEMS.MainView = this.gridView1;
             this.gridControl_ITEMS.Name = "gridControl_ITEMS";
-            this.gridControl_ITEMS.Size = new System.Drawing.Size(652, 447);
+            this.gridControl_ITEMS.Size = new System.Drawing.Size(649, 497);
             this.gridControl_ITEMS.TabIndex = 1;
             this.gridControl_ITEMS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -204,12 +204,12 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             // 
-            // FORM_RPTITEMS
+            // FORM_RPT_ITEMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(39)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(662, 562);
+            this.ClientSize = new System.Drawing.Size(659, 612);
             this.Controls.Add(this.gridControl_ITEMS);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Cairo Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -217,7 +217,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FORM_RPTITEMS";
+            this.Name = "FORM_RPT_ITEMS";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

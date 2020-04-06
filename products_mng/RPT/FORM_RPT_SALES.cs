@@ -13,7 +13,7 @@ namespace products_mng.PL
     public partial class FORM_RPT_SALES : Form
     {
         BL.CLS_ORDERS ORD = new BL.CLS_ORDERS ();
-
+        BL.CLS_REPORT_LIST RPT = new BL.CLS_REPORT_LIST ();
         public FORM_RPT_SALES()
         {
             InitializeComponent ();
@@ -44,7 +44,7 @@ namespace products_mng.PL
             {
                 int ID_ORDER = Convert.ToInt16 (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_ORDER"]).ToString ());
                 RPT.RPT_INVO x = new RPT.RPT_INVO ();
-                x.DataSource = ORD.PRT_INVO_ORDER (BL.CLS_ORDERS.ORDER_TYPES, ID_ORDER);
+                x.DataSource = RPT.PRT_INVO_ORDER (BL.CLS_ORDERS.ORDER_TYPES, ID_ORDER);
                 x.ShowPreviewDialog ();
             }
         }

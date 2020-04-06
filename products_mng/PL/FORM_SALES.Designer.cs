@@ -110,7 +110,6 @@
             this.label_MONEYIES_ID.TabIndex = 4;
             this.label_MONEYIES_ID.Text = "MONEY_ID";
             this.label_MONEYIES_ID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_MONEYIES_ID.Visible = false;
             // 
             // label_COUST_ID
             // 
@@ -121,7 +120,6 @@
             this.label_COUST_ID.TabIndex = 3;
             this.label_COUST_ID.Text = "COUST_ID";
             this.label_COUST_ID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_COUST_ID.Visible = false;
             // 
             // label_SALES_MAN
             // 
@@ -592,6 +590,7 @@
             this.textBox_COUST_NAME.Size = new System.Drawing.Size(223, 34);
             this.textBox_COUST_NAME.TabIndex = 13;
             this.textBox_COUST_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_COUST_NAME.Leave += new System.EventHandler(this.textBox_COUST_NAME_Leave);
             // 
             // label7
             // 

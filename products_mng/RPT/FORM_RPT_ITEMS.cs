@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 namespace products_mng.RPT
 {
-    public partial class FORM_RPTITEMS : Form
+    public partial class FORM_RPT_ITEMS : Form
     {
         BL.CLS_PRODUCTS PRD = new BL.CLS_PRODUCTS ();
-        public FORM_RPTITEMS()
+        public FORM_RPT_ITEMS()
         {
             InitializeComponent ();
         }
