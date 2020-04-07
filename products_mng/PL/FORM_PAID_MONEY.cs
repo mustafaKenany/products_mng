@@ -15,6 +15,7 @@ namespace products_mng.PL
     {
         BL.CLS_COUSTOMERS COUST = new BL.CLS_COUSTOMERS ();
         BL.CLS_MONEYIES paid = new BL.CLS_MONEYIES ();
+        
         public FORM_PAID_MONEY()
         {
             InitializeComponent ();
@@ -82,7 +83,8 @@ namespace products_mng.PL
                 int PAID_ID = int.Parse (label_PAIDID.Text);
                 DateTime PAID_DATE = dateTimePicker_DATEPAID.Value;
                 string PAID_NOTES = textBox_NOTESPAID.Text;
-                paid.ADD_PAID_SPENT_MONEY (PAID_ID, COUST_ID, PAID_MONEY, PAID_DATE, "سندات قبض", PAID_NOTES);
+                String SALES_MAN = BL.CLS_LOGIN.SALES_MAN;
+                paid.ADD_PAID_SPENT_MONEY (PAID_ID, COUST_ID, PAID_MONEY, PAID_DATE, "سندات قبض", PAID_NOTES,SALES_MAN);
                 MessageBox.Show ("تم الحفظ بنجاح", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 COUS_NAME.Enabled = textBox_MONEYPAID.Enabled = textBox_NOTESPAID.Enabled = dateTimePicker_DATEPAID.Enabled = false;
                 button_PRTPAID.Enabled = true;

@@ -28,6 +28,8 @@ namespace products_mng.DAL {
         
         private PRT_ALL_INVOSDataTable tablePRT_ALL_INVOS;
         
+        private PAID_SPENT_MONEYDataTable tablePAID_SPENT_MONEY;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -61,6 +63,9 @@ namespace products_mng.DAL {
                 }
                 if ((ds.Tables["PRT_ALL_INVOS"] != null)) {
                     base.Tables.Add(new PRT_ALL_INVOSDataTable(ds.Tables["PRT_ALL_INVOS"]));
+                }
+                if ((ds.Tables["PAID_SPENT_MONEY"] != null)) {
+                    base.Tables.Add(new PAID_SPENT_MONEYDataTable(ds.Tables["PAID_SPENT_MONEY"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -97,6 +102,16 @@ namespace products_mng.DAL {
         public PRT_ALL_INVOSDataTable PRT_ALL_INVOS {
             get {
                 return this.tablePRT_ALL_INVOS;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PAID_SPENT_MONEYDataTable PAID_SPENT_MONEY {
+            get {
+                return this.tablePAID_SPENT_MONEY;
             }
         }
         
@@ -173,6 +188,9 @@ namespace products_mng.DAL {
                 if ((ds.Tables["PRT_ALL_INVOS"] != null)) {
                     base.Tables.Add(new PRT_ALL_INVOSDataTable(ds.Tables["PRT_ALL_INVOS"]));
                 }
+                if ((ds.Tables["PAID_SPENT_MONEY"] != null)) {
+                    base.Tables.Add(new PAID_SPENT_MONEYDataTable(ds.Tables["PAID_SPENT_MONEY"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -218,6 +236,12 @@ namespace products_mng.DAL {
                     this.tablePRT_ALL_INVOS.InitVars();
                 }
             }
+            this.tablePAID_SPENT_MONEY = ((PAID_SPENT_MONEYDataTable)(base.Tables["PAID_SPENT_MONEY"]));
+            if ((initTable == true)) {
+                if ((this.tablePAID_SPENT_MONEY != null)) {
+                    this.tablePAID_SPENT_MONEY.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -232,6 +256,8 @@ namespace products_mng.DAL {
             base.Tables.Add(this.tablePRT_INVO_ORDER);
             this.tablePRT_ALL_INVOS = new PRT_ALL_INVOSDataTable();
             base.Tables.Add(this.tablePRT_ALL_INVOS);
+            this.tablePAID_SPENT_MONEY = new PAID_SPENT_MONEYDataTable();
+            base.Tables.Add(this.tablePAID_SPENT_MONEY);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -243,6 +269,12 @@ namespace products_mng.DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializePRT_ALL_INVOS() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializePAID_SPENT_MONEY() {
             return false;
         }
         
@@ -306,6 +338,9 @@ namespace products_mng.DAL {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void PRT_ALL_INVOSRowChangeEventHandler(object sender, PRT_ALL_INVOSRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void PAID_SPENT_MONEYRowChangeEventHandler(object sender, PAID_SPENT_MONEYRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1153,6 +1188,309 @@ namespace products_mng.DAL {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "PRT_ALL_INVOSDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PAID_SPENT_MONEYDataTable : global::System.Data.TypedTableBase<PAID_SPENT_MONEYRow> {
+            
+            private global::System.Data.DataColumn columnPAID_SPENT_ID;
+            
+            private global::System.Data.DataColumn columnTHE_AMOUNT;
+            
+            private global::System.Data.DataColumn columnPAID_SPENT_DATE;
+            
+            private global::System.Data.DataColumn columnPAID_SPENT_TYPE;
+            
+            private global::System.Data.DataColumn columnNOTS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAID_SPENT_MONEYDataTable() {
+                this.TableName = "PAID_SPENT_MONEY";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PAID_SPENT_MONEYDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PAID_SPENT_MONEYDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAID_SPENT_IDColumn {
+                get {
+                    return this.columnPAID_SPENT_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn THE_AMOUNTColumn {
+                get {
+                    return this.columnTHE_AMOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAID_SPENT_DATEColumn {
+                get {
+                    return this.columnPAID_SPENT_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAID_SPENT_TYPEColumn {
+                get {
+                    return this.columnPAID_SPENT_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NOTSColumn {
+                get {
+                    return this.columnNOTS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAID_SPENT_MONEYRow this[int index] {
+                get {
+                    return ((PAID_SPENT_MONEYRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PAID_SPENT_MONEYRowChangeEventHandler PAID_SPENT_MONEYRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PAID_SPENT_MONEYRowChangeEventHandler PAID_SPENT_MONEYRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PAID_SPENT_MONEYRowChangeEventHandler PAID_SPENT_MONEYRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PAID_SPENT_MONEYRowChangeEventHandler PAID_SPENT_MONEYRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPAID_SPENT_MONEYRow(PAID_SPENT_MONEYRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAID_SPENT_MONEYRow AddPAID_SPENT_MONEYRow(short PAID_SPENT_ID, double THE_AMOUNT, System.DateTime PAID_SPENT_DATE, string PAID_SPENT_TYPE, string NOTS) {
+                PAID_SPENT_MONEYRow rowPAID_SPENT_MONEYRow = ((PAID_SPENT_MONEYRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        PAID_SPENT_ID,
+                        THE_AMOUNT,
+                        PAID_SPENT_DATE,
+                        PAID_SPENT_TYPE,
+                        NOTS};
+                rowPAID_SPENT_MONEYRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPAID_SPENT_MONEYRow);
+                return rowPAID_SPENT_MONEYRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PAID_SPENT_MONEYDataTable cln = ((PAID_SPENT_MONEYDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PAID_SPENT_MONEYDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnPAID_SPENT_ID = base.Columns["PAID_SPENT_ID"];
+                this.columnTHE_AMOUNT = base.Columns["THE_AMOUNT"];
+                this.columnPAID_SPENT_DATE = base.Columns["PAID_SPENT_DATE"];
+                this.columnPAID_SPENT_TYPE = base.Columns["PAID_SPENT_TYPE"];
+                this.columnNOTS = base.Columns["NOTS"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnPAID_SPENT_ID = new global::System.Data.DataColumn("PAID_SPENT_ID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAID_SPENT_ID);
+                this.columnTHE_AMOUNT = new global::System.Data.DataColumn("THE_AMOUNT", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTHE_AMOUNT);
+                this.columnPAID_SPENT_DATE = new global::System.Data.DataColumn("PAID_SPENT_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAID_SPENT_DATE);
+                this.columnPAID_SPENT_TYPE = new global::System.Data.DataColumn("PAID_SPENT_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAID_SPENT_TYPE);
+                this.columnNOTS = new global::System.Data.DataColumn("NOTS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTS);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAID_SPENT_MONEYRow NewPAID_SPENT_MONEYRow() {
+                return ((PAID_SPENT_MONEYRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PAID_SPENT_MONEYRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PAID_SPENT_MONEYRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PAID_SPENT_MONEYRowChanged != null)) {
+                    this.PAID_SPENT_MONEYRowChanged(this, new PAID_SPENT_MONEYRowChangeEvent(((PAID_SPENT_MONEYRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PAID_SPENT_MONEYRowChanging != null)) {
+                    this.PAID_SPENT_MONEYRowChanging(this, new PAID_SPENT_MONEYRowChangeEvent(((PAID_SPENT_MONEYRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PAID_SPENT_MONEYRowDeleted != null)) {
+                    this.PAID_SPENT_MONEYRowDeleted(this, new PAID_SPENT_MONEYRowChangeEvent(((PAID_SPENT_MONEYRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PAID_SPENT_MONEYRowDeleting != null)) {
+                    this.PAID_SPENT_MONEYRowDeleting(this, new PAID_SPENT_MONEYRowChangeEvent(((PAID_SPENT_MONEYRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovePAID_SPENT_MONEYRow(PAID_SPENT_MONEYRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                RPT_TABLES ds = new RPT_TABLES();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PAID_SPENT_MONEYDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2064,6 +2402,161 @@ namespace products_mng.DAL {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PAID_SPENT_MONEYRow : global::System.Data.DataRow {
+            
+            private PAID_SPENT_MONEYDataTable tablePAID_SPENT_MONEY;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PAID_SPENT_MONEYRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePAID_SPENT_MONEY = ((PAID_SPENT_MONEYDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short PAID_SPENT_ID {
+                get {
+                    try {
+                        return ((short)(this[this.tablePAID_SPENT_MONEY.PAID_SPENT_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PAID_SPENT_ID\' in table \'PAID_SPENT_MONEY\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePAID_SPENT_MONEY.PAID_SPENT_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double THE_AMOUNT {
+                get {
+                    try {
+                        return ((double)(this[this.tablePAID_SPENT_MONEY.THE_AMOUNTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'THE_AMOUNT\' in table \'PAID_SPENT_MONEY\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePAID_SPENT_MONEY.THE_AMOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime PAID_SPENT_DATE {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePAID_SPENT_MONEY.PAID_SPENT_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PAID_SPENT_DATE\' in table \'PAID_SPENT_MONEY\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePAID_SPENT_MONEY.PAID_SPENT_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PAID_SPENT_TYPE {
+                get {
+                    try {
+                        return ((string)(this[this.tablePAID_SPENT_MONEY.PAID_SPENT_TYPEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PAID_SPENT_TYPE\' in table \'PAID_SPENT_MONEY\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePAID_SPENT_MONEY.PAID_SPENT_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NOTS {
+                get {
+                    try {
+                        return ((string)(this[this.tablePAID_SPENT_MONEY.NOTSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTS\' in table \'PAID_SPENT_MONEY\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePAID_SPENT_MONEY.NOTSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPAID_SPENT_IDNull() {
+                return this.IsNull(this.tablePAID_SPENT_MONEY.PAID_SPENT_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPAID_SPENT_IDNull() {
+                this[this.tablePAID_SPENT_MONEY.PAID_SPENT_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTHE_AMOUNTNull() {
+                return this.IsNull(this.tablePAID_SPENT_MONEY.THE_AMOUNTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTHE_AMOUNTNull() {
+                this[this.tablePAID_SPENT_MONEY.THE_AMOUNTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPAID_SPENT_DATENull() {
+                return this.IsNull(this.tablePAID_SPENT_MONEY.PAID_SPENT_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPAID_SPENT_DATENull() {
+                this[this.tablePAID_SPENT_MONEY.PAID_SPENT_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPAID_SPENT_TYPENull() {
+                return this.IsNull(this.tablePAID_SPENT_MONEY.PAID_SPENT_TYPEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPAID_SPENT_TYPENull() {
+                this[this.tablePAID_SPENT_MONEY.PAID_SPENT_TYPEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNOTSNull() {
+                return this.IsNull(this.tablePAID_SPENT_MONEY.NOTSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNOTSNull() {
+                this[this.tablePAID_SPENT_MONEY.NOTSColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2117,6 +2610,40 @@ namespace products_mng.DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PRT_ALL_INVOSRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class PAID_SPENT_MONEYRowChangeEvent : global::System.EventArgs {
+            
+            private PAID_SPENT_MONEYRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAID_SPENT_MONEYRowChangeEvent(PAID_SPENT_MONEYRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAID_SPENT_MONEYRow Row {
                 get {
                     return this.eventRow;
                 }

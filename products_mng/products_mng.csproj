@@ -280,11 +280,11 @@
     <Compile Include="RPT\RPT_PAID_SPENT.Designer.cs">
       <DependentUpon>RPT_PAID_SPENT.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\RPT_PAID_SPENT_MONEY.cs">
+    <Compile Include="RPT\RPT_USR_PAID_SPENT_MONEY.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RPT\RPT_PAID_SPENT_MONEY.Designer.cs">
-      <DependentUpon>RPT_PAID_SPENT_MONEY.cs</DependentUpon>
+    <Compile Include="RPT\RPT_USR_PAID_SPENT_MONEY.Designer.cs">
+      <DependentUpon>RPT_USR_PAID_SPENT_MONEY.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\RPT_USR_SALES.cs">
       <SubType>Component</SubType>
@@ -388,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_PAID_SPENT.resx">
       <DependentUpon>RPT_PAID_SPENT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_USR_PAID_SPENT_MONEY.resx">
+      <DependentUpon>RPT_USR_PAID_SPENT_MONEY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_USR_SALES.resx">
       <DependentUpon>RPT_USR_SALES.cs</DependentUpon>

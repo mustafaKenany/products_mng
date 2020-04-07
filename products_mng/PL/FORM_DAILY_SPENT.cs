@@ -46,7 +46,8 @@ namespace products_mng.PL
                 int PAID_ID = int.Parse (label_PAIDID.Text);
                 DateTime PAID_DATE = dateTimePicker_DATEPAID.Value;
                 string PAID_NOTES = textBox_NOTESPAID.Text + "   " + comboBox_SPENTTYPE.Text;
-                PAID.ADD_PAID_SPENT_MONEY (PAID_ID, 4, PAID_MONEY, PAID_DATE, "صرفيات يومية", PAID_NOTES);
+                String SALES_MAN = BL.CLS_LOGIN.SALES_MAN;
+                PAID.ADD_PAID_SPENT_MONEY (PAID_ID, 4, PAID_MONEY, PAID_DATE, "صرفيات يومية", PAID_NOTES,SALES_MAN);
                 MessageBox.Show ("تم الحفظ بنجاح", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 comboBox_SPENTTYPE.Enabled = textBox_MONEYPAID.Enabled = textBox_NOTESPAID.Enabled = dateTimePicker_DATEPAID.Enabled = false;
                 button_PRTPAID.Enabled = true;

@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace products_mng.RPT
 {
-    public partial class RPT_PAID_SPENT_MONEY : DevExpress.XtraReports.UI.XtraReport
+    public partial class RPT_USR_PAID_SPENT_MONEY : DevExpress.XtraReports.UI.XtraReport
     {
-        public RPT_PAID_SPENT_MONEY()
+        public RPT_USR_PAID_SPENT_MONEY()
         {
             InitializeComponent ();
         }

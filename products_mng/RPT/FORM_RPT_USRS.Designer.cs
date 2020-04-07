@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_displayData = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button_RPT_USR_DAILY_SPENT = new System.Windows.Forms.Button();
+            this.button_RPT_SPENT_MONEY = new System.Windows.Forms.Button();
+            this.button_RPT_USR_PAID_money = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker_END_DATE = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_BEGIN_DATE = new System.Windows.Forms.DateTimePicker();
             this.button_RPT_SALES = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button_RPT_PAID_MONEY = new System.Windows.Forms.Button();
-            this.button_RPT_SPENT_MONEY = new System.Windows.Forms.Button();
-            this.button_RPT_DAILY_SPENT = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.gridControl_USRS = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button_displayData = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_USRS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -54,9 +54,9 @@
             // 
             this.groupBox1.Controls.Add(this.button_displayData);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button_RPT_DAILY_SPENT);
+            this.groupBox1.Controls.Add(this.button_RPT_USR_DAILY_SPENT);
             this.groupBox1.Controls.Add(this.button_RPT_SPENT_MONEY);
-            this.groupBox1.Controls.Add(this.button_RPT_PAID_MONEY);
+            this.groupBox1.Controls.Add(this.button_RPT_USR_PAID_money);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -71,6 +71,94 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "الاجراءات الممكنة";
+            // 
+            // button_displayData
+            // 
+            this.button_displayData.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_displayData.FlatAppearance.BorderSize = 2;
+            this.button_displayData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_displayData.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_displayData.ForeColor = System.Drawing.Color.White;
+            this.button_displayData.Location = new System.Drawing.Point(850, 26);
+            this.button_displayData.Name = "button_displayData";
+            this.button_displayData.Size = new System.Drawing.Size(85, 66);
+            this.button_displayData.TabIndex = 67;
+            this.button_displayData.Text = "عرض الكل";
+            this.button_displayData.UseVisualStyleBackColor = true;
+            this.button_displayData.Click += new System.EventHandler(this.button_displayData_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(759, 26);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 66);
+            this.button2.TabIndex = 66;
+            this.button2.Text = "طباعة الصندوق";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button_RPT_USR_DAILY_SPENT
+            // 
+            this.button_RPT_USR_DAILY_SPENT.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_RPT_USR_DAILY_SPENT.FlatAppearance.BorderSize = 2;
+            this.button_RPT_USR_DAILY_SPENT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_RPT_USR_DAILY_SPENT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_RPT_USR_DAILY_SPENT.ForeColor = System.Drawing.Color.White;
+            this.button_RPT_USR_DAILY_SPENT.Location = new System.Drawing.Point(231, 26);
+            this.button_RPT_USR_DAILY_SPENT.Name = "button_RPT_USR_DAILY_SPENT";
+            this.button_RPT_USR_DAILY_SPENT.Size = new System.Drawing.Size(122, 66);
+            this.button_RPT_USR_DAILY_SPENT.TabIndex = 65;
+            this.button_RPT_USR_DAILY_SPENT.Text = "طباعة الصرفيات اليومية";
+            this.button_RPT_USR_DAILY_SPENT.UseVisualStyleBackColor = true;
+            this.button_RPT_USR_DAILY_SPENT.Click += new System.EventHandler(this.button_RPT_USR_DAILY_SPENT_Click);
+            // 
+            // button_RPT_SPENT_MONEY
+            // 
+            this.button_RPT_SPENT_MONEY.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_RPT_SPENT_MONEY.FlatAppearance.BorderSize = 2;
+            this.button_RPT_SPENT_MONEY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_RPT_SPENT_MONEY.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_RPT_SPENT_MONEY.ForeColor = System.Drawing.Color.White;
+            this.button_RPT_SPENT_MONEY.Location = new System.Drawing.Point(359, 26);
+            this.button_RPT_SPENT_MONEY.Name = "button_RPT_SPENT_MONEY";
+            this.button_RPT_SPENT_MONEY.Size = new System.Drawing.Size(103, 66);
+            this.button_RPT_SPENT_MONEY.TabIndex = 64;
+            this.button_RPT_SPENT_MONEY.Text = "طباعة سندات الصرف";
+            this.button_RPT_SPENT_MONEY.UseVisualStyleBackColor = true;
+            this.button_RPT_SPENT_MONEY.Click += new System.EventHandler(this.button_RPT_SPENT_MONEY_Click);
+            // 
+            // button_RPT_USR_PAID_money
+            // 
+            this.button_RPT_USR_PAID_money.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_RPT_USR_PAID_money.FlatAppearance.BorderSize = 2;
+            this.button_RPT_USR_PAID_money.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_RPT_USR_PAID_money.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_RPT_USR_PAID_money.ForeColor = System.Drawing.Color.White;
+            this.button_RPT_USR_PAID_money.Location = new System.Drawing.Point(468, 26);
+            this.button_RPT_USR_PAID_money.Name = "button_RPT_USR_PAID_money";
+            this.button_RPT_USR_PAID_money.Size = new System.Drawing.Size(103, 66);
+            this.button_RPT_USR_PAID_money.TabIndex = 63;
+            this.button_RPT_USR_PAID_money.Text = "طباعة سندات القبض";
+            this.button_RPT_USR_PAID_money.UseVisualStyleBackColor = true;
+            this.button_RPT_USR_PAID_money.Click += new System.EventHandler(this.button_RPT_USR_PAID_SPENT_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(577, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 66);
+            this.button1.TabIndex = 62;
+            this.button1.Text = "طباعة المشتريات";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -122,76 +210,6 @@
             this.button_RPT_SALES.Text = "طباعة المبيعات";
             this.button_RPT_SALES.UseVisualStyleBackColor = true;
             this.button_RPT_SALES.Click += new System.EventHandler(this.button_RPT_SALES_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(577, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 66);
-            this.button1.TabIndex = 62;
-            this.button1.Text = "طباعة المشتريات";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button_RPT_PAID_MONEY
-            // 
-            this.button_RPT_PAID_MONEY.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_RPT_PAID_MONEY.FlatAppearance.BorderSize = 2;
-            this.button_RPT_PAID_MONEY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_RPT_PAID_MONEY.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_RPT_PAID_MONEY.ForeColor = System.Drawing.Color.White;
-            this.button_RPT_PAID_MONEY.Location = new System.Drawing.Point(468, 26);
-            this.button_RPT_PAID_MONEY.Name = "button_RPT_PAID_MONEY";
-            this.button_RPT_PAID_MONEY.Size = new System.Drawing.Size(103, 66);
-            this.button_RPT_PAID_MONEY.TabIndex = 63;
-            this.button_RPT_PAID_MONEY.Text = "طباعة سندات القبض";
-            this.button_RPT_PAID_MONEY.UseVisualStyleBackColor = true;
-            // 
-            // button_RPT_SPENT_MONEY
-            // 
-            this.button_RPT_SPENT_MONEY.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_RPT_SPENT_MONEY.FlatAppearance.BorderSize = 2;
-            this.button_RPT_SPENT_MONEY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_RPT_SPENT_MONEY.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_RPT_SPENT_MONEY.ForeColor = System.Drawing.Color.White;
-            this.button_RPT_SPENT_MONEY.Location = new System.Drawing.Point(359, 26);
-            this.button_RPT_SPENT_MONEY.Name = "button_RPT_SPENT_MONEY";
-            this.button_RPT_SPENT_MONEY.Size = new System.Drawing.Size(103, 66);
-            this.button_RPT_SPENT_MONEY.TabIndex = 64;
-            this.button_RPT_SPENT_MONEY.Text = "طباعة سندات الصرف";
-            this.button_RPT_SPENT_MONEY.UseVisualStyleBackColor = true;
-            // 
-            // button_RPT_DAILY_SPENT
-            // 
-            this.button_RPT_DAILY_SPENT.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_RPT_DAILY_SPENT.FlatAppearance.BorderSize = 2;
-            this.button_RPT_DAILY_SPENT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_RPT_DAILY_SPENT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_RPT_DAILY_SPENT.ForeColor = System.Drawing.Color.White;
-            this.button_RPT_DAILY_SPENT.Location = new System.Drawing.Point(231, 26);
-            this.button_RPT_DAILY_SPENT.Name = "button_RPT_DAILY_SPENT";
-            this.button_RPT_DAILY_SPENT.Size = new System.Drawing.Size(122, 66);
-            this.button_RPT_DAILY_SPENT.TabIndex = 65;
-            this.button_RPT_DAILY_SPENT.Text = "طباعة الصرفيات اليومية";
-            this.button_RPT_DAILY_SPENT.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(759, 26);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 66);
-            this.button2.TabIndex = 66;
-            this.button2.Text = "طباعة الصندوق";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // gridControl_USRS
             // 
@@ -294,21 +312,6 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
-            // button_displayData
-            // 
-            this.button_displayData.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_displayData.FlatAppearance.BorderSize = 2;
-            this.button_displayData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_displayData.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_displayData.ForeColor = System.Drawing.Color.White;
-            this.button_displayData.Location = new System.Drawing.Point(850, 26);
-            this.button_displayData.Name = "button_displayData";
-            this.button_displayData.Size = new System.Drawing.Size(85, 66);
-            this.button_displayData.TabIndex = 67;
-            this.button_displayData.Text = "عرض الكل";
-            this.button_displayData.UseVisualStyleBackColor = true;
-            this.button_displayData.Click += new System.EventHandler(this.button_displayData_Click);
-            // 
             // FORM_RPT_USRS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
@@ -340,9 +343,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button button_RPT_DAILY_SPENT;
+        public System.Windows.Forms.Button button_RPT_USR_DAILY_SPENT;
         public System.Windows.Forms.Button button_RPT_SPENT_MONEY;
-        public System.Windows.Forms.Button button_RPT_PAID_MONEY;
+        public System.Windows.Forms.Button button_RPT_USR_PAID_money;
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

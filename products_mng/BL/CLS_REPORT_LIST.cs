@@ -29,6 +29,25 @@ namespace products_mng.BL
 
         }
 
+        public DataTable RPT_USR_PAID_SPENT_MONEY(String BEGIN_DATE, String END_DATE, string SALES_MAN, string TYPE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter ("@SALES_MAN", SqlDbType.NVarChar,50);
+            param[0].Value = SALES_MAN;
+            param[1] = new SqlParameter ("@BEGIN_DATE", SqlDbType.NVarChar, 50);
+            param[1].Value = BEGIN_DATE;
+            param[2] = new SqlParameter ("@END_DATE", SqlDbType.NVarChar, 50);
+            param[2].Value = END_DATE;
+            param[3] = new SqlParameter ("@TYPE", SqlDbType.NVarChar,50);
+            param[3].Value = TYPE;
+            dt = dal.SelectData ("RPT_USR_PAID_SPENT_MONEY", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
         public DataTable RPT_USR_SALES(int TYPE_OF_ORDER, String BEGIN_DATE, String END_DATE,string SALES_MAN)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();

@@ -24,7 +24,7 @@ namespace products_mng.BL
             return ID;
         }
 
-        public void ADD_PAID_SPENT_MONEY(int PAID_SPENT_ID, int COUST_ID, float THE_AMOUNT, DateTime DATE, String TYPE, String NOTS)
+        public void ADD_PAID_SPENT_MONEY(int PAID_SPENT_ID, int COUST_ID, float THE_AMOUNT, DateTime DATE, String TYPE, String NOTS, string SALES_MAN)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
@@ -35,12 +35,14 @@ namespace products_mng.BL
             PARAM[3] = new SqlParameter ("@DATE", SqlDbType.Date);
             PARAM[4] = new SqlParameter ("@TYPE", SqlDbType.NVarChar, 50);
             PARAM[5] = new SqlParameter ("@NOTS", SqlDbType.NVarChar, 50);
+            PARAM[6] = new SqlParameter ("@SALES_MAN", SqlDbType.NVarChar, 50);
             PARAM[0].Value = PAID_SPENT_ID;
             PARAM[1].Value = COUST_ID;
             PARAM[2].Value = THE_AMOUNT;
             PARAM[3].Value = DATE;
             PARAM[4].Value = TYPE;
             PARAM[5].Value = NOTS;
+            PARAM[6].Value = SALES_MAN;
             dal.ExecuteCommand ("ADD_PAID_SPENT_MONEY", PARAM);
             dal.ConClose ();
         }
