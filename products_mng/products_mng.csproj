@@ -224,6 +224,12 @@
     <Compile Include="RPT\FORM_RPT_COUSTOMERS.Designer.cs">
       <DependentUpon>FORM_RPT_COUSTOMERS.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\FORM_RPT_PAID_SPENT_WITH_COUSTOMERS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\FORM_RPT_PAID_SPENT_WITH_COUSTOMERS.Designer.cs">
+      <DependentUpon>FORM_RPT_PAID_SPENT_WITH_COUSTOMERS.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\FORM_RPT_SALES.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\FORM_RPT_ITEMS.resx">
       <DependentUpon>FORM_RPT_ITEMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\FORM_RPT_PAID_SPENT_WITH_COUSTOMERS.resx">
+      <DependentUpon>FORM_RPT_PAID_SPENT_WITH_COUSTOMERS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\FORM_RPT_SALES.resx">
       <DependentUpon>FORM_RPT_SALES.cs</DependentUpon>

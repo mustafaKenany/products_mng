@@ -63,7 +63,7 @@
             this.ToolStripMenuItem_REPORITMS = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_COUST = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_USRS = new System.Windows.Forms.ToolStripMenuItem();
-            this.تقريرالحساباتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_RPT_PAID_SPENT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -320,7 +320,7 @@
             this.ToolStripMenuItem_REPORITMS,
             this.ToolStripMenuItem_COUST,
             this.ToolStripMenuItem_USRS,
-            this.تقريرالحساباتToolStripMenuItem});
+            this.ToolStripMenuItem_RPT_PAID_SPENT});
             this.ToolStripMenuItem_REPORTS.Enabled = false;
             this.ToolStripMenuItem_REPORTS.Name = "ToolStripMenuItem_REPORTS";
             this.ToolStripMenuItem_REPORTS.Size = new System.Drawing.Size(64, 28);
@@ -361,11 +361,12 @@
             this.ToolStripMenuItem_USRS.Text = "تقرير المستخدمين";
             this.ToolStripMenuItem_USRS.Click += new System.EventHandler(this.ToolStripMenuItem_USRS_Click);
             // 
-            // تقريرالحساباتToolStripMenuItem
+            // ToolStripMenuItem_RPT_PAID_SPENT
             // 
-            this.تقريرالحساباتToolStripMenuItem.Name = "تقريرالحساباتToolStripMenuItem";
-            this.تقريرالحساباتToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
-            this.تقريرالحساباتToolStripMenuItem.Text = "تقرير الحسابات";
+            this.ToolStripMenuItem_RPT_PAID_SPENT.Name = "ToolStripMenuItem_RPT_PAID_SPENT";
+            this.ToolStripMenuItem_RPT_PAID_SPENT.Size = new System.Drawing.Size(189, 28);
+            this.ToolStripMenuItem_RPT_PAID_SPENT.Text = "تقرير الحسابات";
+            this.ToolStripMenuItem_RPT_PAID_SPENT.Click += new System.EventHandler(this.ToolStripMenuItem_RPT_PAID_SPENT_Click);
             // 
             // FORM_MAIN
             // 
@@ -430,7 +431,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORITMS;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_COUST;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_USRS;
-        private System.Windows.Forms.ToolStripMenuItem تقريرالحساباتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_RPT_PAID_SPENT;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_mngdocs;
         public System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORTS;
     }

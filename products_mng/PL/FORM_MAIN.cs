@@ -154,5 +154,11 @@ namespace products_mng.PL
             RPT.FORM_RPT_USRS FORM = new RPT.FORM_RPT_USRS ();
             FORM.ShowDialog ();
         }
+
+        private void ToolStripMenuItem_RPT_PAID_SPENT_Click(object sender, EventArgs e)
+        {
+            RPT.FORM_RPT_PAID_SPENT_WITH_COUSTOMERS FORM = new RPT.FORM_RPT_PAID_SPENT_WITH_COUSTOMERS ();
+            FORM.ShowDialog ();
+        }
     }
 }
