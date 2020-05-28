@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_BARCODEPRT = new System.Windows.Forms.Button();
+            this.button_BARCODE = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.ID_PRODUCT = new System.Windows.Forms.TextBox();
             this.btn_SAVE_PRODUCT = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_Close = new System.Windows.Forms.Button();
             this.btn_UPLODPICTURE = new System.Windows.Forms.Button();
             this.textBox_LABEL = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,16 +44,20 @@
             this.comboBox_CATEGORIES = new System.Windows.Forms.ComboBox();
             this.textBox_BARCODE = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonBarcode = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PRODUCTS)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonBarcode);
+            this.groupBox1.Controls.Add(this.button_BARCODEPRT);
+            this.groupBox1.Controls.Add(this.button_BARCODE);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.ID_PRODUCT);
             this.groupBox1.Controls.Add(this.btn_SAVE_PRODUCT);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button_Close);
             this.groupBox1.Controls.Add(this.btn_UPLODPICTURE);
             this.groupBox1.Controls.Add(this.textBox_LABEL);
             this.groupBox1.Controls.Add(this.label4);
@@ -70,10 +76,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "أضافة مادة جديدة";
             // 
+            // button_BARCODEPRT
+            // 
+            this.button_BARCODEPRT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.button_BARCODEPRT.FlatAppearance.BorderSize = 2;
+            this.button_BARCODEPRT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_BARCODEPRT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_BARCODEPRT.ForeColor = System.Drawing.Color.White;
+            this.button_BARCODEPRT.Location = new System.Drawing.Point(34, 87);
+            this.button_BARCODEPRT.Name = "button_BARCODEPRT";
+            this.button_BARCODEPRT.Size = new System.Drawing.Size(100, 50);
+            this.button_BARCODEPRT.TabIndex = 14;
+            this.button_BARCODEPRT.Text = "طبع باركود";
+            this.button_BARCODEPRT.UseVisualStyleBackColor = true;
+            // 
+            // button_BARCODE
+            // 
+            this.button_BARCODE.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.button_BARCODE.FlatAppearance.BorderSize = 2;
+            this.button_BARCODE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_BARCODE.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_BARCODE.ForeColor = System.Drawing.Color.White;
+            this.button_BARCODE.Location = new System.Drawing.Point(140, 87);
+            this.button_BARCODE.Name = "button_BARCODE";
+            this.button_BARCODE.Size = new System.Drawing.Size(71, 50);
+            this.button_BARCODE.TabIndex = 13;
+            this.button_BARCODE.Text = "باركود";
+            this.button_BARCODE.UseVisualStyleBackColor = true;
+            this.button_BARCODE.Click += new System.EventHandler(this.button_BARCODE_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(524, 45);
+            this.label5.Location = new System.Drawing.Point(651, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 24);
             this.label5.TabIndex = 12;
@@ -82,7 +117,7 @@
             // ID_PRODUCT
             // 
             this.ID_PRODUCT.Enabled = false;
-            this.ID_PRODUCT.Location = new System.Drawing.Point(97, 40);
+            this.ID_PRODUCT.Location = new System.Drawing.Point(224, 40);
             this.ID_PRODUCT.Margin = new System.Windows.Forms.Padding(10);
             this.ID_PRODUCT.Multiline = true;
             this.ID_PRODUCT.Name = "ID_PRODUCT";
@@ -105,20 +140,20 @@
             this.btn_SAVE_PRODUCT.UseVisualStyleBackColor = true;
             this.btn_SAVE_PRODUCT.Click += new System.EventHandler(this.btn_SAVE_PRODUCT_Click);
             // 
-            // button1
+            // button_Close
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(524, 445);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 50);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "الغاء";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_Close.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.button_Close.FlatAppearance.BorderSize = 2;
+            this.button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Close.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_Close.ForeColor = System.Drawing.Color.White;
+            this.button_Close.Location = new System.Drawing.Point(524, 445);
+            this.button_Close.Name = "button_Close";
+            this.button_Close.Size = new System.Drawing.Size(100, 50);
+            this.button_Close.TabIndex = 9;
+            this.button_Close.Text = "الغاء";
+            this.button_Close.UseVisualStyleBackColor = true;
+            this.button_Close.Click += new System.EventHandler(this.button_Close_Click);
             // 
             // btn_UPLODPICTURE
             // 
@@ -127,7 +162,7 @@
             this.btn_UPLODPICTURE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_UPLODPICTURE.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btn_UPLODPICTURE.ForeColor = System.Drawing.Color.White;
-            this.btn_UPLODPICTURE.Location = new System.Drawing.Point(81, 313);
+            this.btn_UPLODPICTURE.Location = new System.Drawing.Point(208, 313);
             this.btn_UPLODPICTURE.Name = "btn_UPLODPICTURE";
             this.btn_UPLODPICTURE.Size = new System.Drawing.Size(100, 50);
             this.btn_UPLODPICTURE.TabIndex = 8;
@@ -137,18 +172,19 @@
             // 
             // textBox_LABEL
             // 
-            this.textBox_LABEL.Location = new System.Drawing.Point(97, 202);
+            this.textBox_LABEL.Location = new System.Drawing.Point(224, 202);
             this.textBox_LABEL.Margin = new System.Windows.Forms.Padding(10);
             this.textBox_LABEL.Multiline = true;
             this.textBox_LABEL.Name = "textBox_LABEL";
             this.textBox_LABEL.Size = new System.Drawing.Size(300, 35);
             this.textBox_LABEL.TabIndex = 7;
             this.textBox_LABEL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_LABEL.TextChanged += new System.EventHandler(this.textBox_LABEL_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(332, 326);
+            this.label4.Location = new System.Drawing.Point(459, 326);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 24);
             this.label4.TabIndex = 6;
@@ -157,7 +193,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(535, 207);
+            this.label3.Location = new System.Drawing.Point(648, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 24);
             this.label3.TabIndex = 5;
@@ -166,7 +202,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(411, 154);
+            this.label2.Location = new System.Drawing.Point(524, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(198, 24);
             this.label2.TabIndex = 4;
@@ -176,7 +212,7 @@
             // 
             this.pictureBox_PRODUCTS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_PRODUCTS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox_PRODUCTS.Location = new System.Drawing.Point(194, 263);
+            this.pictureBox_PRODUCTS.Location = new System.Drawing.Point(321, 263);
             this.pictureBox_PRODUCTS.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBox_PRODUCTS.Name = "pictureBox_PRODUCTS";
             this.pictureBox_PRODUCTS.Padding = new System.Windows.Forms.Padding(2);
@@ -191,7 +227,7 @@
             this.comboBox_CATEGORIES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_CATEGORIES.FormattingEnabled = true;
             this.comboBox_CATEGORIES.ItemHeight = 24;
-            this.comboBox_CATEGORIES.Location = new System.Drawing.Point(97, 150);
+            this.comboBox_CATEGORIES.Location = new System.Drawing.Point(224, 150);
             this.comboBox_CATEGORIES.Margin = new System.Windows.Forms.Padding(10);
             this.comboBox_CATEGORIES.Name = "comboBox_CATEGORIES";
             this.comboBox_CATEGORIES.Size = new System.Drawing.Size(300, 32);
@@ -199,7 +235,7 @@
             // 
             // textBox_BARCODE
             // 
-            this.textBox_BARCODE.Location = new System.Drawing.Point(97, 95);
+            this.textBox_BARCODE.Location = new System.Drawing.Point(224, 95);
             this.textBox_BARCODE.Margin = new System.Windows.Forms.Padding(10);
             this.textBox_BARCODE.Multiline = true;
             this.textBox_BARCODE.Name = "textBox_BARCODE";
@@ -207,16 +243,33 @@
             this.textBox_BARCODE.TabIndex = 1;
             this.textBox_BARCODE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_BARCODE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_BARCODE_KeyPress);
+            this.textBox_BARCODE.Leave += new System.EventHandler(this.textBox_BARCODE_Leave);
             this.textBox_BARCODE.Validated += new System.EventHandler(this.textBox_BARCODE_Validated);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(430, 100);
+            this.label1.Location = new System.Drawing.Point(543, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "الباركود الخاص بالمادة ان وجد";
+            // 
+            // buttonBarcode
+            // 
+            this.buttonBarcode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.buttonBarcode.FlatAppearance.BorderSize = 2;
+            this.buttonBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBarcode.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.buttonBarcode.ForeColor = System.Drawing.Color.White;
+            this.buttonBarcode.Location = new System.Drawing.Point(34, 445);
+            this.buttonBarcode.Name = "buttonBarcode";
+            this.buttonBarcode.Size = new System.Drawing.Size(100, 50);
+            this.buttonBarcode.TabIndex = 15;
+            this.buttonBarcode.Text = "تحديث باركود";
+            this.buttonBarcode.UseVisualStyleBackColor = true;
+            this.buttonBarcode.Visible = false;
+            this.buttonBarcode.Click += new System.EventHandler(this.buttonBarcode_Click);
             // 
             // FORM_ADD_PRODUCTS
             // 
@@ -252,7 +305,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Close;
         private System.Windows.Forms.Button btn_UPLODPICTURE;
         public System.Windows.Forms.TextBox textBox_LABEL;
         public System.Windows.Forms.PictureBox pictureBox_PRODUCTS;
@@ -261,5 +314,8 @@
         public System.Windows.Forms.Button btn_SAVE_PRODUCT;
         public System.Windows.Forms.TextBox ID_PRODUCT;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button_BARCODEPRT;
+        private System.Windows.Forms.Button button_BARCODE;
+        public System.Windows.Forms.Button buttonBarcode;
     }
 }

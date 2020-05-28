@@ -28,7 +28,7 @@ namespace products_mng.BL
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
-            SqlParameter[] PARAM = new SqlParameter[6];
+            SqlParameter[] PARAM = new SqlParameter[7];
             PARAM[0] = new SqlParameter ("@PAID_SPENT_ID", SqlDbType.Int);
             PARAM[1] = new SqlParameter ("@COUST_ID", SqlDbType.Int);
             PARAM[2] = new SqlParameter ("@THE_AMOUNT", SqlDbType.Float);

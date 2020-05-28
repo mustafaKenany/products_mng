@@ -64,6 +64,7 @@
             this.ToolStripMenuItem_COUST = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_USRS = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_RPT_PAID_SPENT = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_RPT_NETMONEY = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -320,7 +321,8 @@
             this.ToolStripMenuItem_REPORITMS,
             this.ToolStripMenuItem_COUST,
             this.ToolStripMenuItem_USRS,
-            this.ToolStripMenuItem_RPT_PAID_SPENT});
+            this.ToolStripMenuItem_RPT_PAID_SPENT,
+            this.ToolStripMenuItem_RPT_NETMONEY});
             this.ToolStripMenuItem_REPORTS.Enabled = false;
             this.ToolStripMenuItem_REPORTS.Name = "ToolStripMenuItem_REPORTS";
             this.ToolStripMenuItem_REPORTS.Size = new System.Drawing.Size(64, 28);
@@ -367,6 +369,13 @@
             this.ToolStripMenuItem_RPT_PAID_SPENT.Size = new System.Drawing.Size(189, 28);
             this.ToolStripMenuItem_RPT_PAID_SPENT.Text = "تقرير الحسابات";
             this.ToolStripMenuItem_RPT_PAID_SPENT.Click += new System.EventHandler(this.ToolStripMenuItem_RPT_PAID_SPENT_Click);
+            // 
+            // ToolStripMenuItem_RPT_NETMONEY
+            // 
+            this.ToolStripMenuItem_RPT_NETMONEY.Name = "ToolStripMenuItem_RPT_NETMONEY";
+            this.ToolStripMenuItem_RPT_NETMONEY.Size = new System.Drawing.Size(189, 28);
+            this.ToolStripMenuItem_RPT_NETMONEY.Text = "تقرير الصندوق";
+            this.ToolStripMenuItem_RPT_NETMONEY.Click += new System.EventHandler(this.ToolStripMenuItem_RPT_NETMONEY_Click);
             // 
             // FORM_MAIN
             // 
@@ -434,5 +443,6 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_RPT_PAID_SPENT;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_mngdocs;
         public System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORTS;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_RPT_NETMONEY;
     }
 }

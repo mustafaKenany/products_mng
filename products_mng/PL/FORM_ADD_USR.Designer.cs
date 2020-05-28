@@ -65,6 +65,7 @@
             this.groupBox_TOP.Controls.Add(this.label5);
             this.groupBox_TOP.Controls.Add(this.txt_USRFLNAME);
             this.groupBox_TOP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox_TOP.ForeColor = System.Drawing.Color.White;
             this.groupBox_TOP.Location = new System.Drawing.Point(5, 5);
             this.groupBox_TOP.Name = "groupBox_TOP";
             this.groupBox_TOP.Size = new System.Drawing.Size(574, 276);
@@ -159,7 +160,7 @@
             this.button_CANCL.FlatAppearance.BorderSize = 2;
             this.button_CANCL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_CANCL.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_CANCL.ForeColor = System.Drawing.Color.Black;
+            this.button_CANCL.ForeColor = System.Drawing.Color.White;
             this.button_CANCL.Location = new System.Drawing.Point(6, 170);
             this.button_CANCL.Name = "button_CANCL";
             this.button_CANCL.Size = new System.Drawing.Size(100, 50);
@@ -183,6 +184,7 @@
             this.groupBox1.Controls.Add(this.button_ADD_USR);
             this.groupBox1.Controls.Add(this.button_CANCL);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(5, 281);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(574, 228);
@@ -328,7 +330,7 @@
             this.button_ADD_USR.FlatAppearance.BorderSize = 2;
             this.button_ADD_USR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ADD_USR.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_ADD_USR.ForeColor = System.Drawing.Color.Black;
+            this.button_ADD_USR.ForeColor = System.Drawing.Color.White;
             this.button_ADD_USR.Location = new System.Drawing.Point(112, 170);
             this.button_ADD_USR.Name = "button_ADD_USR";
             this.button_ADD_USR.Size = new System.Drawing.Size(100, 50);
@@ -341,10 +343,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(65)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(584, 514);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox_TOP);
             this.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MaximizeBox = false;

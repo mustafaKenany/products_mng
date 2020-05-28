@@ -103,33 +103,41 @@
             // 
             // label_MONEYIES_ID
             // 
+            this.label_MONEYIES_ID.AutoSize = true;
             this.label_MONEYIES_ID.ForeColor = System.Drawing.Color.White;
-            this.label_MONEYIES_ID.Location = new System.Drawing.Point(284, 5);
+            this.label_MONEYIES_ID.Location = new System.Drawing.Point(284, 12);
             this.label_MONEYIES_ID.Name = "label_MONEYIES_ID";
-            this.label_MONEYIES_ID.Size = new System.Drawing.Size(125, 40);
+            this.label_MONEYIES_ID.Size = new System.Drawing.Size(81, 26);
             this.label_MONEYIES_ID.TabIndex = 4;
             this.label_MONEYIES_ID.Text = "MONEY_ID";
             this.label_MONEYIES_ID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_MONEYIES_ID.MouseLeave += new System.EventHandler(this.label_MONEYIES_ID_MouseLeave);
+            this.label_MONEYIES_ID.MouseHover += new System.EventHandler(this.label_MONEYIES_ID_MouseHover);
             // 
             // label_COUST_ID
             // 
+            this.label_COUST_ID.AutoSize = true;
             this.label_COUST_ID.ForeColor = System.Drawing.Color.White;
-            this.label_COUST_ID.Location = new System.Drawing.Point(450, 5);
+            this.label_COUST_ID.Location = new System.Drawing.Point(450, 12);
             this.label_COUST_ID.Name = "label_COUST_ID";
-            this.label_COUST_ID.Size = new System.Drawing.Size(99, 40);
+            this.label_COUST_ID.Size = new System.Drawing.Size(75, 26);
             this.label_COUST_ID.TabIndex = 3;
             this.label_COUST_ID.Text = "COUST_ID";
             this.label_COUST_ID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_COUST_ID.MouseLeave += new System.EventHandler(this.label_COUST_ID_MouseLeave);
+            this.label_COUST_ID.MouseHover += new System.EventHandler(this.label_COUST_ID_MouseHover);
             // 
             // label_SALES_MAN
             // 
             this.label_SALES_MAN.ForeColor = System.Drawing.Color.White;
-            this.label_SALES_MAN.Location = new System.Drawing.Point(589, 5);
+            this.label_SALES_MAN.Location = new System.Drawing.Point(589, 7);
             this.label_SALES_MAN.Name = "label_SALES_MAN";
             this.label_SALES_MAN.Size = new System.Drawing.Size(99, 40);
             this.label_SALES_MAN.TabIndex = 2;
             this.label_SALES_MAN.Text = "المستخدم";
             this.label_SALES_MAN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_SALES_MAN.MouseLeave += new System.EventHandler(this.label_SALES_MAN_MouseLeave);
+            this.label_SALES_MAN.MouseHover += new System.EventHandler(this.label_SALES_MAN_MouseHover);
             // 
             // label1
             // 
@@ -262,6 +270,7 @@
             this.textBox_INVO_PAID.Text = "0";
             this.textBox_INVO_PAID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_INVO_PAID.TextChanged += new System.EventHandler(this.textBox_INVO_PAID_TextChanged);
+            this.textBox_INVO_PAID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_INVO_PAID_KeyPress);
             // 
             // label_INVO_TOTAL
             // 
@@ -329,6 +338,7 @@
             this.textBox_INVO_DISC.Text = "0";
             this.textBox_INVO_DISC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_INVO_DISC.TextChanged += new System.EventHandler(this.textBox_INVO_DISC_TextChanged);
+            this.textBox_INVO_DISC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_INVO_DISC_KeyPress);
             // 
             // label_INVO_REMID
             // 
@@ -512,6 +522,8 @@
             this.label_ID_ORDER.TabIndex = 3;
             this.label_ID_ORDER.Text = "رقم القائمة";
             this.label_ID_ORDER.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_ID_ORDER.MouseLeave += new System.EventHandler(this.label_ID_ORDER_MouseLeave);
+            this.label_ID_ORDER.MouseHover += new System.EventHandler(this.label_ID_ORDER_MouseHover);
             // 
             // button_NEW_INVO
             // 
@@ -669,6 +681,7 @@
             this.Text = "البيع المباشر";
             this.Load += new System.EventHandler(this.FORM_SALES_Load);
             this.panel_top.ResumeLayout(false);
+            this.panel_top.PerformLayout();
             this.panel_Right.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_INVO_ITEMS)).EndInit();
             this.panel_PAID_MONEY.ResumeLayout(false);

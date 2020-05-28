@@ -124,13 +124,12 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(485, 26);
+            this.button4.Location = new System.Drawing.Point(273, 26);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(113, 66);
             this.button4.TabIndex = 57;
             this.button4.Text = "طباعة مشتريات الزبون";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
             // 
             // button1
             // 
@@ -139,13 +138,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(604, 26);
+            this.button1.Location = new System.Drawing.Point(717, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 66);
             this.button1.TabIndex = 56;
             this.button1.Text = "طباعة مشتريات المادة";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             // 
             // button3
             // 
@@ -154,7 +152,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(379, 26);
+            this.button3.Location = new System.Drawing.Point(167, 26);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 66);
             this.button3.TabIndex = 55;
@@ -168,7 +166,7 @@
             this.button_COUST_ONE_ITEM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_COUST_ONE_ITEM.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_COUST_ONE_ITEM.ForeColor = System.Drawing.Color.White;
-            this.button_COUST_ONE_ITEM.Location = new System.Drawing.Point(723, 26);
+            this.button_COUST_ONE_ITEM.Location = new System.Drawing.Point(836, 26);
             this.button_COUST_ONE_ITEM.Name = "button_COUST_ONE_ITEM";
             this.button_COUST_ONE_ITEM.Size = new System.Drawing.Size(109, 66);
             this.button_COUST_ONE_ITEM.TabIndex = 54;
@@ -183,7 +181,7 @@
             this.button_PRT_COUST_SALES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_PRT_COUST_SALES.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_PRT_COUST_SALES.ForeColor = System.Drawing.Color.White;
-            this.button_PRT_COUST_SALES.Location = new System.Drawing.Point(838, 26);
+            this.button_PRT_COUST_SALES.Location = new System.Drawing.Point(392, 26);
             this.button_PRT_COUST_SALES.Name = "button_PRT_COUST_SALES";
             this.button_PRT_COUST_SALES.Size = new System.Drawing.Size(107, 66);
             this.button_PRT_COUST_SALES.TabIndex = 53;
@@ -264,6 +262,7 @@
             this.gridColumn_COUST_NAME.Caption = "أسم الزبون";
             this.gridColumn_COUST_NAME.FieldName = "COUST_NAME";
             this.gridColumn_COUST_NAME.Name = "gridColumn_COUST_NAME";
+            this.gridColumn_COUST_NAME.OptionsColumn.AllowEdit = false;
             this.gridColumn_COUST_NAME.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_COUST_NAME.OptionsColumn.AllowMove = false;
             this.gridColumn_COUST_NAME.OptionsColumn.AllowShowHide = false;
@@ -286,6 +285,7 @@
             this.gridColumn_ADDRESS.Caption = "العنوان";
             this.gridColumn_ADDRESS.FieldName = "ADDRESS";
             this.gridColumn_ADDRESS.Name = "gridColumn_ADDRESS";
+            this.gridColumn_ADDRESS.OptionsColumn.AllowEdit = false;
             this.gridColumn_ADDRESS.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_ADDRESS.OptionsColumn.AllowMove = false;
             this.gridColumn_ADDRESS.OptionsColumn.AllowShowHide = false;
@@ -308,6 +308,7 @@
             this.gridColumn_TEL.Caption = "رقم الموبايل";
             this.gridColumn_TEL.FieldName = "TEL";
             this.gridColumn_TEL.Name = "gridColumn_TEL";
+            this.gridColumn_TEL.OptionsColumn.AllowEdit = false;
             this.gridColumn_TEL.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_TEL.OptionsColumn.AllowMove = false;
             this.gridColumn_TEL.OptionsColumn.AllowShowHide = false;
@@ -330,6 +331,7 @@
             this.gridColumn_COUST_TYPE.Caption = "صنف الزبون";
             this.gridColumn_COUST_TYPE.FieldName = "COUST_TYPE";
             this.gridColumn_COUST_TYPE.Name = "gridColumn_COUST_TYPE";
+            this.gridColumn_COUST_TYPE.OptionsColumn.AllowEdit = false;
             this.gridColumn_COUST_TYPE.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_COUST_TYPE.OptionsColumn.AllowMove = false;
             this.gridColumn_COUST_TYPE.OptionsColumn.AllowShowHide = false;
@@ -352,6 +354,7 @@
             this.gridColumn_ID_COUSTOMER.Caption = "ID";
             this.gridColumn_ID_COUSTOMER.FieldName = "ID_COUSTOMER";
             this.gridColumn_ID_COUSTOMER.Name = "gridColumn_ID_COUSTOMER";
+            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowEdit = false;
             this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowMove = false;
             this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowShowHide = false;
@@ -450,6 +453,7 @@
             this.gridColumn3.Caption = "gridColumn3";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             // 
             // FORM_RPT_COUSTOMERS
             // 

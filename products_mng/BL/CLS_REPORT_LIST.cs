@@ -9,6 +9,23 @@ namespace products_mng.BL
 {
     class CLS_REPORT_LIST
     {
+        public static int ReportFlag = 0;  //0= sales 1=Purchase 2=NetMoney
+
+        public DataTable RPT_PRODUCTS_DTLS(int ID_PRODUCT, String BEGIN_DATE, String END_DATE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter ("@ID_PRODUCT", SqlDbType.Int);
+            param[0].Value = ID_PRODUCT;
+            param[1] = new SqlParameter ("@BEGIN_DATE", SqlDbType.NVarChar, 50);
+            param[1].Value = BEGIN_DATE;
+            param[2] = new SqlParameter ("@END_DATE", SqlDbType.NVarChar,50);
+            param[2].Value = END_DATE;
+            dt = dal.SelectData ("RPT_PRODUCTS_DTLS", param);
+            dal.ConClose ();
+            return dt;
+        }
 
         public DataTable RPT_COUSTOMER_ALL_ORDER(int TYPE_OF_ORDER, String BEGIN_DATE, String END_DATE,int COUST_ID)
         {
@@ -128,5 +145,41 @@ namespace products_mng.BL
             return dt;
 
         }
+
+        public DataTable RPT_NETMONEY( String BEGIN_DATE, String END_DATE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter ("@BEGIN_DATE", SqlDbType.NVarChar, 50);
+            param[0].Value = BEGIN_DATE;
+            param[1] = new SqlParameter ("@END_DATE", SqlDbType.NVarChar, 50);
+            param[1].Value = END_DATE;
+            dt = dal.SelectData ("RPT_NETMONEY", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
+        public DataTable RPT_COUST_WITH_ALL_RECIPT(int COUST_ID,String BEGIN_DATE, String END_DATE,string PAID_SPENT_TYPE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter ("@ID", SqlDbType.Int);
+            param[0].Value = COUST_ID;
+            param[2] = new SqlParameter ("@BEGIN_DATE", SqlDbType.NVarChar, 50);
+            param[2].Value = BEGIN_DATE;
+            param[1] = new SqlParameter ("@END_DATE", SqlDbType.NVarChar, 50);
+            param[1].Value = END_DATE;
+            param[3] = new SqlParameter ("@PAID_SPENT_TYPE", SqlDbType.NVarChar, 50);
+            param[3].Value = PAID_SPENT_TYPE;
+            dt = dal.SelectData ("RPT_COUST_WITH_ALL_RECIPT", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
+
     }
 }

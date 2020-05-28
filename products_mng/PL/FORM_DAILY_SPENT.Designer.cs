@@ -147,6 +147,7 @@
             this.textBox_MONEYPAID.Size = new System.Drawing.Size(130, 35);
             this.textBox_MONEYPAID.TabIndex = 47;
             this.textBox_MONEYPAID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MONEYPAID.Enter += new System.EventHandler(this.textBox_MONEYPAID_Enter);
             this.textBox_MONEYPAID.Leave += new System.EventHandler(this.textBox_MONEYPAID_Leave);
             // 
             // button_NEWPAID
@@ -201,7 +202,7 @@
             this.label4.TabIndex = 61;
             this.label4.Text = "نوع الصرف";
             // 
-            // FORM_DAILY_PAID
+            // FORM_DAILY_SPENT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -226,7 +227,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FORM_DAILY_PAID";
+            this.Name = "FORM_DAILY_SPENT";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

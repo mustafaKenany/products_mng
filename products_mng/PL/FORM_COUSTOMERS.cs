@@ -86,12 +86,12 @@ namespace products_mng.PL
                 switch (stat)
                 {
                     case "add":
-                        COUST.ADD_NEW_COUSTOMER (int.Parse(ID_COUST.Text),textBox_COUST_NAME.Text, textBox_COUST_TEL.Text, textBox_COUST_ADD.Text, COUST_TYPE, ImageByte);
+                        COUST.ADD_NEW_COUSTOMER (int.Parse (ID_COUST.Text), textBox_COUST_NAME.Text, textBox_COUST_TEL.Text, textBox_COUST_ADD.Text, COUST_TYPE, ImageByte);
                         MessageBox.Show ("تمت عملية الحفظ بنجاح", "SAVE");
                         clearFunction ();
                         break;
                     case "update":
-                        COUST.UPDATE_COUSTOMER (int.Parse(ID_COUST.Text),textBox_COUST_NAME.Text, textBox_COUST_TEL.Text, textBox_COUST_ADD.Text, COUST_TYPE, ImageByte);
+                        COUST.UPDATE_COUSTOMER (int.Parse (ID_COUST.Text), textBox_COUST_NAME.Text, textBox_COUST_TEL.Text, textBox_COUST_ADD.Text, COUST_TYPE, ImageByte);
                         MessageBox.Show ("تمت عملية التعديل بنجاح", "Update");
                         FORM_MNG_COUSTOMERS.getMainForm.gridControl_COUSTOMERS.DataSource = COUST.GET_ALL_COUSTOMERS ();
                         this.Close ();
@@ -109,7 +109,7 @@ namespace products_mng.PL
             }
         }
 
-        
+
 
         private void pictureBox_COUST_Click(object sender, EventArgs e)
         {
@@ -120,6 +120,26 @@ namespace products_mng.PL
                 pictureBox_COUST.Image = Image.FromFile (OFD.FileName);
             }
 
+        }
+
+        private void textBox_COUST_NAME_Validated(object sender, EventArgs e)
+        {
+            if (textBox_COUST_NAME.Text != "")
+            {
+                var dt = COUST.SEARCH_COUSTOMER (textBox_COUST_NAME.Text);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show ("هذا الاسم موجود مسبقا", "Error");
+                    textBox_COUST_NAME.Focus ();
+                    textBox_COUST_NAME.SelectionStart = 0;
+                    textBox_COUST_NAME.SelectionLength = textBox_COUST_NAME.TextLength;
+                }
+            }
+        }
+
+        private void button_CANCEL_Click(object sender, EventArgs e)
+        {
+            this.Close ();
         }
     }
 }

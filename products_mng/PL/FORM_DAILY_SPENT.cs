@@ -73,5 +73,10 @@ namespace products_mng.PL
                 textBox_MONEYPAID.Text = int.Parse (textBox_MONEYPAID.Text).ToString ("n1");
             }
         }
+
+        private void textBox_MONEYPAID_Enter(object sender, EventArgs e)
+        {
+            textBox_MONEYPAID.Text = "";
+        }
     }
 }

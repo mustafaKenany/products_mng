@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.button_CANCEL = new System.Windows.Forms.Button();
             this.button_ADD_NEW_COUST = new System.Windows.Forms.Button();
             this.textBox_COUST_TEL = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.comboBox_COUST_TYPE = new System.Windows.Forms.ComboBox();
             this.textBox_COUST_NAME = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_COUST)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "أضافة زبون جديد";
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(549, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(223, 70);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "يرجى ادخال الاسم الثلاثي للزبون وادخال عنوان سكنه ورقم هاتف\r\n";
+            // 
             // button_CANCEL
             // 
             this.button_CANCEL.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -86,6 +94,7 @@
             this.button_CANCEL.TabIndex = 18;
             this.button_CANCEL.Text = "الغاء";
             this.button_CANCEL.UseVisualStyleBackColor = true;
+            this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
             // button_ADD_NEW_COUST
             // 
@@ -209,6 +218,7 @@
             this.textBox_COUST_NAME.Size = new System.Drawing.Size(264, 35);
             this.textBox_COUST_NAME.TabIndex = 1;
             this.textBox_COUST_NAME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_COUST_NAME.Validated += new System.EventHandler(this.textBox_COUST_NAME_Validated);
             // 
             // label1
             // 
@@ -218,14 +228,6 @@
             this.label1.Size = new System.Drawing.Size(79, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "أسم الزبون";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(549, 189);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 70);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "يرجى ادخال الاسم الثلاثي للزبون وادخال عنوان سكنه ورقم هاتف\r\n";
             // 
             // FORM_COUSTOMERS
             // 

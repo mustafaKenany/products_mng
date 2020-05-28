@@ -30,7 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox_COUST_FILTER = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button_DLT_COUST = new System.Windows.Forms.Button();
             this.button_EDIT_COUST = new System.Windows.Forms.Button();
             this.gridControl_COUSTOMERS = new DevExpress.XtraGrid.GridControl();
@@ -48,7 +47,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox_COUST_FILTER);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button_DLT_COUST);
             this.groupBox1.Controls.Add(this.button_EDIT_COUST);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -56,14 +54,14 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(934, 150);
+            this.groupBox1.Size = new System.Drawing.Size(934, 100);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "الاجراءات المتاحة";
+            this.groupBox1.Text = "بحث بوساطة الاسم او العنوان او الصنف";
             // 
             // textBox_COUST_FILTER
             // 
-            this.textBox_COUST_FILTER.Location = new System.Drawing.Point(656, 95);
+            this.textBox_COUST_FILTER.Location = new System.Drawing.Point(411, 48);
             this.textBox_COUST_FILTER.Margin = new System.Windows.Forms.Padding(10);
             this.textBox_COUST_FILTER.Multiline = true;
             this.textBox_COUST_FILTER.Name = "textBox_COUST_FILTER";
@@ -71,15 +69,6 @@
             this.textBox_COUST_FILTER.TabIndex = 24;
             this.textBox_COUST_FILTER.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_COUST_FILTER.TextChanged += new System.EventHandler(this.textBox_COUST_FILTER_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(755, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 26);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "ابحث هنا";
             // 
             // button_DLT_COUST
             // 
@@ -89,7 +78,7 @@
             this.button_DLT_COUST.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_DLT_COUST.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_DLT_COUST.ForeColor = System.Drawing.Color.White;
-            this.button_DLT_COUST.Location = new System.Drawing.Point(477, 80);
+            this.button_DLT_COUST.Location = new System.Drawing.Point(232, 40);
             this.button_DLT_COUST.Name = "button_DLT_COUST";
             this.button_DLT_COUST.Size = new System.Drawing.Size(80, 50);
             this.button_DLT_COUST.TabIndex = 18;
@@ -105,7 +94,7 @@
             this.button_EDIT_COUST.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_EDIT_COUST.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_EDIT_COUST.ForeColor = System.Drawing.Color.White;
-            this.button_EDIT_COUST.Location = new System.Drawing.Point(563, 80);
+            this.button_EDIT_COUST.Location = new System.Drawing.Point(318, 40);
             this.button_EDIT_COUST.Name = "button_EDIT_COUST";
             this.button_EDIT_COUST.Size = new System.Drawing.Size(80, 50);
             this.button_EDIT_COUST.TabIndex = 17;
@@ -116,10 +105,10 @@
             // gridControl_COUSTOMERS
             // 
             this.gridControl_COUSTOMERS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_COUSTOMERS.Location = new System.Drawing.Point(0, 150);
+            this.gridControl_COUSTOMERS.Location = new System.Drawing.Point(0, 100);
             this.gridControl_COUSTOMERS.MainView = this.gridView1;
             this.gridControl_COUSTOMERS.Name = "gridControl_COUSTOMERS";
-            this.gridControl_COUSTOMERS.Size = new System.Drawing.Size(934, 412);
+            this.gridControl_COUSTOMERS.Size = new System.Drawing.Size(934, 462);
             this.gridControl_COUSTOMERS.TabIndex = 3;
             this.gridControl_COUSTOMERS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -267,7 +256,6 @@
         public System.Windows.Forms.Button button_EDIT_COUST;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         public System.Windows.Forms.TextBox textBox_COUST_FILTER;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_COUST_NAME;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_ADDRESS;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_TEL;

@@ -102,10 +102,5 @@ namespace products_mng.PL
 
             }
         }
-
-        private void textBox_Cat_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

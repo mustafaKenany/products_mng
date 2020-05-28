@@ -49,7 +49,7 @@ namespace products_mng.RPT
                 }
                 else
                 {
-                    MessageBox.Show ("لا توجد بيانات");
+                    MessageBox.Show ("لا توجد بيانات لهذا الزبون خلال هذه الفترة المحددة", "Message");
                 }
             }
         }
@@ -82,7 +82,7 @@ namespace products_mng.RPT
                     }
                     else
                     {
-                        MessageBox.Show ("لا توجد بيانات");
+                        MessageBox.Show ("لا توجد بيانات لهذه المادة خلال هذه الفترة المحددة مع هذا الزبون","Message");
                     }
 
                 }

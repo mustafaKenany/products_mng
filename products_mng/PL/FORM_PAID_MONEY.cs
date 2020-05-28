@@ -122,5 +122,10 @@ namespace products_mng.PL
             }
 
         }
+
+        private void textBox_MONEYPAID_Enter(object sender, EventArgs e)
+        {
+            textBox_MONEYPAID.Text = "";
+        }
     }
 }

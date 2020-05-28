@@ -279,6 +279,8 @@ namespace products_mng.PL
                 textBox_INVO_PAID.Focus ();
                 textBox_INVO_PAID.Text = label_INVO_TOTAL.Text;
                 textBox_INVO_PAID.SelectAll ();
+                textBox_INVO_DISC.Text = "0";
+                label_INVO_REMID.Text = "0";
             }
         }
 
@@ -415,9 +417,9 @@ namespace products_mng.PL
         {
             if (dataGridView_INVO_ITEMS.Rows.Count > 0)
             {
-                if (textBox_INVO_PAID.Text == "")
+                if (textBox_INVO_PAID.Text == "" || textBox_INVO_PAID.Text == "0")
                 {
-                    label_INVO_REMID.Text = label_INVO_TOTAL.Text;
+                    label_INVO_REMID.Text = (double.Parse (label_INVO_TOTAL.Text) - double.Parse (textBox_INVO_DISC.Text)).ToString ();
                 }
                 else
                 {
@@ -435,15 +437,20 @@ namespace products_mng.PL
                 {
                     label_INVO_REMID.Text = (double.Parse (label_INVO_TOTAL.Text) - double.Parse (textBox_INVO_PAID.Text)).ToString ();
                 }
-                else if (double.Parse (textBox_INVO_DISC.Text) == double.Parse (label_INVO_TOTAL.Text))
-                {
-                    label_INVO_REMID.Text = "0";
-                    textBox_INVO_PAID.Text = "0";
-                }
+                //else if (double.Parse (textBox_INVO_DISC.Text) == double.Parse (label_INVO_TOTAL.Text))
+                //{
+                //    label_INVO_REMID.Text = "0";
+                //    textBox_INVO_PAID.Text = "0";
+                //}
+                //else
+                //{
+                //    label_INVO_REMID.Text = (double.Parse (label_INVO_TOTAL.Text) - double.Parse (textBox_INVO_PAID.Text) - double.Parse (textBox_INVO_DISC.Text)).ToString ();
+
+                //}
                 else
                 {
+                    textBox_INVO_PAID.Text = "0";
                     label_INVO_REMID.Text = (double.Parse (label_INVO_TOTAL.Text) - double.Parse (textBox_INVO_PAID.Text) - double.Parse (textBox_INVO_DISC.Text)).ToString ();
-
                 }
             }
         }
@@ -461,6 +468,67 @@ namespace products_mng.PL
                 {
                     label_COUST_ID.Text = dt.Rows[0]["ID_COUSTOMER"].ToString ();
                 }
+            }
+        }
+
+        private void label_SALES_MAN_MouseHover(object sender, EventArgs e)
+        {
+            label_SALES_MAN.Text = "SALES_MAN";
+        }
+
+        private void label_SALES_MAN_MouseLeave(object sender, EventArgs e)
+        {
+            label_SALES_MAN.Text = BL.CLS_LOGIN.SALES_MAN;
+        }
+
+        private void label_COUST_ID_MouseHover(object sender, EventArgs e)
+        {
+            label_COUST_ID.Text = "COUST_ID";
+        }
+
+        private void label_COUST_ID_MouseLeave(object sender, EventArgs e)
+        {
+            label_COUST_ID.Text = BL.CLS_COUSTOMERS.COUST_ID.ToString ();
+        }
+
+        private void label_MONEYIES_ID_MouseHover(object sender, EventArgs e)
+        {
+            label_MONEYIES_ID.Text = "MONEY_ID";
+        }
+
+        private void label_MONEYIES_ID_MouseLeave(object sender, EventArgs e)
+        {
+            if (button_NEW_INVO.Enabled == false)
+            {
+                this.label_MONEYIES_ID.Text = ORD.GET_ID_MONEYIES ().ToString ();
+            }
+           
+        }
+
+        private void textBox_INVO_DISC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress (e);
+            if (!char.IsControl (e.KeyChar) && !char.IsDigit (e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+        }
+
+        private void textBox_INVO_PAID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            base.OnKeyPress (e);
+            if (!char.IsControl (e.KeyChar) && !char.IsDigit (e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+        }
+
+        private void label_ID_ORDER_MouseHover(object sender, EventArgs e)
+        {
+            label_ID_ORDER.Text = "رقم القائمة";
+        }
+
+        private void label_ID_ORDER_MouseLeave(object sender, EventArgs e)
+        {
+            if (button_NEW_INVO.Enabled == false)
+            {
+                this.label_ID_ORDER.Text = ORD.GET_ID_ORDER ().ToString ();
             }
         }
     }

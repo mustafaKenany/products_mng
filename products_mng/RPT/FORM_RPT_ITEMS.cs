@@ -13,6 +13,7 @@ namespace products_mng.RPT
     public partial class FORM_RPT_ITEMS : Form
     {
         BL.CLS_PRODUCTS PRD = new BL.CLS_PRODUCTS ();
+        BL.CLS_REPORT_LIST RPTCLS = new BL.CLS_REPORT_LIST ();
         public FORM_RPT_ITEMS()
         {
             InitializeComponent ();
@@ -31,7 +32,11 @@ namespace products_mng.RPT
                 string PRDLABEL = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["LABEL_PRODUCT"]).ToString ();
                 RPT.RPT_ITMSDTLS X = new RPT_ITMSDTLS ();
                 var dt = new DataTable ();
-                dt = PRD.RPT_PRODUCTS_DTLS (PRD_ID);
+                var BEGIN_DATE = dateTimePicker_BEGIN_DATE.Text;
+                var END_DATE = dateTimePicker_END_DATE.Text;
+                X.xrLabel11.Text = BEGIN_DATE;
+                X.xrLabel9.Text = END_DATE;
+                dt = RPTCLS.RPT_PRODUCTS_DTLS (PRD_ID,BEGIN_DATE,END_DATE);
                 if (dt.Rows.Count > 0)
                 {
                     Cursor = Cursors.WaitCursor;
@@ -42,7 +47,7 @@ namespace products_mng.RPT
                 }
                 else
                 {
-                    MessageBox.Show ("لا توجد معلومات");
+                    MessageBox.Show ("لا توجد مبيعات لهذه المادة خلال هذه الفترة","Message");
                 }
 
 

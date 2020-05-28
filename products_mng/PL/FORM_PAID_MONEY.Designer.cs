@@ -92,6 +92,7 @@
             this.textBox_MONEYPAID.Size = new System.Drawing.Size(130, 35);
             this.textBox_MONEYPAID.TabIndex = 2;
             this.textBox_MONEYPAID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_MONEYPAID.Enter += new System.EventHandler(this.textBox_MONEYPAID_Enter);
             this.textBox_MONEYPAID.Leave += new System.EventHandler(this.textBox_MONEYPAID_Leave);
             // 
             // textBox_NOTESPAID

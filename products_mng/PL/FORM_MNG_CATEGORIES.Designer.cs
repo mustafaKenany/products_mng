@@ -190,7 +190,6 @@
             this.textBox_Cat.Size = new System.Drawing.Size(300, 34);
             this.textBox_Cat.TabIndex = 0;
             this.textBox_Cat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Cat.TextChanged += new System.EventHandler(this.textBox_Cat_TextChanged);
             // 
             // panel1
             // 
@@ -261,7 +260,7 @@
             this.button_PRINT.Name = "button_PRINT";
             this.button_PRINT.Size = new System.Drawing.Size(132, 50);
             this.button_PRINT.TabIndex = 16;
-            this.button_PRINT.Text = "طباعة";
+            this.button_PRINT.Text = "طباعة الكل";
             this.button_PRINT.UseVisualStyleBackColor = true;
             this.button_PRINT.Click += new System.EventHandler(this.button_PRINT_Click);
             // 

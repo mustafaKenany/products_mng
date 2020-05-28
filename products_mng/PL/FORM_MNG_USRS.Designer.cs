@@ -85,6 +85,7 @@
             this.groupBox1.Controls.Add(this.button_UPDATEUSR);
             this.groupBox1.Controls.Add(this.button_ALL_USRS);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(5, 4);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
@@ -100,7 +101,7 @@
             this.button4.FlatAppearance.BorderSize = 2;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(320, 53);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 50);
@@ -114,7 +115,7 @@
             this.button_BLOCKUSR.FlatAppearance.BorderSize = 2;
             this.button_BLOCKUSR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_BLOCKUSR.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_BLOCKUSR.ForeColor = System.Drawing.Color.Black;
+            this.button_BLOCKUSR.ForeColor = System.Drawing.Color.White;
             this.button_BLOCKUSR.Location = new System.Drawing.Point(452, 53);
             this.button_BLOCKUSR.Name = "button_BLOCKUSR";
             this.button_BLOCKUSR.Size = new System.Drawing.Size(100, 50);
@@ -129,7 +130,7 @@
             this.button_DLTUSR.FlatAppearance.BorderSize = 2;
             this.button_DLTUSR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_DLTUSR.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_DLTUSR.ForeColor = System.Drawing.Color.Black;
+            this.button_DLTUSR.ForeColor = System.Drawing.Color.White;
             this.button_DLTUSR.Location = new System.Drawing.Point(584, 53);
             this.button_DLTUSR.Name = "button_DLTUSR";
             this.button_DLTUSR.Size = new System.Drawing.Size(100, 50);
@@ -144,7 +145,7 @@
             this.button_UPDATEUSR.FlatAppearance.BorderSize = 2;
             this.button_UPDATEUSR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_UPDATEUSR.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_UPDATEUSR.ForeColor = System.Drawing.Color.Black;
+            this.button_UPDATEUSR.ForeColor = System.Drawing.Color.White;
             this.button_UPDATEUSR.Location = new System.Drawing.Point(716, 53);
             this.button_UPDATEUSR.Name = "button_UPDATEUSR";
             this.button_UPDATEUSR.Size = new System.Drawing.Size(100, 50);
@@ -159,7 +160,7 @@
             this.button_ALL_USRS.FlatAppearance.BorderSize = 2;
             this.button_ALL_USRS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ALL_USRS.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_ALL_USRS.ForeColor = System.Drawing.Color.Black;
+            this.button_ALL_USRS.ForeColor = System.Drawing.Color.White;
             this.button_ALL_USRS.Location = new System.Drawing.Point(848, 53);
             this.button_ALL_USRS.Name = "button_ALL_USRS";
             this.button_ALL_USRS.Size = new System.Drawing.Size(100, 50);
@@ -170,7 +171,7 @@
             // 
             // gridControl_MNGUSR
             // 
-            this.gridControl_MNGUSR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridControl_MNGUSR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl_MNGUSR.Location = new System.Drawing.Point(5, 133);
             this.gridControl_MNGUSR.MainView = this.gridView1;
             this.gridControl_MNGUSR.Name = "gridControl_MNGUSR";
@@ -186,7 +187,7 @@
             this.repositoryItemCheckEdit9,
             this.repositoryItemCheckEdit10,
             this.repositoryItemCheckEdit11});
-            this.gridControl_MNGUSR.Size = new System.Drawing.Size(1174, 297);
+            this.gridControl_MNGUSR.Size = new System.Drawing.Size(1174, 450);
             this.gridControl_MNGUSR.TabIndex = 1;
             this.gridControl_MNGUSR.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -213,6 +214,8 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.RowHeight = 30;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumn1
             // 
@@ -229,6 +232,7 @@
             this.gridColumn1.Caption = "اسم المستخدم الكامل";
             this.gridColumn1.FieldName = "USR_FLNAME";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
@@ -247,6 +251,7 @@
             this.gridColumn2.Caption = "اسم الدخول";
             this.gridColumn2.FieldName = "USRNAME";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
@@ -255,6 +260,7 @@
             this.gridColumn3.Caption = "USRID";
             this.gridColumn3.FieldName = "ID_USER";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             // 
             // gridColumn4
             // 
@@ -266,6 +272,7 @@
             this.gridColumn4.Caption = "بيع مباشر";
             this.gridColumn4.FieldName = "ACS1";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
             // 
@@ -279,6 +286,7 @@
             this.gridColumn5.Caption = "ادارة مبيعات";
             this.gridColumn5.FieldName = "ACS2";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
             // 
@@ -292,6 +300,7 @@
             this.gridColumn6.Caption = "مشتريات";
             this.gridColumn6.FieldName = "ACS3";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             // 
             // gridColumn7
             // 
@@ -303,6 +312,7 @@
             this.gridColumn7.Caption = "ادارة مشتريا";
             this.gridColumn7.FieldName = "ACS4";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             // 
             // gridColumn8
             // 
@@ -314,6 +324,7 @@
             this.gridColumn8.Caption = "الاصناف والمواد";
             this.gridColumn8.FieldName = "ACS5";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 4;
             // 
@@ -327,6 +338,7 @@
             this.gridColumn9.Caption = "العملاء";
             this.gridColumn9.FieldName = "ACS6";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 5;
             // 
@@ -340,6 +352,7 @@
             this.gridColumn10.Caption = "ادارة العملاء";
             this.gridColumn10.FieldName = "ACS7";
             this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 6;
             // 
@@ -353,6 +366,7 @@
             this.gridColumn11.Caption = "المستخدمين";
             this.gridColumn11.FieldName = "ACS8";
             this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 7;
             // 
@@ -366,6 +380,7 @@
             this.gridColumn12.Caption = "ادارة المستخدمين";
             this.gridColumn12.FieldName = "ACS9";
             this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 8;
             // 
@@ -379,6 +394,7 @@
             this.gridColumn13.Caption = "الحسابات";
             this.gridColumn13.FieldName = "ACS10";
             this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 9;
             // 
@@ -392,6 +408,7 @@
             this.gridColumn14.Caption = "التقارير";
             this.gridColumn14.FieldName = "ACS11";
             this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -452,10 +469,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(65)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1184, 587);
             this.Controls.Add(this.gridControl_MNGUSR);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MaximizeBox = false;

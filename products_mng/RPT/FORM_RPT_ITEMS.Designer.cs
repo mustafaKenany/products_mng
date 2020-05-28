@@ -38,6 +38,10 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker_END_DATE = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_BEGIN_DATE = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_ITEMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -45,15 +49,20 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.dateTimePicker_END_DATE);
+            this.groupBox1.Controls.Add(this.dateTimePicker_BEGIN_DATE);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button_ITEMALLSALES);
             this.groupBox1.Controls.Add(this.button_ALLITEMS);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Font = new System.Drawing.Font("Cairo Black", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(649, 105);
+            this.groupBox1.Size = new System.Drawing.Size(649, 112);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "الاجراءات الممكنة";
@@ -65,7 +74,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(141, 28);
+            this.button3.Location = new System.Drawing.Point(201, 33);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 66);
             this.button3.TabIndex = 55;
@@ -79,13 +88,12 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(247, 28);
+            this.button2.Location = new System.Drawing.Point(307, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 66);
             this.button2.TabIndex = 54;
             this.button2.Text = "طباعة المشتريات";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
             // 
             // button_ITEMALLSALES
             // 
@@ -94,7 +102,7 @@
             this.button_ITEMALLSALES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ITEMALLSALES.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_ITEMALLSALES.ForeColor = System.Drawing.Color.White;
-            this.button_ITEMALLSALES.Location = new System.Drawing.Point(353, 28);
+            this.button_ITEMALLSALES.Location = new System.Drawing.Point(413, 33);
             this.button_ITEMALLSALES.Name = "button_ITEMALLSALES";
             this.button_ITEMALLSALES.Size = new System.Drawing.Size(100, 66);
             this.button_ITEMALLSALES.TabIndex = 53;
@@ -109,7 +117,7 @@
             this.button_ALLITEMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ALLITEMS.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_ALLITEMS.ForeColor = System.Drawing.Color.White;
-            this.button_ALLITEMS.Location = new System.Drawing.Point(459, 28);
+            this.button_ALLITEMS.Location = new System.Drawing.Point(519, 33);
             this.button_ALLITEMS.Name = "button_ALLITEMS";
             this.button_ALLITEMS.Size = new System.Drawing.Size(100, 66);
             this.button_ALLITEMS.TabIndex = 52;
@@ -120,10 +128,10 @@
             // gridControl_ITEMS
             // 
             this.gridControl_ITEMS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_ITEMS.Location = new System.Drawing.Point(5, 110);
+            this.gridControl_ITEMS.Location = new System.Drawing.Point(5, 117);
             this.gridControl_ITEMS.MainView = this.gridView1;
             this.gridControl_ITEMS.Name = "gridControl_ITEMS";
-            this.gridControl_ITEMS.Size = new System.Drawing.Size(649, 497);
+            this.gridControl_ITEMS.Size = new System.Drawing.Size(649, 490);
             this.gridControl_ITEMS.TabIndex = 1;
             this.gridControl_ITEMS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -204,6 +212,44 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(123, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 26);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "الى";
+            // 
+            // dateTimePicker_END_DATE
+            // 
+            this.dateTimePicker_END_DATE.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker_END_DATE.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_END_DATE.Location = new System.Drawing.Point(6, 64);
+            this.dateTimePicker_END_DATE.Name = "dateTimePicker_END_DATE";
+            this.dateTimePicker_END_DATE.ShowUpDown = true;
+            this.dateTimePicker_END_DATE.Size = new System.Drawing.Size(102, 34);
+            this.dateTimePicker_END_DATE.TabIndex = 63;
+            // 
+            // dateTimePicker_BEGIN_DATE
+            // 
+            this.dateTimePicker_BEGIN_DATE.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker_BEGIN_DATE.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_BEGIN_DATE.Location = new System.Drawing.Point(6, 24);
+            this.dateTimePicker_BEGIN_DATE.Name = "dateTimePicker_BEGIN_DATE";
+            this.dateTimePicker_BEGIN_DATE.ShowUpDown = true;
+            this.dateTimePicker_BEGIN_DATE.Size = new System.Drawing.Size(102, 34);
+            this.dateTimePicker_BEGIN_DATE.TabIndex = 62;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(123, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 26);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "من";
+            // 
             // FORM_RPT_ITEMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
@@ -224,6 +270,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "تقرير مواد";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_ITEMS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -242,5 +289,9 @@
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button_ITEMALLSALES;
         public System.Windows.Forms.Button button_ALLITEMS;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_END_DATE;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_BEGIN_DATE;
     }
 }

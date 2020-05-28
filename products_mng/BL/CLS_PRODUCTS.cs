@@ -97,18 +97,7 @@ namespace products_mng.BL
             return dt;
         }
 
-        public DataTable RPT_PRODUCTS_DTLS(int ID_PRODUCT)
-        {
-            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
-            DataTable dt = new DataTable ();
-            SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter ("@ID_PRODUCT", SqlDbType.Int);
-            param[0].Value = ID_PRODUCT;
-            dt = dal.SelectData ("RPT_PRODUCTS_DTLS", param);
-            dal.ConClose ();
-            return dt;
-
-        }
+       
 
         public int GET_ID_PRODUCT()
         {
@@ -157,6 +146,21 @@ namespace products_mng.BL
             PARAM[1].Value = STOCK;
             PARAM[2].Value = PRICE;
             dal.ExecuteCommand ("UPDATE_PRICE_STOCK", PARAM);
+            dal.ConClose ();
+
+        }
+
+        public void ModifyPrdBarcode(int ID_PRD, int BARCODE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            dal.ConOpen ();
+            SqlParameter[] PARAM = new SqlParameter[2];
+            PARAM[0] = new SqlParameter ("@ID", SqlDbType.Int);
+            PARAM[1] = new SqlParameter ("@barcode", SqlDbType.Float);
+
+            PARAM[0].Value = ID_PRD;
+            PARAM[1].Value = BARCODE;
+            dal.ExecuteCommand ("ModifyPrdBarcode", PARAM);
             dal.ConClose ();
 
         }

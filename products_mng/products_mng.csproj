@@ -68,6 +68,9 @@
     <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="OnBarcode.Barcode.WinForms">
+      <HintPath>..\..\..\..\Downloads\OnBarcode.BarcodeGenerator.DotnetSuite\OnBarcode.BarcodeGenerator.DotnetSuite\dll\Net40\OnBarcode.Barcode.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -86,8 +89,17 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net45\zxing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net45\zxing.presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\CLS_BARCODE.cs" />
     <Compile Include="BL\CLS_MONEYIES.cs" />
     <Compile Include="BL\CLS_PRODUCTS.cs" />
     <Compile Include="BL\CLS_COUSTOMERS.cs" />
@@ -256,6 +268,12 @@
     <Compile Include="RPT\PRT_ALL_INVO.Designer.cs">
       <DependentUpon>PRT_ALL_INVO.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\RPT_COUST_WITH_ALL_RECIPT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_COUST_WITH_ALL_RECIPT.Designer.cs">
+      <DependentUpon>RPT_COUST_WITH_ALL_RECIPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\RPT_INVO.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -273,6 +291,12 @@
     </Compile>
     <Compile Include="RPT\RPT_ITMSDTLS.Designer.cs">
       <DependentUpon>RPT_ITMSDTLS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\RPT_NETMONEY.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_NETMONEY.Designer.cs">
+      <DependentUpon>RPT_NETMONEY.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\RPT_ONE_ITEM_ONE_COUST.cs">
       <SubType>Component</SubType>
@@ -383,6 +407,9 @@
     <EmbeddedResource Include="RPT\PRT_ALL_INVO.resx">
       <DependentUpon>PRT_ALL_INVO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_COUST_WITH_ALL_RECIPT.resx">
+      <DependentUpon>RPT_COUST_WITH_ALL_RECIPT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_INVO.resx">
       <DependentUpon>RPT_INVO.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_ITMSDTLS.resx">
       <DependentUpon>RPT_ITMSDTLS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_NETMONEY.resx">
+      <DependentUpon>RPT_NETMONEY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_ONE_ITEM_ONE_COUST.resx">
       <DependentUpon>RPT_ONE_ITEM_ONE_COUST.cs</DependentUpon>
@@ -415,6 +445,7 @@
     <None Include="DAL\RPT_TABLES.xss">
       <DependentUpon>RPT_TABLES.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

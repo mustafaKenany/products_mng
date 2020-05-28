@@ -133,6 +133,7 @@ namespace products_mng.PL
 
         private void ToolStripMenuItem_SLAESREP_Click(object sender, EventArgs e)
         {
+            BL.CLS_REPORT_LIST.ReportFlag = 0;
             PL.FORM_RPTDATE form = new FORM_RPTDATE ();
             form.ShowDialog ();
         }
@@ -159,6 +160,13 @@ namespace products_mng.PL
         {
             RPT.FORM_RPT_PAID_SPENT_WITH_COUSTOMERS FORM = new RPT.FORM_RPT_PAID_SPENT_WITH_COUSTOMERS ();
             FORM.ShowDialog ();
+        }
+
+        private void ToolStripMenuItem_RPT_NETMONEY_Click(object sender, EventArgs e)
+        {
+            BL.CLS_REPORT_LIST.ReportFlag = 2;
+            PL.FORM_RPTDATE form = new FORM_RPTDATE ();
+            form.ShowDialog ();
         }
     }
 }

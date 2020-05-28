@@ -33,19 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker_END_DATE = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_BEGIN_DATE = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_COUST_WITH_ALL_DAILY_SPENT = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button_COUST_ONE_ITEM = new System.Windows.Forms.Button();
-            this.button_PRT_COUST_SALES = new System.Windows.Forms.Button();
+            this.button_COUST_WITH_ALL_SPENT = new System.Windows.Forms.Button();
+            this.button_PRT_COUST_WITH_ALL_RECIPT = new System.Windows.Forms.Button();
             this.button_DISPLAY_DATA = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.gridControl_COUSTOMERS = new DevExpress.XtraGrid.GridControl();
-            this.gridView_COUST = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn_COUST_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_ADDRESS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_TEL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_COUST_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_ID_COUSTOMER = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl_PAID_SPENT = new DevExpress.XtraGrid.GridControl();
             this.gridView_PAID_SPENT = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,12 +47,19 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl_COUSTOMERS = new DevExpress.XtraGrid.GridControl();
+            this.gridView_COUST = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn_COUST_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_ADDRESS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_TEL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_COUST_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_ID_COUSTOMER = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl_COUSTOMERS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_COUST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_PAID_SPENT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_PAID_SPENT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_COUSTOMERS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_COUST)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -68,10 +68,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dateTimePicker_END_DATE);
             this.groupBox1.Controls.Add(this.dateTimePicker_BEGIN_DATE);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button_COUST_WITH_ALL_DAILY_SPENT);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button_COUST_ONE_ITEM);
-            this.groupBox1.Controls.Add(this.button_PRT_COUST_SALES);
+            this.groupBox1.Controls.Add(this.button_COUST_WITH_ALL_SPENT);
+            this.groupBox1.Controls.Add(this.button_PRT_COUST_WITH_ALL_RECIPT);
             this.groupBox1.Controls.Add(this.button_DISPLAY_DATA);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -118,20 +118,20 @@
             this.dateTimePicker_BEGIN_DATE.Size = new System.Drawing.Size(102, 34);
             this.dateTimePicker_BEGIN_DATE.TabIndex = 58;
             // 
-            // button1
+            // button_COUST_WITH_ALL_DAILY_SPENT
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(696, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 66);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "طباعة كل المصروفات اليومية";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.button_COUST_WITH_ALL_DAILY_SPENT.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_COUST_WITH_ALL_DAILY_SPENT.FlatAppearance.BorderSize = 2;
+            this.button_COUST_WITH_ALL_DAILY_SPENT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_COUST_WITH_ALL_DAILY_SPENT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_COUST_WITH_ALL_DAILY_SPENT.ForeColor = System.Drawing.Color.White;
+            this.button_COUST_WITH_ALL_DAILY_SPENT.Location = new System.Drawing.Point(696, 26);
+            this.button_COUST_WITH_ALL_DAILY_SPENT.Name = "button_COUST_WITH_ALL_DAILY_SPENT";
+            this.button_COUST_WITH_ALL_DAILY_SPENT.Size = new System.Drawing.Size(139, 66);
+            this.button_COUST_WITH_ALL_DAILY_SPENT.TabIndex = 56;
+            this.button_COUST_WITH_ALL_DAILY_SPENT.Text = "طباعة كل المصروفات اليومية";
+            this.button_COUST_WITH_ALL_DAILY_SPENT.UseVisualStyleBackColor = true;
+            this.button_COUST_WITH_ALL_DAILY_SPENT.Click += new System.EventHandler(this.button_COUST_WITH_ALL_DAILY_SPENT_Click);
             // 
             // button3
             // 
@@ -147,33 +147,35 @@
             this.button3.Text = "طباعة كل حركات";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button_COUST_ONE_ITEM
+            // button_COUST_WITH_ALL_SPENT
             // 
-            this.button_COUST_ONE_ITEM.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_COUST_ONE_ITEM.FlatAppearance.BorderSize = 2;
-            this.button_COUST_ONE_ITEM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_COUST_ONE_ITEM.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_COUST_ONE_ITEM.ForeColor = System.Drawing.Color.White;
-            this.button_COUST_ONE_ITEM.Location = new System.Drawing.Point(841, 26);
-            this.button_COUST_ONE_ITEM.Name = "button_COUST_ONE_ITEM";
-            this.button_COUST_ONE_ITEM.Size = new System.Drawing.Size(109, 66);
-            this.button_COUST_ONE_ITEM.TabIndex = 54;
-            this.button_COUST_ONE_ITEM.Text = "طباعة كل المصروفات";
-            this.button_COUST_ONE_ITEM.UseVisualStyleBackColor = true;
+            this.button_COUST_WITH_ALL_SPENT.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_COUST_WITH_ALL_SPENT.FlatAppearance.BorderSize = 2;
+            this.button_COUST_WITH_ALL_SPENT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_COUST_WITH_ALL_SPENT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_COUST_WITH_ALL_SPENT.ForeColor = System.Drawing.Color.White;
+            this.button_COUST_WITH_ALL_SPENT.Location = new System.Drawing.Point(841, 26);
+            this.button_COUST_WITH_ALL_SPENT.Name = "button_COUST_WITH_ALL_SPENT";
+            this.button_COUST_WITH_ALL_SPENT.Size = new System.Drawing.Size(109, 66);
+            this.button_COUST_WITH_ALL_SPENT.TabIndex = 54;
+            this.button_COUST_WITH_ALL_SPENT.Text = "طباعة كل المصروفات";
+            this.button_COUST_WITH_ALL_SPENT.UseVisualStyleBackColor = true;
+            this.button_COUST_WITH_ALL_SPENT.Click += new System.EventHandler(this.button_COUST_WITH_ALL_SPENT_Click);
             // 
-            // button_PRT_COUST_SALES
+            // button_PRT_COUST_WITH_ALL_RECIPT
             // 
-            this.button_PRT_COUST_SALES.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_PRT_COUST_SALES.FlatAppearance.BorderSize = 2;
-            this.button_PRT_COUST_SALES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_PRT_COUST_SALES.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_PRT_COUST_SALES.ForeColor = System.Drawing.Color.White;
-            this.button_PRT_COUST_SALES.Location = new System.Drawing.Point(956, 26);
-            this.button_PRT_COUST_SALES.Name = "button_PRT_COUST_SALES";
-            this.button_PRT_COUST_SALES.Size = new System.Drawing.Size(107, 66);
-            this.button_PRT_COUST_SALES.TabIndex = 53;
-            this.button_PRT_COUST_SALES.Text = "طباعة كل المقبوضات";
-            this.button_PRT_COUST_SALES.UseVisualStyleBackColor = true;
+            this.button_PRT_COUST_WITH_ALL_RECIPT.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_PRT_COUST_WITH_ALL_RECIPT.FlatAppearance.BorderSize = 2;
+            this.button_PRT_COUST_WITH_ALL_RECIPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PRT_COUST_WITH_ALL_RECIPT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_PRT_COUST_WITH_ALL_RECIPT.ForeColor = System.Drawing.Color.White;
+            this.button_PRT_COUST_WITH_ALL_RECIPT.Location = new System.Drawing.Point(956, 26);
+            this.button_PRT_COUST_WITH_ALL_RECIPT.Name = "button_PRT_COUST_WITH_ALL_RECIPT";
+            this.button_PRT_COUST_WITH_ALL_RECIPT.Size = new System.Drawing.Size(107, 66);
+            this.button_PRT_COUST_WITH_ALL_RECIPT.TabIndex = 53;
+            this.button_PRT_COUST_WITH_ALL_RECIPT.Text = "طباعة كل المقبوضات";
+            this.button_PRT_COUST_WITH_ALL_RECIPT.UseVisualStyleBackColor = true;
+            this.button_PRT_COUST_WITH_ALL_RECIPT.Click += new System.EventHandler(this.button_PRT_COUST_WITH_ALL_RECIPT_Click);
             // 
             // button_DISPLAY_DATA
             // 
@@ -193,8 +195,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.62712F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.37288F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.38983F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.61017F));
             this.tableLayoutPanel1.Controls.Add(this.gridControl_PAID_SPENT, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.gridControl_COUSTOMERS, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -205,147 +207,13 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1180, 478);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // gridControl_COUSTOMERS
-            // 
-            this.gridControl_COUSTOMERS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_COUSTOMERS.Location = new System.Drawing.Point(681, 3);
-            this.gridControl_COUSTOMERS.MainView = this.gridView_COUST;
-            this.gridControl_COUSTOMERS.Name = "gridControl_COUSTOMERS";
-            this.gridControl_COUSTOMERS.Size = new System.Drawing.Size(496, 472);
-            this.gridControl_COUSTOMERS.TabIndex = 4;
-            this.gridControl_COUSTOMERS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView_COUST});
-            // 
-            // gridView_COUST
-            // 
-            this.gridView_COUST.ColumnPanelRowHeight = 30;
-            this.gridView_COUST.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn_COUST_NAME,
-            this.gridColumn_ADDRESS,
-            this.gridColumn_TEL,
-            this.gridColumn_COUST_TYPE,
-            this.gridColumn_ID_COUSTOMER});
-            this.gridView_COUST.GridControl = this.gridControl_COUSTOMERS;
-            this.gridView_COUST.Name = "gridView_COUST";
-            this.gridView_COUST.OptionsView.ShowAutoFilterRow = true;
-            this.gridView_COUST.OptionsView.ShowGroupPanel = false;
-            this.gridView_COUST.RowHeight = 30;
-            this.gridView_COUST.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn_ID_COUSTOMER, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // gridColumn_COUST_NAME
-            // 
-            this.gridColumn_COUST_NAME.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gridColumn_COUST_NAME.AppearanceCell.Options.UseFont = true;
-            this.gridColumn_COUST_NAME.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_COUST_NAME.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_COUST_NAME.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_COUST_NAME.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.gridColumn_COUST_NAME.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn_COUST_NAME.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_COUST_NAME.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_COUST_NAME.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_COUST_NAME.Caption = "أسم الزبون";
-            this.gridColumn_COUST_NAME.FieldName = "COUST_NAME";
-            this.gridColumn_COUST_NAME.Name = "gridColumn_COUST_NAME";
-            this.gridColumn_COUST_NAME.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_COUST_NAME.OptionsColumn.AllowMove = false;
-            this.gridColumn_COUST_NAME.OptionsColumn.AllowShowHide = false;
-            this.gridColumn_COUST_NAME.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_COUST_NAME.Visible = true;
-            this.gridColumn_COUST_NAME.VisibleIndex = 1;
-            // 
-            // gridColumn_ADDRESS
-            // 
-            this.gridColumn_ADDRESS.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gridColumn_ADDRESS.AppearanceCell.Options.UseFont = true;
-            this.gridColumn_ADDRESS.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_ADDRESS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_ADDRESS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_ADDRESS.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.gridColumn_ADDRESS.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn_ADDRESS.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_ADDRESS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_ADDRESS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_ADDRESS.Caption = "العنوان";
-            this.gridColumn_ADDRESS.FieldName = "ADDRESS";
-            this.gridColumn_ADDRESS.Name = "gridColumn_ADDRESS";
-            this.gridColumn_ADDRESS.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_ADDRESS.OptionsColumn.AllowMove = false;
-            this.gridColumn_ADDRESS.OptionsColumn.AllowShowHide = false;
-            this.gridColumn_ADDRESS.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            // 
-            // gridColumn_TEL
-            // 
-            this.gridColumn_TEL.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gridColumn_TEL.AppearanceCell.Options.UseFont = true;
-            this.gridColumn_TEL.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_TEL.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_TEL.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_TEL.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.gridColumn_TEL.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn_TEL.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_TEL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_TEL.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_TEL.Caption = "رقم الموبايل";
-            this.gridColumn_TEL.FieldName = "TEL";
-            this.gridColumn_TEL.Name = "gridColumn_TEL";
-            this.gridColumn_TEL.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_TEL.OptionsColumn.AllowMove = false;
-            this.gridColumn_TEL.OptionsColumn.AllowShowHide = false;
-            this.gridColumn_TEL.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            // 
-            // gridColumn_COUST_TYPE
-            // 
-            this.gridColumn_COUST_TYPE.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gridColumn_COUST_TYPE.AppearanceCell.Options.UseFont = true;
-            this.gridColumn_COUST_TYPE.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_COUST_TYPE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_COUST_TYPE.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_COUST_TYPE.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.gridColumn_COUST_TYPE.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn_COUST_TYPE.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_COUST_TYPE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_COUST_TYPE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_COUST_TYPE.Caption = "صنف الزبون";
-            this.gridColumn_COUST_TYPE.FieldName = "COUST_TYPE";
-            this.gridColumn_COUST_TYPE.Name = "gridColumn_COUST_TYPE";
-            this.gridColumn_COUST_TYPE.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_COUST_TYPE.OptionsColumn.AllowMove = false;
-            this.gridColumn_COUST_TYPE.OptionsColumn.AllowShowHide = false;
-            this.gridColumn_COUST_TYPE.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_COUST_TYPE.Visible = true;
-            this.gridColumn_COUST_TYPE.VisibleIndex = 4;
-            // 
-            // gridColumn_ID_COUSTOMER
-            // 
-            this.gridColumn_ID_COUSTOMER.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.gridColumn_ID_COUSTOMER.AppearanceCell.Options.UseFont = true;
-            this.gridColumn_ID_COUSTOMER.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_ID_COUSTOMER.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_ID_COUSTOMER.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_ID_COUSTOMER.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.gridColumn_ID_COUSTOMER.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn_ID_COUSTOMER.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_ID_COUSTOMER.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_ID_COUSTOMER.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_ID_COUSTOMER.Caption = "ID";
-            this.gridColumn_ID_COUSTOMER.FieldName = "ID_COUSTOMER";
-            this.gridColumn_ID_COUSTOMER.Name = "gridColumn_ID_COUSTOMER";
-            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowMove = false;
-            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowShowHide = false;
-            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_ID_COUSTOMER.Visible = true;
-            this.gridColumn_ID_COUSTOMER.VisibleIndex = 0;
-            // 
             // gridControl_PAID_SPENT
             // 
             this.gridControl_PAID_SPENT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl_PAID_SPENT.Location = new System.Drawing.Point(3, 3);
             this.gridControl_PAID_SPENT.MainView = this.gridView_PAID_SPENT;
             this.gridControl_PAID_SPENT.Name = "gridControl_PAID_SPENT";
-            this.gridControl_PAID_SPENT.Size = new System.Drawing.Size(672, 472);
+            this.gridControl_PAID_SPENT.Size = new System.Drawing.Size(780, 472);
             this.gridControl_PAID_SPENT.TabIndex = 5;
             this.gridControl_PAID_SPENT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_PAID_SPENT});
@@ -382,7 +250,7 @@
             this.gridView_PAID_SPENT.OptionsView.ShowGroupPanel = false;
             this.gridView_PAID_SPENT.RowHeight = 30;
             this.gridView_PAID_SPENT.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumn1
             // 
@@ -401,9 +269,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 146;
+            this.gridColumn1.Width = 114;
             // 
             // gridColumn2
             // 
@@ -421,9 +287,10 @@
             this.gridColumn2.FieldName = "COUST_NAME";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 249;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 189;
             // 
             // gridColumn3
             // 
@@ -446,11 +313,12 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsColumn.AllowSize = false;
+            this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THE_AMOUNT", "SUM={0:n1}")});
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 132;
+            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 101;
             // 
             // gridColumn4
             // 
@@ -471,9 +339,10 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.AllowSize = false;
+            this.gridColumn4.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 113;
+            this.gridColumn4.VisibleIndex = 2;
+            this.gridColumn4.Width = 110;
             // 
             // gridColumn5
             // 
@@ -492,9 +361,10 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsColumn.AllowSize = false;
+            this.gridColumn5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 161;
+            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.Width = 119;
             // 
             // gridColumn6
             // 
@@ -512,9 +382,152 @@
             this.gridColumn6.FieldName = "NOTS";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 227;
+            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.Width = 184;
+            // 
+            // gridControl_COUSTOMERS
+            // 
+            this.gridControl_COUSTOMERS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_COUSTOMERS.Location = new System.Drawing.Point(789, 3);
+            this.gridControl_COUSTOMERS.MainView = this.gridView_COUST;
+            this.gridControl_COUSTOMERS.Name = "gridControl_COUSTOMERS";
+            this.gridControl_COUSTOMERS.Size = new System.Drawing.Size(388, 472);
+            this.gridControl_COUSTOMERS.TabIndex = 4;
+            this.gridControl_COUSTOMERS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_COUST});
+            // 
+            // gridView_COUST
+            // 
+            this.gridView_COUST.ColumnPanelRowHeight = 30;
+            this.gridView_COUST.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn_COUST_NAME,
+            this.gridColumn_ADDRESS,
+            this.gridColumn_TEL,
+            this.gridColumn_COUST_TYPE,
+            this.gridColumn_ID_COUSTOMER});
+            this.gridView_COUST.GridControl = this.gridControl_COUSTOMERS;
+            this.gridView_COUST.Name = "gridView_COUST";
+            this.gridView_COUST.OptionsView.ShowAutoFilterRow = true;
+            this.gridView_COUST.OptionsView.ShowGroupPanel = false;
+            this.gridView_COUST.RowHeight = 30;
+            this.gridView_COUST.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn_ID_COUSTOMER, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn_COUST_NAME
+            // 
+            this.gridColumn_COUST_NAME.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn_COUST_NAME.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_COUST_NAME.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_COUST_NAME.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_COUST_NAME.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_COUST_NAME.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_COUST_NAME.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_COUST_NAME.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_COUST_NAME.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_COUST_NAME.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_COUST_NAME.Caption = "أسم الزبون";
+            this.gridColumn_COUST_NAME.FieldName = "COUST_NAME";
+            this.gridColumn_COUST_NAME.Name = "gridColumn_COUST_NAME";
+            this.gridColumn_COUST_NAME.OptionsColumn.AllowEdit = false;
+            this.gridColumn_COUST_NAME.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_COUST_NAME.OptionsColumn.AllowMove = false;
+            this.gridColumn_COUST_NAME.OptionsColumn.AllowShowHide = false;
+            this.gridColumn_COUST_NAME.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_COUST_NAME.Visible = true;
+            this.gridColumn_COUST_NAME.VisibleIndex = 1;
+            this.gridColumn_COUST_NAME.Width = 191;
+            // 
+            // gridColumn_ADDRESS
+            // 
+            this.gridColumn_ADDRESS.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn_ADDRESS.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_ADDRESS.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_ADDRESS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_ADDRESS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_ADDRESS.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_ADDRESS.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_ADDRESS.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_ADDRESS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_ADDRESS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_ADDRESS.Caption = "العنوان";
+            this.gridColumn_ADDRESS.FieldName = "ADDRESS";
+            this.gridColumn_ADDRESS.Name = "gridColumn_ADDRESS";
+            this.gridColumn_ADDRESS.OptionsColumn.AllowEdit = false;
+            this.gridColumn_ADDRESS.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_ADDRESS.OptionsColumn.AllowMove = false;
+            this.gridColumn_ADDRESS.OptionsColumn.AllowShowHide = false;
+            this.gridColumn_ADDRESS.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // gridColumn_TEL
+            // 
+            this.gridColumn_TEL.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn_TEL.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_TEL.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_TEL.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_TEL.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_TEL.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_TEL.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_TEL.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_TEL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_TEL.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_TEL.Caption = "رقم الموبايل";
+            this.gridColumn_TEL.FieldName = "TEL";
+            this.gridColumn_TEL.Name = "gridColumn_TEL";
+            this.gridColumn_TEL.OptionsColumn.AllowEdit = false;
+            this.gridColumn_TEL.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_TEL.OptionsColumn.AllowMove = false;
+            this.gridColumn_TEL.OptionsColumn.AllowShowHide = false;
+            this.gridColumn_TEL.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // gridColumn_COUST_TYPE
+            // 
+            this.gridColumn_COUST_TYPE.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn_COUST_TYPE.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_COUST_TYPE.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_COUST_TYPE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_COUST_TYPE.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_COUST_TYPE.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_COUST_TYPE.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_COUST_TYPE.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_COUST_TYPE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_COUST_TYPE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_COUST_TYPE.Caption = "صنف الزبون";
+            this.gridColumn_COUST_TYPE.FieldName = "COUST_TYPE";
+            this.gridColumn_COUST_TYPE.Name = "gridColumn_COUST_TYPE";
+            this.gridColumn_COUST_TYPE.OptionsColumn.AllowEdit = false;
+            this.gridColumn_COUST_TYPE.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_COUST_TYPE.OptionsColumn.AllowMove = false;
+            this.gridColumn_COUST_TYPE.OptionsColumn.AllowShowHide = false;
+            this.gridColumn_COUST_TYPE.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_COUST_TYPE.Visible = true;
+            this.gridColumn_COUST_TYPE.VisibleIndex = 2;
+            this.gridColumn_COUST_TYPE.Width = 120;
+            // 
+            // gridColumn_ID_COUSTOMER
+            // 
+            this.gridColumn_ID_COUSTOMER.AppearanceCell.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn_ID_COUSTOMER.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_ID_COUSTOMER.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_ID_COUSTOMER.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_ID_COUSTOMER.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_ID_COUSTOMER.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_ID_COUSTOMER.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_ID_COUSTOMER.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_ID_COUSTOMER.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_ID_COUSTOMER.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_ID_COUSTOMER.Caption = "ID";
+            this.gridColumn_ID_COUSTOMER.FieldName = "ID_COUSTOMER";
+            this.gridColumn_ID_COUSTOMER.Name = "gridColumn_ID_COUSTOMER";
+            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowEdit = false;
+            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowMove = false;
+            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowShowHide = false;
+            this.gridColumn_ID_COUSTOMER.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_ID_COUSTOMER.Visible = true;
+            this.gridColumn_ID_COUSTOMER.VisibleIndex = 0;
+            this.gridColumn_ID_COUSTOMER.Width = 59;
             // 
             // FORM_RPT_PAID_SPENT_WITH_COUSTOMERS
             // 
@@ -538,10 +551,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl_COUSTOMERS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_COUST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_PAID_SPENT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_PAID_SPENT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_COUSTOMERS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_COUST)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -553,10 +566,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker_END_DATE;
         private System.Windows.Forms.DateTimePicker dateTimePicker_BEGIN_DATE;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button_COUST_WITH_ALL_DAILY_SPENT;
         public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Button button_COUST_ONE_ITEM;
-        public System.Windows.Forms.Button button_PRT_COUST_SALES;
+        public System.Windows.Forms.Button button_COUST_WITH_ALL_SPENT;
+        public System.Windows.Forms.Button button_PRT_COUST_WITH_ALL_RECIPT;
         public System.Windows.Forms.Button button_DISPLAY_DATA;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public DevExpress.XtraGrid.GridControl gridControl_COUSTOMERS;

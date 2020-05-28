@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_SEARCH_PRODUCT = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_AllPrd = new System.Windows.Forms.Button();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
@@ -44,6 +45,9 @@
             this.gridColumn_QTE_IN_STOCK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_PRICE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_IMAGE_PRODUCT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTreeListLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTreeListLookUpEdit();
+            this.repositoryItemTreeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_ADD_NEW_PRODUCT = new System.Windows.Forms.Button();
@@ -53,11 +57,14 @@
             this.button_DELETE_PRODUCT = new System.Windows.Forms.Button();
             this.button_PRINT_PRD = new System.Windows.Forms.Button();
             this.button_PRODUCT_MODIFY = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button_ModifyPrdBarcode = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridControl_PRODUCTS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTreeListLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTreeListLookUpEdit1TreeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +73,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(673, 44);
+            this.label1.Location = new System.Drawing.Point(629, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 24);
             this.label1.TabIndex = 1;
@@ -74,7 +81,7 @@
             // 
             // textBox_SEARCH_PRODUCT
             // 
-            this.textBox_SEARCH_PRODUCT.Location = new System.Drawing.Point(360, 39);
+            this.textBox_SEARCH_PRODUCT.Location = new System.Drawing.Point(316, 39);
             this.textBox_SEARCH_PRODUCT.Margin = new System.Windows.Forms.Padding(10);
             this.textBox_SEARCH_PRODUCT.Multiline = true;
             this.textBox_SEARCH_PRODUCT.Name = "textBox_SEARCH_PRODUCT";
@@ -85,6 +92,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button_AllPrd);
             this.groupBox1.Controls.Add(this.documentViewer1);
             this.groupBox1.Controls.Add(this.textBox_SEARCH_PRODUCT);
             this.groupBox1.Controls.Add(this.label1);
@@ -95,7 +103,22 @@
             this.groupBox1.Size = new System.Drawing.Size(1024, 100);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "البحث";
+            this.groupBox1.Text = "بحث بوساطة الاسم او الباركود او الصنف";
+            // 
+            // button_AllPrd
+            // 
+            this.button_AllPrd.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_AllPrd.FlatAppearance.BorderSize = 2;
+            this.button_AllPrd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_AllPrd.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_AllPrd.ForeColor = System.Drawing.Color.White;
+            this.button_AllPrd.Location = new System.Drawing.Point(894, 31);
+            this.button_AllPrd.Name = "button_AllPrd";
+            this.button_AllPrd.Size = new System.Drawing.Size(100, 50);
+            this.button_AllPrd.TabIndex = 21;
+            this.button_AllPrd.Text = "عرض الكل";
+            this.button_AllPrd.UseVisualStyleBackColor = true;
+            this.button_AllPrd.Click += new System.EventHandler(this.button_AllPrd_Click);
             // 
             // documentViewer1
             // 
@@ -104,7 +127,7 @@
             this.documentViewer1.IsMetric = false;
             this.documentViewer1.Location = new System.Drawing.Point(3, 28);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(344, 69);
+            this.documentViewer1.Size = new System.Drawing.Size(165, 69);
             this.documentViewer1.TabIndex = 3;
             this.documentViewer1.Visible = false;
             // 
@@ -128,6 +151,9 @@
             this.GridControl_PRODUCTS.Location = new System.Drawing.Point(5, 25);
             this.GridControl_PRODUCTS.MainView = this.gridView1;
             this.GridControl_PRODUCTS.Name = "GridControl_PRODUCTS";
+            this.GridControl_PRODUCTS.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTreeListLookUpEdit1,
+            this.repositoryItemComboBox1});
             this.GridControl_PRODUCTS.Size = new System.Drawing.Size(1014, 362);
             this.GridControl_PRODUCTS.TabIndex = 21;
             this.GridControl_PRODUCTS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -279,6 +305,29 @@
             this.gridColumn_IMAGE_PRODUCT.Visible = true;
             this.gridColumn_IMAGE_PRODUCT.VisibleIndex = 6;
             // 
+            // repositoryItemTreeListLookUpEdit1
+            // 
+            this.repositoryItemTreeListLookUpEdit1.AutoHeight = false;
+            this.repositoryItemTreeListLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTreeListLookUpEdit1.Name = "repositoryItemTreeListLookUpEdit1";
+            this.repositoryItemTreeListLookUpEdit1.TreeList = this.repositoryItemTreeListLookUpEdit1TreeList;
+            // 
+            // repositoryItemTreeListLookUpEdit1TreeList
+            // 
+            this.repositoryItemTreeListLookUpEdit1TreeList.Location = new System.Drawing.Point(0, 0);
+            this.repositoryItemTreeListLookUpEdit1TreeList.Name = "repositoryItemTreeListLookUpEdit1TreeList";
+            this.repositoryItemTreeListLookUpEdit1TreeList.OptionsView.ShowIndentAsRowStyle = true;
+            this.repositoryItemTreeListLookUpEdit1TreeList.Size = new System.Drawing.Size(400, 200);
+            this.repositoryItemTreeListLookUpEdit1TreeList.TabIndex = 0;
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.GridControl_PRODUCTS);
@@ -303,7 +352,7 @@
             this.panel1.Controls.Add(this.button_DELETE_PRODUCT);
             this.panel1.Controls.Add(this.button_PRINT_PRD);
             this.panel1.Controls.Add(this.button_PRODUCT_MODIFY);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.button_ModifyPrdBarcode);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(5, 387);
             this.panel1.Name = "panel1";
@@ -414,19 +463,20 @@
             this.button_PRODUCT_MODIFY.UseVisualStyleBackColor = true;
             this.button_PRODUCT_MODIFY.Click += new System.EventHandler(this.button_PRODUCT_MODIFY_Click);
             // 
-            // button5
+            // button_ModifyPrdBarcode
             // 
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(427, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 50);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "تفاصيل منتج";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button_ModifyPrdBarcode.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_ModifyPrdBarcode.FlatAppearance.BorderSize = 2;
+            this.button_ModifyPrdBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ModifyPrdBarcode.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_ModifyPrdBarcode.ForeColor = System.Drawing.Color.White;
+            this.button_ModifyPrdBarcode.Location = new System.Drawing.Point(427, 19);
+            this.button_ModifyPrdBarcode.Name = "button_ModifyPrdBarcode";
+            this.button_ModifyPrdBarcode.Size = new System.Drawing.Size(100, 50);
+            this.button_ModifyPrdBarcode.TabIndex = 16;
+            this.button_ModifyPrdBarcode.Text = "تعديل باركود";
+            this.button_ModifyPrdBarcode.UseVisualStyleBackColor = true;
+            this.button_ModifyPrdBarcode.Click += new System.EventHandler(this.button_ModifyPrdBarcode_Click);
             // 
             // FORM_MNG_PRODUCTS
             // 
@@ -452,6 +502,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridControl_PRODUCTS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTreeListLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTreeListLookUpEdit1TreeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -467,7 +520,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button_CLOSE;
         private System.Windows.Forms.Button button_PRINT_PRD;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button_ModifyPrdBarcode;
         private System.Windows.Forms.Button button_PRODUCT_MODIFY;
         private System.Windows.Forms.Button button_DELETE_PRODUCT;
         private System.Windows.Forms.Button button_ADD_NEW_PRODUCT;
@@ -485,5 +538,9 @@
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
         private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
+        private System.Windows.Forms.Button button_AllPrd;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTreeListLookUpEdit repositoryItemTreeListLookUpEdit1;
+        private DevExpress.XtraTreeList.TreeList repositoryItemTreeListLookUpEdit1TreeList;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
     }
 }
