@@ -45,6 +45,7 @@
             this.gridColumn_QTE_IN_STOCK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_PRICE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_IMAGE_PRODUCT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_PRDCOSTS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTreeListLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTreeListLookUpEdit();
             this.repositoryItemTreeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -57,7 +58,7 @@
             this.button_DELETE_PRODUCT = new System.Windows.Forms.Button();
             this.button_PRINT_PRD = new System.Windows.Forms.Button();
             this.button_PRODUCT_MODIFY = new System.Windows.Forms.Button();
-            this.button_ModifyPrdBarcode = new System.Windows.Forms.Button();
+            this.button_ModifyPRDCOSTS = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridControl_PRODUCTS)).BeginInit();
@@ -100,7 +101,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1024, 100);
+            this.groupBox1.Size = new System.Drawing.Size(1124, 100);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بحث بوساطة الاسم او الباركود او الصنف";
@@ -154,10 +155,11 @@
             this.GridControl_PRODUCTS.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTreeListLookUpEdit1,
             this.repositoryItemComboBox1});
-            this.GridControl_PRODUCTS.Size = new System.Drawing.Size(1014, 362);
+            this.GridControl_PRODUCTS.Size = new System.Drawing.Size(1114, 362);
             this.GridControl_PRODUCTS.TabIndex = 21;
             this.GridControl_PRODUCTS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.GridControl_PRODUCTS.EditorKeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GridControl_PRODUCTS_EditorKeyPress);
             // 
             // gridView1
             // 
@@ -169,13 +171,16 @@
             this.gridColumn_CAT_DESCRPTION,
             this.gridColumn_QTE_IN_STOCK,
             this.gridColumn_PRICE,
-            this.gridColumn_IMAGE_PRODUCT});
+            this.gridColumn_IMAGE_PRODUCT,
+            this.gridColumn_PRDCOSTS});
             this.gridView1.FooterPanelHeight = 30;
             this.gridView1.GridControl = this.GridControl_PRODUCTS;
             this.gridView1.GroupRowHeight = 30;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.RowHeight = 30;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn_ID_PRODUCT, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // gridColumn_ID_PRODUCT
             // 
@@ -193,6 +198,7 @@
             this.gridColumn_ID_PRODUCT.FieldName = "ID_PRODUCT";
             this.gridColumn_ID_PRODUCT.Name = "gridColumn_ID_PRODUCT";
             this.gridColumn_ID_PRODUCT.OptionsColumn.AllowEdit = false;
+            this.gridColumn_ID_PRODUCT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_ID_PRODUCT.OptionsFilter.AllowFilter = false;
             this.gridColumn_ID_PRODUCT.Visible = true;
             this.gridColumn_ID_PRODUCT.VisibleIndex = 0;
@@ -213,6 +219,7 @@
             this.gridColumn_BARCODE_PRODUCT.FieldName = "BARCODE_PRODUCT";
             this.gridColumn_BARCODE_PRODUCT.Name = "gridColumn_BARCODE_PRODUCT";
             this.gridColumn_BARCODE_PRODUCT.OptionsColumn.AllowEdit = false;
+            this.gridColumn_BARCODE_PRODUCT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_BARCODE_PRODUCT.Visible = true;
             this.gridColumn_BARCODE_PRODUCT.VisibleIndex = 1;
             // 
@@ -232,6 +239,7 @@
             this.gridColumn_LABEL_PRODUCT.FieldName = "LABEL_PRODUCT";
             this.gridColumn_LABEL_PRODUCT.Name = "gridColumn_LABEL_PRODUCT";
             this.gridColumn_LABEL_PRODUCT.OptionsColumn.AllowEdit = false;
+            this.gridColumn_LABEL_PRODUCT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_LABEL_PRODUCT.Visible = true;
             this.gridColumn_LABEL_PRODUCT.VisibleIndex = 2;
             // 
@@ -251,6 +259,7 @@
             this.gridColumn_CAT_DESCRPTION.FieldName = "CAT_DESCRPTION";
             this.gridColumn_CAT_DESCRPTION.Name = "gridColumn_CAT_DESCRPTION";
             this.gridColumn_CAT_DESCRPTION.OptionsColumn.AllowEdit = false;
+            this.gridColumn_CAT_DESCRPTION.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_CAT_DESCRPTION.Visible = true;
             this.gridColumn_CAT_DESCRPTION.VisibleIndex = 3;
             // 
@@ -270,6 +279,7 @@
             this.gridColumn_QTE_IN_STOCK.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn_QTE_IN_STOCK.FieldName = "QTE_IN_STOCK";
             this.gridColumn_QTE_IN_STOCK.Name = "gridColumn_QTE_IN_STOCK";
+            this.gridColumn_QTE_IN_STOCK.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_QTE_IN_STOCK.Visible = true;
             this.gridColumn_QTE_IN_STOCK.VisibleIndex = 4;
             // 
@@ -288,6 +298,7 @@
             this.gridColumn_PRICE.Caption = "سعر البيع";
             this.gridColumn_PRICE.FieldName = "PRICE";
             this.gridColumn_PRICE.Name = "gridColumn_PRICE";
+            this.gridColumn_PRICE.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_PRICE.Visible = true;
             this.gridColumn_PRICE.VisibleIndex = 5;
             // 
@@ -302,8 +313,28 @@
             this.gridColumn_IMAGE_PRODUCT.FieldName = "IMAGE_PRODUCT";
             this.gridColumn_IMAGE_PRODUCT.Name = "gridColumn_IMAGE_PRODUCT";
             this.gridColumn_IMAGE_PRODUCT.OptionsColumn.AllowEdit = false;
+            this.gridColumn_IMAGE_PRODUCT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_IMAGE_PRODUCT.Visible = true;
             this.gridColumn_IMAGE_PRODUCT.VisibleIndex = 6;
+            // 
+            // gridColumn_PRDCOSTS
+            // 
+            this.gridColumn_PRDCOSTS.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_PRDCOSTS.AppearanceCell.Options.UseFont = true;
+            this.gridColumn_PRDCOSTS.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_PRDCOSTS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_PRDCOSTS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_PRDCOSTS.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_PRDCOSTS.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn_PRDCOSTS.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_PRDCOSTS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_PRDCOSTS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn_PRDCOSTS.Caption = "الكلفة";
+            this.gridColumn_PRDCOSTS.FieldName = "PRD_COST";
+            this.gridColumn_PRDCOSTS.Name = "gridColumn_PRDCOSTS";
+            this.gridColumn_PRDCOSTS.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_PRDCOSTS.Visible = true;
+            this.gridColumn_PRDCOSTS.VisibleIndex = 7;
             // 
             // repositoryItemTreeListLookUpEdit1
             // 
@@ -337,7 +368,7 @@
             this.groupBox2.Location = new System.Drawing.Point(5, 105);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.groupBox2.Size = new System.Drawing.Size(1024, 477);
+            this.groupBox2.Size = new System.Drawing.Size(1124, 477);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "المواد";
@@ -352,11 +383,11 @@
             this.panel1.Controls.Add(this.button_DELETE_PRODUCT);
             this.panel1.Controls.Add(this.button_PRINT_PRD);
             this.panel1.Controls.Add(this.button_PRODUCT_MODIFY);
-            this.panel1.Controls.Add(this.button_ModifyPrdBarcode);
+            this.panel1.Controls.Add(this.button_ModifyPRDCOSTS);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(5, 387);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1014, 85);
+            this.panel1.Size = new System.Drawing.Size(1114, 85);
             this.panel1.TabIndex = 22;
             // 
             // button_ADD_NEW_PRODUCT
@@ -463,27 +494,27 @@
             this.button_PRODUCT_MODIFY.UseVisualStyleBackColor = true;
             this.button_PRODUCT_MODIFY.Click += new System.EventHandler(this.button_PRODUCT_MODIFY_Click);
             // 
-            // button_ModifyPrdBarcode
+            // button_ModifyPRDCOSTS
             // 
-            this.button_ModifyPrdBarcode.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_ModifyPrdBarcode.FlatAppearance.BorderSize = 2;
-            this.button_ModifyPrdBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ModifyPrdBarcode.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_ModifyPrdBarcode.ForeColor = System.Drawing.Color.White;
-            this.button_ModifyPrdBarcode.Location = new System.Drawing.Point(427, 19);
-            this.button_ModifyPrdBarcode.Name = "button_ModifyPrdBarcode";
-            this.button_ModifyPrdBarcode.Size = new System.Drawing.Size(100, 50);
-            this.button_ModifyPrdBarcode.TabIndex = 16;
-            this.button_ModifyPrdBarcode.Text = "تعديل باركود";
-            this.button_ModifyPrdBarcode.UseVisualStyleBackColor = true;
-            this.button_ModifyPrdBarcode.Click += new System.EventHandler(this.button_ModifyPrdBarcode_Click);
+            this.button_ModifyPRDCOSTS.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_ModifyPRDCOSTS.FlatAppearance.BorderSize = 2;
+            this.button_ModifyPRDCOSTS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ModifyPRDCOSTS.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_ModifyPRDCOSTS.ForeColor = System.Drawing.Color.White;
+            this.button_ModifyPRDCOSTS.Location = new System.Drawing.Point(427, 19);
+            this.button_ModifyPRDCOSTS.Name = "button_ModifyPRDCOSTS";
+            this.button_ModifyPRDCOSTS.Size = new System.Drawing.Size(100, 50);
+            this.button_ModifyPRDCOSTS.TabIndex = 16;
+            this.button_ModifyPRDCOSTS.Text = "تعديل الكلف";
+            this.button_ModifyPRDCOSTS.UseVisualStyleBackColor = true;
+            this.button_ModifyPRDCOSTS.Click += new System.EventHandler(this.button_ModifyPRDCOSTS_Click);
             // 
             // FORM_MNG_PRODUCTS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(65)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1034, 587);
+            this.ClientSize = new System.Drawing.Size(1134, 587);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -520,7 +551,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button_CLOSE;
         private System.Windows.Forms.Button button_PRINT_PRD;
-        private System.Windows.Forms.Button button_ModifyPrdBarcode;
+        private System.Windows.Forms.Button button_ModifyPRDCOSTS;
         private System.Windows.Forms.Button button_PRODUCT_MODIFY;
         private System.Windows.Forms.Button button_DELETE_PRODUCT;
         private System.Windows.Forms.Button button_ADD_NEW_PRODUCT;
@@ -542,5 +573,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTreeListLookUpEdit repositoryItemTreeListLookUpEdit1;
         private DevExpress.XtraTreeList.TreeList repositoryItemTreeListLookUpEdit1TreeList;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_PRDCOSTS;
     }
 }

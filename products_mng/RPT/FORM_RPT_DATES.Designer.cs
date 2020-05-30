@@ -78,7 +78,7 @@
             this.button_PRTDOCS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_PRTDOCS.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_PRTDOCS.ForeColor = System.Drawing.Color.White;
-            this.button_PRTDOCS.Location = new System.Drawing.Point(111, 192);
+            this.button_PRTDOCS.Location = new System.Drawing.Point(134, 190);
             this.button_PRTDOCS.Name = "button_PRTDOCS";
             this.button_PRTDOCS.Size = new System.Drawing.Size(100, 50);
             this.button_PRTDOCS.TabIndex = 32;

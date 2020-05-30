@@ -9,7 +9,7 @@ namespace products_mng.BL
 {
     class CLS_REPORT_LIST
     {
-        public static int ReportFlag = 0;  //0= sales 1=Purchase 2=NetMoney
+        public static int ReportFlag = 0;  //0= sales 1=Purchase 2=NetMoney, 3=PROFIT_COST
 
         public DataTable RPT_PRODUCTS_DTLS(int ID_PRODUCT, String BEGIN_DATE, String END_DATE)
         {
@@ -175,6 +175,38 @@ namespace products_mng.BL
             param[3] = new SqlParameter ("@PAID_SPENT_TYPE", SqlDbType.NVarChar, 50);
             param[3].Value = PAID_SPENT_TYPE;
             dt = dal.SelectData ("RPT_COUST_WITH_ALL_RECIPT", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
+        public DataTable RPT_NETMONEY_WITH_USR(String BEGIN_DATE, String END_DATE,string SALES_MAN)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter ("@BEGIN_DATE", SqlDbType.NVarChar, 50);
+            param[0].Value = BEGIN_DATE;
+            param[1] = new SqlParameter ("@END_DATE", SqlDbType.NVarChar, 50);
+            param[1].Value = END_DATE;
+            param[2] = new SqlParameter ("@SALES_MAN", SqlDbType.NVarChar, 50);
+            param[2].Value = SALES_MAN;
+            dt = dal.SelectData ("RPT_NETMONEY_WITH_USR", param);
+            dal.ConClose ();
+            return dt;
+
+        }
+
+        public DataTable RPT_CALC_PROFT_COST(String BEGIN_DATE, String END_DATE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            DataTable dt = new DataTable ();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter ("@BEGIN_DATE", SqlDbType.NVarChar, 50);
+            param[0].Value = BEGIN_DATE;
+            param[1] = new SqlParameter ("@END_DATE", SqlDbType.NVarChar, 50);
+            param[1].Value = END_DATE;
+            dt = dal.SelectData ("RPT_CALC_PROFT_COST", param);
             dal.ConClose ();
             return dt;
 

@@ -132,9 +132,25 @@ namespace products_mng.PL
             this.GridControl_PRODUCTS.DataSource = PRD.GET_ALL_PRODUCTS ();
         }
 
-        private void button_ModifyPrdBarcode_Click(object sender, EventArgs e)
+        private void GridControl_PRODUCTS_EditorKeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            base.OnKeyPress (e);
+            if (!char.IsControl (e.KeyChar) && !char.IsDigit (e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+        }
+
+        private void button_ModifyPRDCOSTS_Click(object sender, EventArgs e)
+        {
+            if (this.gridView1.RowCount > 0)
+            {
+                for (int i = 0; i < this.gridView1.RowCount; i++)
+                {
+                    int ID_PRD = Convert.ToInt16 (gridView1.GetRowCellValue (i, gridView1.Columns["ID_PRODUCT"]).ToString ());
+                    Double PRD_COSTS = Convert.ToDouble (gridView1.GetRowCellValue (i, gridView1.Columns["PRD_COST"]).ToString ());
+                    PRD.UPDATE_PRD_COSTS (ID_PRD, PRD_COSTS);
+                }
+                MessageBox.Show ("Update Success", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

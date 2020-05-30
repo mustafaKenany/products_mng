@@ -268,6 +268,12 @@
     <Compile Include="RPT\PRT_ALL_INVO.Designer.cs">
       <DependentUpon>PRT_ALL_INVO.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\RPT_CALC_PROFT_COST.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_CALC_PROFT_COST.Designer.cs">
+      <DependentUpon>RPT_CALC_PROFT_COST.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\RPT_COUST_WITH_ALL_RECIPT.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -297,6 +303,12 @@
     </Compile>
     <Compile Include="RPT\RPT_NETMONEY.Designer.cs">
       <DependentUpon>RPT_NETMONEY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\RPT_NETMONEY_WITH_USR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_NETMONEY_WITH_USR.Designer.cs">
+      <DependentUpon>RPT_NETMONEY_WITH_USR.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\RPT_ONE_ITEM_ONE_COUST.cs">
       <SubType>Component</SubType>
@@ -407,6 +419,9 @@
     <EmbeddedResource Include="RPT\PRT_ALL_INVO.resx">
       <DependentUpon>PRT_ALL_INVO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_CALC_PROFT_COST.resx">
+      <DependentUpon>RPT_CALC_PROFT_COST.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_COUST_WITH_ALL_RECIPT.resx">
       <DependentUpon>RPT_COUST_WITH_ALL_RECIPT.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_NETMONEY.resx">
       <DependentUpon>RPT_NETMONEY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_NETMONEY_WITH_USR.resx">
+      <DependentUpon>RPT_NETMONEY_WITH_USR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_ONE_ITEM_ONE_COUST.resx">
       <DependentUpon>RPT_ONE_ITEM_ONE_COUST.cs</DependentUpon>

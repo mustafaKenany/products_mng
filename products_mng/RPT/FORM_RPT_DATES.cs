@@ -63,6 +63,24 @@ namespace products_mng.PL
                         MessageBox.Show ("لا توجد بيانات للفترة المحددة");
                     }
                     break;
+                case 3:
+
+                    RPT.RPT_CALC_PROFT_COST RPT_COST = new RPT.RPT_CALC_PROFT_COST ();
+                    DT = RPTCLS.RPT_CALC_PROFT_COST (BEGIN_DATE, END_DATE);
+                    if (DT.Rows.Count > 0)
+                    {
+                        RPT_COST.DataSource = DT;
+                        RPT_COST.xrLabel_BEGIN_DATE.Text = BEGIN_DATE;
+                        RPT_COST.xrLabel_END_DATE.Text = END_DATE;
+                        RPT_COST.ShowPreviewDialog ();
+                        this.Close ();
+                    }
+                    else
+                    {
+                        MessageBox.Show ("لا توجد بيانات للفترة المحددة");
+                    }
+                    
+                    break;
                 default:
                     break;
             }

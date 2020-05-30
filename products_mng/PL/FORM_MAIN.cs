@@ -168,5 +168,17 @@ namespace products_mng.PL
             PL.FORM_RPTDATE form = new FORM_RPTDATE ();
             form.ShowDialog ();
         }
+
+        //private void ToolStripMenuItem_PRD_COST_AND_PROFITS_Click(object sender, EventArgs e)
+        //{
+           
+        //}
+
+        private void ToolStripMenuItem_PROFIT_COST_Click(object sender, EventArgs e)
+        {
+            BL.CLS_REPORT_LIST.ReportFlag = 3;
+            PL.FORM_RPTDATE form = new FORM_RPTDATE ();
+            form.ShowDialog ();
+        }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button_displayData = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_RPT_NETMONEY_with_usr = new System.Windows.Forms.Button();
             this.button_RPT_USR_DAILY_SPENT = new System.Windows.Forms.Button();
             this.button_RPT_SPENT_MONEY = new System.Windows.Forms.Button();
             this.button_RPT_USR_PAID_money = new System.Windows.Forms.Button();
@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker_END_DATE = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_BEGIN_DATE = new System.Windows.Forms.DateTimePicker();
-            this.button_RPT_SALES = new System.Windows.Forms.Button();
+            this.button_RPT_USR_SALES = new System.Windows.Forms.Button();
             this.gridControl_USRS = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,7 +53,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button_displayData);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button_RPT_NETMONEY_with_usr);
             this.groupBox1.Controls.Add(this.button_RPT_USR_DAILY_SPENT);
             this.groupBox1.Controls.Add(this.button_RPT_SPENT_MONEY);
             this.groupBox1.Controls.Add(this.button_RPT_USR_PAID_money);
@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dateTimePicker_END_DATE);
             this.groupBox1.Controls.Add(this.dateTimePicker_BEGIN_DATE);
-            this.groupBox1.Controls.Add(this.button_RPT_SALES);
+            this.groupBox1.Controls.Add(this.button_RPT_USR_SALES);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -87,19 +87,20 @@
             this.button_displayData.UseVisualStyleBackColor = true;
             this.button_displayData.Click += new System.EventHandler(this.button_displayData_Click);
             // 
-            // button2
+            // button_RPT_NETMONEY_with_usr
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(759, 26);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 66);
-            this.button2.TabIndex = 66;
-            this.button2.Text = "طباعة الصندوق";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_RPT_NETMONEY_with_usr.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_RPT_NETMONEY_with_usr.FlatAppearance.BorderSize = 2;
+            this.button_RPT_NETMONEY_with_usr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_RPT_NETMONEY_with_usr.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_RPT_NETMONEY_with_usr.ForeColor = System.Drawing.Color.White;
+            this.button_RPT_NETMONEY_with_usr.Location = new System.Drawing.Point(759, 26);
+            this.button_RPT_NETMONEY_with_usr.Name = "button_RPT_NETMONEY_with_usr";
+            this.button_RPT_NETMONEY_with_usr.Size = new System.Drawing.Size(85, 66);
+            this.button_RPT_NETMONEY_with_usr.TabIndex = 66;
+            this.button_RPT_NETMONEY_with_usr.Text = "طباعة الصندوق";
+            this.button_RPT_NETMONEY_with_usr.UseVisualStyleBackColor = true;
+            this.button_RPT_NETMONEY_with_usr.Click += new System.EventHandler(this.button_RPT_NETMONEY_with_usr_Click);
             // 
             // button_RPT_USR_DAILY_SPENT
             // 
@@ -196,20 +197,20 @@
             this.dateTimePicker_BEGIN_DATE.Size = new System.Drawing.Size(102, 34);
             this.dateTimePicker_BEGIN_DATE.TabIndex = 58;
             // 
-            // button_RPT_SALES
+            // button_RPT_USR_SALES
             // 
-            this.button_RPT_SALES.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button_RPT_SALES.FlatAppearance.BorderSize = 2;
-            this.button_RPT_SALES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_RPT_SALES.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button_RPT_SALES.ForeColor = System.Drawing.Color.White;
-            this.button_RPT_SALES.Location = new System.Drawing.Point(668, 26);
-            this.button_RPT_SALES.Name = "button_RPT_SALES";
-            this.button_RPT_SALES.Size = new System.Drawing.Size(85, 66);
-            this.button_RPT_SALES.TabIndex = 57;
-            this.button_RPT_SALES.Text = "طباعة المبيعات";
-            this.button_RPT_SALES.UseVisualStyleBackColor = true;
-            this.button_RPT_SALES.Click += new System.EventHandler(this.button_RPT_SALES_Click);
+            this.button_RPT_USR_SALES.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_RPT_USR_SALES.FlatAppearance.BorderSize = 2;
+            this.button_RPT_USR_SALES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_RPT_USR_SALES.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_RPT_USR_SALES.ForeColor = System.Drawing.Color.White;
+            this.button_RPT_USR_SALES.Location = new System.Drawing.Point(668, 26);
+            this.button_RPT_USR_SALES.Name = "button_RPT_USR_SALES";
+            this.button_RPT_USR_SALES.Size = new System.Drawing.Size(85, 66);
+            this.button_RPT_USR_SALES.TabIndex = 57;
+            this.button_RPT_USR_SALES.Text = "طباعة المبيعات";
+            this.button_RPT_USR_SALES.UseVisualStyleBackColor = true;
+            this.button_RPT_USR_SALES.Click += new System.EventHandler(this.button_RPT_USR_SALES_Click);
             // 
             // gridControl_USRS
             // 
@@ -342,7 +343,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button_RPT_NETMONEY_with_usr;
         public System.Windows.Forms.Button button_RPT_USR_DAILY_SPENT;
         public System.Windows.Forms.Button button_RPT_SPENT_MONEY;
         public System.Windows.Forms.Button button_RPT_USR_PAID_money;
@@ -351,7 +352,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker_END_DATE;
         private System.Windows.Forms.DateTimePicker dateTimePicker_BEGIN_DATE;
-        public System.Windows.Forms.Button button_RPT_SALES;
+        public System.Windows.Forms.Button button_RPT_USR_SALES;
         private DevExpress.XtraGrid.GridControl gridControl_USRS;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;

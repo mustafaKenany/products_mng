@@ -165,5 +165,20 @@ namespace products_mng.BL
 
         }
 
+        public void UPDATE_PRD_COSTS(int ID_PRD, double COST)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            dal.ConOpen ();
+            SqlParameter[] PARAM = new SqlParameter[2];
+            PARAM[0] = new SqlParameter ("@ID_PRD", SqlDbType.Int);
+            PARAM[1] = new SqlParameter ("@COST", SqlDbType.Float);
+            PARAM[0].Value = ID_PRD;
+            PARAM[1].Value = COST;
+            dal.ExecuteCommand ("UPDATE_PRD_COSTS", PARAM);
+            dal.ConClose ();
+
+        }
+
+
     }
 }

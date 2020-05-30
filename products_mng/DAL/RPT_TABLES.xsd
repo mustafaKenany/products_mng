@@ -82,6 +82,17 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="COST_PROFITS" msprop:Generator_TableClassName="COST_PROFITSDataTable" msprop:Generator_TableVarName="tableCOST_PROFITS" msprop:Generator_RowChangedName="COST_PROFITSRowChanged" msprop:Generator_TablePropName="COST_PROFITS" msprop:Generator_RowDeletingName="COST_PROFITSRowDeleting" msprop:Generator_RowChangingName="COST_PROFITSRowChanging" msprop:Generator_RowEvHandlerName="COST_PROFITSRowChangeEventHandler" msprop:Generator_RowDeletedName="COST_PROFITSRowDeleted" msprop:Generator_RowClassName="COST_PROFITSRow" msprop:Generator_UserTableName="COST_PROFITS" msprop:Generator_RowEvArgName="COST_PROFITSRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_PRODUCT" msprop:Generator_ColumnVarNameInTable="columnID_PRODUCT" msprop:Generator_ColumnPropNameInRow="ID_PRODUCT" msprop:Generator_ColumnPropNameInTable="ID_PRODUCTColumn" msprop:Generator_UserColumnName="ID_PRODUCT" type="xs:string" minOccurs="0" />
+              <xs:element name="LABEL_PRODUCT" msprop:Generator_ColumnVarNameInTable="columnLABEL_PRODUCT" msprop:Generator_ColumnPropNameInRow="LABEL_PRODUCT" msprop:Generator_ColumnPropNameInTable="LABEL_PRODUCTColumn" msprop:Generator_UserColumnName="LABEL_PRODUCT" type="xs:string" minOccurs="0" />
+              <xs:element name="PRD_COST" msprop:Generator_ColumnVarNameInTable="columnPRD_COST" msprop:Generator_ColumnPropNameInRow="PRD_COST" msprop:Generator_ColumnPropNameInTable="PRD_COSTColumn" msprop:Generator_UserColumnName="PRD_COST" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:string" minOccurs="0" />
+              <xs:element name="AVG_Price" msprop:Generator_ColumnVarNameInTable="columnAVG_Price" msprop:Generator_ColumnPropNameInRow="AVG_Price" msprop:Generator_ColumnPropNameInTable="AVG_PriceColumn" msprop:Generator_UserColumnName="AVG_Price" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
