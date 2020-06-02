@@ -180,5 +180,17 @@ namespace products_mng.PL
             PL.FORM_RPTDATE form = new FORM_RPTDATE ();
             form.ShowDialog ();
         }
+
+        private void Tool_DIRECTPURCHASE_Click(object sender, EventArgs e)
+        {
+            PL.FORM_PURCHASES FORM = new FORM_PURCHASES ();
+            FORM.ShowDialog ();
+        }
+
+        private void Tool_MNGPURCHASE_Click(object sender, EventArgs e)
+        {
+            PL.FORM_MNG_PURCHASES FORM = new FORM_MNG_PURCHASES ();
+            FORM.ShowDialog ();
+        }
     }
 }

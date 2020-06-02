@@ -162,19 +162,20 @@
             this.Tool_PURCHAES.Name = "Tool_PURCHAES";
             this.Tool_PURCHAES.Size = new System.Drawing.Size(81, 28);
             this.Tool_PURCHAES.Text = "المشتريات";
-            this.Tool_PURCHAES.Visible = false;
             // 
             // Tool_DIRECTPURCHASE
             // 
             this.Tool_DIRECTPURCHASE.Name = "Tool_DIRECTPURCHASE";
             this.Tool_DIRECTPURCHASE.Size = new System.Drawing.Size(172, 28);
             this.Tool_DIRECTPURCHASE.Text = "شراء مباشر";
+            this.Tool_DIRECTPURCHASE.Click += new System.EventHandler(this.Tool_DIRECTPURCHASE_Click);
             // 
             // Tool_MNGPURCHASE
             // 
             this.Tool_MNGPURCHASE.Name = "Tool_MNGPURCHASE";
             this.Tool_MNGPURCHASE.Size = new System.Drawing.Size(172, 28);
             this.Tool_MNGPURCHASE.Text = "أدارة  المشتريات";
+            this.Tool_MNGPURCHASE.Click += new System.EventHandler(this.Tool_MNGPURCHASE_Click);
             // 
             // Tool_ITEMS
             // 
@@ -436,8 +437,6 @@
         public System.Windows.Forms.ToolStripMenuItem Too_USERS;
         public System.Windows.Forms.ToolStripMenuItem Tool_MONEY;
         public System.Windows.Forms.ToolStripMenuItem tool_login;
-        private System.Windows.Forms.ToolStripMenuItem Tool_DIRECTPURCHASE;
-        private System.Windows.Forms.ToolStripMenuItem Tool_MNGPURCHASE;
         public System.Windows.Forms.ToolStripMenuItem tool_DIRSALES;
         public System.Windows.Forms.ToolStripMenuItem tool_MNGSALESS;
         public System.Windows.Forms.ToolStripMenuItem Tool_ADDCUSTOMER;
@@ -454,5 +453,7 @@
         public System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORTS;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_RPT_NETMONEY;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_PROFIT_COST;
+        public System.Windows.Forms.ToolStripMenuItem Tool_DIRECTPURCHASE;
+        public System.Windows.Forms.ToolStripMenuItem Tool_MNGPURCHASE;
     }
 }

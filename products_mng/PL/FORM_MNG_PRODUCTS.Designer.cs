@@ -46,6 +46,7 @@
             this.gridColumn_PRICE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_IMAGE_PRODUCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_PRDCOSTS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTreeListLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTreeListLookUpEdit();
             this.repositoryItemTreeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -172,7 +173,8 @@
             this.gridColumn_QTE_IN_STOCK,
             this.gridColumn_PRICE,
             this.gridColumn_IMAGE_PRODUCT,
-            this.gridColumn_PRDCOSTS});
+            this.gridColumn_PRDCOSTS,
+            this.gridColumn1});
             this.gridView1.FooterPanelHeight = 30;
             this.gridView1.GridControl = this.GridControl_PRODUCTS;
             this.gridView1.GroupRowHeight = 30;
@@ -335,6 +337,26 @@
             this.gridColumn_PRDCOSTS.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_PRDCOSTS.Visible = true;
             this.gridColumn_PRDCOSTS.VisibleIndex = 7;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn1.Caption = "تاريخ الصلاحية";
+            this.gridColumn1.DisplayFormat.FormatString = "yyyy-MM-dd";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn1.FieldName = "Expire_date";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 8;
             // 
             // repositoryItemTreeListLookUpEdit1
             // 
@@ -574,5 +596,6 @@
         private DevExpress.XtraTreeList.TreeList repositoryItemTreeListLookUpEdit1TreeList;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_PRDCOSTS;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

@@ -89,10 +89,12 @@ namespace products_mng.PL
                 byte[] image = (byte[]) PRD.GET_IMAGE_PRODUCTS (ID_PRODUCT).Rows[0][0];
                 MemoryStream ms = new MemoryStream (image);
                 FRM.pictureBox_PRODUCTS.Image = Image.FromStream (ms);
+                var EXPIRE_DATE = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["Expire_date"]);
+                FRM.dateTimePicker_EXPIREDATE.Text = EXPIRE_DATE.ToString();
+
                 FRM.Text = "تحديث بيانات";
                 FRM.btn_SAVE_PRODUCT.Text = "تحديث";
                 FRM.ShowDialog ();
-
             }
         }
 

@@ -89,6 +89,7 @@ namespace products_mng.PL
         private void button_CNCLPAID_Click(object sender, EventArgs e)
         {
             COUS_NAME.Text = textBox_MONEYPAID.Text = textBox_NOTESPAID.Text = "";
+            this.Close ();
         }
 
         private void COUS_NAME_Leave(object sender, EventArgs e)

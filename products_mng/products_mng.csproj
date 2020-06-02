@@ -152,11 +152,23 @@
     <Compile Include="PL\FORM_MNG_PAID_SPENT_DOCS.Designer.cs">
       <DependentUpon>FORM_MNG_PAID_SPENT_DOCS.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FORM_MNG_PURCHASES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_MNG_PURCHASES.Designer.cs">
+      <DependentUpon>FORM_MNG_PURCHASES.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FORM_PAID_MONEY.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\FORM_PAID_MONEY.Designer.cs">
       <DependentUpon>FORM_PAID_MONEY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FORM_PURCHASES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FORM_PURCHASES.Designer.cs">
+      <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\FORM_RPT_DATES.cs">
       <SubType>Form</SubType>
@@ -217,12 +229,6 @@
     </Compile>
     <Compile Include="PL\FORM_PRODUCTS.Designer.cs">
       <DependentUpon>FORM_PRODUCTS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\FORM_PURCHASES.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\FORM_PURCHASES.Designer.cs">
-      <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\FORM_RPT_ITEMS.cs">
       <SubType>Form</SubType>
@@ -355,6 +361,9 @@
     <EmbeddedResource Include="PL\FORM_PAID_MONEY.resx">
       <DependentUpon>FORM_PAID_MONEY.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_PURCHASES.resx">
+      <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\FORM_RPT_COUSTOMERS.resx">
       <DependentUpon>FORM_RPT_COUSTOMERS.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,9 +396,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_PRODUCTS.resx">
       <DependentUpon>FORM_PRODUCTS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\FORM_PURCHASES.resx">
-      <DependentUpon>FORM_PURCHASES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\FORM_RPT_ITEMS.resx">
       <DependentUpon>FORM_RPT_ITEMS.cs</DependentUpon>

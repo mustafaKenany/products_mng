@@ -44,23 +44,25 @@ namespace products_mng.PL
 
                     if (USR_ACC[1] == 1)
                     {
-                        FORM_MAIN.getMainForm.tool_DIRSALES.Enabled = true;
                         FORM_MAIN.getMainForm.tool_SALES.Enabled = true;
+                        FORM_MAIN.getMainForm.tool_DIRSALES.Enabled = true;
 
                     }
                     if (USR_ACC[2] == 1)
                     {
-                        FORM_MAIN.getMainForm.tool_MNGSALESS.Enabled = true;
                         FORM_MAIN.getMainForm.tool_SALES.Enabled = true;
+                        FORM_MAIN.getMainForm.tool_MNGSALESS.Enabled = true;
 
                     }
                     if (USR_ACC[3] == 1)
                     {
-
+                        FORM_MAIN.getMainForm.Tool_PURCHAES.Enabled = true;
+                        FORM_MAIN.getMainForm.Tool_DIRECTPURCHASE.Enabled = true;
                     }
                     if (USR_ACC[4] == 1)
                     {
-
+                        FORM_MAIN.getMainForm.Tool_PURCHAES.Enabled = true;
+                        FORM_MAIN.getMainForm.Tool_MNGPURCHASE.Enabled = true;
                     }
                     if (USR_ACC[5] == 1)
                     {
@@ -120,6 +122,26 @@ namespace products_mng.PL
         private void btn_close_Click(object sender, EventArgs e)
         {
             Application.Exit ();
+        }
+
+        private void txb_userID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char) Keys.Enter)
+            {
+                // Your logic here....
+                e.Handled = true; //Handle the Keypress event (suppress the Beep)
+                txb_PwdUsr.Focus ();
+            }
+        }
+
+        private void txb_PwdUsr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char) Keys.Enter)
+            {
+                // Your logic here....
+                e.Handled = true; //Handle the Keypress event (suppress the Beep)
+                btn_Enter.Focus ();
+            }
         }
     }
 }

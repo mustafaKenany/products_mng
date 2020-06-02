@@ -19,21 +19,23 @@ namespace products_mng.BL
 
         }
 
-        public void ADD_PRODUCT( int ID_PRD, int ID_CAT, string BARCODE_PRODUCT, string LABEL, byte[] IMAGE)
+        public void ADD_PRODUCT( int ID_PRD, int ID_CAT, string BARCODE_PRODUCT, string LABEL, byte[] IMAGE, DateTime EXPIRE_DATE)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
-            SqlParameter[] PARAM = new SqlParameter[5];
+            SqlParameter[] PARAM = new SqlParameter[6];
             PARAM[0] = new SqlParameter ("@ID_CAT", SqlDbType.Int);
             PARAM[1] = new SqlParameter ("@BARCODE_PRODUCT", SqlDbType.NVarChar,50);
             PARAM[2] = new SqlParameter ("@LABEL", SqlDbType.NVarChar,50);
             PARAM[3] = new SqlParameter ("@IMAGE", SqlDbType.Image);
             PARAM[4] = new SqlParameter ("@ID_PRD", SqlDbType.Int);
+            PARAM[5] = new SqlParameter ("@EXPIRE_DATE", SqlDbType.NVarChar, 50);
             PARAM[0].Value = ID_CAT;
             PARAM[1].Value = BARCODE_PRODUCT;
             PARAM[2].Value = LABEL;
             PARAM[3].Value = IMAGE;
             PARAM[4].Value = ID_PRD;
+            PARAM[5].Value = EXPIRE_DATE;
             dal.ExecuteCommand ("ADD_PRODUCT", PARAM);
             dal.ConClose ();
 
@@ -113,21 +115,24 @@ namespace products_mng.BL
             return ID;
         }
 
-        public void UPDATE_PRODCUT(int ID_CAT, string BARCODE_PRODUCT, string LABEL, byte[] IMAGE,string ID_PRODCUT)
+        public void UPDATE_PRODCUT(int ID_CAT, string BARCODE_PRODUCT, string LABEL, byte[] IMAGE,string ID_PRODCUT,DateTime EXPIRE_DATE)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             dal.ConOpen ();
-            SqlParameter[] PARAM = new SqlParameter[5];
+            SqlParameter[] PARAM = new SqlParameter[6];
             PARAM[0] = new SqlParameter ("@ID_CAT", SqlDbType.Int);
             PARAM[1] = new SqlParameter ("@BARCODE_PRODUCT", SqlDbType.NVarChar, 50);
             PARAM[2] = new SqlParameter ("@LABEL", SqlDbType.NVarChar, 50);
             PARAM[3] = new SqlParameter ("@IMAGE", SqlDbType.Image);
             PARAM[4] = new SqlParameter ("@ID_PRODUCT", SqlDbType.Int);
+            PARAM[5] = new SqlParameter ("@EXPIRE_DATE", SqlDbType.Date);
             PARAM[0].Value = ID_CAT;
             PARAM[1].Value = BARCODE_PRODUCT;
             PARAM[2].Value = LABEL;
             PARAM[3].Value = IMAGE;
             PARAM[4].Value = ID_PRODCUT;
+            PARAM[5].Value = EXPIRE_DATE;
+
             dal.ExecuteCommand ("UPDATE_PRODUCTS", PARAM);
             dal.ConClose ();
 

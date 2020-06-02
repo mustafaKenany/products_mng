@@ -46,6 +46,7 @@
             this.txb_userID.Size = new System.Drawing.Size(250, 40);
             this.txb_userID.TabIndex = 1;
             this.txb_userID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txb_userID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_userID_KeyPress);
             // 
             // txb_PwdUsr
             // 
@@ -57,6 +58,7 @@
             this.txb_PwdUsr.Size = new System.Drawing.Size(250, 40);
             this.txb_PwdUsr.TabIndex = 2;
             this.txb_PwdUsr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txb_PwdUsr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_PwdUsr_KeyPress);
             // 
             // label1
             // 

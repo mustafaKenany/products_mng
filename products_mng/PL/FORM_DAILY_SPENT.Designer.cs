@@ -56,6 +56,7 @@
             this.button_CNCLPAID.TabIndex = 53;
             this.button_CNCLPAID.Text = "الغاء";
             this.button_CNCLPAID.UseVisualStyleBackColor = true;
+            this.button_CNCLPAID.Click += new System.EventHandler(this.button_CNCLPAID_Click);
             // 
             // button_PRTPAID
             // 
@@ -122,9 +123,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(61, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 26);
+            this.label1.Size = new System.Drawing.Size(112, 26);
             this.label1.TabIndex = 55;
-            this.label1.Text = "المبلغ الواصل";
+            this.label1.Text = "المبلغ المصروف";
             // 
             // textBox_NOTESPAID
             // 
@@ -187,11 +188,13 @@
             "صرفيات تشغيلة",
             "صرفيات طعام",
             "مكافاءات",
-            "صرفيات اخرى"});
+            "صرفيات اخرى",
+            "تصفير صندوق"});
             this.comboBox_SPENTTYPE.Location = new System.Drawing.Point(187, 36);
             this.comboBox_SPENTTYPE.Name = "comboBox_SPENTTYPE";
             this.comboBox_SPENTTYPE.Size = new System.Drawing.Size(130, 34);
             this.comboBox_SPENTTYPE.TabIndex = 60;
+            this.comboBox_SPENTTYPE.SelectedIndexChanged += new System.EventHandler(this.comboBox_SPENTTYPE_SelectedIndexChanged);
             // 
             // label4
             // 

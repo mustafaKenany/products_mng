@@ -13,7 +13,7 @@ namespace products_mng.DAL
         //This constructor is initialize the sql connection
         public DataAccessLayer()
         {
-            con = new SqlConnection (@"Data Source=.;Initial Catalog=Product_DB;User ID=sa;Password=123");
+            con = new SqlConnection (@"Data Source=.;Initial Catalog=Pharmacy_DB;User ID=sa;Password=123");
         }
 
         //This method open conection with SQL

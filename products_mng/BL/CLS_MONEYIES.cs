@@ -9,6 +9,7 @@ namespace products_mng.BL
 {
     class CLS_MONEYIES
     {
+
         public int GET_ID_PAID_SPENT()
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
@@ -32,7 +33,7 @@ namespace products_mng.BL
             PARAM[0] = new SqlParameter ("@PAID_SPENT_ID", SqlDbType.Int);
             PARAM[1] = new SqlParameter ("@COUST_ID", SqlDbType.Int);
             PARAM[2] = new SqlParameter ("@THE_AMOUNT", SqlDbType.Float);
-            PARAM[3] = new SqlParameter ("@DATE", SqlDbType.Date);
+            PARAM[3] = new SqlParameter ("@DATE", SqlDbType.DateTime);
             PARAM[4] = new SqlParameter ("@TYPE", SqlDbType.NVarChar, 50);
             PARAM[5] = new SqlParameter ("@NOTS", SqlDbType.NVarChar, 50);
             PARAM[6] = new SqlParameter ("@SALES_MAN", SqlDbType.NVarChar, 50);
@@ -82,6 +83,7 @@ namespace products_mng.BL
             dal.ConClose ();
 
         }
+
 
     }
 }

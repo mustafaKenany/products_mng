@@ -69,6 +69,30 @@ namespace products_mng.BL
 
         }
 
+        public void UPDATE_ORDER(int ID_ORDER, int ID_COUST, string ORDER_NOTES, int ORDER_TYPE, int PAID_OR_NOT, String SALES_MAN)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            dal.ConOpen ();
+            SqlParameter[] PARAM = new SqlParameter[7];
+            PARAM[0] = new SqlParameter ("@ID_ORDER", SqlDbType.Int);
+            PARAM[1] = new SqlParameter ("@ID_COUST", SqlDbType.Int);
+            PARAM[2] = new SqlParameter ("@ORDER_NOTES", SqlDbType.NVarChar, 50);
+            PARAM[3] = new SqlParameter ("@ORDER_TYPE", SqlDbType.Bit);
+            PARAM[4] = new SqlParameter ("@PAID_OR_NOT", SqlDbType.Bit);
+            PARAM[5] = new SqlParameter ("@SALES_MAN", SqlDbType.NVarChar, 50);
+            PARAM[6] = new SqlParameter ("@ORDER_DATE", SqlDbType.Date);
+            PARAM[0].Value = ID_ORDER;
+            PARAM[1].Value = ID_COUST;
+            PARAM[2].Value = ORDER_NOTES;
+            PARAM[3].Value = ORDER_TYPE;
+            PARAM[4].Value = PAID_OR_NOT;
+            PARAM[5].Value = SALES_MAN;
+            PARAM[6].Value = DateTime.Now.ToShortDateString ();
+            dal.ExecuteCommand ("UPDATE_ORDER", PARAM);
+            dal.ConClose ();
+
+        }
+
         public void ADD_ORDER_DETAILS(int ID_ORDER, int ID_PRD, float PRD_QTY, float QTY_BY_PRICE, float PRD_PRICE)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
@@ -85,6 +109,26 @@ namespace products_mng.BL
             PARAM[3].Value = QTY_BY_PRICE;
             PARAM[4].Value = PRD_PRICE;
             dal.ExecuteCommand ("ADD_ORDER_DETAILS", PARAM);
+            dal.ConClose ();
+
+        }
+
+        public void UPDATE_ORDER_DETAILS(int ID_ORDER, int ID_PRD, float PRD_QTY, float QTY_BY_PRICE, float PRD_PRICE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            dal.ConOpen ();
+            SqlParameter[] PARAM = new SqlParameter[5];
+            PARAM[0] = new SqlParameter ("@ID_ORDER", SqlDbType.Int);
+            PARAM[1] = new SqlParameter ("@ID_PRD", SqlDbType.Int);
+            PARAM[2] = new SqlParameter ("@PRD_QTY", SqlDbType.Float);
+            PARAM[3] = new SqlParameter ("@QTY_BY_PRICE", SqlDbType.Float);
+            PARAM[4] = new SqlParameter ("@PRD_PRICE", SqlDbType.Float);
+            PARAM[0].Value = ID_ORDER;
+            PARAM[1].Value = ID_PRD;
+            PARAM[2].Value = PRD_QTY;
+            PARAM[3].Value = QTY_BY_PRICE;
+            PARAM[4].Value = PRD_PRICE;
+            dal.ExecuteCommand ("UPDATE_ORDER_DETAILS", PARAM);
             dal.ConClose ();
 
         }
@@ -113,6 +157,30 @@ namespace products_mng.BL
 
         }
 
+        public void UPDATE_ORDER_MONEY(int ID_MONEY, int ID_ORDER, int ID_COUST, float TOTAL_AMOUNT, float PAID_AMOUNT, float DISCOUNT_AMOUNT, float REMINDER_AMOUNT)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            dal.ConOpen ();
+            SqlParameter[] PARAM = new SqlParameter[7];
+            PARAM[0] = new SqlParameter ("@ID_ORDER", SqlDbType.Int);
+            PARAM[1] = new SqlParameter ("@ID_COUST", SqlDbType.Int);
+            PARAM[2] = new SqlParameter ("@TOTAL_AMOUNT", SqlDbType.Float);
+            PARAM[3] = new SqlParameter ("@PAID_AMOUNT", SqlDbType.Float);
+            PARAM[4] = new SqlParameter ("@DISCOUNT_AMOUNT", SqlDbType.Float);
+            PARAM[5] = new SqlParameter ("@REMINDER_AMOUNT", SqlDbType.Float);
+            PARAM[6] = new SqlParameter ("@ID_MONEYIES", SqlDbType.Int);
+            PARAM[0].Value = ID_ORDER;
+            PARAM[1].Value = ID_COUST;
+            PARAM[2].Value = TOTAL_AMOUNT;
+            PARAM[3].Value = PAID_AMOUNT;
+            PARAM[4].Value = DISCOUNT_AMOUNT;
+            PARAM[5].Value = REMINDER_AMOUNT;
+            PARAM[6].Value = ID_MONEY;
+            dal.ExecuteCommand ("UPDATE_ORDER_MONEY", PARAM);
+            dal.ConClose ();
+
+        }
+
         public void ADD_MONEY_DETAILS(int ID_MONEY, int ID_COUST, String TYPES_OF_MONEY, String NOTES, DateTime MONEY_DATE)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
@@ -129,6 +197,38 @@ namespace products_mng.BL
             PARAM[3].Value = NOTES;
             PARAM[4].Value = MONEY_DATE;
             dal.ExecuteCommand ("ADD_MONEY_DETAILS", PARAM);
+            dal.ConClose ();
+
+        }
+
+        public void UPDATE_MONEY_DETAILS(int ID_MONEY, int ID_COUST, String TYPES_OF_MONEY, String NOTES, DateTime MONEY_DATE)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            dal.ConOpen ();
+            SqlParameter[] PARAM = new SqlParameter[5];
+            PARAM[0] = new SqlParameter ("@ID_MONEY", SqlDbType.Int);
+            PARAM[1] = new SqlParameter ("@ID_COUST", SqlDbType.Int);
+            PARAM[2] = new SqlParameter ("@TYPES_OF_MONEY", SqlDbType.NVarChar, 250);
+            PARAM[3] = new SqlParameter ("@NOTES", SqlDbType.NVarChar, 250);
+            PARAM[4] = new SqlParameter ("@MONEY_DATE", SqlDbType.Date);
+            PARAM[0].Value = ID_MONEY;
+            PARAM[1].Value = ID_COUST;
+            PARAM[2].Value = TYPES_OF_MONEY;
+            PARAM[3].Value = NOTES;
+            PARAM[4].Value = MONEY_DATE;
+            dal.ExecuteCommand ("UPDATE_MONEY_DETAILS", PARAM);
+            dal.ConClose ();
+
+        }
+
+        public void DLT_ORDER_MONEY(int ID_MONEY)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
+            dal.ConOpen ();
+            SqlParameter[] PARAM = new SqlParameter[1];
+            PARAM[0] = new SqlParameter ("@ID_MONEY", SqlDbType.Int);
+            PARAM[0].Value = ID_MONEY;
+            dal.ExecuteCommand ("DLT_ORDER_MONEY", PARAM);
             dal.ConClose ();
 
         }

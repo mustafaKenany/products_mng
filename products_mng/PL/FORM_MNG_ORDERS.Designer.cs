@@ -226,7 +226,7 @@
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn2.Caption = "تاريخ الفاتورة";
-            this.gridColumn2.DisplayFormat.FormatString = "yyyy/MM/dd";
+            this.gridColumn2.DisplayFormat.FormatString = "yyyy-MM-dd";
             this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn2.FieldName = "ORDER_DATE";
             this.gridColumn2.Name = "gridColumn2";
@@ -424,7 +424,7 @@
             this.button_INVO_DETLS.Name = "button_INVO_DETLS";
             this.button_INVO_DETLS.Size = new System.Drawing.Size(100, 61);
             this.button_INVO_DETLS.TabIndex = 14;
-            this.button_INVO_DETLS.Text = "كشف الفاتورة";
+            this.button_INVO_DETLS.Text = "تعديل الفاتورة";
             this.button_INVO_DETLS.UseVisualStyleBackColor = true;
             this.button_INVO_DETLS.Click += new System.EventHandler(this.button_INVO_DETLS_Click);
             // 
@@ -480,10 +480,10 @@
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Button button_PRT_INVO;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Button button_INVO_DETLS;
         private System.Windows.Forms.Button button_PRT_GRID;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
         private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
+        private System.Windows.Forms.Button button_INVO_DETLS;
     }
 }

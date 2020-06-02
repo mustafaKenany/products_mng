@@ -72,7 +72,7 @@ namespace products_mng.PL
         private void btn_SAVE_PRODUCT_Click(object sender, EventArgs e)
         {
 
-
+            var EXPIRE_DATE = dateTimePicker_EXPIREDATE.Value;
             if (CheckInputs ())
             {
                 if (stat == "add")
@@ -80,7 +80,8 @@ namespace products_mng.PL
                     MemoryStream ms = new MemoryStream ();
                     pictureBox_PRODUCTS.Image.Save (ms, pictureBox_PRODUCTS.Image.RawFormat);
                     byte[] ImageByte = ms.ToArray ();
-                    prd.ADD_PRODUCT (int.Parse (ID_PRODUCT.Text), int.Parse (comboBox_CATEGORIES.SelectedValue.ToString ()), textBox_BARCODE.Text, textBox_LABEL.Text, ImageByte);
+
+                    prd.ADD_PRODUCT (int.Parse (ID_PRODUCT.Text), int.Parse (comboBox_CATEGORIES.SelectedValue.ToString ()), textBox_BARCODE.Text, textBox_LABEL.Text, ImageByte, EXPIRE_DATE);
                     MessageBox.Show ("تمت عملية الحفظ بنجاح", "SAVE");
                     Clear_Function ();
                 }
@@ -89,7 +90,7 @@ namespace products_mng.PL
                     MemoryStream ms = new MemoryStream ();
                     pictureBox_PRODUCTS.Image.Save (ms, pictureBox_PRODUCTS.Image.RawFormat);
                     byte[] ImageByte = ms.ToArray ();
-                    prd.UPDATE_PRODCUT (int.Parse (comboBox_CATEGORIES.SelectedValue.ToString ()), textBox_BARCODE.Text, textBox_LABEL.Text, ImageByte, ID_PRODUCT.Text);
+                    prd.UPDATE_PRODCUT (int.Parse (comboBox_CATEGORIES.SelectedValue.ToString ()), textBox_BARCODE.Text, textBox_LABEL.Text, ImageByte, ID_PRODUCT.Text,EXPIRE_DATE);
                     MessageBox.Show ("تمت عملية التعديل بنجاح", "UPDATE");
                     FORM_MNG_PRODUCTS.getMainForm.GridControl_PRODUCTS.DataSource = prd.GET_ALL_PRODUCTS ();
 

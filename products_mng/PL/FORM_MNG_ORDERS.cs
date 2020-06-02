@@ -107,11 +107,10 @@ namespace products_mng.PL
             {
                 var ORDER_TYPES = BL.CLS_ORDERS.ORDER_TYPES;
                 int ID_ORD = int.Parse (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_ORDER"]).ToString ());
-                RPT.RPT_INVO x = new RPT.RPT_INVO ();
-                x.DataSource = RPT.PRT_INVO_ORDER (ORDER_TYPES, ID_ORD);
-                x.ShowPreviewDialog ();
-                //MessageBox.Show (ID_ORD.ToString ());
-
+                PL.FORM_SALES form = new FORM_SALES ();
+                form.Restore_Order (ID_ORD);
+                form.InitializeFunction ();
+                form.ShowDialog ();
             }
         }
     }

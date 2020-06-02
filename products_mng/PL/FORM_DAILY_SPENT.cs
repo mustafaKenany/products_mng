@@ -18,6 +18,11 @@ namespace products_mng.PL
             InitializeComponent ();
         }
         BL.CLS_MONEYIES PAID = new BL.CLS_MONEYIES ();
+        BL.CLS_REPORT_LIST RPTCLS = new BL.CLS_REPORT_LIST ();
+        float PAID_MONEY;
+        int PAID_ID;
+        string PAID_NOTES, SALES_MAN;
+        DateTime PAID_DATE;
         private void Initialize_Function()
         {
 
@@ -42,12 +47,19 @@ namespace products_mng.PL
             }
             else
             {
-                float PAID_MONEY = float.Parse (textBox_MONEYPAID.Text);
-                int PAID_ID = int.Parse (label_PAIDID.Text);
-                DateTime PAID_DATE = dateTimePicker_DATEPAID.Value;
-                string PAID_NOTES = textBox_NOTESPAID.Text + "   " + comboBox_SPENTTYPE.Text;
-                String SALES_MAN = BL.CLS_LOGIN.SALES_MAN;
-                PAID.ADD_PAID_SPENT_MONEY (PAID_ID, 4, PAID_MONEY, PAID_DATE, "صرفيات يومية", PAID_NOTES,SALES_MAN);
+                PAID_MONEY = float.Parse (textBox_MONEYPAID.Text);
+                PAID_ID = int.Parse (label_PAIDID.Text);
+                PAID_DATE = dateTimePicker_DATEPAID.Value;
+                PAID_NOTES = textBox_NOTESPAID.Text + "  / " + comboBox_SPENTTYPE.Text;
+                SALES_MAN = BL.CLS_LOGIN.SALES_MAN;
+                PAID.ADD_PAID_SPENT_MONEY (PAID_ID, 4, PAID_MONEY * -1, PAID_DATE, "صرفيات يومية", PAID_NOTES, SALES_MAN);
+                if (comboBox_SPENTTYPE.SelectedIndex == 7)
+                {
+
+                    PAID_ID = PAID.GET_ID_PAID_SPENT ();
+                    DateTime NEXT_DATE = dateTimePicker_DATEPAID.Value.AddDays (1);
+                    PAID.ADD_PAID_SPENT_MONEY (PAID_ID, 4, PAID_MONEY, NEXT_DATE, "سندات قبض", "حساب مدور سابق", SALES_MAN);
+                }
                 MessageBox.Show ("تم الحفظ بنجاح", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 comboBox_SPENTTYPE.Enabled = textBox_MONEYPAID.Enabled = textBox_NOTESPAID.Enabled = dateTimePicker_DATEPAID.Enabled = false;
                 button_PRTPAID.Enabled = true;
@@ -68,7 +80,7 @@ namespace products_mng.PL
 
         private void textBox_MONEYPAID_Leave(object sender, EventArgs e)
         {
-            if (textBox_MONEYPAID.Text!="")
+            if (textBox_MONEYPAID.Text != "")
             {
                 textBox_MONEYPAID.Text = int.Parse (textBox_MONEYPAID.Text).ToString ("n1");
             }
@@ -77,6 +89,37 @@ namespace products_mng.PL
         private void textBox_MONEYPAID_Enter(object sender, EventArgs e)
         {
             textBox_MONEYPAID.Text = "";
+        }
+
+        private void button_CNCLPAID_Click(object sender, EventArgs e)
+        {
+            this.Close ();
+        }
+
+        private void comboBox_SPENTTYPE_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_SPENTTYPE.SelectedIndex == 7)
+            {
+                PAID_DATE = dateTimePicker_DATEPAID.Value;
+                var dt = RPTCLS.RPT_NETMONEY (PAID_DATE.ToString ("yyyy-MM-dd"), PAID_DATE.ToString ("yyyy-MM-dd"));
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        PAID_MONEY = PAID_MONEY + float.Parse (dt.Rows[i]["PAID_AMOUNT"].ToString ());
+                    }
+                    textBox_MONEYPAID.Text = PAID_MONEY.ToString ();
+                    textBox_MONEYPAID.Enabled = textBox_NOTESPAID.Enabled = false;
+                    textBox_MONEYPAID.Text = int.Parse (textBox_MONEYPAID.Text).ToString ("n1");
+                    textBox_NOTESPAID.Text = "تدوير الحساب";
+                }
+            }
+            else
+            {
+                textBox_MONEYPAID.Enabled = textBox_NOTESPAID.Enabled = true;
+                textBox_MONEYPAID.Text = "";
+                textBox_NOTESPAID.Text = "";
+            }
         }
     }
 }

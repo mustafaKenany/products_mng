@@ -34,9 +34,23 @@ namespace products_mng.PL
             {
                 if (MessageBox.Show ("هل  تريد حذف هذا المستند", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
-                    int ID =Convert.ToInt16( gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["PAID_SPENT_ID"]).ToString ());
-                    MONEY.DLT_PAID_SPENT_DOCS (ID);
-                    MessageBox.Show ("تمت عملية الحذف", "حذف");
+                    var Notes = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["NOTS"]).ToString ();
+                    int ID = Convert.ToInt16 (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["PAID_SPENT_ID"]).ToString ());
+                    if (Notes.Contains ("تدوير الحساب"))
+                    {
+                        MONEY.DLT_PAID_SPENT_DOCS (ID);
+                        MONEY.DLT_PAID_SPENT_DOCS (ID + 1);
+                        MessageBox.Show ("تمت عملية الحذف", "حذف");
+                    }
+                    else if (Notes.Contains ("حساب مدور سابق"))
+                    {
+                        MessageBox.Show ("لا يكن حذف حساب مدور سابق", "تحذير");
+                    }
+                    else
+                    {
+                        MONEY.DLT_PAID_SPENT_DOCS (ID);
+                        MessageBox.Show ("تمت عملية الحذف", "حذف");
+                    }
                     var BEGIN_DATE = dateTimePicker_BEGIN_DATE.Text;
                     var END_DATE = dateTimePicker_END_DATE.Text;
                     DataTable dt = new DataTable ();
@@ -61,7 +75,7 @@ namespace products_mng.PL
 
         private void button_PRTDOCS_Click(object sender, EventArgs e)
         {
-            if (gridView1.RowCount>0)
+            if (gridView1.RowCount > 0)
             {
                 RPT.RPT_PAID_SPENT x = new RPT.RPT_PAID_SPENT ();
                 var DOC_TITLE = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["PAID_SPENT_TYPE"]).ToString ();
@@ -70,7 +84,7 @@ namespace products_mng.PL
                 var NOTS = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["NOTS"]).ToString ();
                 var DATE_DOC = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["PAID_SPENT_DATE"]).ToString ();
                 var PAID_SPENT_ID = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["PAID_SPENT_ID"]).ToString ();
-                
+
 
                 x.xrLabelTITLE.Text = "مستند قبض";
                 x.xrLabelDETLS.Text = " استلمت من السيد/السيدة " + COUST_NAME + "  مبلغ مالي مقداره  " + AMOUNT + "   وذلك عن  " + NOTS + "  ولأجله وقعت";
@@ -80,6 +94,11 @@ namespace products_mng.PL
                 x.ShowPreviewDialog ();
 
             }
+        }
+
+        private void button_UPDATEDOCS_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

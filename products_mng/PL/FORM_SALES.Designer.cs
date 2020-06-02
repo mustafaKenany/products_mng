@@ -72,8 +72,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel_CATEGORIES = new System.Windows.Forms.Panel();
             this.flowLayoutPanel_CATEGORIES = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_PRD = new System.Windows.Forms.Panel();
             this.flowLayoutPanel_PRD = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_PRD_BARCODE = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
             this.panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_INVO_ITEMS)).BeginInit();
@@ -82,7 +85,8 @@
             this.panel_BTNS.SuspendLayout();
             this.panel_COUST_NOTS.SuspendLayout();
             this.panel_CATEGORIES.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel_PRD.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_top
@@ -271,6 +275,7 @@
             this.textBox_INVO_PAID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_INVO_PAID.TextChanged += new System.EventHandler(this.textBox_INVO_PAID_TextChanged);
             this.textBox_INVO_PAID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_INVO_PAID_KeyPress);
+            this.textBox_INVO_PAID.Leave += new System.EventHandler(this.textBox_INVO_PAID_Leave);
             // 
             // label_INVO_TOTAL
             // 
@@ -339,6 +344,7 @@
             this.textBox_INVO_DISC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_INVO_DISC.TextChanged += new System.EventHandler(this.textBox_INVO_DISC_TextChanged);
             this.textBox_INVO_DISC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_INVO_DISC_KeyPress);
+            this.textBox_INVO_DISC.Leave += new System.EventHandler(this.textBox_INVO_DISC_Leave);
             // 
             // label_INVO_REMID
             // 
@@ -618,9 +624,10 @@
             // panel_CATEGORIES
             // 
             this.panel_CATEGORIES.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel_CATEGORIES.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_CATEGORIES.Controls.Add(this.flowLayoutPanel_CATEGORIES);
-            this.panel_CATEGORIES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_CATEGORIES.Location = new System.Drawing.Point(0, 149);
+            this.panel_CATEGORIES.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_CATEGORIES.Location = new System.Drawing.Point(0, 500);
             this.panel_CATEGORIES.Name = "panel_CATEGORIES";
             this.panel_CATEGORIES.Padding = new System.Windows.Forms.Padding(5);
             this.panel_CATEGORIES.Size = new System.Drawing.Size(800, 200);
@@ -633,19 +640,20 @@
             this.flowLayoutPanel_CATEGORIES.Location = new System.Drawing.Point(5, 5);
             this.flowLayoutPanel_CATEGORIES.Name = "flowLayoutPanel_CATEGORIES";
             this.flowLayoutPanel_CATEGORIES.Padding = new System.Windows.Forms.Padding(3);
-            this.flowLayoutPanel_CATEGORIES.Size = new System.Drawing.Size(790, 190);
+            this.flowLayoutPanel_CATEGORIES.Size = new System.Drawing.Size(786, 186);
             this.flowLayoutPanel_CATEGORIES.TabIndex = 0;
             // 
-            // panel3
+            // panel_PRD
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.panel3.Controls.Add(this.flowLayoutPanel_PRD);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 375);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(800, 325);
-            this.panel3.TabIndex = 5;
+            this.panel_PRD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.panel_PRD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_PRD.Controls.Add(this.flowLayoutPanel_PRD);
+            this.panel_PRD.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_PRD.Location = new System.Drawing.Point(0, 200);
+            this.panel_PRD.Name = "panel_PRD";
+            this.panel_PRD.Padding = new System.Windows.Forms.Padding(5);
+            this.panel_PRD.Size = new System.Drawing.Size(800, 300);
+            this.panel_PRD.TabIndex = 5;
             // 
             // flowLayoutPanel_PRD
             // 
@@ -654,16 +662,51 @@
             this.flowLayoutPanel_PRD.Location = new System.Drawing.Point(5, 5);
             this.flowLayoutPanel_PRD.Name = "flowLayoutPanel_PRD";
             this.flowLayoutPanel_PRD.Padding = new System.Windows.Forms.Padding(3);
-            this.flowLayoutPanel_PRD.Size = new System.Drawing.Size(790, 315);
+            this.flowLayoutPanel_PRD.Size = new System.Drawing.Size(786, 286);
             this.flowLayoutPanel_PRD.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.textBox_PRD_BARCODE);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 149);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(3);
+            this.panel1.Size = new System.Drawing.Size(800, 39);
+            this.panel1.TabIndex = 6;
+            // 
+            // textBox_PRD_BARCODE
+            // 
+            this.textBox_PRD_BARCODE.Dock = System.Windows.Forms.DockStyle.Right;
+            this.textBox_PRD_BARCODE.Enabled = false;
+            this.textBox_PRD_BARCODE.Location = new System.Drawing.Point(409, 3);
+            this.textBox_PRD_BARCODE.Name = "textBox_PRD_BARCODE";
+            this.textBox_PRD_BARCODE.Size = new System.Drawing.Size(303, 34);
+            this.textBox_PRD_BARCODE.TabIndex = 13;
+            this.textBox_PRD_BARCODE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_PRD_BARCODE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_PRD_BARCODE_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label9.Location = new System.Drawing.Point(712, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 33);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "باركود";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FORM_SALES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1250, 700);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_PRD);
             this.Controls.Add(this.panel_CATEGORIES);
             this.Controls.Add(this.panel_COUST_NOTS);
             this.Controls.Add(this.panel_BTNS);
@@ -691,7 +734,9 @@
             this.panel_COUST_NOTS.ResumeLayout(false);
             this.panel_COUST_NOTS.PerformLayout();
             this.panel_CATEGORIES.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panel_PRD.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -705,7 +750,6 @@
         private System.Windows.Forms.Panel panel_Right;
         private System.Windows.Forms.Panel panel_BTNS;
         private System.Windows.Forms.Button button_NEW_INVO;
-        private System.Windows.Forms.Label label_ID_ORDER;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Button button_PRT_INVO;
         private System.Windows.Forms.Splitter splitter3;
@@ -729,7 +773,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel_CATEGORIES;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_CATEGORIES;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel_PRD;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_PRD;
         private System.Windows.Forms.DataGridView dataGridView_INVO_ITEMS;
         private System.Windows.Forms.Button button_DLT_ITEM;
@@ -744,5 +788,9 @@
         public System.Windows.Forms.Label label_COUST_ID;
         public System.Windows.Forms.TextBox textBox_COUST_NAME;
         public System.Windows.Forms.Label label_MONEYIES_ID;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TextBox textBox_PRD_BARCODE;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label_ID_ORDER;
     }
 }

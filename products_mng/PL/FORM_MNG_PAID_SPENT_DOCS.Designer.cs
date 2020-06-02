@@ -376,6 +376,7 @@
             this.button_UPDATEDOCS.TabIndex = 20;
             this.button_UPDATEDOCS.Text = "تعديل";
             this.button_UPDATEDOCS.UseVisualStyleBackColor = true;
+            this.button_UPDATEDOCS.Click += new System.EventHandler(this.button_UPDATEDOCS_Click);
             // 
             // button_ALL_DOCS
             // 
