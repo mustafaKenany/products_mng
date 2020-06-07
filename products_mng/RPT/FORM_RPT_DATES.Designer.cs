@@ -73,6 +73,7 @@
             // 
             // button_PRTDOCS
             // 
+            this.button_PRTDOCS.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button_PRTDOCS.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_PRTDOCS.FlatAppearance.BorderSize = 2;
             this.button_PRTDOCS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -84,7 +85,6 @@
             this.button_PRTDOCS.TabIndex = 32;
             this.button_PRTDOCS.Text = "طباعة";
             this.button_PRTDOCS.UseVisualStyleBackColor = true;
-            this.button_PRTDOCS.Click += new System.EventHandler(this.button_PRTDOCS_Click);
             // 
             // FORM_RPTDATE
             // 
@@ -117,8 +117,8 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_END_DATE;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_BEGIN_DATE;
         public System.Windows.Forms.Button button_PRTDOCS;
+        public System.Windows.Forms.DateTimePicker dateTimePicker_END_DATE;
+        public System.Windows.Forms.DateTimePicker dateTimePicker_BEGIN_DATE;
     }
 }

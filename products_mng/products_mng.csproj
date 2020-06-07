@@ -51,6 +51,7 @@
     <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v17.2.Extensions, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -268,12 +269,6 @@
     <Compile Include="RPT\FORM_RPT_USRS.Designer.cs">
       <DependentUpon>FORM_RPT_USRS.cs</DependentUpon>
     </Compile>
-    <Compile Include="RPT\PRT_ALL_INVO.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RPT\PRT_ALL_INVO.Designer.cs">
-      <DependentUpon>PRT_ALL_INVO.cs</DependentUpon>
-    </Compile>
     <Compile Include="RPT\RPT_CALC_PROFT_COST.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -291,12 +286,6 @@
     </Compile>
     <Compile Include="RPT\RPT_INVO.Designer.cs">
       <DependentUpon>RPT_INVO.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RPT\RPT_ITEMS_COUST.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RPT\RPT_ITEMS_COUST.Designer.cs">
-      <DependentUpon>RPT_ITEMS_COUST.cs</DependentUpon>
     </Compile>
     <Compile Include="RPT\RPT_ITMSDTLS.cs">
       <SubType>Component</SubType>
@@ -340,6 +329,18 @@
     <Compile Include="RPT\RPT_USR_SALES.Designer.cs">
       <DependentUpon>RPT_USR_SALES.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPT\RPT_ALL_INVOS_BETWEEN_DATES.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPT_ALL_INVOS_BETWEEN_DATES.Designer.cs">
+      <DependentUpon>RPT_ALL_INVOS_BETWEEN_DATES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PL\FORM_ADD_PRODUCTS.resx">
       <DependentUpon>FORM_ADD_PRODUCTS.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_MNG_PAID_SPENT_DOCS.resx">
       <DependentUpon>FORM_MNG_PAID_SPENT_DOCS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FORM_MNG_PURCHASES.resx">
+      <DependentUpon>FORM_MNG_PURCHASES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FORM_PAID_MONEY.resx">
       <DependentUpon>FORM_PAID_MONEY.cs</DependentUpon>
@@ -422,9 +426,6 @@
     <EmbeddedResource Include="RPT\FORM_RPT_USRS.resx">
       <DependentUpon>FORM_RPT_USRS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RPT\PRT_ALL_INVO.resx">
-      <DependentUpon>PRT_ALL_INVO.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_CALC_PROFT_COST.resx">
       <DependentUpon>RPT_CALC_PROFT_COST.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,9 +434,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_INVO.resx">
       <DependentUpon>RPT_INVO.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RPT\RPT_ITEMS_COUST.resx">
-      <DependentUpon>RPT_ITEMS_COUST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_ITMSDTLS.resx">
       <DependentUpon>RPT_ITMSDTLS.cs</DependentUpon>
@@ -457,6 +455,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RPT_USR_SALES.resx">
       <DependentUpon>RPT_USR_SALES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_ALL_INVOS_BETWEEN_DATES.resx">
+      <DependentUpon>RPT_ALL_INVOS_BETWEEN_DATES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DAL\RPT_TABLES.xsc">
       <DependentUpon>RPT_TABLES.xsd</DependentUpon>

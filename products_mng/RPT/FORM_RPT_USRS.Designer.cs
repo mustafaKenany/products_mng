@@ -34,7 +34,7 @@
             this.button_RPT_USR_DAILY_SPENT = new System.Windows.Forms.Button();
             this.button_RPT_SPENT_MONEY = new System.Windows.Forms.Button();
             this.button_RPT_USR_PAID_money = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_RPT_USR_PURCHASE = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker_END_DATE = new System.Windows.Forms.DateTimePicker();
@@ -57,7 +57,7 @@
             this.groupBox1.Controls.Add(this.button_RPT_USR_DAILY_SPENT);
             this.groupBox1.Controls.Add(this.button_RPT_SPENT_MONEY);
             this.groupBox1.Controls.Add(this.button_RPT_USR_PAID_money);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button_RPT_USR_PURCHASE);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dateTimePicker_END_DATE);
@@ -147,19 +147,20 @@
             this.button_RPT_USR_PAID_money.UseVisualStyleBackColor = true;
             this.button_RPT_USR_PAID_money.Click += new System.EventHandler(this.button_RPT_USR_PAID_SPENT_Click);
             // 
-            // button1
+            // button_RPT_USR_PURCHASE
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(577, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 66);
-            this.button1.TabIndex = 62;
-            this.button1.Text = "طباعة المشتريات";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_RPT_USR_PURCHASE.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_RPT_USR_PURCHASE.FlatAppearance.BorderSize = 2;
+            this.button_RPT_USR_PURCHASE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_RPT_USR_PURCHASE.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_RPT_USR_PURCHASE.ForeColor = System.Drawing.Color.White;
+            this.button_RPT_USR_PURCHASE.Location = new System.Drawing.Point(577, 26);
+            this.button_RPT_USR_PURCHASE.Name = "button_RPT_USR_PURCHASE";
+            this.button_RPT_USR_PURCHASE.Size = new System.Drawing.Size(85, 66);
+            this.button_RPT_USR_PURCHASE.TabIndex = 62;
+            this.button_RPT_USR_PURCHASE.Text = "طباعة المشتريات";
+            this.button_RPT_USR_PURCHASE.UseVisualStyleBackColor = true;
+            this.button_RPT_USR_PURCHASE.Click += new System.EventHandler(this.button_RPT_USR_PURCHASE_Click);
             // 
             // label2
             // 
@@ -347,7 +348,7 @@
         public System.Windows.Forms.Button button_RPT_USR_DAILY_SPENT;
         public System.Windows.Forms.Button button_RPT_SPENT_MONEY;
         public System.Windows.Forms.Button button_RPT_USR_PAID_money;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button_RPT_USR_PURCHASE;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker_END_DATE;

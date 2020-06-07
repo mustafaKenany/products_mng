@@ -24,7 +24,7 @@ namespace products_mng.PL
         int ORDER_TYPE = 1;
         int PAID_OR_NOT = 1;
         String SALES_MAN = "";
-
+        string ORDER_NOTES;
         private static FORM_PURCHASES frm;
         static void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -59,19 +59,58 @@ namespace products_mng.PL
 
         #region FUNCTIONS
 
-        private void InitializeFunction()
+        public void Restore_Order(int OrderId)
         {
-            this.label_ID_ORDER.Text = ORD.GET_ID_ORDER ().ToString ();
-            this.label_MONEYIES_ID.Text = ORD.GET_ID_MONEYIES ().ToString ();
-            ID_ORDER = int.Parse (label_ID_ORDER.Text);
-            ID_COUST = int.Parse (label_COUST_ID.Text);
-            ID_MONEY = int.Parse (label_MONEYIES_ID.Text);
-            SALES_MAN = label_SALES_MAN.Text;
-            dataGridView_INVO_ITEMS.Rows.Clear ();
-            label_INVO_TOTAL.Text = textBox_INVO_PAID.Text = textBox_INVO_DISC.Text = "0";
-            textBox_ORDER_NOTES.Text = "";
-            textBox_PRD_BARCODE.Enabled = true;
-            textBox_PRD_BARCODE.Focus ();
+            var ORDER_TYPES = BL.CLS_ORDERS.ORDER_TYPES;
+            button_NEW_INVO.Enabled = false;
+            DataTable dt = new DataTable ();
+            dt = RPT.PRT_INVO_ORDER (ORDER_TYPES, OrderId);
+            if (dt.Rows.Count > 0)
+            {
+                label_ID_ORDER.Text = OrderId.ToString ();
+                label_MONEYIES_ID.Text = dt.Rows[0]["ID_MONEY"].ToString ();
+                button_SAVE_INVO.Text = "تحديث";
+                textBox_INVO_DISC.Text = dt.Rows[0]["DISCOUNT_AMOUNT"].ToString ();
+                textBox_INVO_PAID.Text = (int.Parse(dt.Rows[0]["PAID_AMOUNT"].ToString ())*-1).ToString();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    int idx = dataGridView_INVO_ITEMS.Rows.Add ();
+                    DataGridViewRow row = dataGridView_INVO_ITEMS.Rows[idx];
+                    row.Cells["ITEM_ID"].Value = dt.Rows[i]["ID_PRODUCT"].ToString ();
+                    row.Cells["ITEM_NAME"].Value = dt.Rows[i]["LABEL_PRODUCT"].ToString ();
+                    row.Cells["ITEM_QTY"].Value = dt.Rows[i]["PRD_QTY"].ToString ();
+                    row.Cells["Stock_PRD"].Value = dt.Rows[i]["PRD_QTY"].ToString ();
+                    row.Cells["ITEM_PRICE"].Value = dt.Rows[i]["PRD_PRICE"].ToString ();
+                    row.Cells["ITEM_TOTAL"].Value = dt.Rows[i]["QTY_BY_PRICE"].ToString ();
+                }
+                MessageBox.Show ("يمكنك فقط تغير الاعداد ولا يمكن حذف مادة او الاضافة", "MESSAGE");
+            }
+        }
+
+        public void InitializeFunction()
+        {
+
+            if (button_SAVE_INVO.Text == "تحديث")
+            {
+
+                ID_ORDER = int.Parse (label_ID_ORDER.Text);
+                ID_COUST = int.Parse (label_COUST_ID.Text);
+                ID_MONEY = int.Parse (label_MONEYIES_ID.Text);
+                SALES_MAN = label_SALES_MAN.Text;
+            }
+            else
+            {
+                this.label_ID_ORDER.Text = ORD.GET_ID_ORDER ().ToString ();
+                this.label_MONEYIES_ID.Text = ORD.GET_ID_MONEYIES ().ToString ();
+                dataGridView_INVO_ITEMS.Rows.Clear ();
+                label_INVO_TOTAL.Text = textBox_INVO_PAID.Text = textBox_INVO_DISC.Text = "0";
+                textBox_ORDER_NOTES.Text = "";
+                ID_ORDER = int.Parse (label_ID_ORDER.Text);
+                ID_COUST = int.Parse (label_COUST_ID.Text);
+                ID_MONEY = int.Parse (label_MONEYIES_ID.Text);
+                SALES_MAN = label_SALES_MAN.Text;
+
+            }
         }
 
         private void SELECT_CATEGORIES()
@@ -167,14 +206,14 @@ namespace products_mng.PL
 
             if (dt.Rows.Count > 0)
             {
-                if (dt.Rows[0]["PRICE"].ToString () == "")
-                {
-                    ITEM_PRICE = 0;
-                }
-                else
-                {
-                    ITEM_PRICE = float.Parse (dt.Rows[0]["PRICE"].ToString ());
-                }
+                ITEM_PRICE = 1;
+                //if (dt.Rows[0]["PRICE"].ToString () == "")
+                //{
+                //}
+                //else
+                //{
+                //    ITEM_PRICE = float.Parse (dt.Rows[0]["PRICE"].ToString ());
+                //}
 
                 if (CHECK_IF_DUPLICATE (clickedbutton.Text))
                 {
@@ -215,14 +254,66 @@ namespace products_mng.PL
             float PAID_AMOUNT = float.Parse (textBox_INVO_PAID.Text);
             float DISCOUNT_AMOUNT = float.Parse (textBox_INVO_DISC.Text);
             float REMINDER_AMOUNT = float.Parse (label_INVO_REMID.Text);
-            ORD.ADD_ORDER_MONEY (ID_MONEY, ID_ORDER, ID_COUST, TOTAL_AMOUNT, PAID_AMOUNT, DISCOUNT_AMOUNT, REMINDER_AMOUNT);
+            ORD.ADD_ORDER_MONEY (ID_MONEY, ID_ORDER, ID_COUST, TOTAL_AMOUNT, PAID_AMOUNT * -1, DISCOUNT_AMOUNT, REMINDER_AMOUNT);
         }
 
         private void ADD_MONEY_DETAILS()
         {
 
-            ORD.ADD_MONEY_DETAILS (ID_MONEY, ID_COUST, "بيع مباشر", ("فاتورة مرقمة " + label_ID_ORDER.Text + " " + textBox_ORDER_NOTES.Text), DateTime.Now);
+            ORD.ADD_MONEY_DETAILS (ID_MONEY, ID_COUST, "شراء مباشر", ("فاتورة مرقمة " + label_ID_ORDER.Text + " " + textBox_ORDER_NOTES.Text), DateTime.Now);
         }
+
+        private void UPDATE_ORDER()
+        {
+            ORD.UPDATE_ORDER (ID_ORDER, ID_COUST, ORDER_NOTES, ORDER_TYPE, PAID_OR_NOT, SALES_MAN);
+        }
+
+        private void UPDATE_ORDER_DETAILS()
+        {
+            for (int i = 0; i < dataGridView_INVO_ITEMS.Rows.Count; i++)
+            {
+                int ID_PRD = int.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_ID"].Value.ToString ());
+                float PRD_QTY = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_QTY"].Value.ToString ());
+                float QTY_BY_PRICE = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_TOTAL"].Value.ToString ());
+                float PRD_PRICE = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_PRICE"].Value.ToString ());
+                ORD.UPDATE_ORDER_DETAILS (ID_ORDER, ID_PRD, PRD_QTY, QTY_BY_PRICE, PRD_PRICE);
+            }
+        }
+
+        private void UPDATE_MONEY_DETAILS()
+        {
+            ORD.UPDATE_MONEY_DETAILS (ID_MONEY, ID_COUST, "بيع مباشر", ("فاتورة مرقمة " + label_ID_ORDER.Text + " " + textBox_ORDER_NOTES.Text), DateTime.Now);
+        }
+
+        private void UPDATE_ORDER_MONEY()
+        {
+            float TOTAL_AMOUNT = float.Parse (label_INVO_TOTAL.Text);
+            float PAID_AMOUNT = float.Parse (textBox_INVO_PAID.Text);
+            float DISCOUNT_AMOUNT = float.Parse (textBox_INVO_DISC.Text);
+            float REMINDER_AMOUNT = float.Parse (label_INVO_REMID.Text);
+            ORD.UPDATE_ORDER_MONEY (ID_MONEY, ID_ORDER, ID_COUST, TOTAL_AMOUNT, PAID_AMOUNT, DISCOUNT_AMOUNT, REMINDER_AMOUNT);
+        }
+
+        private void Add_Qty_Stock()
+        {
+            for (int i = 0; i < dataGridView_INVO_ITEMS.Rows.Count; i++)
+            {
+                int ID_PRD = int.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_ID"].Value.ToString ());
+                float PRD_QTY = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_QTY"].Value.ToString ());
+                PROD.ADD_PRD_Stock (ID_PRD, PRD_QTY);
+            }
+        }
+
+        private void Update_Qty_Stock()
+        {
+            for (int i = 0; i < dataGridView_INVO_ITEMS.Rows.Count; i++)
+            {
+                int ID_PRD = int.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_ID"].Value.ToString ());
+                float PRD_QTY = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["Stock_PRD"].Value.ToString ());
+                PROD.UPDATE_PRD_Stock (ID_PRD, PRD_QTY);
+            }
+        }
+
 
         private bool CHECK_MONEY()
         {
@@ -254,6 +345,8 @@ namespace products_mng.PL
             InitializeFunction ();
             SELECT_CATEGORIES ();
             button_NEW_INVO.Enabled = false;
+            textBox_PRD_BARCODE.Enabled = true;
+            textBox_PRD_BARCODE.Focus ();
         }
 
         private void button_PAID_INVO_Click(object sender, EventArgs e)
@@ -277,17 +370,35 @@ namespace products_mng.PL
                 {
                     if (CHECK_MONEY ())
                     {
-                        ADD_ORDER ();
-                        ADD_ORDER_DETAILS ();
-                        ADD_ORDER_MONEY ();
-                        ADD_MONEY_DETAILS ();
-                        MessageBox.Show ("حفظ بنجاح", "ADD_ORDER SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ORDER_NOTES = textBox_ORDER_NOTES.Text;
+                        if (button_SAVE_INVO.Text == "تحديث")
+                        {
+                            UPDATE_ORDER ();
+                            UPDATE_ORDER_DETAILS ();
+                            UPDATE_ORDER_MONEY ();
+                            UPDATE_MONEY_DETAILS ();
+                            Update_Qty_Stock ();
+                            Add_Qty_Stock ();
+                            dataGridView_INVO_ITEMS.Rows.Clear ();
+                        }
+                        else
+                        {
+                            ADD_ORDER ();
+                            ADD_ORDER_DETAILS ();
+                            ADD_ORDER_MONEY ();
+                            ADD_MONEY_DETAILS ();
+                            Add_Qty_Stock ();
+                        }
+
                         InitializeFunction ();
                         button_PRT_INVO.Enabled = true;
+                        MessageBox.Show ("Success", "Message");
 
                     }
+
                 }
             }
+
             catch (Exception ex)
             {
 
@@ -311,6 +422,7 @@ namespace products_mng.PL
             {
                 if (MessageBox.Show ("هل  تريد الغاء الفاتورة", "الغاء", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
+                    button_SAVE_INVO.Text = "حفظ";
                     InitializeFunction ();
                     button_NEW_INVO.Enabled = true;
 
@@ -360,18 +472,24 @@ namespace products_mng.PL
         {
             label_COUST_ID.Text = BL.CLS_COUSTOMERS.COUST_ID.ToString ();
         }
-
+        int MoneyID;
         private void label_MONEYIES_ID_MouseHover(object sender, EventArgs e)
         {
+            MoneyID = int.Parse (label_MONEYIES_ID.Text);
             label_MONEYIES_ID.Text = "MONEY_ID";
         }
 
         private void label_MONEYIES_ID_MouseLeave(object sender, EventArgs e)
         {
-            if (button_NEW_INVO.Enabled == false)
+            if (button_SAVE_INVO.Text == "تحديث")
+            {
+                label_MONEYIES_ID.Text = MoneyID.ToString ();
+            }
+            else if (!button_NEW_INVO.Enabled)
             {
                 this.label_MONEYIES_ID.Text = ORD.GET_ID_MONEYIES ().ToString ();
             }
+
         }
 
         #endregion
@@ -517,20 +635,21 @@ namespace products_mng.PL
                 e.Handled = true; //Handle the Keypress event (suppress the Beep)
                 if (textBox_PRD_BARCODE.Text != "")
                 {
-                    var dt = PROD.SEARCH_PRODUCT (textBox_PRD_BARCODE.Text);
+                    var dt = PROD.Select_Product_BY_Barcode (textBox_PRD_BARCODE.Text);
                     float ITEM_PRICE = 0;
                     if (dt.Rows.Count > 0)
                     {
                         var Item_name = dt.Rows[0]["LABEL_PRODUCT"].ToString ();
                         var Item_ID = dt.Rows[0]["ID_PRODUCT"].ToString ();
-                        if (dt.Rows[0]["PRICE"].ToString () == "")
-                        {
-                            ITEM_PRICE = 0;
-                        }
-                        else
-                        {
-                            ITEM_PRICE = float.Parse (dt.Rows[0]["PRICE"].ToString ());
-                        }
+                        //if (dt.Rows[0]["PRICE"].ToString () == "")
+                        //{
+                        //    ITEM_PRICE = 0;
+                        //}
+                        //else
+                        //{
+                        //    ITEM_PRICE = float.Parse (dt.Rows[0]["PRICE"].ToString ());
+                        //}
+                        ITEM_PRICE = 1;
 
                         if (CHECK_IF_DUPLICATE (Item_name))
                         {
@@ -565,8 +684,28 @@ namespace products_mng.PL
                 textBox_INVO_PAID.Text = "0";
             }
         }
-        
+
         #endregion
+
+        int Modified_order = 0;
+        private void label_ID_ORDER_MouseHover(object sender, EventArgs e)
+        {
+            Modified_order = int.Parse (label_ID_ORDER.Text);
+            label_ID_ORDER.Text = "رقم القائمة";
+        }
+
+        private void label_ID_ORDER_MouseLeave(object sender, EventArgs e)
+        {
+            if (button_SAVE_INVO.Text == "تحديث")
+            {
+                label_ID_ORDER.Text = Modified_order.ToString ();
+            }
+            else if (!button_NEW_INVO.Enabled)
+            {
+                this.label_ID_ORDER.Text = ORD.GET_ID_ORDER ().ToString ();
+            }
+
+        }
     }
 
 }

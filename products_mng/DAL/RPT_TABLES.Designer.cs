@@ -2005,6 +2005,8 @@ namespace products_mng.DAL {
             
             private global::System.Data.DataColumn columnAVG_Price;
             
+            private global::System.Data.DataColumn columnQTE_IN_STOCK;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public COST_PROFITSDataTable() {
@@ -2080,6 +2082,14 @@ namespace products_mng.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QTE_IN_STOCKColumn {
+                get {
+                    return this.columnQTE_IN_STOCK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2115,14 +2125,15 @@ namespace products_mng.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public COST_PROFITSRow AddCOST_PROFITSRow(string ID_PRODUCT, string LABEL_PRODUCT, string PRD_COST, string Quantity, string AVG_Price) {
+            public COST_PROFITSRow AddCOST_PROFITSRow(string ID_PRODUCT, string LABEL_PRODUCT, string PRD_COST, string Quantity, string AVG_Price, string QTE_IN_STOCK) {
                 COST_PROFITSRow rowCOST_PROFITSRow = ((COST_PROFITSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_PRODUCT,
                         LABEL_PRODUCT,
                         PRD_COST,
                         Quantity,
-                        AVG_Price};
+                        AVG_Price,
+                        QTE_IN_STOCK};
                 rowCOST_PROFITSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCOST_PROFITSRow);
                 return rowCOST_PROFITSRow;
@@ -2150,6 +2161,7 @@ namespace products_mng.DAL {
                 this.columnPRD_COST = base.Columns["PRD_COST"];
                 this.columnQuantity = base.Columns["Quantity"];
                 this.columnAVG_Price = base.Columns["AVG_Price"];
+                this.columnQTE_IN_STOCK = base.Columns["QTE_IN_STOCK"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2165,6 +2177,8 @@ namespace products_mng.DAL {
                 base.Columns.Add(this.columnQuantity);
                 this.columnAVG_Price = new global::System.Data.DataColumn("AVG_Price", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAVG_Price);
+                this.columnQTE_IN_STOCK = new global::System.Data.DataColumn("QTE_IN_STOCK", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQTE_IN_STOCK);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3735,6 +3749,22 @@ namespace products_mng.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string QTE_IN_STOCK {
+                get {
+                    try {
+                        return ((string)(this[this.tableCOST_PROFITS.QTE_IN_STOCKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QTE_IN_STOCK\' in table \'COST_PROFITS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCOST_PROFITS.QTE_IN_STOCKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_PRODUCTNull() {
                 return this.IsNull(this.tableCOST_PROFITS.ID_PRODUCTColumn);
             }
@@ -3791,6 +3821,18 @@ namespace products_mng.DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAVG_PriceNull() {
                 this[this.tableCOST_PROFITS.AVG_PriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQTE_IN_STOCKNull() {
+                return this.IsNull(this.tableCOST_PROFITS.QTE_IN_STOCKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQTE_IN_STOCKNull() {
+                this[this.tableCOST_PROFITS.QTE_IN_STOCKColumn] = global::System.Convert.DBNull;
             }
         }
         

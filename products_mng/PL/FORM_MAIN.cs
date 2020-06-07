@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data;
+using DevExpress.XtraReports.UI;
 namespace products_mng.PL
 {
     public partial class FORM_MAIN : Form
     {
         private static FORM_MAIN frm;
+        BL.CLS_ORDERS ORD = new BL.CLS_ORDERS ();
+        BL.CLS_REPORT_LIST RPTCLS = new BL.CLS_REPORT_LIST ();
+
         public FORM_MAIN()
         {
             if (frm == null)
@@ -85,7 +89,7 @@ namespace products_mng.PL
 
         private void tool_MNGSALESS_Click(object sender, EventArgs e)
         {
-           
+            BL.CLS_ORDERS.ORDER_TYPES = 0;
             FORM_MNG_ORDERS FORM = new FORM_MNG_ORDERS ();
             FORM.ShowDialog ();
         }
@@ -134,8 +138,25 @@ namespace products_mng.PL
         private void ToolStripMenuItem_SLAESREP_Click(object sender, EventArgs e)
         {
             BL.CLS_REPORT_LIST.ReportFlag = 0;
+            BL.CLS_ORDERS.ORDER_TYPES = 0;
             PL.FORM_RPTDATE form = new FORM_RPTDATE ();
-            form.ShowDialog ();
+            if (form.ShowDialog () == DialogResult.OK)
+            {
+                RPT.RPT_ALL_INVOS_BETWEEN_DATES y = new RPT.RPT_ALL_INVOS_BETWEEN_DATES ();
+                var DT = ORD.SEARCH_ORDER_DATE (BL.CLS_ORDERS.ORDER_TYPES, form.dateTimePicker_BEGIN_DATE.Value.ToString ("yyyy-MM-dd"), form.dateTimePicker_END_DATE.Value.ToString ("yyyy-MM-dd"));
+                y.xrTableCell_BeginDate.Text = form.dateTimePicker_BEGIN_DATE.Value.ToString ("yyyy-MM-dd");
+                y.xrTableCell_EndDate.Text = form.dateTimePicker_END_DATE.Value.ToString ("yyyy-MM-dd");
+                if (DT.Rows.Count > 0)
+                {
+                    y.DataSource = DT;
+                    y.ShowPreviewDialog ();
+                }
+                else
+                {
+                    MessageBox.Show ("لا توجد بيانات للفترة المحددة");
+                }
+            }
+
         }
 
         private void ToolStripMenuItem_REPORITMS_Click(object sender, EventArgs e)
@@ -166,31 +187,103 @@ namespace products_mng.PL
         {
             BL.CLS_REPORT_LIST.ReportFlag = 2;
             PL.FORM_RPTDATE form = new FORM_RPTDATE ();
-            form.ShowDialog ();
+            if (form.ShowDialog () == DialogResult.OK)
+            {
+                RPT.RPT_NETMONEY rpt_netmoney = new RPT.RPT_NETMONEY ();
+                var DT = RPTCLS.RPT_NETMONEY (form.dateTimePicker_BEGIN_DATE.Value.ToString ("yyyy-MM-dd"), form.dateTimePicker_END_DATE.Value.ToString ("yyyy-MM-dd"));
+                if (DT.Rows.Count > 0)
+                {
+                    rpt_netmoney.DataSource = DT;
+                    rpt_netmoney.xrLabel_BeginDate.Text = form.dateTimePicker_BEGIN_DATE.Value.ToString ("yyyy-MM-dd");
+                    rpt_netmoney.xrLabel_EndDate.Text = form.dateTimePicker_BEGIN_DATE.Value.ToString ("yyyy-MM-dd");
+                    rpt_netmoney.ShowPreviewDialog ();
+                }
+                else
+                {
+                    MessageBox.Show ("لا توجد بيانات للفترة المحددة");
+                }
+            }
+
         }
 
         //private void ToolStripMenuItem_PRD_COST_AND_PROFITS_Click(object sender, EventArgs e)
         //{
-           
+
         //}
 
         private void ToolStripMenuItem_PROFIT_COST_Click(object sender, EventArgs e)
         {
             BL.CLS_REPORT_LIST.ReportFlag = 3;
             PL.FORM_RPTDATE form = new FORM_RPTDATE ();
-            form.ShowDialog ();
+            if (form.ShowDialog () == DialogResult.OK)
+            {
+                RPT.RPT_CALC_PROFT_COST RPT_COST = new RPT.RPT_CALC_PROFT_COST ();
+                var DT = RPTCLS.RPT_CALC_PROFT_COST (form.dateTimePicker_BEGIN_DATE.Value.ToString ("yyyy-MM-dd"), form.dateTimePicker_END_DATE.Value.ToString ("yyyy-MM-dd"));
+                if (DT.Rows.Count > 0)
+                {
+                    RPT_COST.DataSource = DT;
+                    RPT_COST.xrLabel_BEGIN_DATE.Text = form.dateTimePicker_BEGIN_DATE.Value.ToString ("yyyy-MM-dd");
+                    RPT_COST.xrLabel_END_DATE.Text = form.dateTimePicker_END_DATE.Value.ToString ("yyyy-MM-dd");
+                    RPT_COST.ShowPreviewDialog ();
+                }
+                else
+                {
+                    MessageBox.Show ("لا توجد بيانات للفترة المحددة");
+                }
+
+            }
+
         }
 
         private void Tool_DIRECTPURCHASE_Click(object sender, EventArgs e)
         {
+            BL.CLS_ORDERS.ORDER_TYPES = 1;
             PL.FORM_PURCHASES FORM = new FORM_PURCHASES ();
             FORM.ShowDialog ();
         }
 
         private void Tool_MNGPURCHASE_Click(object sender, EventArgs e)
         {
+            BL.CLS_ORDERS.ORDER_TYPES = 1;
             PL.FORM_MNG_PURCHASES FORM = new FORM_MNG_PURCHASES ();
             FORM.ShowDialog ();
+        }
+
+        private void FORM_MAIN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == (char) Keys.Enter)
+            {
+                // Your logic here....
+                FORM_LOGIN form = new FORM_LOGIN ();
+                form.ShowDialog ();
+            }
+        }
+
+        private void ToolStripMenuItem_PurchaseRepo_Click(object sender, EventArgs e)
+        {
+            BL.CLS_ORDERS.ORDER_TYPES = 1;
+            BL.CLS_REPORT_LIST.ReportFlag = 1;
+            PL.FORM_RPTDATE form = new FORM_RPTDATE ();
+            if (form.ShowDialog () == DialogResult.OK)
+            {
+                RPT.RPT_ALL_INVOS_BETWEEN_DATES y = new RPT.RPT_ALL_INVOS_BETWEEN_DATES ();
+                var DT = ORD.SEARCH_ORDER_DATE (BL.CLS_ORDERS.ORDER_TYPES, form.dateTimePicker_BEGIN_DATE.Value.ToString ("yyyy-MM-dd"), form.dateTimePicker_END_DATE.Value.ToString ("yyyy-MM-dd"));
+                y.xrTableCell_BeginDate.Text = form.dateTimePicker_BEGIN_DATE.Value.ToString ("yyyy-MM-dd");
+                y.xrTableCell_EndDate.Text = form.dateTimePicker_END_DATE.Value.ToString ("yyyy-MM-dd");
+                y.xrLabel_ReportTitle.Text = "قوائم المشتريات للفترة المحددة";
+                y.xrTableCell_RPT_FOOTER.Text = "مجموع المشتريات خلال هذه الفترة";
+                if (DT.Rows.Count > 0)
+                {
+                    y.DataSource = DT;
+                    y.ShowPreviewDialog ();
+                }
+                else
+                {
+                    MessageBox.Show ("لا توجد بيانات للفترة المحددة");
+                }
+            }
+
         }
     }
 }

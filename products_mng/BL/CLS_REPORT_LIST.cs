@@ -11,17 +11,19 @@ namespace products_mng.BL
     {
         public static int ReportFlag = 0;  //0= sales 1=Purchase 2=NetMoney, 3=PROFIT_COST
 
-        public DataTable RPT_PRODUCTS_DTLS(int ID_PRODUCT, String BEGIN_DATE, String END_DATE)
+        public DataTable RPT_PRODUCTS_DTLS(int ID_PRODUCT, String BEGIN_DATE, String END_DATE,int ORDER_TYPE)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer ();
             DataTable dt = new DataTable ();
-            SqlParameter[] param = new SqlParameter[3];
+            SqlParameter[] param = new SqlParameter[4];
             param[0] = new SqlParameter ("@ID_PRODUCT", SqlDbType.Int);
             param[0].Value = ID_PRODUCT;
             param[1] = new SqlParameter ("@BEGIN_DATE", SqlDbType.NVarChar, 50);
             param[1].Value = BEGIN_DATE;
             param[2] = new SqlParameter ("@END_DATE", SqlDbType.NVarChar,50);
             param[2].Value = END_DATE;
+            param[3] = new SqlParameter ("@ORDER_TYPE", SqlDbType.NVarChar, 50);
+            param[3].Value = ORDER_TYPE;
             dt = dal.SelectData ("RPT_PRODUCTS_DTLS", param);
             dal.ConClose ();
             return dt;

@@ -138,6 +138,34 @@ namespace products_mng.RPT
             }
         }
 
+        private void button_RPT_USR_PURCHASE_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount > 0)
+            {
+                BEGIN_DATE = dateTimePicker_BEGIN_DATE.Text;
+                END_DATE = dateTimePicker_END_DATE.Text;
+
+                //int ID_USR = Convert.ToInt16 (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_USER"]).ToString ());
+                string USR_NAME = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["USR_FLNAME"]).ToString ();
+                RPT.RPT_USR_SALES X = new RPT_USR_SALES ();
+                X.xrLabel_BEGINDATE.Text = BEGIN_DATE;
+                X.xrLabel_ENDDATE.Text = END_DATE;
+                X.xrLabel_USR_NAME.Text = USR_NAME;
+                X.xrLabel_title.Text = "تقرير مشتريات خاص بكاشير محدد وحسب فترة محددة";
+                 
+                dt = RPTCLS.RPT_USR_SALES (1, BEGIN_DATE, END_DATE, USR_NAME);
+                if (dt.Rows.Count > 0)
+                {
+                    X.DataSource = dt;
+                    X.ShowPreviewDialog ();
+                }
+                else
+                {
+                    MessageBox.Show ("لا توجد مبيعات لهذا المستخدم خلال الفترة المحددة", "MESSAGE");
+                }
+            }
+        }
+
         private void button_RPT_NETMONEY_with_usr_Click(object sender, EventArgs e)
         {
             if (gridView1.RowCount > 0)

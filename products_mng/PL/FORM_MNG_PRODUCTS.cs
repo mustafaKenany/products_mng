@@ -154,5 +154,10 @@ namespace products_mng.PL
                 MessageBox.Show ("Update Success", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void button_ExpireProducts_Click(object sender, EventArgs e)
+        {
+            this.GridControl_PRODUCTS.DataSource = PRD.GET_ALL_EXPIRE_PRODUTS ();
+        }
     }
 }

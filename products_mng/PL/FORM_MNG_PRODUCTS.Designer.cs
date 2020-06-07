@@ -44,7 +44,6 @@
             this.gridColumn_CAT_DESCRPTION = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_QTE_IN_STOCK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_PRICE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_IMAGE_PRODUCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_PRDCOSTS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTreeListLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTreeListLookUpEdit();
@@ -54,7 +53,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_ADD_NEW_PRODUCT = new System.Windows.Forms.Button();
             this.button_CLOSE = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.button_ExpireProducts = new System.Windows.Forms.Button();
             this.button_PRODUCT_PRICE_STOCK = new System.Windows.Forms.Button();
             this.button_DELETE_PRODUCT = new System.Windows.Forms.Button();
             this.button_PRINT_PRD = new System.Windows.Forms.Button();
@@ -164,6 +163,14 @@
             // 
             // gridView1
             // 
+            this.gridView1.AppearancePrint.EvenRow.Font = new System.Drawing.Font("Tahoma", 40F);
+            this.gridView1.AppearancePrint.EvenRow.Options.UseFont = true;
+            this.gridView1.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
+            this.gridView1.AppearancePrint.HeaderPanel.Options.UseFont = true;
+            this.gridView1.AppearancePrint.Preview.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.gridView1.AppearancePrint.Preview.Options.UseFont = true;
+            this.gridView1.AppearancePrint.Row.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.AppearancePrint.Row.Options.UseFont = true;
             this.gridView1.ColumnPanelRowHeight = 30;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn_ID_PRODUCT,
@@ -172,13 +179,15 @@
             this.gridColumn_CAT_DESCRPTION,
             this.gridColumn_QTE_IN_STOCK,
             this.gridColumn_PRICE,
-            this.gridColumn_IMAGE_PRODUCT,
             this.gridColumn_PRDCOSTS,
             this.gridColumn1});
             this.gridView1.FooterPanelHeight = 30;
             this.gridView1.GridControl = this.GridControl_PRODUCTS;
             this.gridView1.GroupRowHeight = 30;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsPrint.EnableAppearanceEvenRow = true;
+            this.gridView1.OptionsPrint.PrintPreview = true;
+            this.gridView1.OptionsPrint.UsePrintStyles = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.RowHeight = 30;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -186,12 +195,12 @@
             // 
             // gridColumn_ID_PRODUCT
             // 
-            this.gridColumn_ID_PRODUCT.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridColumn_ID_PRODUCT.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn_ID_PRODUCT.AppearanceCell.Options.UseFont = true;
             this.gridColumn_ID_PRODUCT.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn_ID_PRODUCT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn_ID_PRODUCT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_ID_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_ID_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn_ID_PRODUCT.AppearanceHeader.Options.UseFont = true;
             this.gridColumn_ID_PRODUCT.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn_ID_PRODUCT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -207,12 +216,12 @@
             // 
             // gridColumn_BARCODE_PRODUCT
             // 
-            this.gridColumn_BARCODE_PRODUCT.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_BARCODE_PRODUCT.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn_BARCODE_PRODUCT.AppearanceCell.Options.UseFont = true;
             this.gridColumn_BARCODE_PRODUCT.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn_BARCODE_PRODUCT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn_BARCODE_PRODUCT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.Options.UseFont = true;
             this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn_BARCODE_PRODUCT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -227,12 +236,12 @@
             // 
             // gridColumn_LABEL_PRODUCT
             // 
-            this.gridColumn_LABEL_PRODUCT.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_LABEL_PRODUCT.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn_LABEL_PRODUCT.AppearanceCell.Options.UseFont = true;
             this.gridColumn_LABEL_PRODUCT.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn_LABEL_PRODUCT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn_LABEL_PRODUCT.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_LABEL_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_LABEL_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn_LABEL_PRODUCT.AppearanceHeader.Options.UseFont = true;
             this.gridColumn_LABEL_PRODUCT.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn_LABEL_PRODUCT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -247,12 +256,12 @@
             // 
             // gridColumn_CAT_DESCRPTION
             // 
-            this.gridColumn_CAT_DESCRPTION.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_CAT_DESCRPTION.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn_CAT_DESCRPTION.AppearanceCell.Options.UseFont = true;
             this.gridColumn_CAT_DESCRPTION.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn_CAT_DESCRPTION.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn_CAT_DESCRPTION.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_CAT_DESCRPTION.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_CAT_DESCRPTION.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn_CAT_DESCRPTION.AppearanceHeader.Options.UseFont = true;
             this.gridColumn_CAT_DESCRPTION.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn_CAT_DESCRPTION.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -267,12 +276,12 @@
             // 
             // gridColumn_QTE_IN_STOCK
             // 
-            this.gridColumn_QTE_IN_STOCK.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_QTE_IN_STOCK.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn_QTE_IN_STOCK.AppearanceCell.Options.UseFont = true;
             this.gridColumn_QTE_IN_STOCK.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn_QTE_IN_STOCK.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn_QTE_IN_STOCK.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_QTE_IN_STOCK.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_QTE_IN_STOCK.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn_QTE_IN_STOCK.AppearanceHeader.Options.UseFont = true;
             this.gridColumn_QTE_IN_STOCK.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn_QTE_IN_STOCK.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -287,12 +296,12 @@
             // 
             // gridColumn_PRICE
             // 
-            this.gridColumn_PRICE.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_PRICE.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn_PRICE.AppearanceCell.Options.UseFont = true;
             this.gridColumn_PRICE.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn_PRICE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn_PRICE.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_PRICE.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_PRICE.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn_PRICE.AppearanceHeader.Options.UseFont = true;
             this.gridColumn_PRICE.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn_PRICE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -304,29 +313,14 @@
             this.gridColumn_PRICE.Visible = true;
             this.gridColumn_PRICE.VisibleIndex = 5;
             // 
-            // gridColumn_IMAGE_PRODUCT
-            // 
-            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_IMAGE_PRODUCT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_IMAGE_PRODUCT.Caption = "الصورة";
-            this.gridColumn_IMAGE_PRODUCT.FieldName = "IMAGE_PRODUCT";
-            this.gridColumn_IMAGE_PRODUCT.Name = "gridColumn_IMAGE_PRODUCT";
-            this.gridColumn_IMAGE_PRODUCT.OptionsColumn.AllowEdit = false;
-            this.gridColumn_IMAGE_PRODUCT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_IMAGE_PRODUCT.Visible = true;
-            this.gridColumn_IMAGE_PRODUCT.VisibleIndex = 6;
-            // 
             // gridColumn_PRDCOSTS
             // 
-            this.gridColumn_PRDCOSTS.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_PRDCOSTS.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn_PRDCOSTS.AppearanceCell.Options.UseFont = true;
             this.gridColumn_PRDCOSTS.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn_PRDCOSTS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn_PRDCOSTS.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn_PRDCOSTS.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn_PRDCOSTS.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn_PRDCOSTS.AppearanceHeader.Options.UseFont = true;
             this.gridColumn_PRDCOSTS.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn_PRDCOSTS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -336,16 +330,16 @@
             this.gridColumn_PRDCOSTS.Name = "gridColumn_PRDCOSTS";
             this.gridColumn_PRDCOSTS.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_PRDCOSTS.Visible = true;
-            this.gridColumn_PRDCOSTS.VisibleIndex = 7;
+            this.gridColumn_PRDCOSTS.VisibleIndex = 6;
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -356,7 +350,7 @@
             this.gridColumn1.FieldName = "Expire_date";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 8;
+            this.gridColumn1.VisibleIndex = 7;
             // 
             // repositoryItemTreeListLookUpEdit1
             // 
@@ -400,7 +394,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.button_ADD_NEW_PRODUCT);
             this.panel1.Controls.Add(this.button_CLOSE);
-            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.button_ExpireProducts);
             this.panel1.Controls.Add(this.button_PRODUCT_PRICE_STOCK);
             this.panel1.Controls.Add(this.button_DELETE_PRODUCT);
             this.panel1.Controls.Add(this.button_PRINT_PRD);
@@ -419,7 +413,7 @@
             this.button_ADD_NEW_PRODUCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ADD_NEW_PRODUCT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_ADD_NEW_PRODUCT.ForeColor = System.Drawing.Color.White;
-            this.button_ADD_NEW_PRODUCT.Location = new System.Drawing.Point(871, 19);
+            this.button_ADD_NEW_PRODUCT.Location = new System.Drawing.Point(870, 19);
             this.button_ADD_NEW_PRODUCT.Name = "button_ADD_NEW_PRODUCT";
             this.button_ADD_NEW_PRODUCT.Size = new System.Drawing.Size(100, 50);
             this.button_ADD_NEW_PRODUCT.TabIndex = 12;
@@ -442,19 +436,21 @@
             this.button_CLOSE.UseVisualStyleBackColor = true;
             this.button_CLOSE.Click += new System.EventHandler(this.button_CLOSE_Click);
             // 
-            // button8
+            // button_ExpireProducts
             // 
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.BorderSize = 2;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(172, 19);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(91, 50);
-            this.button8.TabIndex = 19;
-            this.button8.Text = "ملف اكسل";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button_ExpireProducts.AutoSize = true;
+            this.button_ExpireProducts.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_ExpireProducts.FlatAppearance.BorderSize = 2;
+            this.button_ExpireProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ExpireProducts.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_ExpireProducts.ForeColor = System.Drawing.Color.White;
+            this.button_ExpireProducts.Location = new System.Drawing.Point(164, 19);
+            this.button_ExpireProducts.Name = "button_ExpireProducts";
+            this.button_ExpireProducts.Size = new System.Drawing.Size(146, 50);
+            this.button_ExpireProducts.TabIndex = 19;
+            this.button_ExpireProducts.Text = "مواد منتهية صلاحية";
+            this.button_ExpireProducts.UseVisualStyleBackColor = true;
+            this.button_ExpireProducts.Click += new System.EventHandler(this.button_ExpireProducts_Click);
             // 
             // button_PRODUCT_PRICE_STOCK
             // 
@@ -463,7 +459,7 @@
             this.button_PRODUCT_PRICE_STOCK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_PRODUCT_PRICE_STOCK.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_PRODUCT_PRICE_STOCK.ForeColor = System.Drawing.Color.White;
-            this.button_PRODUCT_PRICE_STOCK.Location = new System.Drawing.Point(538, 19);
+            this.button_PRODUCT_PRICE_STOCK.Location = new System.Drawing.Point(561, 19);
             this.button_PRODUCT_PRICE_STOCK.Name = "button_PRODUCT_PRICE_STOCK";
             this.button_PRODUCT_PRICE_STOCK.Size = new System.Drawing.Size(100, 50);
             this.button_PRODUCT_PRICE_STOCK.TabIndex = 20;
@@ -478,7 +474,7 @@
             this.button_DELETE_PRODUCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_DELETE_PRODUCT.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_DELETE_PRODUCT.ForeColor = System.Drawing.Color.White;
-            this.button_DELETE_PRODUCT.Location = new System.Drawing.Point(760, 19);
+            this.button_DELETE_PRODUCT.Location = new System.Drawing.Point(767, 19);
             this.button_DELETE_PRODUCT.Name = "button_DELETE_PRODUCT";
             this.button_DELETE_PRODUCT.Size = new System.Drawing.Size(100, 50);
             this.button_DELETE_PRODUCT.TabIndex = 13;
@@ -493,7 +489,7 @@
             this.button_PRINT_PRD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_PRINT_PRD.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_PRINT_PRD.ForeColor = System.Drawing.Color.White;
-            this.button_PRINT_PRD.Location = new System.Drawing.Point(274, 19);
+            this.button_PRINT_PRD.Location = new System.Drawing.Point(313, 19);
             this.button_PRINT_PRD.Name = "button_PRINT_PRD";
             this.button_PRINT_PRD.Size = new System.Drawing.Size(142, 50);
             this.button_PRINT_PRD.TabIndex = 17;
@@ -508,7 +504,7 @@
             this.button_PRODUCT_MODIFY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_PRODUCT_MODIFY.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_PRODUCT_MODIFY.ForeColor = System.Drawing.Color.White;
-            this.button_PRODUCT_MODIFY.Location = new System.Drawing.Point(649, 19);
+            this.button_PRODUCT_MODIFY.Location = new System.Drawing.Point(664, 19);
             this.button_PRODUCT_MODIFY.Name = "button_PRODUCT_MODIFY";
             this.button_PRODUCT_MODIFY.Size = new System.Drawing.Size(100, 50);
             this.button_PRODUCT_MODIFY.TabIndex = 14;
@@ -523,7 +519,7 @@
             this.button_ModifyPRDCOSTS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ModifyPRDCOSTS.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button_ModifyPRDCOSTS.ForeColor = System.Drawing.Color.White;
-            this.button_ModifyPRDCOSTS.Location = new System.Drawing.Point(427, 19);
+            this.button_ModifyPRDCOSTS.Location = new System.Drawing.Point(458, 19);
             this.button_ModifyPRDCOSTS.Name = "button_ModifyPRDCOSTS";
             this.button_ModifyPRDCOSTS.Size = new System.Drawing.Size(100, 50);
             this.button_ModifyPRDCOSTS.TabIndex = 16;
@@ -560,6 +556,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -570,7 +567,7 @@
         private System.Windows.Forms.TextBox textBox_SEARCH_PRODUCT;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button_ExpireProducts;
         private System.Windows.Forms.Button button_CLOSE;
         private System.Windows.Forms.Button button_PRINT_PRD;
         private System.Windows.Forms.Button button_ModifyPRDCOSTS;
@@ -586,7 +583,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_CAT_DESCRPTION;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_QTE_IN_STOCK;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_PRICE;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_IMAGE_PRODUCT;
         public DevExpress.XtraGrid.GridControl GridControl_PRODUCTS;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;

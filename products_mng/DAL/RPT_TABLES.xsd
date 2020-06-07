@@ -12,7 +12,7 @@
   <xs:element name="RPT_TABLES" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RPT_TABLES" msprop:Generator_UserDSName="RPT_TABLES">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="PRT_INVO_ORDER" msprop:Generator_TableClassName="PRT_INVO_ORDERDataTable" msprop:Generator_TableVarName="tablePRT_INVO_ORDER" msprop:Generator_RowChangedName="PRT_INVO_ORDERRowChanged" msprop:Generator_TablePropName="PRT_INVO_ORDER" msprop:Generator_RowDeletingName="PRT_INVO_ORDERRowDeleting" msprop:Generator_RowChangingName="PRT_INVO_ORDERRowChanging" msprop:Generator_RowEvHandlerName="PRT_INVO_ORDERRowChangeEventHandler" msprop:Generator_RowDeletedName="PRT_INVO_ORDERRowDeleted" msprop:Generator_RowClassName="PRT_INVO_ORDERRow" msprop:Generator_UserTableName="PRT_INVO_ORDER" msprop:Generator_RowEvArgName="PRT_INVO_ORDERRowChangeEvent">
+        <xs:element name="PRT_INVO_ORDER" msprop:Generator_TableClassName="PRT_INVO_ORDERDataTable" msprop:Generator_TableVarName="tablePRT_INVO_ORDER" msprop:Generator_TablePropName="PRT_INVO_ORDER" msprop:Generator_RowDeletingName="PRT_INVO_ORDERRowDeleting" msprop:Generator_RowChangingName="PRT_INVO_ORDERRowChanging" msprop:Generator_RowEvHandlerName="PRT_INVO_ORDERRowChangeEventHandler" msprop:Generator_RowDeletedName="PRT_INVO_ORDERRowDeleted" msprop:Generator_UserTableName="PRT_INVO_ORDER" msprop:Generator_RowChangedName="PRT_INVO_ORDERRowChanged" msprop:Generator_RowEvArgName="PRT_INVO_ORDERRowChangeEvent" msprop:Generator_RowClassName="PRT_INVO_ORDERRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_ORDER" msprop:Generator_ColumnVarNameInTable="columnID_ORDER" msprop:Generator_ColumnPropNameInRow="ID_ORDER" msprop:Generator_ColumnPropNameInTable="ID_ORDERColumn" msprop:Generator_UserColumnName="ID_ORDER" type="xs:int" minOccurs="0" />
@@ -33,7 +33,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PRT_ALL_INVOS" msprop:Generator_TableClassName="PRT_ALL_INVOSDataTable" msprop:Generator_TableVarName="tablePRT_ALL_INVOS" msprop:Generator_TablePropName="PRT_ALL_INVOS" msprop:Generator_RowDeletingName="PRT_ALL_INVOSRowDeleting" msprop:Generator_RowChangingName="PRT_ALL_INVOSRowChanging" msprop:Generator_RowEvHandlerName="PRT_ALL_INVOSRowChangeEventHandler" msprop:Generator_RowDeletedName="PRT_ALL_INVOSRowDeleted" msprop:Generator_UserTableName="PRT_ALL_INVOS" msprop:Generator_RowChangedName="PRT_ALL_INVOSRowChanged" msprop:Generator_RowEvArgName="PRT_ALL_INVOSRowChangeEvent" msprop:Generator_RowClassName="PRT_ALL_INVOSRow">
+        <xs:element name="PRT_ALL_INVOS" msprop:Generator_TableClassName="PRT_ALL_INVOSDataTable" msprop:Generator_TableVarName="tablePRT_ALL_INVOS" msprop:Generator_RowChangedName="PRT_ALL_INVOSRowChanged" msprop:Generator_TablePropName="PRT_ALL_INVOS" msprop:Generator_RowDeletingName="PRT_ALL_INVOSRowDeleting" msprop:Generator_RowChangingName="PRT_ALL_INVOSRowChanging" msprop:Generator_RowEvHandlerName="PRT_ALL_INVOSRowChangeEventHandler" msprop:Generator_RowDeletedName="PRT_ALL_INVOSRowDeleted" msprop:Generator_RowClassName="PRT_ALL_INVOSRow" msprop:Generator_UserTableName="PRT_ALL_INVOS" msprop:Generator_RowEvArgName="PRT_ALL_INVOSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_ORDER" msprop:Generator_ColumnVarNameInTable="columnID_ORDER" msprop:Generator_ColumnPropNameInRow="ID_ORDER" msprop:Generator_ColumnPropNameInTable="ID_ORDERColumn" msprop:Generator_UserColumnName="ID_ORDER" type="xs:int" minOccurs="0" />
@@ -54,7 +54,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PAID_SPENT_MONEY" msprop:Generator_TableClassName="PAID_SPENT_MONEYDataTable" msprop:Generator_TableVarName="tablePAID_SPENT_MONEY" msprop:Generator_RowChangedName="PAID_SPENT_MONEYRowChanged" msprop:Generator_TablePropName="PAID_SPENT_MONEY" msprop:Generator_RowDeletingName="PAID_SPENT_MONEYRowDeleting" msprop:Generator_RowChangingName="PAID_SPENT_MONEYRowChanging" msprop:Generator_RowEvHandlerName="PAID_SPENT_MONEYRowChangeEventHandler" msprop:Generator_RowDeletedName="PAID_SPENT_MONEYRowDeleted" msprop:Generator_RowClassName="PAID_SPENT_MONEYRow" msprop:Generator_UserTableName="PAID_SPENT_MONEY" msprop:Generator_RowEvArgName="PAID_SPENT_MONEYRowChangeEvent">
+        <xs:element name="PAID_SPENT_MONEY" msprop:Generator_TableClassName="PAID_SPENT_MONEYDataTable" msprop:Generator_TableVarName="tablePAID_SPENT_MONEY" msprop:Generator_TablePropName="PAID_SPENT_MONEY" msprop:Generator_RowDeletingName="PAID_SPENT_MONEYRowDeleting" msprop:Generator_RowChangingName="PAID_SPENT_MONEYRowChanging" msprop:Generator_RowEvHandlerName="PAID_SPENT_MONEYRowChangeEventHandler" msprop:Generator_RowDeletedName="PAID_SPENT_MONEYRowDeleted" msprop:Generator_UserTableName="PAID_SPENT_MONEY" msprop:Generator_RowChangedName="PAID_SPENT_MONEYRowChanged" msprop:Generator_RowEvArgName="PAID_SPENT_MONEYRowChangeEvent" msprop:Generator_RowClassName="PAID_SPENT_MONEYRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PAID_SPENT_ID" msprop:Generator_ColumnVarNameInTable="columnPAID_SPENT_ID" msprop:Generator_ColumnPropNameInRow="PAID_SPENT_ID" msprop:Generator_ColumnPropNameInTable="PAID_SPENT_IDColumn" msprop:Generator_UserColumnName="PAID_SPENT_ID" type="xs:short" minOccurs="0" />
@@ -65,7 +65,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RPT_NETMONEY" msprop:Generator_TableClassName="RPT_NETMONEYDataTable" msprop:Generator_TableVarName="tableRPT_NETMONEY" msprop:Generator_TablePropName="RPT_NETMONEY" msprop:Generator_RowDeletingName="RPT_NETMONEYRowDeleting" msprop:Generator_RowChangingName="RPT_NETMONEYRowChanging" msprop:Generator_RowEvHandlerName="RPT_NETMONEYRowChangeEventHandler" msprop:Generator_RowDeletedName="RPT_NETMONEYRowDeleted" msprop:Generator_UserTableName="RPT_NETMONEY" msprop:Generator_RowChangedName="RPT_NETMONEYRowChanged" msprop:Generator_RowEvArgName="RPT_NETMONEYRowChangeEvent" msprop:Generator_RowClassName="RPT_NETMONEYRow">
+        <xs:element name="RPT_NETMONEY" msprop:Generator_TableClassName="RPT_NETMONEYDataTable" msprop:Generator_TableVarName="tableRPT_NETMONEY" msprop:Generator_RowChangedName="RPT_NETMONEYRowChanged" msprop:Generator_TablePropName="RPT_NETMONEY" msprop:Generator_RowDeletingName="RPT_NETMONEYRowDeleting" msprop:Generator_RowChangingName="RPT_NETMONEYRowChanging" msprop:Generator_RowEvHandlerName="RPT_NETMONEYRowChangeEventHandler" msprop:Generator_RowDeletedName="RPT_NETMONEYRowDeleted" msprop:Generator_RowClassName="RPT_NETMONEYRow" msprop:Generator_UserTableName="RPT_NETMONEY" msprop:Generator_RowEvArgName="RPT_NETMONEYRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_MONEY" msprop:Generator_ColumnVarNameInTable="columnID_MONEY" msprop:Generator_ColumnPropNameInRow="ID_MONEY" msprop:Generator_ColumnPropNameInTable="ID_MONEYColumn" msprop:Generator_UserColumnName="ID_MONEY" type="xs:string" minOccurs="0" />
@@ -82,7 +82,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="COST_PROFITS" msprop:Generator_TableClassName="COST_PROFITSDataTable" msprop:Generator_TableVarName="tableCOST_PROFITS" msprop:Generator_RowChangedName="COST_PROFITSRowChanged" msprop:Generator_TablePropName="COST_PROFITS" msprop:Generator_RowDeletingName="COST_PROFITSRowDeleting" msprop:Generator_RowChangingName="COST_PROFITSRowChanging" msprop:Generator_RowEvHandlerName="COST_PROFITSRowChangeEventHandler" msprop:Generator_RowDeletedName="COST_PROFITSRowDeleted" msprop:Generator_RowClassName="COST_PROFITSRow" msprop:Generator_UserTableName="COST_PROFITS" msprop:Generator_RowEvArgName="COST_PROFITSRowChangeEvent">
+        <xs:element name="COST_PROFITS" msprop:Generator_TableClassName="COST_PROFITSDataTable" msprop:Generator_TableVarName="tableCOST_PROFITS" msprop:Generator_TablePropName="COST_PROFITS" msprop:Generator_RowDeletingName="COST_PROFITSRowDeleting" msprop:Generator_RowChangingName="COST_PROFITSRowChanging" msprop:Generator_RowEvHandlerName="COST_PROFITSRowChangeEventHandler" msprop:Generator_RowDeletedName="COST_PROFITSRowDeleted" msprop:Generator_UserTableName="COST_PROFITS" msprop:Generator_RowChangedName="COST_PROFITSRowChanged" msprop:Generator_RowEvArgName="COST_PROFITSRowChangeEvent" msprop:Generator_RowClassName="COST_PROFITSRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_PRODUCT" msprop:Generator_ColumnVarNameInTable="columnID_PRODUCT" msprop:Generator_ColumnPropNameInRow="ID_PRODUCT" msprop:Generator_ColumnPropNameInTable="ID_PRODUCTColumn" msprop:Generator_UserColumnName="ID_PRODUCT" type="xs:string" minOccurs="0" />
@@ -90,6 +90,7 @@
               <xs:element name="PRD_COST" msprop:Generator_ColumnVarNameInTable="columnPRD_COST" msprop:Generator_ColumnPropNameInRow="PRD_COST" msprop:Generator_ColumnPropNameInTable="PRD_COSTColumn" msprop:Generator_UserColumnName="PRD_COST" type="xs:string" minOccurs="0" />
               <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:string" minOccurs="0" />
               <xs:element name="AVG_Price" msprop:Generator_ColumnVarNameInTable="columnAVG_Price" msprop:Generator_ColumnPropNameInRow="AVG_Price" msprop:Generator_ColumnPropNameInTable="AVG_PriceColumn" msprop:Generator_UserColumnName="AVG_Price" type="xs:string" minOccurs="0" />
+              <xs:element name="QTE_IN_STOCK" msprop:Generator_ColumnVarNameInTable="columnQTE_IN_STOCK" msprop:Generator_ColumnPropNameInRow="QTE_IN_STOCK" msprop:Generator_ColumnPropNameInTable="QTE_IN_STOCKColumn" msprop:Generator_UserColumnName="QTE_IN_STOCK" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

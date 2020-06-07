@@ -59,7 +59,7 @@
             this.ToolStripMenuItem_mngdocs = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_REPORTS = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_SLAESREP = new System.Windows.Forms.ToolStripMenuItem();
-            this.تقريرمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_PurchaseRepo = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_REPORITMS = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_COUST = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_USRS = new System.Windows.Forms.ToolStripMenuItem();
@@ -319,7 +319,7 @@
             // 
             this.ToolStripMenuItem_REPORTS.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_SLAESREP,
-            this.تقريرمشترياتToolStripMenuItem,
+            this.ToolStripMenuItem_PurchaseRepo,
             this.ToolStripMenuItem_REPORITMS,
             this.ToolStripMenuItem_COUST,
             this.ToolStripMenuItem_USRS,
@@ -338,12 +338,12 @@
             this.ToolStripMenuItem_SLAESREP.Text = "تقرير مبيعات";
             this.ToolStripMenuItem_SLAESREP.Click += new System.EventHandler(this.ToolStripMenuItem_SLAESREP_Click);
             // 
-            // تقريرمشترياتToolStripMenuItem
+            // ToolStripMenuItem_PurchaseRepo
             // 
-            this.تقريرمشترياتToolStripMenuItem.Name = "تقريرمشترياتToolStripMenuItem";
-            this.تقريرمشترياتToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
-            this.تقريرمشترياتToolStripMenuItem.Text = "تقرير مشتريات";
-            this.تقريرمشترياتToolStripMenuItem.Visible = false;
+            this.ToolStripMenuItem_PurchaseRepo.Name = "ToolStripMenuItem_PurchaseRepo";
+            this.ToolStripMenuItem_PurchaseRepo.Size = new System.Drawing.Size(189, 28);
+            this.ToolStripMenuItem_PurchaseRepo.Text = "تقرير مشتريات";
+            this.ToolStripMenuItem_PurchaseRepo.Click += new System.EventHandler(this.ToolStripMenuItem_PurchaseRepo_Click);
             // 
             // ToolStripMenuItem_REPORITMS
             // 
@@ -391,6 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(70)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(792, 464);
             this.Controls.Add(this.menuStrip);
@@ -408,6 +409,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "النافذة  الرئيسية";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FORM_MAIN_KeyPress);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -444,7 +446,7 @@
         public System.Windows.Forms.ToolStripMenuItem Tool_ADDUSER;
         public System.Windows.Forms.ToolStripMenuItem Tool_MNGUSERS;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_SLAESREP;
-        private System.Windows.Forms.ToolStripMenuItem تقريرمشترياتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_PurchaseRepo;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_REPORITMS;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_COUST;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_USRS;

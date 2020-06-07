@@ -75,13 +75,13 @@
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel_title = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel_COUST_NAME = new DevExpress.XtraReports.UI.XRLabel();
-            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel_TOPPRICE = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel_QTYTOTAL = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel_LOWPRICE = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -448,11 +448,13 @@
             // 
             // xrLabel_title
             // 
-            this.xrLabel_title.LocationFloat = new DevExpress.Utils.PointFloat(348.6753F, 41.1955F);
+            this.xrLabel_title.LocationFloat = new DevExpress.Utils.PointFloat(338.2586F, 41.1955F);
             this.xrLabel_title.Name = "xrLabel_title";
             this.xrLabel_title.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel_title.SizeF = new System.Drawing.SizeF(365.4661F, 37.42308F);
+            this.xrLabel_title.SizeF = new System.Drawing.SizeF(376.9244F, 37.42307F);
+            this.xrLabel_title.StylePriority.UseTextAlignment = false;
             this.xrLabel_title.Text = "تقرير مبيعات مادة محددة لزبون محدد خلال فترة محددة";
+            this.xrLabel_title.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel_COUST_NAME
             // 
@@ -461,84 +463,96 @@
             this.xrLabel_COUST_NAME.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel_COUST_NAME.SizeF = new System.Drawing.SizeF(299.5992F, 37.42308F);
             // 
-            // ReportFooter
-            // 
-            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel5,
-            this.xrLabel4,
-            this.xrLabel2,
-            this.xrLabel6,
-            this.xrLabel7,
-            this.xrLabel8});
-            this.ReportFooter.HeightF = 75.00003F;
-            this.ReportFooter.Name = "ReportFooter";
-            // 
             // xrLabel5
             // 
             this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([PRT_ALL_INVOS].[PRD_QTY])")});
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(45F, 10.00001F);
+            this.xrLabel5.Font = new System.Drawing.Font("Cairo", 12F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(177.0833F, 33.41664F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(119.7916F, 43.41666F);
+            this.xrLabel5.StylePriority.UseFont = false;
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrLabel5.Summary = xrSummary1;
             this.xrLabel5.Text = "xrLabel1";
             this.xrLabel5.TextFormatString = "{0:#,#}";
             // 
-            // xrLabel4
+            // xrLabel_TOPPRICE
             // 
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(943.0643F, 10.00001F);
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(180F, 33.41665F);
-            this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "أعلى سعر بيع لهذه المادة";
-            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel_TOPPRICE.Font = new System.Drawing.Font("Cairo", 12F);
+            this.xrLabel_TOPPRICE.LocationFloat = new DevExpress.Utils.PointFloat(926.3976F, 0F);
+            this.xrLabel_TOPPRICE.Name = "xrLabel_TOPPRICE";
+            this.xrLabel_TOPPRICE.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel_TOPPRICE.SizeF = new System.Drawing.SizeF(202.6025F, 43.41666F);
+            this.xrLabel_TOPPRICE.StylePriority.UseFont = false;
+            this.xrLabel_TOPPRICE.StylePriority.UseTextAlignment = false;
+            this.xrLabel_TOPPRICE.Text = "أعلى سعر بيع لهذه المادة";
+            this.xrLabel_TOPPRICE.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel2
             // 
             this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumMax([PRT_ALL_INVOS].[PRD_PRICE])")});
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(759.7494F, 10.00001F);
+            this.xrLabel2.Font = new System.Drawing.Font("Cairo", 12F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(771.9166F, 0F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(177.0834F, 33.41665F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(154.481F, 43.41666F);
+            this.xrLabel2.StylePriority.UseFont = false;
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrLabel2.Summary = xrSummary2;
             this.xrLabel2.Text = "xrLabel1";
             this.xrLabel2.TextFormatString = "{0:n1}";
             // 
-            // xrLabel6
+            // xrLabel_QTYTOTAL
             // 
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(222.0833F, 10.00001F);
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(158.3333F, 33.41665F);
-            this.xrLabel6.Text = "مجموع الكمية المبيوعة لهذه المادة";
+            this.xrLabel_QTYTOTAL.Font = new System.Drawing.Font("Cairo", 12F);
+            this.xrLabel_QTYTOTAL.LocationFloat = new DevExpress.Utils.PointFloat(119.7916F, 0F);
+            this.xrLabel_QTYTOTAL.Name = "xrLabel_QTYTOTAL";
+            this.xrLabel_QTYTOTAL.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel_QTYTOTAL.SizeF = new System.Drawing.SizeF(304.8794F, 43.41666F);
+            this.xrLabel_QTYTOTAL.StylePriority.UseFont = false;
+            this.xrLabel_QTYTOTAL.Text = "مجموع الكمية المبيوعة لهذه المادة";
             // 
             // xrLabel7
             // 
             this.xrLabel7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumMin([PRT_ALL_INVOS].[PRD_PRICE])")});
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(380.921F, 10.00001F);
+            this.xrLabel7.Font = new System.Drawing.Font("Cairo", 12F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(424.671F, 0F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel7.SizeF = new System.Drawing.SizeF(177.0833F, 33.41664F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(156.5209F, 43.41666F);
+            this.xrLabel7.StylePriority.UseFont = false;
             xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrLabel7.Summary = xrSummary3;
             this.xrLabel7.Text = "xrLabel1";
             this.xrLabel7.TextFormatString = "{0:#,#}";
             // 
-            // xrLabel8
+            // xrLabel_LOWPRICE
             // 
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(569.8282F, 10.00001F);
-            this.xrLabel8.Name = "xrLabel8";
-            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(179.014F, 33.41665F);
-            this.xrLabel8.StylePriority.UseTextAlignment = false;
-            this.xrLabel8.Text = "أقل سعر بيع لهذه المادة";
-            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel_LOWPRICE.Font = new System.Drawing.Font("Cairo", 12F);
+            this.xrLabel_LOWPRICE.LocationFloat = new DevExpress.Utils.PointFloat(581.1919F, 0F);
+            this.xrLabel_LOWPRICE.Name = "xrLabel_LOWPRICE";
+            this.xrLabel_LOWPRICE.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel_LOWPRICE.SizeF = new System.Drawing.SizeF(190.7248F, 43.41666F);
+            this.xrLabel_LOWPRICE.StylePriority.UseFont = false;
+            this.xrLabel_LOWPRICE.StylePriority.UseTextAlignment = false;
+            this.xrLabel_LOWPRICE.Text = "أقل سعر بيع لهذه المادة";
+            this.xrLabel_LOWPRICE.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // PageFooter
+            // 
+            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel_LOWPRICE,
+            this.xrLabel_TOPPRICE,
+            this.xrLabel2,
+            this.xrLabel_QTYTOTAL,
+            this.xrLabel7,
+            this.xrLabel5});
+            this.PageFooter.HeightF = 43.41666F;
+            this.PageFooter.Name = "PageFooter";
             // 
             // RPT_ONE_ITEM_ONE_COUST
             // 
@@ -547,7 +561,7 @@
             this.TopMargin,
             this.BottomMargin,
             this.ReportHeader,
-            this.ReportFooter});
+            this.PageFooter});
             this.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
@@ -611,14 +625,14 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell22;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell23;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell24;
-        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLabel xrLabel7;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel8;
         public DevExpress.XtraReports.UI.XRLabel xrLabel10;
         public DevExpress.XtraReports.UI.XRLabel xrLabel9;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel_TOPPRICE;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel_LOWPRICE;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel_QTYTOTAL;
+        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
     }
 }

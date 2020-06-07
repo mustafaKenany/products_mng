@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace products_mng.RPT
 {
-    public partial class PRT_ALL_INVO : DevExpress.XtraReports.UI.XtraReport
+    public partial class RPT_COUST_ORDERS : DevExpress.XtraReports.UI.XtraReport
     {
-        public PRT_ALL_INVO()
+        public RPT_COUST_ORDERS()
         {
             InitializeComponent ();
         }

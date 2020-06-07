@@ -33,8 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker_END_DATE = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_BEGIN_DATE = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_RPT_COUST_PURCHASE = new System.Windows.Forms.Button();
+            this.button_COUST_ITEM_PURCHASE = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button_COUST_ONE_ITEM = new System.Windows.Forms.Button();
             this.button_PRT_COUST_SALES = new System.Windows.Forms.Button();
@@ -66,8 +66,8 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dateTimePicker_END_DATE);
             this.groupBox1.Controls.Add(this.dateTimePicker_BEGIN_DATE);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button_RPT_COUST_PURCHASE);
+            this.groupBox1.Controls.Add(this.button_COUST_ITEM_PURCHASE);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button_COUST_ONE_ITEM);
             this.groupBox1.Controls.Add(this.button_PRT_COUST_SALES);
@@ -117,33 +117,35 @@
             this.dateTimePicker_BEGIN_DATE.Size = new System.Drawing.Size(102, 34);
             this.dateTimePicker_BEGIN_DATE.TabIndex = 58;
             // 
-            // button4
+            // button_RPT_COUST_PURCHASE
             // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(273, 26);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(113, 66);
-            this.button4.TabIndex = 57;
-            this.button4.Text = "طباعة مشتريات الزبون";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button_RPT_COUST_PURCHASE.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_RPT_COUST_PURCHASE.FlatAppearance.BorderSize = 2;
+            this.button_RPT_COUST_PURCHASE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_RPT_COUST_PURCHASE.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_RPT_COUST_PURCHASE.ForeColor = System.Drawing.Color.White;
+            this.button_RPT_COUST_PURCHASE.Location = new System.Drawing.Point(273, 26);
+            this.button_RPT_COUST_PURCHASE.Name = "button_RPT_COUST_PURCHASE";
+            this.button_RPT_COUST_PURCHASE.Size = new System.Drawing.Size(113, 66);
+            this.button_RPT_COUST_PURCHASE.TabIndex = 57;
+            this.button_RPT_COUST_PURCHASE.Text = "طباعة مشتريات الزبون";
+            this.button_RPT_COUST_PURCHASE.UseVisualStyleBackColor = true;
+            this.button_RPT_COUST_PURCHASE.Click += new System.EventHandler(this.button_RPT_COUST_PURCHASE_Click);
             // 
-            // button1
+            // button_COUST_ITEM_PURCHASE
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(717, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 66);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "طباعة مشتريات المادة";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_COUST_ITEM_PURCHASE.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_COUST_ITEM_PURCHASE.FlatAppearance.BorderSize = 2;
+            this.button_COUST_ITEM_PURCHASE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_COUST_ITEM_PURCHASE.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button_COUST_ITEM_PURCHASE.ForeColor = System.Drawing.Color.White;
+            this.button_COUST_ITEM_PURCHASE.Location = new System.Drawing.Point(717, 26);
+            this.button_COUST_ITEM_PURCHASE.Name = "button_COUST_ITEM_PURCHASE";
+            this.button_COUST_ITEM_PURCHASE.Size = new System.Drawing.Size(113, 66);
+            this.button_COUST_ITEM_PURCHASE.TabIndex = 56;
+            this.button_COUST_ITEM_PURCHASE.Text = "طباعة مشتريات المادة";
+            this.button_COUST_ITEM_PURCHASE.UseVisualStyleBackColor = true;
+            this.button_COUST_ITEM_PURCHASE.Click += new System.EventHandler(this.button_COUST_ITEM_PURCHASE_Click);
             // 
             // button3
             // 
@@ -506,8 +508,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_TEL;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_COUST_TYPE;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_ID_COUSTOMER;
-        public System.Windows.Forms.Button button4;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button_RPT_COUST_PURCHASE;
+        public System.Windows.Forms.Button button_COUST_ITEM_PURCHASE;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker_END_DATE;

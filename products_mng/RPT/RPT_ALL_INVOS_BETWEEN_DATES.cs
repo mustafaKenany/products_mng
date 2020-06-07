@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace products_mng.RPT
 {
-    public partial class RPT_ITEMS_COUST : DevExpress.XtraReports.UI.XtraReport
+    public partial class RPT_ALL_INVOS_BETWEEN_DATES : DevExpress.XtraReports.UI.XtraReport
     {
-        public RPT_ITEMS_COUST()
+        public RPT_ALL_INVOS_BETWEEN_DATES()
         {
             InitializeComponent ();
         }

@@ -287,6 +287,7 @@
             this.label_INVO_TOTAL.TabIndex = 16;
             this.label_INVO_TOTAL.Text = "0";
             this.label_INVO_TOTAL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_INVO_TOTAL.TextChanged += new System.EventHandler(this.label_INVO_TOTAL_TextChanged);
             // 
             // label6
             // 

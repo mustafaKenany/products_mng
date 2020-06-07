@@ -10,7 +10,7 @@
     <Shape ID="DesignTable:PRT_ALL_INVOS" ZOrder="4" X="0" Y="0" Height="429" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="425" />
     <Shape ID="DesignTable:PAID_SPENT_MONEY" ZOrder="3" X="575" Y="33" Height="124" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
     <Shape ID="DesignTable:RPT_NETMONEY" ZOrder="2" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
-    <Shape ID="DesignTable:COST_PROFITS" ZOrder="1" X="581" Y="185" Height="124" Width="200" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
+    <Shape ID="DesignTable:COST_PROFITS" ZOrder="1" X="581" Y="185" Height="143" Width="151" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

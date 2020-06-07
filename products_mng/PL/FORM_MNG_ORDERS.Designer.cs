@@ -174,6 +174,8 @@
             this.gridView1.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.gridView1.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView1.AppearancePrint.Row.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.gridView1.AppearancePrint.Row.Options.UseFont = true;
             this.gridView1.ColumnPanelRowHeight = 30;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
@@ -186,6 +188,7 @@
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TOTAL_AMOUNT", this.gridColumn3, "")});
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsPrint.UsePrintStyles = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.RowHeight = 30;

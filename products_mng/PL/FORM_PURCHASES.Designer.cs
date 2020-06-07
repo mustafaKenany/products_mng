@@ -36,11 +36,6 @@
             this.button_close = new System.Windows.Forms.Button();
             this.panel_Right = new System.Windows.Forms.Panel();
             this.dataGridView_INVO_ITEMS = new System.Windows.Forms.DataGridView();
-            this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_PAID_MONEY = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox_INVO_PAID = new System.Windows.Forms.TextBox();
@@ -77,6 +72,12 @@
             this.flowLayoutPanel_PRD = new System.Windows.Forms.FlowLayoutPanel();
             this.panel_CATEGORIES = new System.Windows.Forms.Panel();
             this.flowLayoutPanel_CATEGORIES = new System.Windows.Forms.FlowLayoutPanel();
+            this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock_PRD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_top.SuspendLayout();
             this.panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_INVO_ITEMS)).BeginInit();
@@ -191,7 +192,8 @@
             this.ITEM_NAME,
             this.ITEM_QTY,
             this.ITEM_PRICE,
-            this.ITEM_TOTAL});
+            this.ITEM_TOTAL,
+            this.Stock_PRD});
             this.dataGridView_INVO_ITEMS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_INVO_ITEMS.Location = new System.Drawing.Point(5, 5);
             this.dataGridView_INVO_ITEMS.MultiSelect = false;
@@ -202,32 +204,6 @@
             this.dataGridView_INVO_ITEMS.TabIndex = 2;
             this.dataGridView_INVO_ITEMS.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_INVO_ITEMS_CellValueChanged);
             this.dataGridView_INVO_ITEMS.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_INVO_ITEMS_EditingControlShowing);
-            // 
-            // ITEM_ID
-            // 
-            this.ITEM_ID.HeaderText = "ITEM_ID";
-            this.ITEM_ID.Name = "ITEM_ID";
-            this.ITEM_ID.Visible = false;
-            // 
-            // ITEM_NAME
-            // 
-            this.ITEM_NAME.HeaderText = "مادة";
-            this.ITEM_NAME.Name = "ITEM_NAME";
-            // 
-            // ITEM_QTY
-            // 
-            this.ITEM_QTY.HeaderText = "عدد";
-            this.ITEM_QTY.Name = "ITEM_QTY";
-            // 
-            // ITEM_PRICE
-            // 
-            this.ITEM_PRICE.HeaderText = "سعر";
-            this.ITEM_PRICE.Name = "ITEM_PRICE";
-            // 
-            // ITEM_TOTAL
-            // 
-            this.ITEM_TOTAL.HeaderText = "المجموع";
-            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
             // 
             // panel_PAID_MONEY
             // 
@@ -528,6 +504,8 @@
             this.label_ID_ORDER.TabIndex = 3;
             this.label_ID_ORDER.Text = "رقم القائمة";
             this.label_ID_ORDER.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_ID_ORDER.MouseLeave += new System.EventHandler(this.label_ID_ORDER_MouseLeave);
+            this.label_ID_ORDER.MouseHover += new System.EventHandler(this.label_ID_ORDER_MouseHover);
             // 
             // button_NEW_INVO
             // 
@@ -697,6 +675,38 @@
             this.flowLayoutPanel_CATEGORIES.Size = new System.Drawing.Size(786, 186);
             this.flowLayoutPanel_CATEGORIES.TabIndex = 0;
             // 
+            // ITEM_ID
+            // 
+            this.ITEM_ID.HeaderText = "ITEM_ID";
+            this.ITEM_ID.Name = "ITEM_ID";
+            this.ITEM_ID.Visible = false;
+            // 
+            // ITEM_NAME
+            // 
+            this.ITEM_NAME.HeaderText = "مادة";
+            this.ITEM_NAME.Name = "ITEM_NAME";
+            // 
+            // ITEM_QTY
+            // 
+            this.ITEM_QTY.HeaderText = "عدد";
+            this.ITEM_QTY.Name = "ITEM_QTY";
+            // 
+            // ITEM_PRICE
+            // 
+            this.ITEM_PRICE.HeaderText = "سعر";
+            this.ITEM_PRICE.Name = "ITEM_PRICE";
+            // 
+            // ITEM_TOTAL
+            // 
+            this.ITEM_TOTAL.HeaderText = "المجموع";
+            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
+            // 
+            // Stock_PRD
+            // 
+            this.Stock_PRD.HeaderText = "Stock";
+            this.Stock_PRD.Name = "Stock_PRD";
+            this.Stock_PRD.Visible = false;
+            // 
             // FORM_PURCHASES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
@@ -746,11 +756,6 @@
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.Panel panel_Right;
         private System.Windows.Forms.DataGridView dataGridView_INVO_ITEMS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_QTY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_PRICE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_TOTAL;
         private System.Windows.Forms.Panel panel_PAID_MONEY;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textBox_INVO_PAID;
@@ -787,5 +792,11 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_PRD;
         private System.Windows.Forms.Panel panel_CATEGORIES;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_CATEGORIES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_QTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_PRICE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_TOTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_PRD;
     }
 }

@@ -36,7 +36,7 @@ namespace products_mng.RPT
                 var END_DATE = dateTimePicker_END_DATE.Text;
                 X.xrLabel11.Text = BEGIN_DATE;
                 X.xrLabel9.Text = END_DATE;
-                dt = RPTCLS.RPT_PRODUCTS_DTLS (PRD_ID,BEGIN_DATE,END_DATE);
+                dt = RPTCLS.RPT_PRODUCTS_DTLS (PRD_ID, BEGIN_DATE, END_DATE,0);
                 if (dt.Rows.Count > 0)
                 {
                     Cursor = Cursors.WaitCursor;
@@ -47,7 +47,40 @@ namespace products_mng.RPT
                 }
                 else
                 {
-                    MessageBox.Show ("لا توجد مبيعات لهذه المادة خلال هذه الفترة","Message");
+                    MessageBox.Show ("لا توجد مبيعات لهذه المادة خلال هذه الفترة", "Message");
+                }
+
+
+            }
+        }
+
+        private void button_RPT_Purchases_Click(object sender, EventArgs e)
+        {
+            if (gridView1.RowCount > 0)
+            {
+                int PRD_ID = Convert.ToInt16 (gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["ID_PRODUCT"]).ToString ());
+                string PRDLABEL = gridView1.GetRowCellValue (gridView1.FocusedRowHandle, gridView1.Columns["LABEL_PRODUCT"]).ToString ();
+                RPT.RPT_ITMSDTLS X = new RPT_ITMSDTLS ();
+                var dt = new DataTable ();
+                var BEGIN_DATE = dateTimePicker_BEGIN_DATE.Text;
+                var END_DATE = dateTimePicker_END_DATE.Text;
+                X.xrLabel11.Text = BEGIN_DATE;
+                X.xrLabel9.Text = END_DATE;
+                X.xrLabel_avgPrice.Text = "معدل سعر الشراء";
+                X.xrLabel_lowestPrice.Text = "اقل سعر شراء";
+                X.xrLabel_topPrice.Text = "اعلى سعر شراء";
+                X.xrLabel_TotalQTY.Text = "مجموع الكمية التي تم شرائها";
+                X.xrTableCell_Title.Text = "تقرير مشتريات مادة معينة خلال فترة معينة";
+                dt = RPTCLS.RPT_PRODUCTS_DTLS (PRD_ID, BEGIN_DATE, END_DATE,1);
+                X.xrTableCell_PRDLABEL.Text = PRDLABEL;
+                if (dt.Rows.Count > 0)
+                {
+                    X.DataSource = dt;
+                    X.ShowPreviewDialog ();
+                }
+                else
+                {
+                    MessageBox.Show ("لا توجد مشتريات لهذه المادة خلال هذه الفترة", "Message");
                 }
 
 

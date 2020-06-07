@@ -63,6 +63,7 @@ namespace products_mng.PL
         #region FUNCTIONS
         public void Restore_Order(int OrderId)
         {
+            button_NEW_INVO.Enabled = false;
             var ORDER_TYPES = BL.CLS_ORDERS.ORDER_TYPES;
             DataTable dt = new DataTable ();
             dt = RPT.PRT_INVO_ORDER (ORDER_TYPES, OrderId);
@@ -234,11 +235,6 @@ namespace products_mng.PL
             ORD.ADD_ORDER (ID_ORDER, ID_COUST, ORDER_NOTES, ORDER_TYPE, PAID_OR_NOT, SALES_MAN);
         }
 
-        private void UPDATE_ORDER()
-        {
-            ORD.UPDATE_ORDER (ID_ORDER, ID_COUST, ORDER_NOTES, ORDER_TYPE, PAID_OR_NOT, SALES_MAN);
-        }
-
         private void ADD_ORDER_DETAILS()
         {
             for (int i = 0; i < dataGridView_INVO_ITEMS.Rows.Count; i++)
@@ -251,6 +247,11 @@ namespace products_mng.PL
             }
         }
 
+        private void UPDATE_ORDER()
+        {
+            ORD.UPDATE_ORDER (ID_ORDER, ID_COUST, ORDER_NOTES, ORDER_TYPE, PAID_OR_NOT, SALES_MAN);
+        }
+
         private void UPDATE_ORDER_DETAILS()
         {
             for (int i = 0; i < dataGridView_INVO_ITEMS.Rows.Count; i++)
@@ -261,6 +262,20 @@ namespace products_mng.PL
                 float PRD_PRICE = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_PRICE"].Value.ToString ());
                 ORD.UPDATE_ORDER_DETAILS (ID_ORDER, ID_PRD, PRD_QTY, QTY_BY_PRICE, PRD_PRICE);
             }
+        }
+
+        private void UPDATE_MONEY_DETAILS()
+        {
+            ORD.UPDATE_MONEY_DETAILS (ID_MONEY, ID_COUST, "بيع مباشر", ("فاتورة مرقمة " + label_ID_ORDER.Text + " " + textBox_ORDER_NOTES.Text), DateTime.Now);
+        }
+
+        private void UPDATE_ORDER_MONEY()
+        {
+            float TOTAL_AMOUNT = float.Parse (label_INVO_TOTAL.Text);
+            float PAID_AMOUNT = float.Parse (textBox_INVO_PAID.Text);
+            float DISCOUNT_AMOUNT = float.Parse (textBox_INVO_DISC.Text);
+            float REMINDER_AMOUNT = float.Parse (label_INVO_REMID.Text);
+            ORD.UPDATE_ORDER_MONEY (ID_MONEY, ID_ORDER, ID_COUST, TOTAL_AMOUNT, PAID_AMOUNT, DISCOUNT_AMOUNT, REMINDER_AMOUNT);
         }
 
         private void ADD_ORDER_MONEY()
@@ -278,19 +293,6 @@ namespace products_mng.PL
             ORD.ADD_MONEY_DETAILS (ID_MONEY, ID_COUST, "بيع مباشر", ("فاتورة مرقمة " + label_ID_ORDER.Text + " " + textBox_ORDER_NOTES.Text), DateTime.Now);
         }
 
-        private void UPDATE_MONEY_DETAILS()
-        {
-            ORD.UPDATE_MONEY_DETAILS (ID_MONEY, ID_COUST, "بيع مباشر", ("فاتورة مرقمة " + label_ID_ORDER.Text + " " + textBox_ORDER_NOTES.Text), DateTime.Now);
-        }
-
-        private void UPDATE_ORDER_MONEY()
-        {
-            float TOTAL_AMOUNT = float.Parse (label_INVO_TOTAL.Text);
-            float PAID_AMOUNT = float.Parse (textBox_INVO_PAID.Text);
-            float DISCOUNT_AMOUNT = float.Parse (textBox_INVO_DISC.Text);
-            float REMINDER_AMOUNT = float.Parse (label_INVO_REMID.Text);
-            ORD.UPDATE_ORDER_MONEY (ID_MONEY, ID_ORDER, ID_COUST, TOTAL_AMOUNT, PAID_AMOUNT, DISCOUNT_AMOUNT, REMINDER_AMOUNT);
-        }
 
         private bool CHECK_MONEY()
         {
@@ -367,7 +369,6 @@ namespace products_mng.PL
                         ORDER_NOTES = textBox_ORDER_NOTES.Text;
                         if (button_SAVE_INVO.Text == "تحديث")
                         {
-                            MessageBox.Show (ID_ORDER.ToString ());
                             UPDATE_ORDER ();
                             UPDATE_ORDER_DETAILS ();
                             UPDATE_ORDER_MONEY ();
@@ -383,6 +384,7 @@ namespace products_mng.PL
                         }
                         InitializeFunction ();
                         button_PRT_INVO.Enabled = true;
+                        MessageBox.Show ("Success", "Message");
 
                     }
                 }
@@ -410,6 +412,7 @@ namespace products_mng.PL
             {
                 if (MessageBox.Show ("هل  تريد الغاء الفاتورة", "الغاء", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
+                    button_SAVE_INVO.Text = "حفظ";
                     InitializeFunction ();
                     button_NEW_INVO.Enabled = true;
 
@@ -595,26 +598,28 @@ namespace products_mng.PL
         int Modified_Money = 0;
         private void label_MONEYIES_ID_MouseHover(object sender, EventArgs e)
         {
-            if (button_NEW_INVO.Enabled == false && button_NEW_INVO.Text == "تحديث")
+            if (button_SAVE_INVO.Text=="تحديث")
             {
                 Modified_Money = int.Parse (label_MONEYIES_ID.Text);
+                label_MONEYIES_ID.Text = "MONEY_ID";
+            }
+            else
+            {
                 label_MONEYIES_ID.Text = "MONEY_ID";
             }
         }
 
         private void label_MONEYIES_ID_MouseLeave(object sender, EventArgs e)
         {
-            if (button_NEW_INVO.Enabled == false)
+            if (button_SAVE_INVO.Text == "تحديث")
             {
-                if (button_NEW_INVO.Text == "تحديث")
-                {
-                    label_MONEYIES_ID.Text = Modified_Money.ToString ();
-                }
-                else
-                {
-                    this.label_MONEYIES_ID.Text = ORD.GET_ID_MONEYIES ().ToString ();
-                }
+                label_MONEYIES_ID.Text = Modified_Money.ToString ();
             }
+            else if(!button_NEW_INVO.Enabled)
+            {
+                this.label_MONEYIES_ID.Text = ORD.GET_ID_MONEYIES ().ToString ();
+            }
+
 
         }
 
@@ -635,26 +640,29 @@ namespace products_mng.PL
         int Modified_order = 0;
         private void label_ID_ORDER_MouseHover(object sender, EventArgs e)
         {
-            if (button_NEW_INVO.Enabled == false && button_NEW_INVO.Text == "تحديث")
+            if (button_SAVE_INVO.Text=="تحديث")
             {
                 Modified_order = int.Parse (label_ID_ORDER.Text);
+                label_ID_ORDER.Text = "رقم القائمة";
+
+            }
+            else 
+            {
                 label_ID_ORDER.Text = "رقم القائمة";
             }
         }
 
         private void label_ID_ORDER_MouseLeave(object sender, EventArgs e)
         {
-            if (button_NEW_INVO.Enabled == false)
+            if (button_SAVE_INVO.Text == "تحديث")
             {
-                if (button_NEW_INVO.Text == "تحديث")
-                {
-                    label_ID_ORDER.Text = Modified_order.ToString ();
-                }
-                else
-                {
-                    this.label_ID_ORDER.Text = ORD.GET_ID_ORDER ().ToString ();
-                }
+                label_ID_ORDER.Text = Modified_order.ToString ();
             }
+            else if(!button_NEW_INVO.Enabled)
+            {
+                this.label_ID_ORDER.Text = ORD.GET_ID_ORDER ().ToString ();
+            }
+
         }
 
         private void textBox_PRD_BARCODE_KeyPress(object sender, KeyPressEventArgs e)
@@ -665,7 +673,7 @@ namespace products_mng.PL
                 e.Handled = true; //Handle the Keypress event (suppress the Beep)
                 if (textBox_PRD_BARCODE.Text != "")
                 {
-                    var dt = PROD.SEARCH_PRODUCT (textBox_PRD_BARCODE.Text);
+                    var dt = PROD.Select_Product_BY_Barcode (textBox_PRD_BARCODE.Text);
                     float ITEM_PRICE = 0;
                     if (dt.Rows.Count > 0)
                     {
@@ -713,6 +721,16 @@ namespace products_mng.PL
             {
                 textBox_INVO_PAID.Text = "0";
             }
+        }
+
+        private void label_INVO_TOTAL_TextChanged(object sender, EventArgs e)
+        {
+            float Paid, Discount, Reminder, Total;
+            Total = float.Parse (label_INVO_TOTAL.Text);
+            Paid = float.Parse (textBox_INVO_PAID.Text);
+            Discount = float.Parse (textBox_INVO_DISC.Text);
+            Reminder = Total - (Paid + Discount);
+            label_INVO_REMID.Text = Reminder.ToString ();
         }
     }
 }
