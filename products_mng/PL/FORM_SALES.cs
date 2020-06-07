@@ -57,6 +57,14 @@ namespace products_mng.PL
             textBox_COUST_NAME.Text = BL.CLS_COUSTOMERS.COUST_NAME;
             label_COUST_ID.Text = BL.CLS_COUSTOMERS.COUST_ID.ToString ();
             textBox_PRD_BARCODE.Enabled = false;
+            var dt = COUST.GET_ALL_COUSTOMERS ();
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    textBox_COUST_NAME.AutoCompleteCustomSource.Add (dt.Rows[i]["COUST_NAME"].ToString ());
+                }
+            }
 
         }
 
@@ -81,10 +89,11 @@ namespace products_mng.PL
                     row.Cells["ITEM_ID"].Value = dt.Rows[i]["ID_PRODUCT"].ToString ();
                     row.Cells["ITEM_NAME"].Value = dt.Rows[i]["LABEL_PRODUCT"].ToString ();
                     row.Cells["ITEM_QTY"].Value = dt.Rows[i]["PRD_QTY"].ToString ();
+                    row.Cells["Stock"].Value = dt.Rows[i]["PRD_QTY"].ToString ();
                     row.Cells["ITEM_PRICE"].Value = dt.Rows[i]["PRD_PRICE"].ToString ();
                     row.Cells["ITEM_TOTAL"].Value = dt.Rows[i]["QTY_BY_PRICE"].ToString ();
                 }
-                MessageBox.Show ("يمكنك فقط تغير الاعداد ولا يمكن حذف مادة او الاضافة", "MESSAGE");
+                MessageBox.Show ("يمكنك فقط تغير الاعداد ولا يمكن حذف مادة او الاضافة باقي الحساب يتم قبضه او صرفه", "MESSAGE");
             }
         }
 
@@ -201,30 +210,29 @@ namespace products_mng.PL
         {
             Button clickedbutton = sender as Button;
             var dt = new DataTable ();
-            float ITEM_PRICE;
+            float ITEM_PRICE = 0;
             dt = PROD.SEARCH_PRODUCT (clickedbutton.Text);
 
             if (dt.Rows.Count > 0)
             {
-                if (dt.Rows[0]["PRICE"].ToString () == "")
+                int Stock = int.Parse (dt.Rows[0]["QTE_IN_STOCK"].ToString ());
+                ITEM_PRICE = float.Parse (dt.Rows[0]["PRICE"].ToString ());
+                if (Stock <= 0)
                 {
-                    ITEM_PRICE = 0;
+                    MessageBox.Show ("رصيد مادة غير متوفر", "Message");
                 }
                 else
                 {
-                    ITEM_PRICE = float.Parse (dt.Rows[0]["PRICE"].ToString ());
-                }
-
-                if (CHECK_IF_DUPLICATE (clickedbutton.Text))
-                {
-                    int idx = dataGridView_INVO_ITEMS.Rows.Add ();
-                    DataGridViewRow row = dataGridView_INVO_ITEMS.Rows[idx];
-                    row.Cells["ITEM_ID"].Value = clickedbutton.Name;
-                    row.Cells["ITEM_NAME"].Value = clickedbutton.Text;//اسم مادة
-                    row.Cells["ITEM_QTY"].Value = 1;//كمية المادة
-                    row.Cells["ITEM_PRICE"].Value = ITEM_PRICE;  //سعر المادة
-                    row.Cells["ITEM_TOTAL"].Value = ITEM_PRICE * 1;     //مجموع المادة
-
+                    if (CHECK_IF_DUPLICATE (clickedbutton.Text))
+                    {
+                        int idx = dataGridView_INVO_ITEMS.Rows.Add ();
+                        DataGridViewRow row = dataGridView_INVO_ITEMS.Rows[idx];
+                        row.Cells["ITEM_ID"].Value = clickedbutton.Name;
+                        row.Cells["ITEM_NAME"].Value = clickedbutton.Text;//اسم مادة
+                        row.Cells["ITEM_QTY"].Value = 1;//كمية المادة
+                        row.Cells["ITEM_PRICE"].Value = ITEM_PRICE;  //سعر المادة
+                        row.Cells["ITEM_TOTAL"].Value = ITEM_PRICE * 1;     //مجموع المادة
+                    }
                 }
 
             }
@@ -305,9 +313,19 @@ namespace products_mng.PL
             }
             else
             {
-                MessageBox.Show ("هناك خلل في التسديدات المالية", "CHECK_MONEY ERORR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                if (MessageBox.Show ("القائمة بالاجل هل تريد متابعة", "تحذير", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+                    PAID_OR_NOT = 0;
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show ("هناك خلل في التسديدات المالية", "CHECK_MONEY ERORR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
+
+
 
         }
 
@@ -373,6 +391,8 @@ namespace products_mng.PL
                             UPDATE_ORDER_DETAILS ();
                             UPDATE_ORDER_MONEY ();
                             UPDATE_MONEY_DETAILS ();
+                            Increase_Stock ();
+                            Decrease_Stock ();
                             dataGridView_INVO_ITEMS.Rows.Clear ();
                         }
                         else
@@ -381,6 +401,7 @@ namespace products_mng.PL
                             ADD_ORDER_DETAILS ();
                             ADD_ORDER_MONEY ();
                             ADD_MONEY_DETAILS ();
+                            Decrease_Stock ();
                         }
                         InitializeFunction ();
                         button_PRT_INVO.Enabled = true;
@@ -398,7 +419,26 @@ namespace products_mng.PL
 
         }
 
+        private void Increase_Stock()
+        {
+            for (int i = 0; i < dataGridView_INVO_ITEMS.Rows.Count; i++)
+            {
+                int ID_PRD = int.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_ID"].Value.ToString ());
+                float PRD_QTY = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["Stock"].Value.ToString ());
+                PROD.ADD_PRD_Stock (ID_PRD, PRD_QTY);
+            }
+        }
 
+        private void Decrease_Stock()
+        {
+            for (int i = 0; i < dataGridView_INVO_ITEMS.Rows.Count; i++)
+            {
+                int ID_PRD = int.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_ID"].Value.ToString ());
+                float PRD_QTY = float.Parse (dataGridView_INVO_ITEMS.Rows[i].Cells["ITEM_QTY"].Value.ToString ());
+                PROD.UPDATE_PRD_Stock (ID_PRD, PRD_QTY);
+            }
+
+        }
 
         private void button_COUST_BRWS_Click(object sender, EventArgs e)
         {
@@ -448,17 +488,50 @@ namespace products_mng.PL
                 switch (dataGridView_INVO_ITEMS.Columns[e.ColumnIndex].Name)
                 {
                     case "ITEM_QTY":
-                        var ITEM_QTY = double.Parse (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value.ToString ());
-                        if (ITEM_QTY <= 0)
+                        if (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value == null || dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value == "")
                         {
-                            MessageBox.Show ("خطا في ادخال القيمة", "ITEM_QTY Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            dataGridView_INVO_ITEMS.CurrentCell.Selected = true;
                             dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value = 1;
-
                         }
-                        else if (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_PRICE"].Value != null)
+                        else
                         {
-                            dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_TOTAL"].Value = double.Parse (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value.ToString ()) * double.Parse (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_PRICE"].Value.ToString ());
+                            var ITEM_QTY = double.Parse (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value.ToString ());
+                            if (ITEM_QTY <= 0)
+                            {
+                                MessageBox.Show ("خطا في ادخال القيمة", "ITEM_QTY Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                dataGridView_INVO_ITEMS.CurrentCell.Selected = true;
+                                dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value = 1;
+
+                            }
+                            else if (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_PRICE"].Value != null)
+                            {
+                                int ID = int.Parse (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_ID"].Value.ToString ());
+                                float Qty = float.Parse (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value.ToString ());
+                                var dt = PROD.SEARCH_PRODUCT (ID.ToString ());
+                                if (dt.Rows.Count > 0)
+                                {
+                                    float Stock = float.Parse (dt.Rows[0]["QTE_IN_STOCK"].ToString ());
+                                    if (button_SAVE_INVO.Text == "تحديث")
+                                    {
+                                        float Pre_Qty = float.Parse (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["Stock"].Value.ToString ());
+                                        if ((Pre_Qty + Stock) < Qty)
+                                        {
+                                            MessageBox.Show ("رصيد المادة غير كافي الرصيد المتبقي بالمخزن " + (Pre_Qty + Stock), "Message");
+                                            dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value = Pre_Qty + Stock;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (Qty > Stock)
+                                        {
+                                            MessageBox.Show ("رصيد المادة غير كافي الرصيد المتبقي بالمخزن " + Stock, "Message");
+                                            dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value = Stock;
+                                        }
+                                    }
+                                }
+                                dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_TOTAL"].Value = double.Parse (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_QTY"].Value.ToString ()) * double.Parse (dataGridView_INVO_ITEMS.Rows[e.RowIndex].Cells["ITEM_PRICE"].Value.ToString ());
+                            }
+
+
                         }
                         break;
 
@@ -487,6 +560,8 @@ namespace products_mng.PL
 
             }
         }
+
+
 
         private void dataGridView_INVO_ITEMS_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -559,6 +634,7 @@ namespace products_mng.PL
                 if (dt.Rows.Count > 0)
                 {
                     label_COUST_ID.Text = dt.Rows[0]["ID_COUSTOMER"].ToString ();
+                    BL.CLS_COUSTOMERS.COUST_ID = int.Parse (label_COUST_ID.Text);
                 }
             }
         }
@@ -584,7 +660,8 @@ namespace products_mng.PL
         {
             if (button_NEW_INVO.Enabled == false)
             {
-                label_COUST_ID.Text = "COUST_ID";
+                BL.CLS_COUSTOMERS.COUST_ID = int.Parse (label_COUST_ID.Text);
+                label_COUST_ID.Text = "CoustID";
             }
         }
 
@@ -598,7 +675,7 @@ namespace products_mng.PL
         int Modified_Money = 0;
         private void label_MONEYIES_ID_MouseHover(object sender, EventArgs e)
         {
-            if (button_SAVE_INVO.Text=="تحديث")
+            if (button_SAVE_INVO.Text == "تحديث")
             {
                 Modified_Money = int.Parse (label_MONEYIES_ID.Text);
                 label_MONEYIES_ID.Text = "MONEY_ID";
@@ -615,7 +692,7 @@ namespace products_mng.PL
             {
                 label_MONEYIES_ID.Text = Modified_Money.ToString ();
             }
-            else if(!button_NEW_INVO.Enabled)
+            else if (!button_NEW_INVO.Enabled)
             {
                 this.label_MONEYIES_ID.Text = ORD.GET_ID_MONEYIES ().ToString ();
             }
@@ -640,13 +717,13 @@ namespace products_mng.PL
         int Modified_order = 0;
         private void label_ID_ORDER_MouseHover(object sender, EventArgs e)
         {
-            if (button_SAVE_INVO.Text=="تحديث")
+            if (button_SAVE_INVO.Text == "تحديث")
             {
                 Modified_order = int.Parse (label_ID_ORDER.Text);
                 label_ID_ORDER.Text = "رقم القائمة";
 
             }
-            else 
+            else
             {
                 label_ID_ORDER.Text = "رقم القائمة";
             }
@@ -658,7 +735,7 @@ namespace products_mng.PL
             {
                 label_ID_ORDER.Text = Modified_order.ToString ();
             }
-            else if(!button_NEW_INVO.Enabled)
+            else if (!button_NEW_INVO.Enabled)
             {
                 this.label_ID_ORDER.Text = ORD.GET_ID_ORDER ().ToString ();
             }
@@ -677,27 +754,35 @@ namespace products_mng.PL
                     float ITEM_PRICE = 0;
                     if (dt.Rows.Count > 0)
                     {
+                        int Stock = int.Parse (dt.Rows[0]["QTE_IN_STOCK"].ToString ());
                         var Item_name = dt.Rows[0]["LABEL_PRODUCT"].ToString ();
                         var Item_ID = dt.Rows[0]["ID_PRODUCT"].ToString ();
-                        if (dt.Rows[0]["PRICE"].ToString () == "")
+                        ITEM_PRICE = float.Parse (dt.Rows[0]["PRICE"].ToString ());
+                        //if (dt.Rows[0]["PRICE"].ToString () == "")
+                        //{
+                        //    ITEM_PRICE = 0;
+                        //}
+                        //else
+                        //{
+                        //}
+
+                        if (Stock <= 0)
                         {
-                            ITEM_PRICE = 0;
+                            MessageBox.Show ("رصيد المادة غير متوفر", "Message");
                         }
                         else
                         {
-                            ITEM_PRICE = float.Parse (dt.Rows[0]["PRICE"].ToString ());
-                        }
+                            if (CHECK_IF_DUPLICATE (Item_name))
+                            {
+                                int idx = dataGridView_INVO_ITEMS.Rows.Add ();
+                                DataGridViewRow row = dataGridView_INVO_ITEMS.Rows[idx];
+                                row.Cells["ITEM_ID"].Value = Item_ID;
+                                row.Cells["ITEM_NAME"].Value = Item_name;//اسم مادة
+                                row.Cells["ITEM_QTY"].Value = 1;//كمية المادة
+                                row.Cells["ITEM_PRICE"].Value = ITEM_PRICE;  //سعر المادة
+                                row.Cells["ITEM_TOTAL"].Value = ITEM_PRICE * 1;     //مجموع المادة
 
-                        if (CHECK_IF_DUPLICATE (Item_name))
-                        {
-                            int idx = dataGridView_INVO_ITEMS.Rows.Add ();
-                            DataGridViewRow row = dataGridView_INVO_ITEMS.Rows[idx];
-                            row.Cells["ITEM_ID"].Value = Item_ID;
-                            row.Cells["ITEM_NAME"].Value = Item_name;//اسم مادة
-                            row.Cells["ITEM_QTY"].Value = 1;//كمية المادة
-                            row.Cells["ITEM_PRICE"].Value = ITEM_PRICE;  //سعر المادة
-                            row.Cells["ITEM_TOTAL"].Value = ITEM_PRICE * 1;     //مجموع المادة
-
+                            }
                         }
 
                     }

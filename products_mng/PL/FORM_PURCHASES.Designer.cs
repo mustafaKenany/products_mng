@@ -36,6 +36,12 @@
             this.button_close = new System.Windows.Forms.Button();
             this.panel_Right = new System.Windows.Forms.Panel();
             this.dataGridView_INVO_ITEMS = new System.Windows.Forms.DataGridView();
+            this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock_PRD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_PAID_MONEY = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox_INVO_PAID = new System.Windows.Forms.TextBox();
@@ -72,12 +78,6 @@
             this.flowLayoutPanel_PRD = new System.Windows.Forms.FlowLayoutPanel();
             this.panel_CATEGORIES = new System.Windows.Forms.Panel();
             this.flowLayoutPanel_CATEGORIES = new System.Windows.Forms.FlowLayoutPanel();
-            this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock_PRD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_top.SuspendLayout();
             this.panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_INVO_ITEMS)).BeginInit();
@@ -204,6 +204,38 @@
             this.dataGridView_INVO_ITEMS.TabIndex = 2;
             this.dataGridView_INVO_ITEMS.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_INVO_ITEMS_CellValueChanged);
             this.dataGridView_INVO_ITEMS.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_INVO_ITEMS_EditingControlShowing);
+            // 
+            // ITEM_ID
+            // 
+            this.ITEM_ID.HeaderText = "ITEM_ID";
+            this.ITEM_ID.Name = "ITEM_ID";
+            this.ITEM_ID.Visible = false;
+            // 
+            // ITEM_NAME
+            // 
+            this.ITEM_NAME.HeaderText = "مادة";
+            this.ITEM_NAME.Name = "ITEM_NAME";
+            // 
+            // ITEM_QTY
+            // 
+            this.ITEM_QTY.HeaderText = "عدد";
+            this.ITEM_QTY.Name = "ITEM_QTY";
+            // 
+            // ITEM_PRICE
+            // 
+            this.ITEM_PRICE.HeaderText = "سعر";
+            this.ITEM_PRICE.Name = "ITEM_PRICE";
+            // 
+            // ITEM_TOTAL
+            // 
+            this.ITEM_TOTAL.HeaderText = "المجموع";
+            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
+            // 
+            // Stock_PRD
+            // 
+            this.Stock_PRD.HeaderText = "Stock";
+            this.Stock_PRD.Name = "Stock_PRD";
+            this.Stock_PRD.Visible = false;
             // 
             // panel_PAID_MONEY
             // 
@@ -674,38 +706,6 @@
             this.flowLayoutPanel_CATEGORIES.Padding = new System.Windows.Forms.Padding(3);
             this.flowLayoutPanel_CATEGORIES.Size = new System.Drawing.Size(786, 186);
             this.flowLayoutPanel_CATEGORIES.TabIndex = 0;
-            // 
-            // ITEM_ID
-            // 
-            this.ITEM_ID.HeaderText = "ITEM_ID";
-            this.ITEM_ID.Name = "ITEM_ID";
-            this.ITEM_ID.Visible = false;
-            // 
-            // ITEM_NAME
-            // 
-            this.ITEM_NAME.HeaderText = "مادة";
-            this.ITEM_NAME.Name = "ITEM_NAME";
-            // 
-            // ITEM_QTY
-            // 
-            this.ITEM_QTY.HeaderText = "عدد";
-            this.ITEM_QTY.Name = "ITEM_QTY";
-            // 
-            // ITEM_PRICE
-            // 
-            this.ITEM_PRICE.HeaderText = "سعر";
-            this.ITEM_PRICE.Name = "ITEM_PRICE";
-            // 
-            // ITEM_TOTAL
-            // 
-            this.ITEM_TOTAL.HeaderText = "المجموع";
-            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
-            // 
-            // Stock_PRD
-            // 
-            this.Stock_PRD.HeaderText = "Stock";
-            this.Stock_PRD.Name = "Stock_PRD";
-            this.Stock_PRD.Visible = false;
             // 
             // FORM_PURCHASES
             // 

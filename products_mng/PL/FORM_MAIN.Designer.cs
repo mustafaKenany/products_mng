@@ -407,7 +407,7 @@
             this.RightToLeftLayout = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "النافذة  الرئيسية";
+            this.Text = "صيدلية";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FORM_MAIN_KeyPress);
             this.menuStrip.ResumeLayout(false);

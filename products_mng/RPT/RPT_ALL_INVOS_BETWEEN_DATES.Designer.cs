@@ -88,14 +88,13 @@
             this.xrTableCell27 = new DevExpress.XtraReports.UI.XRTableCell();
             this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
+            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell_RPT_FOOTER = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
-            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable12)).BeginInit();
@@ -120,6 +119,9 @@
             // 
             // bottomMarginBand1
             // 
+            this.bottomMarginBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPageInfo1,
+            this.xrPageInfo2});
             this.bottomMarginBand1.Dpi = 254F;
             this.bottomMarginBand1.HeightF = 85F;
             this.bottomMarginBand1.Name = "bottomMarginBand1";
@@ -127,7 +129,7 @@
             // xrPageInfo1
             // 
             this.xrPageInfo1.Dpi = 254F;
-            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(4.438198F, 0F);
+            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(16.00007F, 0F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
@@ -139,7 +141,7 @@
             // xrPageInfo2
             // 
             this.xrPageInfo2.Dpi = 254F;
-            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(1032.461F, 0F);
+            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(1033.252F, 0F);
             this.xrPageInfo2.Name = "xrPageInfo2";
             this.xrPageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrPageInfo2.SizeF = new System.Drawing.SizeF(993F, 68.58334F);
@@ -187,6 +189,7 @@
             this.xrTableCell1.Dpi = 254F;
             this.xrTableCell1.Font = new System.Drawing.Font("Cairo", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel);
             this.xrTableCell1.Name = "xrTableCell1";
+            this.xrTableCell1.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
             this.xrTableCell1.StylePriority.UseBorders = false;
             this.xrTableCell1.StylePriority.UseFont = false;
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
@@ -196,9 +199,12 @@
             // 
             // xrTableCell_BeginDate
             // 
+            this.xrTableCell_BeginDate.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
             this.xrTableCell_BeginDate.Dpi = 254F;
             this.xrTableCell_BeginDate.Font = new System.Drawing.Font("Cairo", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel);
             this.xrTableCell_BeginDate.Name = "xrTableCell_BeginDate";
+            this.xrTableCell_BeginDate.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
+            this.xrTableCell_BeginDate.StylePriority.UseBorderDashStyle = false;
             this.xrTableCell_BeginDate.StylePriority.UseFont = false;
             this.xrTableCell_BeginDate.StylePriority.UseTextAlignment = false;
             this.xrTableCell_BeginDate.Text = "xrTableCell25";
@@ -211,6 +217,7 @@
             this.xrTableCell3.Dpi = 254F;
             this.xrTableCell3.Font = new System.Drawing.Font("Cairo", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel);
             this.xrTableCell3.Name = "xrTableCell3";
+            this.xrTableCell3.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
             this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
             this.xrTableCell3.Text = "الى تاريخ";
@@ -222,6 +229,7 @@
             this.xrTableCell_EndDate.Dpi = 254F;
             this.xrTableCell_EndDate.Font = new System.Drawing.Font("Cairo", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel);
             this.xrTableCell_EndDate.Name = "xrTableCell_EndDate";
+            this.xrTableCell_EndDate.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
             this.xrTableCell_EndDate.StylePriority.UseFont = false;
             this.xrTableCell_EndDate.StylePriority.UseTextAlignment = false;
             this.xrTableCell_EndDate.Text = "xrTableCell27";
@@ -253,7 +261,7 @@
             this.xrTable12});
             this.groupHeaderBand6.Dpi = 254F;
             this.groupHeaderBand6.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("ORDER_DATE", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("ORDER_DATE", DevExpress.XtraReports.UI.XRColumnSortOrder.None)});
             this.groupHeaderBand6.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
             this.groupHeaderBand6.HeightF = 105F;
             this.groupHeaderBand6.Level = 1;
@@ -425,7 +433,7 @@
             this.xrTable7});
             this.groupHeaderBand7.Dpi = 254F;
             this.groupHeaderBand7.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("COUST_NAME", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("COUST_NAME", DevExpress.XtraReports.UI.XRColumnSortOrder.None)});
             this.groupHeaderBand7.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
             this.groupHeaderBand7.HeightF = 105F;
             this.groupHeaderBand7.Level = 2;
@@ -566,7 +574,7 @@
             this.xrTable8});
             this.groupHeaderBand8.Dpi = 254F;
             this.groupHeaderBand8.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("ID_ORDER", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("ID_ORDER", DevExpress.XtraReports.UI.XRColumnSortOrder.Descending)});
             this.groupHeaderBand8.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
             this.groupHeaderBand8.HeightF = 100F;
             this.groupHeaderBand8.Level = 3;
@@ -971,15 +979,6 @@
             this.PageInfo.Name = "PageInfo";
             this.PageInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             // 
-            // PageFooter
-            // 
-            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPageInfo1,
-            this.xrPageInfo2});
-            this.PageFooter.Dpi = 254F;
-            this.PageFooter.HeightF = 74.08334F;
-            this.PageFooter.Name = "PageFooter";
-            // 
             // GroupFooter1
             // 
             this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -988,10 +987,29 @@
             this.GroupFooter1.HeightF = 62.35408F;
             this.GroupFooter1.Name = "GroupFooter1";
             // 
+            // xrLine1
+            // 
+            this.xrLine1.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.xrLine1.Dpi = 254F;
+            this.xrLine1.LineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.xrLine1.LineWidth = 6;
+            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(4.438239F, 0F);
+            this.xrLine1.Name = "xrLine1";
+            this.xrLine1.SizeF = new System.Drawing.SizeF(2021.814F, 58.42F);
+            this.xrLine1.StylePriority.UseBorderDashStyle = false;
+            // 
+            // ReportFooter
+            // 
+            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrTable2});
+            this.ReportFooter.Dpi = 254F;
+            this.ReportFooter.HeightF = 100.5417F;
+            this.ReportFooter.Name = "ReportFooter";
+            // 
             // xrTable2
             // 
             this.xrTable2.Dpi = 254F;
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(8.342675F, 15.56252F);
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(4.171509F, 7.781277F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
@@ -1055,25 +1073,6 @@
             this.xrTableCell4.TextFormatString = "{0:n2}";
             this.xrTableCell4.Weight = 0.50511152998130116D;
             // 
-            // xrLine1
-            // 
-            this.xrLine1.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
-            this.xrLine1.Dpi = 254F;
-            this.xrLine1.LineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.xrLine1.LineWidth = 6;
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(4.438239F, 0F);
-            this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(2021.814F, 58.42F);
-            this.xrLine1.StylePriority.UseBorderDashStyle = false;
-            // 
-            // ReportFooter
-            // 
-            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrTable2});
-            this.ReportFooter.Dpi = 254F;
-            this.ReportFooter.HeightF = 100.5417F;
-            this.ReportFooter.Name = "ReportFooter";
-            // 
             // RPT_ALL_INVOS_BETWEEN_DATES
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1085,7 +1084,6 @@
             this.groupHeaderBand8,
             this.groupHeaderBand9,
             this.detailBand1,
-            this.PageFooter,
             this.GroupFooter1,
             this.ReportFooter});
             this.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
@@ -1176,7 +1174,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell31;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell38;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell39;
-        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
         private DevExpress.XtraReports.UI.XRTable xrTable1;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
@@ -1186,10 +1183,10 @@
         private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
         private DevExpress.XtraReports.UI.XRLine xrLine1;
         private DevExpress.XtraReports.UI.XRLine xrLine2;
+        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
         private DevExpress.XtraReports.UI.XRTable xrTable2;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow2;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
         public DevExpress.XtraReports.UI.XRTableCell xrTableCell_RPT_FOOTER;
-        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
     }
 }

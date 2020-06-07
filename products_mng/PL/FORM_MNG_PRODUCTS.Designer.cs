@@ -290,6 +290,7 @@
             this.gridColumn_QTE_IN_STOCK.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn_QTE_IN_STOCK.FieldName = "QTE_IN_STOCK";
             this.gridColumn_QTE_IN_STOCK.Name = "gridColumn_QTE_IN_STOCK";
+            this.gridColumn_QTE_IN_STOCK.OptionsColumn.AllowEdit = false;
             this.gridColumn_QTE_IN_STOCK.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_QTE_IN_STOCK.Visible = true;
             this.gridColumn_QTE_IN_STOCK.VisibleIndex = 4;
@@ -463,7 +464,7 @@
             this.button_PRODUCT_PRICE_STOCK.Name = "button_PRODUCT_PRICE_STOCK";
             this.button_PRODUCT_PRICE_STOCK.Size = new System.Drawing.Size(100, 50);
             this.button_PRODUCT_PRICE_STOCK.TabIndex = 20;
-            this.button_PRODUCT_PRICE_STOCK.Text = "سعر و مخزن";
+            this.button_PRODUCT_PRICE_STOCK.Text = "السعر";
             this.button_PRODUCT_PRICE_STOCK.UseVisualStyleBackColor = true;
             this.button_PRODUCT_PRICE_STOCK.Click += new System.EventHandler(this.button_PRODUCT_PRICE_STOCK_Click);
             // 

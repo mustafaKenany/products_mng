@@ -37,9 +37,8 @@ namespace products_mng.RPT
                 string COUST_NAME = gridView_COUST.GetRowCellValue (gridView_COUST.FocusedRowHandle, gridView_COUST.Columns["COUST_NAME"]).ToString ();
                 //طباعة كل مبيعات الزبون وبشكل تفصيلي
                 RPT.RPT_ALL_INVOS_BETWEEN_DATES X = new RPT_ALL_INVOS_BETWEEN_DATES ();
-                //X.xrLabel_BEGINDATE.Text = BEGIN_DATE;
-                //X.xrLabel_ENDDATE.Text = END_DATE;
-                //X.xrLabel_COUST_NAME.Text = COUST_NAME;
+                X.xrTableCell_BeginDate.Text = BEGIN_DATE;
+                X.xrTableCell_EndDate.Text = END_DATE;
                 DataTable dt = new DataTable ();
                 dt = rpt.RPT_COUSTOMER_ALL_ORDER (0, BEGIN_DATE, END_DATE, ID_COUST);
                 if (dt.Rows.Count > 0)
@@ -137,14 +136,12 @@ namespace products_mng.RPT
 
                 int ID_COUST = Convert.ToInt16 (gridView_COUST.GetRowCellValue (gridView_COUST.FocusedRowHandle, gridView_COUST.Columns["ID_COUSTOMER"]).ToString ());
                 string COUST_NAME = gridView_COUST.GetRowCellValue (gridView_COUST.FocusedRowHandle, gridView_COUST.Columns["COUST_NAME"]).ToString ();
-                //طباعة كل مبيعات الزبون وبشكل تفصيلي
+                //طباعة كل المشتريات الزبون وبشكل تفصيلي
                 RPT.RPT_ALL_INVOS_BETWEEN_DATES X = new RPT_ALL_INVOS_BETWEEN_DATES ();
-                //X.xrLabel_BEGINDATE.Text = BEGIN_DATE;
-                //X.xrLabel_ENDDATE.Text = END_DATE;
-                //X.xrLabel_COUST_NAME.Text = COUST_NAME;
-                //X.xrLabel_title.Text = "تقرير مشتريات تفصيلي لزبون محدد خلال فترة محددة";
-                //X.xrTableCell28.Text = "مجموع المشتريات من هذا الزبون";
-                //X.xrTableCell26.Text = "مجموع المبالغ الواصلة الى هذا الزبون";
+                X.xrTableCell_BeginDate.Text = BEGIN_DATE;
+                X.xrTableCell_EndDate.Text = END_DATE;
+                X.xrTableCell_RPT_FOOTER.Text = "مجموع المشتريات خلال هذه الفترة";
+                X.xrLabel_ReportTitle.Text = "قوائم المشتريات للفترة المحددة";
                 DataTable dt = new DataTable ();
                 dt = rpt.RPT_COUSTOMER_ALL_ORDER (1, BEGIN_DATE, END_DATE, ID_COUST);
                 if (dt.Rows.Count > 0)

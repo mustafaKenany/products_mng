@@ -36,11 +36,6 @@
             this.button_close = new System.Windows.Forms.Button();
             this.panel_Right = new System.Windows.Forms.Panel();
             this.dataGridView_INVO_ITEMS = new System.Windows.Forms.DataGridView();
-            this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_PAID_MONEY = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox_INVO_PAID = new System.Windows.Forms.TextBox();
@@ -77,6 +72,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox_PRD_BARCODE = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.ITEM_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_top.SuspendLayout();
             this.panel_Right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_INVO_ITEMS)).BeginInit();
@@ -188,6 +189,7 @@
             this.dataGridView_INVO_ITEMS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_INVO_ITEMS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ITEM_ID,
+            this.Stock,
             this.ITEM_NAME,
             this.ITEM_QTY,
             this.ITEM_PRICE,
@@ -197,37 +199,12 @@
             this.dataGridView_INVO_ITEMS.MultiSelect = false;
             this.dataGridView_INVO_ITEMS.Name = "dataGridView_INVO_ITEMS";
             this.dataGridView_INVO_ITEMS.RowHeadersVisible = false;
+            this.dataGridView_INVO_ITEMS.RowTemplate.Height = 40;
             this.dataGridView_INVO_ITEMS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_INVO_ITEMS.Size = new System.Drawing.Size(440, 490);
             this.dataGridView_INVO_ITEMS.TabIndex = 2;
             this.dataGridView_INVO_ITEMS.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_INVO_ITEMS_CellValueChanged);
             this.dataGridView_INVO_ITEMS.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_INVO_ITEMS_EditingControlShowing);
-            // 
-            // ITEM_ID
-            // 
-            this.ITEM_ID.HeaderText = "ITEM_ID";
-            this.ITEM_ID.Name = "ITEM_ID";
-            this.ITEM_ID.Visible = false;
-            // 
-            // ITEM_NAME
-            // 
-            this.ITEM_NAME.HeaderText = "مادة";
-            this.ITEM_NAME.Name = "ITEM_NAME";
-            // 
-            // ITEM_QTY
-            // 
-            this.ITEM_QTY.HeaderText = "عدد";
-            this.ITEM_QTY.Name = "ITEM_QTY";
-            // 
-            // ITEM_PRICE
-            // 
-            this.ITEM_PRICE.HeaderText = "سعر";
-            this.ITEM_PRICE.Name = "ITEM_PRICE";
-            // 
-            // ITEM_TOTAL
-            // 
-            this.ITEM_TOTAL.HeaderText = "المجموع";
-            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
             // 
             // panel_PAID_MONEY
             // 
@@ -700,6 +677,48 @@
             this.label9.Text = "باركود";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ITEM_ID
+            // 
+            this.ITEM_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ITEM_ID.HeaderText = "ITEM_ID";
+            this.ITEM_ID.MinimumWidth = 100;
+            this.ITEM_ID.Name = "ITEM_ID";
+            this.ITEM_ID.Visible = false;
+            // 
+            // Stock
+            // 
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.Visible = false;
+            // 
+            // ITEM_NAME
+            // 
+            this.ITEM_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ITEM_NAME.FillWeight = 203.0457F;
+            this.ITEM_NAME.HeaderText = "مادة";
+            this.ITEM_NAME.Name = "ITEM_NAME";
+            // 
+            // ITEM_QTY
+            // 
+            this.ITEM_QTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ITEM_QTY.FillWeight = 65.65144F;
+            this.ITEM_QTY.HeaderText = "عدد";
+            this.ITEM_QTY.Name = "ITEM_QTY";
+            // 
+            // ITEM_PRICE
+            // 
+            this.ITEM_PRICE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ITEM_PRICE.FillWeight = 65.65144F;
+            this.ITEM_PRICE.HeaderText = "سعر";
+            this.ITEM_PRICE.Name = "ITEM_PRICE";
+            // 
+            // ITEM_TOTAL
+            // 
+            this.ITEM_TOTAL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ITEM_TOTAL.FillWeight = 65.65144F;
+            this.ITEM_TOTAL.HeaderText = "المجموع";
+            this.ITEM_TOTAL.Name = "ITEM_TOTAL";
+            // 
             // FORM_SALES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 26F);
@@ -780,11 +799,6 @@
         private System.Windows.Forms.Button button_DLT_ITEM;
         private System.Windows.Forms.Splitter splitter5;
         private System.Windows.Forms.Label label_INVO_REMID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_QTY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_PRICE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_TOTAL;
         private System.Windows.Forms.Button button_COUST_BRWS;
         public System.Windows.Forms.Label label_COUST_ID;
         public System.Windows.Forms.TextBox textBox_COUST_NAME;
@@ -793,5 +807,11 @@
         public System.Windows.Forms.TextBox textBox_PRD_BARCODE;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label label_ID_ORDER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_QTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_PRICE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEM_TOTAL;
     }
 }

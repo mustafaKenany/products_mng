@@ -83,7 +83,7 @@ namespace products_mng.PL
                     row.Cells["ITEM_PRICE"].Value = dt.Rows[i]["PRD_PRICE"].ToString ();
                     row.Cells["ITEM_TOTAL"].Value = dt.Rows[i]["QTY_BY_PRICE"].ToString ();
                 }
-                MessageBox.Show ("يمكنك فقط تغير الاعداد ولا يمكن حذف مادة او الاضافة", "MESSAGE");
+                MessageBox.Show ("يمكنك فقط تغير الاعداد ولا يمكن حذف مادة او الاضافة باقي الحساب يتم قبضه او صرفه", "MESSAGE");
             }
         }
 
@@ -327,8 +327,17 @@ namespace products_mng.PL
             }
             else
             {
-                MessageBox.Show ("هناك خلل في التسديدات المالية", "CHECK_MONEY ERORR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                if (MessageBox.Show ("القائمة بالاجل هل تريد متابعة", "تحذير", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+                    PAID_OR_NOT = 0;
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show ("هناك خلل في التسديدات المالية", "CHECK_MONEY ERORR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
             }
 
         }

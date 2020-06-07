@@ -140,6 +140,7 @@ namespace products_mng.PL
             BL.CLS_REPORT_LIST.ReportFlag = 0;
             BL.CLS_ORDERS.ORDER_TYPES = 0;
             PL.FORM_RPTDATE form = new FORM_RPTDATE ();
+
             if (form.ShowDialog () == DialogResult.OK)
             {
                 RPT.RPT_ALL_INVOS_BETWEEN_DATES y = new RPT.RPT_ALL_INVOS_BETWEEN_DATES ();

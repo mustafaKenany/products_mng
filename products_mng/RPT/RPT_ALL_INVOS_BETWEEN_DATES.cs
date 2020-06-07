@@ -12,6 +12,5 @@ namespace products_mng.RPT
         {
             InitializeComponent ();
         }
-
     }
 }
